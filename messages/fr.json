@@ -1,0 +1,149 @@
+{
+  "brand": {
+    "name": "Zentralbiker",
+    "tag": "Suisses centraux autour du monde"
+  },
+  "nav": {
+    "home": "Accueil",
+    "ausruestung": "Équipement",
+    "berichte": "Récits",
+    "fotos": "Photos",
+    "route": "Itinéraire",
+    "info": "Infos",
+    "varia": "Divers",
+    "ueber_uns": "À propos",
+    "claudia": "Claudia",
+    "alexandre": "Alexandre",
+    "menu": "Ouvrir le menu",
+    "close": "Fermer le menu",
+    "language": "Langue"
+  },
+  "crumb": {
+    "home": "Accueil"
+  },
+  "home": {
+    "title": "Suisses centraux autour du monde",
+    "lead": "Idée – décision – préparation",
+    "stats": {
+      "countries": "Pays",
+      "reports": "Récits de voyage",
+      "photos": "Photos",
+      "legs": "Étapes"
+    },
+    "legs_title": "Les étapes",
+    "legs_lead": "Trois grandes étapes — de la côte californienne à la Nouvelle-Zélande en passant par la route de la soie.",
+    "latest": "Derniers récits",
+    "explore": "Tous les récits",
+    "gear_title": "Ce qui nous accompagne",
+    "gear_lead": "Du vélo de trekking à la pharmacie de voyage — la liste complète.",
+    "gear_cta": "Voir l'équipement"
+  },
+  "section": {
+    "ausruestung": {
+      "title": "Équipement",
+      "lead": "Ce qui voyage avec nous sur un tour du monde à vélo — et pourquoi."
+    },
+    "berichte": {
+      "title": "Récits",
+      "lead": "Un récit de voyage pour chaque pays traversé."
+    },
+    "fotos": {
+      "title": "Photos",
+      "lead": "Galeries d'images prises en route."
+    },
+    "route": {
+      "title": "Itinéraire",
+      "lead": "Cartes et étapes de tout le voyage."
+    },
+    "info": {
+      "title": "Infos",
+      "lead": "Visas, vaccins, vols, statistiques et tests de matériel."
+    },
+    "varia": {
+      "title": "Divers",
+      "lead": "Livre d'or, revue de presse, newsletter et contact."
+    }
+  },
+  "leg": {
+    "countries": "{count, plural, =1 {# pays} other {# pays}}",
+    "read": "Lire le récit",
+    "route": "Voir l'itinéraire",
+    "photos": "Voir les photos",
+    "no_report": "Il n'y a pas de récit pour ce pays.",
+    "also": "À voir aussi"
+  },
+  "gallery": {
+    "photos": "{count, plural, =1 {# photo} other {# photos}}",
+    "open": "Ouvrir l'image",
+    "prev": "Image précédente",
+    "next": "Image suivante",
+    "close": "Fermer",
+    "counter": "{current} sur {total}",
+    "loading": "Chargement de l'image …",
+    "empty": "Cette galerie ne contient pas encore d'images."
+  },
+  "guestbook": {
+    "title": "Livre d'or",
+    "lead": "Laissez-nous quelques lignes — nous les lisons en route.",
+    "name": "Nom",
+    "location": "Lieu",
+    "message": "Message",
+    "submit": "Publier",
+    "sending": "Envoi …",
+    "success": "Merci ! Votre message paraîtra dès que nous l'aurons validé.",
+    "error": "Cela n'a pas fonctionné. Merci de réessayer.",
+    "empty": "Aucun message pour l'instant — soyez la première personne.",
+    "entries": "{count, plural, =1 {# message} other {# messages}}",
+    "required": "Merci d'indiquer un nom et un message.",
+    "too_long": "Le message est trop long (max. 2000 caractères).",
+    "rate_limited": "Merci de patienter un instant avant de réécrire."
+  },
+  "newsletter": {
+    "title": "Newsletter",
+    "lead": "Un courriel lorsqu'un nouveau récit paraît. Pas plus.",
+    "email": "Adresse e-mail",
+    "submit": "S'abonner",
+    "sending": "Envoi …",
+    "success": "Presque fini — merci de confirmer le lien reçu par courriel.",
+    "already": "Cette adresse est déjà inscrite.",
+    "error": "Cela n'a pas fonctionné. Merci de réessayer.",
+    "invalid": "Merci d'indiquer une adresse e-mail valide.",
+    "confirmed": "Merci, votre adresse est confirmée.",
+    "confirm_failed": "Ce lien de confirmation est invalide ou a expiré.",
+    "archive": "Archives de la newsletter"
+  },
+  "contact": {
+    "title": "Contact",
+    "lead": "Des questions sur l'itinéraire, le matériel ou autre chose — écrivez-nous.",
+    "name": "Nom",
+    "email": "Adresse e-mail",
+    "subject": "Objet",
+    "message": "Message",
+    "submit": "Envoyer le message",
+    "sending": "Envoi …",
+    "success": "Merci pour votre message — nous vous répondrons.",
+    "error": "Cela n'a pas fonctionné. Merci de réessayer.",
+    "required": "Merci de remplir tous les champs obligatoires."
+  },
+  "footer": {
+    "impressum": "Mentions légales",
+    "kontakt": "Contact",
+    "rights": "© {year} Zentralbiker",
+    "built": "Récits d'un tour du monde à vélo",
+    "sections": "Rubriques",
+    "about": "À propos"
+  },
+  "meta": {
+    "title": "Zentralbiker – Suisses centraux autour du monde",
+    "description": "Récits, photos et itinéraires d'un tour du monde à vélo à travers les Amériques, l'Asie et l'Océanie."
+  },
+  "common": {
+    "back": "Retour",
+    "more": "Plus",
+    "not_found": "Page introuvable",
+    "not_found_lead": "Cette page n'existe pas (ou plus). La page d'accueil peut vous aider.",
+    "to_home": "Aller à l'accueil",
+    "updated": "Mis à jour",
+    "words": "{count} mots"
+  }
+}

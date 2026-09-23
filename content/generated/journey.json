@@ -1,0 +1,339 @@
+{
+ "legs": [
+  {
+   "slug": "amerika",
+   "from": 1,
+   "to": 15,
+   "order": 1,
+   "name": "Amerika",
+   "countries": [
+    {
+     "num": 1,
+     "slug": "kalifornien",
+     "report": "3berichte/301kalifornien.html",
+     "gallery": "4fotos/401kalifornien.html",
+     "route": "5route/501kalifornien.html",
+     "name": "Kalifornien",
+     "path": "/berichte/kalifornien",
+     "galleryDir": "4fotos/401photos_kalifornien"
+    },
+    {
+     "num": 2,
+     "slug": "mexiko",
+     "report": "3berichte/302mexiko.html",
+     "name": "Mexiko",
+     "path": "/berichte/mexiko",
+     "galleryDir": null
+    },
+    {
+     "num": 3,
+     "slug": "guatemala",
+     "report": "3berichte/303guatemala.html",
+     "gallery": "4fotos/403guatemala.html",
+     "route": "5route/503guatemala.html",
+     "name": "Guatemala",
+     "path": "/berichte/guatemala",
+     "galleryDir": "4fotos/403photos_guatemala"
+    },
+    {
+     "num": 4,
+     "slug": "honduras",
+     "report": "3berichte/304honduras.html",
+     "gallery": "4fotos/404honduras.html",
+     "route": "5route/504honduras.html",
+     "name": "Honduras",
+     "path": "/berichte/honduras",
+     "galleryDir": "4fotos/404photos_honduras"
+    },
+    {
+     "num": 5,
+     "slug": "nicaragua",
+     "report": "3berichte/305nicaragua.html",
+     "gallery": "4fotos/405nicaragua.html",
+     "route": "5route/505nicaragua.html",
+     "name": "Nicaragua",
+     "path": "/berichte/nicaragua",
+     "galleryDir": "4fotos/405photos_nicaragua"
+    },
+    {
+     "num": 6,
+     "slug": "costa-rica",
+     "report": "3berichte/306costa_rica.html",
+     "gallery": "4fotos/406costa_rica.html",
+     "route": "5route/506costa_rica.html",
+     "name": "Costa Rica",
+     "path": "/berichte/costa-rica",
+     "galleryDir": "4fotos/406photos_costarica"
+    },
+    {
+     "num": 7,
+     "slug": "panama",
+     "report": "3berichte/307panama.html",
+     "gallery": "4fotos/407panama.html",
+     "route": "5route/507panama.html",
+     "name": "Panama",
+     "path": "/berichte/panama",
+     "galleryDir": "4fotos/407photos_panama"
+    },
+    {
+     "num": 8,
+     "slug": "florida",
+     "report": "3berichte/308florida.html",
+     "gallery": "4fotos/408florida.html",
+     "route": "5route/508florida.html",
+     "name": "Florida",
+     "path": "/berichte/florida",
+     "galleryDir": "4fotos/408photos_florida"
+    },
+    {
+     "num": 9,
+     "slug": "ecuador",
+     "report": "3berichte/309ecuador.html",
+     "gallery": "4fotos/409ecuador.html",
+     "route": "5route/509ecuador.html",
+     "name": "Ecuador",
+     "path": "/berichte/ecuador",
+     "galleryDir": "4fotos/409photos_ecuador"
+    },
+    {
+     "num": 10,
+     "slug": "peru",
+     "report": "3berichte/310peru.html",
+     "gallery": "4fotos/410peru.html",
+     "route": "5route/510peru.html",
+     "name": "Peru",
+     "path": "/berichte/peru",
+     "galleryDir": "4fotos/410photos_peru"
+    },
+    {
+     "num": 11,
+     "slug": "bolivien",
+     "report": "3berichte/311bolivien.html",
+     "gallery": "4fotos/411bolivien.html",
+     "route": "5route/511bolivien.html",
+     "name": "Bolivien",
+     "path": "/berichte/bolivien",
+     "galleryDir": "4fotos/411photos_bolivien"
+    },
+    {
+     "num": 12,
+     "slug": "paraguay",
+     "report": "3berichte/312paraguay.html",
+     "gallery": "4fotos/412paraguay.html",
+     "route": "5route/512paraguay.html",
+     "name": "Paraguay",
+     "path": "/berichte/paraguay",
+     "galleryDir": "4fotos/412photos_paraguay"
+    },
+    {
+     "num": 13,
+     "slug": "argentinien",
+     "report": "3berichte/313argentinien.html",
+     "gallery": "4fotos/413argentinien.html",
+     "route": "5route/513argentinien.html",
+     "name": "Argentinien",
+     "path": "/berichte/argentinien",
+     "galleryDir": "4fotos/413photos_argentinien"
+    },
+    {
+     "num": 14,
+     "slug": "uruguay",
+     "report": "3berichte/314uruguay.html",
+     "gallery": "4fotos/414uruguay.html",
+     "route": "5route/514uruguay.html",
+     "name": "Uruguay",
+     "path": "/berichte/uruguay",
+     "galleryDir": "4fotos/414photos_uruguay"
+    },
+    {
+     "num": 15,
+     "slug": "new-york",
+     "report": "3berichte/315new_york.html",
+     "gallery": "4fotos/415new_york.html",
+     "route": "5route/515new_york.html",
+     "name": "New York",
+     "path": "/berichte/new-york",
+     "galleryDir": "4fotos/415photos_new_york"
+    }
+   ]
+  },
+  {
+   "slug": "asien",
+   "from": 16,
+   "to": 30,
+   "order": 2,
+   "name": "Asien",
+   "countries": [
+    {
+     "num": 16,
+     "slug": "tuerkei",
+     "report": "3berichte/316tuerkei.html",
+     "gallery": "4fotos/416tuerkei.html",
+     "route": "5route/516tuerkei.html",
+     "name": "Türkei",
+     "path": "/berichte/tuerkei",
+     "galleryDir": "4fotos/416photos_tuerkei"
+    },
+    {
+     "num": 17,
+     "slug": "iran",
+     "report": "3berichte/317iran.html",
+     "gallery": "4fotos/417iran.html",
+     "route": "5route/517iran.html",
+     "name": "Iran",
+     "path": "/berichte/iran",
+     "galleryDir": "4fotos/417photos_iran"
+    },
+    {
+     "num": 18,
+     "slug": "turkmenistan",
+     "report": "3berichte/318turkmenistan.html",
+     "gallery": "4fotos/418turkmenistan.html",
+     "route": "5route/518turkmenistan.html",
+     "name": "Turkmenistan",
+     "path": "/berichte/turkmenistan",
+     "galleryDir": "4fotos/418photos_turkmenistan"
+    },
+    {
+     "num": 19,
+     "slug": "usbekistan",
+     "report": "3berichte/319usbekistan.html",
+     "gallery": "4fotos/419usbekistan.html",
+     "route": "5route/519usbekistan.html",
+     "name": "Usbekistan",
+     "path": "/berichte/usbekistan",
+     "galleryDir": "4fotos/419photos_uzbekistan"
+    },
+    {
+     "num": 20,
+     "slug": "tadschikistan",
+     "report": "3berichte/320tadschikistan.html",
+     "gallery": "4fotos/420tadschikistan.html",
+     "route": "5route/520tadschikistan.html",
+     "name": "Tadschikistan",
+     "path": "/berichte/tadschikistan",
+     "galleryDir": "4fotos/420photos_tajikistan"
+    },
+    {
+     "num": 21,
+     "slug": "kirgistan",
+     "report": "3berichte/321kirgistan.html",
+     "gallery": "4fotos/421kirgistan.html",
+     "route": "5route/521kirgistan.html",
+     "name": "Kirgistan",
+     "path": "/berichte/kirgistan",
+     "galleryDir": "4fotos/421photos_kyrgystan"
+    },
+    {
+     "num": 22,
+     "slug": "china",
+     "report": "3berichte/322china.html",
+     "gallery": "4fotos/422china.html",
+     "route": "5route/522china.html",
+     "name": "China",
+     "path": "/berichte/china",
+     "galleryDir": "4fotos/422photos_china"
+    },
+    {
+     "num": 24,
+     "slug": "laos",
+     "report": "3berichte/324laos.html",
+     "gallery": "4fotos/424laos.html",
+     "route": "5route/524laos.html",
+     "name": "Laos",
+     "path": "/berichte/laos",
+     "galleryDir": "4fotos/424photos_laos"
+    },
+    {
+     "num": 26,
+     "slug": "kambodscha",
+     "report": "3berichte/326kambodscha.html",
+     "gallery": "4fotos/426kambodscha.html",
+     "route": "5route/526kambodscha.html",
+     "name": "Kambodscha",
+     "path": "/berichte/kambodscha",
+     "galleryDir": "4fotos/426photos_kambodscha"
+    },
+    {
+     "num": 27,
+     "slug": "thailand",
+     "report": "3berichte/327thailand.html",
+     "gallery": "4fotos/427thailand.html",
+     "route": "5route/527thailand.html",
+     "name": "Thailand",
+     "path": "/berichte/thailand",
+     "galleryDir": "4fotos/427photos_thailand"
+    },
+    {
+     "num": 28,
+     "slug": "malaysia",
+     "report": "3berichte/328malaysia.html",
+     "gallery": "4fotos/428malaysia.html",
+     "route": "5route/528malaysia.html",
+     "name": "Malaysia",
+     "path": "/berichte/malaysia",
+     "galleryDir": "4fotos/428photos_malaysia"
+    },
+    {
+     "num": 29,
+     "slug": "singapur",
+     "report": "3berichte/329singapur.html",
+     "gallery": "4fotos/429singapur.html",
+     "route": "5route/529singapur.html",
+     "name": "Singapur",
+     "path": "/berichte/singapur",
+     "galleryDir": "4fotos/429photos_singapur"
+    },
+    {
+     "num": 30,
+     "slug": "borneo",
+     "report": "3berichte/330borneo.html",
+     "gallery": "4fotos/430borneo.html",
+     "route": "5route/530borneo.html",
+     "name": "Borneo",
+     "path": "/berichte/borneo",
+     "galleryDir": "4fotos/430photos_borneo"
+    }
+   ]
+  },
+  {
+   "slug": "ozeanien",
+   "from": 31,
+   "to": 34,
+   "order": 3,
+   "name": "Ozeanien",
+   "countries": [
+    {
+     "num": 31,
+     "slug": "bolivien",
+     "gallery": "4fotos/431bolivia.html",
+     "report": "3berichte/331bolivien.html",
+     "route": "5route/531bolivia.html",
+     "name": "Bolivien",
+     "path": "/berichte/bolivien",
+     "galleryDir": "4fotos/431photos_bolivien2"
+    },
+    {
+     "num": 32,
+     "slug": "chile",
+     "report": "3berichte/332chile.html",
+     "gallery": "4fotos/432chile.html",
+     "route": "5route/532chile.html",
+     "name": "Chile",
+     "path": "/berichte/chile",
+     "galleryDir": "4fotos/432photos_chile"
+    },
+    {
+     "num": 34,
+     "slug": "new-zealand",
+     "report": "3berichte/334new_zealand.html",
+     "gallery": "4fotos/434new_zealand.html",
+     "route": "5route/534new_zealand.html",
+     "name": "Neuseeland",
+     "path": "/berichte/new-zealand",
+     "galleryDir": "4fotos/434photos_new_zealand"
+    }
+   ]
+  }
+ ]
+}

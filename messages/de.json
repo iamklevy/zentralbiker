@@ -1,0 +1,149 @@
+{
+  "brand": {
+    "name": "Zentralbiker",
+    "tag": "Zentralschweizer auf Weltreise"
+  },
+  "nav": {
+    "home": "Home",
+    "ausruestung": "Ausrüstung",
+    "berichte": "Berichte",
+    "fotos": "Fotos",
+    "route": "Route",
+    "info": "Info",
+    "varia": "Varia",
+    "ueber_uns": "Über uns",
+    "claudia": "Claudia",
+    "alexandre": "Alexandre",
+    "menu": "Menü öffnen",
+    "close": "Menü schliessen",
+    "language": "Sprache"
+  },
+  "crumb": {
+    "home": "Home"
+  },
+  "home": {
+    "title": "Zentralschweizer auf Weltreise",
+    "lead": "Idee – Entschluss – Planung",
+    "stats": {
+      "countries": "Länder",
+      "reports": "Reiseberichte",
+      "photos": "Fotos",
+      "legs": "Etappen"
+    },
+    "legs_title": "Die Etappen",
+    "legs_lead": "Drei grosse Reiseabschnitte – von der kalifornischen Küste über die Seidenstrasse bis nach Neuseeland.",
+    "latest": "Neueste Berichte",
+    "explore": "Alle Berichte",
+    "gear_title": "Was mitkommt",
+    "gear_lead": "Vom Trekkingrad bis zur Reiseapotheke – die vollständige Packliste.",
+    "gear_cta": "Zur Ausrüstung"
+  },
+  "section": {
+    "ausruestung": {
+      "title": "Ausrüstung",
+      "lead": "Was auf einer Weltreise mit dem Velo mitfährt – und warum."
+    },
+    "berichte": {
+      "title": "Berichte",
+      "lead": "Reiseberichte aus jedem durchquerten Land."
+    },
+    "fotos": {
+      "title": "Fotos",
+      "lead": "Bildergalerien von unterwegs."
+    },
+    "route": {
+      "title": "Route",
+      "lead": "Karten und Etappen der ganzen Reise."
+    },
+    "info": {
+      "title": "Info",
+      "lead": "Visa, Impfungen, Flüge, Statistiken und Testberichte."
+    },
+    "varia": {
+      "title": "Varia",
+      "lead": "Gästebuch, Medienberichte, Newsletter und Kontakt."
+    }
+  },
+  "leg": {
+    "countries": "{count, plural, =1 {# Land} other {# Länder}}",
+    "read": "Bericht lesen",
+    "route": "Route ansehen",
+    "photos": "Fotos ansehen",
+    "no_report": "Für dieses Land gibt es keinen Bericht.",
+    "also": "Dazu passend"
+  },
+  "gallery": {
+    "photos": "{count, plural, =1 {# Foto} other {# Fotos}}",
+    "open": "Bild öffnen",
+    "prev": "Vorheriges Bild",
+    "next": "Nächstes Bild",
+    "close": "Schliessen",
+    "counter": "{current} von {total}",
+    "loading": "Bild wird geladen …",
+    "empty": "In dieser Galerie sind noch keine Bilder."
+  },
+  "guestbook": {
+    "title": "Gästebuch",
+    "lead": "Schreib uns ein paar Zeilen – wir lesen unterwegs mit.",
+    "name": "Name",
+    "location": "Ort",
+    "message": "Nachricht",
+    "submit": "Eintrag senden",
+    "sending": "Wird gesendet …",
+    "success": "Danke! Dein Eintrag erscheint, sobald wir ihn freigegeben haben.",
+    "error": "Das hat leider nicht geklappt. Bitte versuch es nochmals.",
+    "empty": "Noch keine Einträge – sei die erste Person.",
+    "entries": "{count, plural, =1 {# Eintrag} other {# Einträge}}",
+    "required": "Bitte Name und Nachricht ausfüllen.",
+    "too_long": "Die Nachricht ist zu lang (max. 2000 Zeichen).",
+    "rate_limited": "Bitte warte einen Moment, bevor du nochmals schreibst."
+  },
+  "newsletter": {
+    "title": "Newsletter",
+    "lead": "Ein Mail, wenn es einen neuen Bericht gibt. Nicht öfter.",
+    "email": "E-Mail-Adresse",
+    "submit": "Abonnieren",
+    "sending": "Wird gesendet …",
+    "success": "Fast geschafft – bitte bestätige den Link in deinem Postfach.",
+    "already": "Diese Adresse ist bereits eingetragen.",
+    "error": "Das hat leider nicht geklappt. Bitte versuch es nochmals.",
+    "invalid": "Bitte eine gültige E-Mail-Adresse eingeben.",
+    "confirmed": "Danke, deine Adresse ist bestätigt.",
+    "confirm_failed": "Dieser Bestätigungslink ist ungültig oder abgelaufen.",
+    "archive": "Newsletter-Archiv"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "lead": "Fragen zur Route, zur Ausrüstung oder einfach so – schreib uns.",
+    "name": "Name",
+    "email": "E-Mail-Adresse",
+    "subject": "Betreff",
+    "message": "Nachricht",
+    "submit": "Nachricht senden",
+    "sending": "Wird gesendet …",
+    "success": "Danke für deine Nachricht – wir melden uns.",
+    "error": "Das hat leider nicht geklappt. Bitte versuch es nochmals.",
+    "required": "Bitte alle Pflichtfelder ausfüllen."
+  },
+  "footer": {
+    "impressum": "Impressum",
+    "kontakt": "Kontakt",
+    "rights": "© {year} Zentralbiker",
+    "built": "Reiseberichte einer Velo-Weltreise",
+    "sections": "Bereiche",
+    "about": "Über uns"
+  },
+  "meta": {
+    "title": "Zentralbiker – Zentralschweizer auf Weltreise",
+    "description": "Reiseberichte, Fotos und Routen einer Velo-Weltreise durch Amerika, Asien und Ozeanien."
+  },
+  "common": {
+    "back": "Zurück",
+    "more": "Mehr",
+    "not_found": "Seite nicht gefunden",
+    "not_found_lead": "Diese Seite gibt es nicht (mehr). Vielleicht hilft die Startseite weiter.",
+    "to_home": "Zur Startseite",
+    "updated": "Aktualisiert",
+    "words": "{count} Wörter"
+  }
+}
