@@ -16,7 +16,9 @@
     "alexandre": "Alexandre",
     "menu": "Menü öffnen",
     "close": "Menü schliessen",
-    "language": "Sprache"
+    "language": "Sprache",
+    "main": "Hauptmenü",
+    "sub": "Untermenü"
   },
   "crumb": {
     "home": "Home"

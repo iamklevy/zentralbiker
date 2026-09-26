@@ -61,7 +61,10 @@ export function newPath(old) {
   if (dir === "5route") {
     return legMatch ? `/route/${LEG[legMatch[1]]}` : `/route/${countrySlug(file)}`;
   }
-  if (dir === "4fotos") return `/fotos/${countrySlug(file.replace(/^\d+[a-z]*_/, ""))}`;
+  // Overview pages carry a short leg code (400_, 400a_, 400ab_); country
+  // galleries do not (406costa_rica). A greedy [a-z]* here ate "costa_" and
+  // "new_", producing /fotos/rica and /fotos/york.
+  if (dir === "4fotos") return `/fotos/${countrySlug(file.replace(/^\d+[a-g]{0,2}_/, ""))}`;
   return `/${p}`;
 }
 
@@ -76,8 +79,13 @@ const DROP_ATTRS = [
 const LAYOUT_STYLE =
   /(float|width|height|padding|margin|border|background|font-family|font-size|text-indent)\s*:/i;
 
-const DROP_TAGS = ["script", "noscript", "style", "meta", "link"];
+// iframes embedded the old PHP contact form and guestbook, which the new
+// site replaces with its own forms.
+const DROP_TAGS = ["script", "noscript", "style", "meta", "link", "iframe"];
 const UNWRAP_TAGS = ["font", "center", "basefont", "tt"];
+
+/** Text styles from the old style.css that carry meaning (see .zb-content in globals.css). */
+const TEXT_CLASSES = new Set(["fett", "klein", "hervorheben", "zitat", "unterschrift", "ueberschrift_2"]);
 
 function cleanNode(node, ctx) {
   for (const el of node.querySelectorAll("*")) {
@@ -107,8 +115,16 @@ function cleanNode(node, ctx) {
       }
       ctx.images.push(resolved);
       const alt = el.getAttribute("alt") || el.getAttribute("title") || "";
+      // Keep the size each picture was shown at — thumbnails must stay
+      // thumbnails — and the float that set a photo beside its text.
+      const w = el.getAttribute("width");
+      const h = el.getAttribute("height");
+      const floated = /float\s*:\s*left/i.test(el.getAttribute("style") || "") || /left/i.test(el.getAttribute("align") || "");
       for (const a of DROP_ATTRS) el.removeAttribute(a);
       el.removeAttribute("style");
+      if (/^\d+$/.test(w || "")) el.setAttribute("width", w);
+      if (/^\d+$/.test(h || "")) el.setAttribute("height", h);
+      if (floated) el.setAttribute("class", "float-left");
       el.setAttribute("src", "/media/" + resolved);
       el.setAttribute("alt", alt);
       continue;
@@ -134,7 +150,11 @@ function cleanNode(node, ctx) {
       continue;
     }
 
+    // The original's text styles (bold subheadings, small dates, highlights)
+    // are part of the design and survive; every other class was layout.
+    const kept = (el.getAttribute("class") || "").split(/\s+/).filter((c) => TEXT_CLASSES.has(c));
     for (const a of DROP_ATTRS) el.removeAttribute(a);
+    if (kept.length) el.setAttribute("class", kept.join(" "));
     const style = el.getAttribute("style");
     if (style && LAYOUT_STYLE.test(style)) el.removeAttribute("style");
   }
@@ -201,7 +221,11 @@ function unwrapLayoutTables(root) {
     const inner = table.innerHTML
       .replace(/<\/?(?:tbody|thead|tfoot|colgroup|col|caption)[^>]*>/gi, "")
       .replace(/<\/?tr[^>]*>/gi, "")
-      .replace(/<t[dh][^>]*>/gi, "<div>")
+      // a cell's text style (only the kept ones survive cleanNode) moves to its block
+      .replace(/<t[dh]([^>]*)>/gi, (_, attrs) => {
+        const cls = attrs.match(/class="([^"]*)"/);
+        return cls ? `<div class="${cls[1]}">` : "<div>";
+      })
       .replace(/<\/t[dh]>/gi, "</div>");
     const replacement = parse(`<div>${inner}</div>`);
 

@@ -160,11 +160,19 @@ for (const [dir, files] of byDir) {
   if (!items.length) continue;
 
   const base = dir.slice("4fotos/".length);
-  const slug = base
-    .replace(/^\d+/, "")
-    .replace(/^(photos|thumbnails|images)_?/, "")
-    .replace(/^highlights_/, "highlights-")
-    .replace(/_/g, "-");
+  // A numbered photo folder belongs to the gallery page with the same number,
+  // and must live at that page's URL — the folder names are spelled
+  // differently (406photos_costarica vs 406costa_rica.html, 419photos_uzbekistan
+  // vs 419usbekistan.html), and every menu and in-text link uses the page's.
+  const num = base.match(/^(\d{3})/)?.[1];
+  const pageForNum = num && Object.values(pages).find((p) => p.oldPath.startsWith(`4fotos/${num}`));
+  const slug = pageForNum
+    ? pageForNum.path.slice("/fotos/".length)
+    : base
+        .replace(/^\d+/, "")
+        .replace(/^(photos|thumbnails|images)_?/, "")
+        .replace(/^highlights_/, "highlights-")
+        .replace(/_/g, "-");
   galleries[dir] = { dir, slug, name: nice(slug.replace(/^highlights-/, "")), count: items.length, items };
 }
 

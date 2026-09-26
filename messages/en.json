@@ -1,7 +1,7 @@
 {
   "brand": {
     "name": "Zentralbiker",
-    "tag": "Central Swiss cycling the world"
+    "tag": "Central Swiss on a World Tour"
   },
   "nav": {
     "home": "Home",
@@ -16,13 +16,15 @@
     "alexandre": "Alexandre",
     "menu": "Open menu",
     "close": "Close menu",
-    "language": "Language"
+    "language": "Language",
+    "main": "Main menu",
+    "sub": "Sub menu"
   },
   "crumb": {
     "home": "Home"
   },
   "home": {
-    "title": "Central Swiss cycling the world",
+    "title": "Central Swiss on a World Tour",
     "lead": "Idea – decision – planning",
     "stats": {
       "countries": "Countries",
@@ -134,7 +136,7 @@
     "about": "About us"
   },
   "meta": {
-    "title": "Zentralbiker – Central Swiss cycling the world",
+    "title": "Zentralbiker – Central Swiss on a World Tour",
     "description": "Travel reports, photos and routes from a round-the-world bicycle journey through the Americas, Asia and Oceania."
   },
   "common": {
@@ -145,5 +147,63 @@
     "to_home": "Go to home page",
     "updated": "Updated",
     "words": "{count} words"
+  },
+  "sidebar": {
+    "ueber uns": "About us",
+    "Über uns": "About us",
+    "Trekkingrad": "Touring bike",
+    "Schlafen": "Sleeping",
+    "Kochen": "Cooking",
+    "Kleider": "Clothing",
+    "Apotheke": "First aid",
+    "Necessaire": "Toiletries",
+    "Administration": "Paperwork",
+    "Technik": "Electronics",
+    "Werkzeug": "Tools",
+    "Ersatzteile": "Spare parts",
+    "Diverses": "Miscellaneous",
+    "Amerika": "America",
+    "Asien": "Asia",
+    "Ozeanien": "Oceania",
+    "Highlights Amerika": "Highlights America",
+    "Highlights Asien": "Highlights Asia",
+    "Highlights Ozeanien": "Highlights Oceania",
+    "Fotos Nordamerika": "Photos North America",
+    "Fotos Suedamerika": "Photos South America",
+    "Fotos Asien": "Photos Asia",
+    "Fotos Ozeanien": "Photos Oceania",
+    "Filme Amerika": "Films America",
+    "Filme Asien": "Films Asia",
+    "Filme Ozeanien": "Films Oceania",
+    "Fotos Rumaenien": "Photos Romania",
+    "Fotos Aegypten": "Photos Egypt",
+    "Fotos Mexico": "Photos Mexico",
+    "Impfung": "Vaccinations",
+    "Visa": "Visas",
+    "Fluege": "Flights",
+    "Statistiken": "Statistics",
+    "Testberichte": "Product tests",
+    "Sponsoren": "Sponsors",
+    "Links": "Links",
+    "Medien": "Media",
+    "Kiosk": "Kiosk",
+    "Newsletter": "Newsletter",
+    "Gaestebuch": "Guestbook",
+    "Kontakt": "Contact",
+    "Impressum": "Imprint",
+    "Kalifornien": "California",
+    "Mexiko": "Mexico",
+    "Bolivien": "Bolivia",
+    "Argentinien": "Argentina",
+    "Tuerkei": "Turkey",
+    "Usbekistan": "Uzbekistan",
+    "Tadschikistan": "Tajikistan",
+    "Tjikistan": "Tajikistan",
+    "Kirgistan": "Kyrgyzstan",
+    "Kambodscha": "Cambodia",
+    "Singapur": "Singapore",
+    "Chile/Argentinien": "Chile/Argentina",
+    "Rumaenien": "Romania",
+    "Aegypten": "Egypt"
   }
 }

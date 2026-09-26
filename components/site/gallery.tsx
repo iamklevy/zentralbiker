@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -9,13 +8,11 @@ import type { GalleryItem } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
 /**
- * Thumbnail grid + lightbox.
- *
- * The originals are 2–4 MP camera files, so the grid never loads them: it
- * renders the gallery's own thumbnail (~17 KB) and only fetches the full
- * image once the lightbox opens. Next/Image is given `unoptimized` for the
- * full view because these are already-compressed JPEGs served from /media —
- * re-encoding 4,000 of them at build time would be pointless work.
+ * Thumbnail grid + lightbox, as the original galleries had them: small
+ * thumbnails at their own size (120x90, or 90x120 upright), five to a
+ * 720px row in 120px cells, opening the full photo over a black overlay.
+ * The thumbnails are deliberately NOT enlarged — the full image only loads
+ * once the lightbox opens.
  */
 export function Gallery({ items }: { items: GalleryItem[] }) {
   const t = useTranslations();
@@ -47,29 +44,17 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
   }, [open, close, step]);
 
   if (!items.length) {
-    return <p className="text-muted">{t("gallery.empty")}</p>;
+    return <p>{t("gallery.empty")}</p>;
   }
 
   return (
     <>
-      <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:gap-3 lg:grid-cols-4">
+      <ul className="zb-thumbs">
         {items.map((item, i) => (
           <li key={item.src}>
-            <button
-              type="button"
-              onClick={() => setOpen(i)}
-              aria-label={t("gallery.open")}
-              className="group relative block aspect-[4/3] w-full overflow-hidden rounded-lg bg-stone focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
-            >
-              <Image
-                src={`/media/${item.thumb}`}
-                alt=""
-                fill
-                unoptimized
-                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                loading="lazy"
-              />
+            <button type="button" onClick={() => setOpen(i)} aria-label={t("gallery.open")}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={`/media/${item.thumb}`} alt="" loading="lazy" />
             </button>
           </li>
         ))}
@@ -79,14 +64,14 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/95 p-4"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black p-4"
           onClick={close}
         >
           <button
             type="button"
             onClick={close}
             aria-label={t("gallery.close")}
-            className="absolute end-4 top-4 z-10 grid size-11 place-items-center rounded-full bg-paper/10 text-paper hover:bg-paper/20"
+            className="absolute end-4 top-4 z-10 grid size-11 place-items-center text-[#ccc] hover:text-white"
           >
             <X className="size-5" />
           </button>
@@ -111,9 +96,9 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
             <img
               src={`/media/${items[open].src}`}
               alt=""
-              className="max-h-[82vh] w-auto rounded-lg object-contain shadow-deep"
+              className="max-h-[82vh] w-auto border-4 border-[#666] object-contain"
             />
-            <figcaption className="mt-3 text-[0.9rem] text-paper/70">
+            <figcaption className="mt-3 text-[12px] text-[#ccc]">
               {t("gallery.counter", { current: open + 1, total: items.length })}
             </figcaption>
           </figure>
@@ -143,7 +128,7 @@ function NavButton({
         onClick();
       }}
       className={cn(
-        "absolute top-1/2 z-10 grid size-12 -translate-y-1/2 place-items-center rounded-full bg-paper/10 text-paper hover:bg-paper/20",
+        "absolute top-1/2 z-10 grid size-12 -translate-y-1/2 place-items-center text-[#ccc] hover:text-white",
         side === "start" ? "start-3" : "end-3",
       )}
     >

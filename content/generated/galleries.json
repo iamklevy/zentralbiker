@@ -1157,8 +1157,8 @@
  },
  "4fotos/406photos_costarica": {
   "dir": "4fotos/406photos_costarica",
-  "slug": "costarica",
-  "name": "Costarica",
+  "slug": "costa-rica",
+  "name": "Costa Rica",
   "count": 135,
   "items": [
    {
@@ -6617,8 +6617,8 @@
  },
  "4fotos/419photos_uzbekistan": {
   "dir": "4fotos/419photos_uzbekistan",
-  "slug": "uzbekistan",
-  "name": "Uzbekistan",
+  "slug": "usbekistan",
+  "name": "Usbekistan",
   "count": 76,
   "items": [
    {
@@ -6929,8 +6929,8 @@
  },
  "4fotos/420photos_tajikistan": {
   "dir": "4fotos/420photos_tajikistan",
-  "slug": "tajikistan",
-  "name": "Tajikistan",
+  "slug": "tadschikistan",
+  "name": "Tadschikistan",
   "count": 96,
   "items": [
    {
@@ -7321,8 +7321,8 @@
  },
  "4fotos/421photos_kyrgystan": {
   "dir": "4fotos/421photos_kyrgystan",
-  "slug": "kyrgystan",
-  "name": "Kyrgystan",
+  "slug": "kirgistan",
+  "name": "Kirgistan",
   "count": 17,
   "items": [
    {
@@ -9681,8 +9681,8 @@
  },
  "4fotos/431photos_bolivien2": {
   "dir": "4fotos/431photos_bolivien2",
-  "slug": "bolivien2",
-  "name": "Bolivien2",
+  "slug": "bolivia",
+  "name": "Bolivien",
   "count": 89,
   "items": [
    {
