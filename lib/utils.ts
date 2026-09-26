@@ -10,7 +10,7 @@ export function formatDate(iso: string, locale: string): string {
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return iso;
   return new Intl.DateTimeFormat(
-    locale === "de" ? "de-CH" : locale === "fr" ? "fr-CH" : "en-GB",
+    locale === "de" ? "de-CH" : "en-GB",
     { day: "numeric", month: "long", year: "numeric" },
   ).format(d);
 }

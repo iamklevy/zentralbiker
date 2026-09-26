@@ -7,8 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "migrate": "node scripts/extract.mjs .mirror && node scripts/build-content.mjs .mirror",
-    "sync-media": "node scripts/sync-media.mjs .mirror"
+    "migrate": "node scripts/extract.mjs .mirror && node scripts/build-content.mjs .mirror && node scripts/build-chrome.mjs .mirror",
+    "sync-media": "node scripts/sync-media.mjs .mirror",
+    "translations": "node scripts/build-translations.mjs",
+    "predev": "node scripts/build-translations.mjs",
+    "prebuild": "node scripts/build-translations.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.5",
