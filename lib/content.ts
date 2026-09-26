@@ -1,6 +1,7 @@
 import pagesJson from "@/content/generated/pages.json";
 import journeyJson from "@/content/generated/journey.json";
 import galleriesJson from "@/content/generated/galleries.json";
+import enJson from "@/content/translations/en.json";
 
 /* ------------------------------------------------------------------ types */
 
@@ -67,12 +68,30 @@ for (const page of Object.values(PAGES)) {
 
 /* --------------------------------------------------------------- lookups */
 
-export function getPage(path: string): MigratedPage | null {
-  return BY_PATH.get(path) ?? null;
+/**
+ * English versions of the migrated pages, keyed by new path. A page without
+ * one is served in the original German — nothing is ever blank.
+ */
+const TRANSLATIONS: Record<string, Record<string, { title?: string; html: string }>> = {
+  en: enJson as Record<string, { title?: string; html: string }>,
+};
+
+function localize(page: MigratedPage | null, locale?: string): MigratedPage | null {
+  const tr = page && locale ? TRANSLATIONS[locale]?.[page.path] : undefined;
+  return tr ? { ...page!, html: tr.html, title: tr.title ?? page!.title } : page;
 }
 
-export function getPageByOldPath(oldPath: string): MigratedPage | null {
-  return PAGES[oldPath] ?? null;
+export function getPage(path: string, locale?: string): MigratedPage | null {
+  return localize(BY_PATH.get(path) ?? null, locale);
+}
+
+export function getPageByOldPath(oldPath: string, locale?: string): MigratedPage | null {
+  return localize(PAGES[oldPath] ?? null, locale);
+}
+
+/** Whether a page has an English (or other) version yet. */
+export function isTranslated(path: string, locale: string): boolean {
+  return locale === "de" || Boolean(TRANSLATIONS[locale]?.[path]);
 }
 
 /** All migrated pages that live directly under a section, e.g. "/info". */
@@ -123,6 +142,11 @@ export function getGalleryByDir(dir: string | null): Gallery | null {
 }
 
 /** Highlight galleries are the curated per-continent sets; the rest are per country. */
+/** Slugs of the migrated /fotos/* pages that are overviews, not galleries. */
+export const FOTO_OVERVIEWS = pagesInSection("fotos")
+  .map((p) => p.path.slice("/fotos/".length))
+  .filter((slug) => !ALL_GALLERIES.some((g) => g.slug === slug));
+
 export const HIGHLIGHT_GALLERIES = ALL_GALLERIES.filter((g) => g.slug.startsWith("highlights-"));
 export const COUNTRY_GALLERIES = ALL_GALLERIES.filter((g) => !g.slug.startsWith("highlights-"));
 

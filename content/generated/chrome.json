@@ -1,0 +1,6854 @@
+{
+ "/": {
+  "banner": "luzern1_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "ueber uns",
+    "href": "/ueber-uns"
+   },
+   {
+    "label": "Claudia",
+    "href": "/claudia"
+   },
+   {
+    "label": "Alexandre",
+    "href": "/alexandre"
+   }
+  ]
+ },
+ "/ueber-uns": {
+  "banner": "luzern1_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Über uns",
+    "href": "/ueber-uns"
+   },
+   {
+    "label": "Claudia",
+    "href": "/claudia"
+   },
+   {
+    "label": "Alexandre",
+    "href": "/alexandre"
+   }
+  ]
+ },
+ "/claudia": {
+  "banner": "luzern1_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Über uns",
+    "href": "/ueber-uns"
+   },
+   {
+    "label": "Claudia",
+    "href": "/claudia"
+   },
+   {
+    "label": "Alexandre",
+    "href": "/alexandre"
+   }
+  ]
+ },
+ "/alexandre": {
+  "banner": "luzern1_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Über uns",
+    "href": "/ueber-uns"
+   },
+   {
+    "label": "Claudia",
+    "href": "/claudia"
+   },
+   {
+    "label": "Alexandre",
+    "href": "/alexandre"
+   }
+  ]
+ },
+ "/ausruestung": {
+  "banner": "luzern2_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Trekkingrad",
+    "href": "/ausruestung/trekkingrad"
+   },
+   {
+    "label": "Schlafen",
+    "href": "/ausruestung/schlafen"
+   },
+   {
+    "label": "Kochen",
+    "href": "/ausruestung/kochen"
+   },
+   {
+    "label": "Kleider",
+    "href": "/ausruestung/kleider"
+   },
+   {
+    "label": "Apotheke",
+    "href": "/ausruestung/apotheke"
+   },
+   {
+    "label": "Necessaire",
+    "href": "/ausruestung/necessaire"
+   },
+   {
+    "label": "Administration",
+    "href": "/ausruestung/administration"
+   },
+   {
+    "label": "Technik",
+    "href": "/ausruestung/technik"
+   },
+   {
+    "label": "Werkzeug",
+    "href": "/ausruestung/werkzeug"
+   },
+   {
+    "label": "Ersatzteile",
+    "href": "/ausruestung/ersatzteile"
+   },
+   {
+    "label": "Diverses",
+    "href": "/ausruestung/diverses"
+   }
+  ]
+ },
+ "/berichte": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Amerika",
+    "href": "/berichte/amerika"
+   },
+   {
+    "label": "Asien",
+    "href": "/berichte/asien"
+   },
+   {
+    "label": "Ozeanien",
+    "href": "/berichte/ozeanien"
+   }
+  ]
+ },
+ "/fotos": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Highlights Ozeanien",
+    "href": "/fotos/highlights-ozeanien"
+   },
+   {
+    "label": "Fotos Nordamerika",
+    "href": "/fotos/nordamerika"
+   },
+   {
+    "label": "Fotos Suedamerika",
+    "href": "/fotos/suedamerika"
+   },
+   {
+    "label": "Fotos Asien",
+    "href": "/fotos/asien"
+   },
+   {
+    "label": "Fotos Ozeanien",
+    "href": "/fotos/ozeanien"
+   },
+   {
+    "label": "Filme Amerika",
+    "href": "/fotos/filme-amerika"
+   },
+   {
+    "label": "Filme Asien",
+    "href": "/fotos/filme-asien"
+   },
+   {
+    "label": "Filme Ozeanien",
+    "href": "/fotos/filme-ozeanien"
+   },
+   {
+    "label": "Fotos Rumaenien",
+    "href": "/fotos/rumaenien"
+   },
+   {
+    "label": "Fotos Aegypten",
+    "href": "/fotos/aegypten"
+   },
+   {
+    "label": "Fotos Mexico",
+    "href": "/fotos/mexico"
+   }
+  ]
+ },
+ "/route": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Amerika",
+    "href": "/route/amerika"
+   },
+   {
+    "label": "Asien",
+    "href": "/route/asien"
+   },
+   {
+    "label": "Ozeanien",
+    "href": "/route/ozeanien"
+   }
+  ]
+ },
+ "/info": {
+  "banner": "luzern6_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Impfung",
+    "href": "/info/impfung"
+   },
+   {
+    "label": "Visa",
+    "href": "/info/visa"
+   },
+   {
+    "label": "Fluege",
+    "href": "/info/fluege"
+   },
+   {
+    "label": "Statistiken",
+    "href": "/info/statistiken"
+   },
+   {
+    "label": "Testberichte",
+    "href": "/info/testberichte"
+   },
+   {
+    "label": "Sponsoren",
+    "href": "/info/sponsoring"
+   },
+   {
+    "label": "Links",
+    "href": "/info/links"
+   }
+  ]
+ },
+ "/varia": {
+  "banner": "luzern7_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Medien",
+    "href": "/varia/medien"
+   },
+   {
+    "label": "Kiosk",
+    "href": "/varia/kiosk"
+   },
+   {
+    "label": "Newsletter",
+    "href": "/varia/newsletter"
+   },
+   {
+    "label": "Gaestebuch",
+    "href": "/varia/gaestebuch"
+   },
+   {
+    "label": "Kontakt",
+    "href": "/varia/kontakt"
+   },
+   {
+    "label": "Impressum",
+    "href": "/varia/impressum"
+   }
+  ]
+ },
+ "/varia/impressum": {
+  "banner": "luzern7_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Medien",
+    "href": "/varia/medien"
+   },
+   {
+    "label": "Kiosk",
+    "href": "/varia/kiosk"
+   },
+   {
+    "label": "Newsletter",
+    "href": "/varia/newsletter"
+   },
+   {
+    "label": "Gaestebuch",
+    "href": "/varia/gaestebuch"
+   },
+   {
+    "label": "Kontakt",
+    "href": "/varia/kontakt"
+   },
+   {
+    "label": "Impressum",
+    "href": "/varia/impressum"
+   }
+  ]
+ },
+ "/varia/kontakt": {
+  "banner": "luzern7_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Medien",
+    "href": "/varia/medien"
+   },
+   {
+    "label": "Kiosk",
+    "href": "/varia/kiosk"
+   },
+   {
+    "label": "Newsletter",
+    "href": "/varia/newsletter"
+   },
+   {
+    "label": "Gaestebuch",
+    "href": "/varia/gaestebuch"
+   },
+   {
+    "label": "Kontakt",
+    "href": "/varia/kontakt"
+   },
+   {
+    "label": "Impressum",
+    "href": "/varia/impressum"
+   }
+  ]
+ },
+ "/ausruestung/trekkingrad": {
+  "banner": "luzern2_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Trekkingrad",
+    "href": "/ausruestung/trekkingrad"
+   },
+   {
+    "label": "Schlafen",
+    "href": "/ausruestung/schlafen"
+   },
+   {
+    "label": "Kochen",
+    "href": "/ausruestung/kochen"
+   },
+   {
+    "label": "Kleider",
+    "href": "/ausruestung/kleider"
+   },
+   {
+    "label": "Apotheke",
+    "href": "/ausruestung/apotheke"
+   },
+   {
+    "label": "Necessaire",
+    "href": "/ausruestung/necessaire"
+   },
+   {
+    "label": "Administration",
+    "href": "/ausruestung/administration"
+   },
+   {
+    "label": "Technik",
+    "href": "/ausruestung/technik"
+   },
+   {
+    "label": "Werkzeug",
+    "href": "/ausruestung/werkzeug"
+   },
+   {
+    "label": "Ersatzteile",
+    "href": "/ausruestung/ersatzteile"
+   },
+   {
+    "label": "Diverses",
+    "href": "/ausruestung/diverses"
+   }
+  ]
+ },
+ "/ausruestung/schlafen": {
+  "banner": "luzern2_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Trekkingrad",
+    "href": "/ausruestung/trekkingrad"
+   },
+   {
+    "label": "Schlafen",
+    "href": "/ausruestung/schlafen"
+   },
+   {
+    "label": "Kochen",
+    "href": "/ausruestung/kochen"
+   },
+   {
+    "label": "Kleider",
+    "href": "/ausruestung/kleider"
+   },
+   {
+    "label": "Apotheke",
+    "href": "/ausruestung/apotheke"
+   },
+   {
+    "label": "Necessaire",
+    "href": "/ausruestung/necessaire"
+   },
+   {
+    "label": "Administration",
+    "href": "/ausruestung/administration"
+   },
+   {
+    "label": "Technik",
+    "href": "/ausruestung/technik"
+   },
+   {
+    "label": "Werkzeug",
+    "href": "/ausruestung/werkzeug"
+   },
+   {
+    "label": "Ersatzteile",
+    "href": "/ausruestung/ersatzteile"
+   },
+   {
+    "label": "Diverses",
+    "href": "/ausruestung/diverses"
+   }
+  ]
+ },
+ "/ausruestung/kochen": {
+  "banner": "luzern2_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Trekkingrad",
+    "href": "/ausruestung/trekkingrad"
+   },
+   {
+    "label": "Schlafen",
+    "href": "/ausruestung/schlafen"
+   },
+   {
+    "label": "Kochen",
+    "href": "/ausruestung/kochen"
+   },
+   {
+    "label": "Kleider",
+    "href": "/ausruestung/kleider"
+   },
+   {
+    "label": "Apotheke",
+    "href": "/ausruestung/apotheke"
+   },
+   {
+    "label": "Necessaire",
+    "href": "/ausruestung/necessaire"
+   },
+   {
+    "label": "Administration",
+    "href": "/ausruestung/administration"
+   },
+   {
+    "label": "Technik",
+    "href": "/ausruestung/technik"
+   },
+   {
+    "label": "Werkzeug",
+    "href": "/ausruestung/werkzeug"
+   },
+   {
+    "label": "Ersatzteile",
+    "href": "/ausruestung/ersatzteile"
+   },
+   {
+    "label": "Diverses",
+    "href": "/ausruestung/diverses"
+   }
+  ]
+ },
+ "/ausruestung/kleider": {
+  "banner": "luzern2_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Trekkingrad",
+    "href": "/ausruestung/trekkingrad"
+   },
+   {
+    "label": "Schlafen",
+    "href": "/ausruestung/schlafen"
+   },
+   {
+    "label": "Kochen",
+    "href": "/ausruestung/kochen"
+   },
+   {
+    "label": "Kleider",
+    "href": "/ausruestung/kleider"
+   },
+   {
+    "label": "Apotheke",
+    "href": "/ausruestung/apotheke"
+   },
+   {
+    "label": "Necessaire",
+    "href": "/ausruestung/necessaire"
+   },
+   {
+    "label": "Administration",
+    "href": "/ausruestung/administration"
+   },
+   {
+    "label": "Technik",
+    "href": "/ausruestung/technik"
+   },
+   {
+    "label": "Werkzeug",
+    "href": "/ausruestung/werkzeug"
+   },
+   {
+    "label": "Ersatzteile",
+    "href": "/ausruestung/ersatzteile"
+   },
+   {
+    "label": "Diverses",
+    "href": "/ausruestung/diverses"
+   }
+  ]
+ },
+ "/ausruestung/apotheke": {
+  "banner": "luzern2_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Trekkingrad",
+    "href": "/ausruestung/trekkingrad"
+   },
+   {
+    "label": "Schlafen",
+    "href": "/ausruestung/schlafen"
+   },
+   {
+    "label": "Kochen",
+    "href": "/ausruestung/kochen"
+   },
+   {
+    "label": "Kleider",
+    "href": "/ausruestung/kleider"
+   },
+   {
+    "label": "Apotheke",
+    "href": "/ausruestung/apotheke"
+   },
+   {
+    "label": "Necessaire",
+    "href": "/ausruestung/necessaire"
+   },
+   {
+    "label": "Administration",
+    "href": "/ausruestung/administration"
+   },
+   {
+    "label": "Technik",
+    "href": "/ausruestung/technik"
+   },
+   {
+    "label": "Werkzeug",
+    "href": "/ausruestung/werkzeug"
+   },
+   {
+    "label": "Ersatzteile",
+    "href": "/ausruestung/ersatzteile"
+   },
+   {
+    "label": "Diverses",
+    "href": "/ausruestung/diverses"
+   }
+  ]
+ },
+ "/ausruestung/necessaire": {
+  "banner": "luzern2_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Trekkingrad",
+    "href": "/ausruestung/trekkingrad"
+   },
+   {
+    "label": "Schlafen",
+    "href": "/ausruestung/schlafen"
+   },
+   {
+    "label": "Kochen",
+    "href": "/ausruestung/kochen"
+   },
+   {
+    "label": "Kleider",
+    "href": "/ausruestung/kleider"
+   },
+   {
+    "label": "Apotheke",
+    "href": "/ausruestung/apotheke"
+   },
+   {
+    "label": "Necessaire",
+    "href": "/ausruestung/necessaire"
+   },
+   {
+    "label": "Administration",
+    "href": "/ausruestung/administration"
+   },
+   {
+    "label": "Technik",
+    "href": "/ausruestung/technik"
+   },
+   {
+    "label": "Werkzeug",
+    "href": "/ausruestung/werkzeug"
+   },
+   {
+    "label": "Ersatzteile",
+    "href": "/ausruestung/ersatzteile"
+   },
+   {
+    "label": "Diverses",
+    "href": "/ausruestung/diverses"
+   }
+  ]
+ },
+ "/ausruestung/administration": {
+  "banner": "luzern2_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Trekkingrad",
+    "href": "/ausruestung/trekkingrad"
+   },
+   {
+    "label": "Schlafen",
+    "href": "/ausruestung/schlafen"
+   },
+   {
+    "label": "Kochen",
+    "href": "/ausruestung/kochen"
+   },
+   {
+    "label": "Kleider",
+    "href": "/ausruestung/kleider"
+   },
+   {
+    "label": "Apotheke",
+    "href": "/ausruestung/apotheke"
+   },
+   {
+    "label": "Necessaire",
+    "href": "/ausruestung/necessaire"
+   },
+   {
+    "label": "Administration",
+    "href": "/ausruestung/administration"
+   },
+   {
+    "label": "Technik",
+    "href": "/ausruestung/technik"
+   },
+   {
+    "label": "Werkzeug",
+    "href": "/ausruestung/werkzeug"
+   },
+   {
+    "label": "Ersatzteile",
+    "href": "/ausruestung/ersatzteile"
+   },
+   {
+    "label": "Diverses",
+    "href": "/ausruestung/diverses"
+   }
+  ]
+ },
+ "/ausruestung/technik": {
+  "banner": "luzern2_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Trekkingrad",
+    "href": "/ausruestung/trekkingrad"
+   },
+   {
+    "label": "Schlafen",
+    "href": "/ausruestung/schlafen"
+   },
+   {
+    "label": "Kochen",
+    "href": "/ausruestung/kochen"
+   },
+   {
+    "label": "Kleider",
+    "href": "/ausruestung/kleider"
+   },
+   {
+    "label": "Apotheke",
+    "href": "/ausruestung/apotheke"
+   },
+   {
+    "label": "Necessaire",
+    "href": "/ausruestung/necessaire"
+   },
+   {
+    "label": "Administration",
+    "href": "/ausruestung/administration"
+   },
+   {
+    "label": "Technik",
+    "href": "/ausruestung/technik"
+   },
+   {
+    "label": "Werkzeug",
+    "href": "/ausruestung/werkzeug"
+   },
+   {
+    "label": "Ersatzteile",
+    "href": "/ausruestung/ersatzteile"
+   },
+   {
+    "label": "Diverses",
+    "href": "/ausruestung/diverses"
+   }
+  ]
+ },
+ "/ausruestung/werkzeug": {
+  "banner": "luzern2_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Trekkingrad",
+    "href": "/ausruestung/trekkingrad"
+   },
+   {
+    "label": "Schlafen",
+    "href": "/ausruestung/schlafen"
+   },
+   {
+    "label": "Kochen",
+    "href": "/ausruestung/kochen"
+   },
+   {
+    "label": "Kleider",
+    "href": "/ausruestung/kleider"
+   },
+   {
+    "label": "Apotheke",
+    "href": "/ausruestung/apotheke"
+   },
+   {
+    "label": "Necessaire",
+    "href": "/ausruestung/necessaire"
+   },
+   {
+    "label": "Administration",
+    "href": "/ausruestung/administration"
+   },
+   {
+    "label": "Technik",
+    "href": "/ausruestung/technik"
+   },
+   {
+    "label": "Werkzeug",
+    "href": "/ausruestung/werkzeug"
+   },
+   {
+    "label": "Ersatzteile",
+    "href": "/ausruestung/ersatzteile"
+   },
+   {
+    "label": "Diverses",
+    "href": "/ausruestung/diverses"
+   }
+  ]
+ },
+ "/ausruestung/ersatzteile": {
+  "banner": "luzern2_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Trekkingrad",
+    "href": "/ausruestung/trekkingrad"
+   },
+   {
+    "label": "Schlafen",
+    "href": "/ausruestung/schlafen"
+   },
+   {
+    "label": "Kochen",
+    "href": "/ausruestung/kochen"
+   },
+   {
+    "label": "Kleider",
+    "href": "/ausruestung/kleider"
+   },
+   {
+    "label": "Apotheke",
+    "href": "/ausruestung/apotheke"
+   },
+   {
+    "label": "Necessaire",
+    "href": "/ausruestung/necessaire"
+   },
+   {
+    "label": "Administration",
+    "href": "/ausruestung/administration"
+   },
+   {
+    "label": "Technik",
+    "href": "/ausruestung/technik"
+   },
+   {
+    "label": "Werkzeug",
+    "href": "/ausruestung/werkzeug"
+   },
+   {
+    "label": "Ersatzteile",
+    "href": "/ausruestung/ersatzteile"
+   },
+   {
+    "label": "Diverses",
+    "href": "/ausruestung/diverses"
+   }
+  ]
+ },
+ "/ausruestung/diverses": {
+  "banner": "luzern2_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Trekkingrad",
+    "href": "/ausruestung/trekkingrad"
+   },
+   {
+    "label": "Schlafen",
+    "href": "/ausruestung/schlafen"
+   },
+   {
+    "label": "Kochen",
+    "href": "/ausruestung/kochen"
+   },
+   {
+    "label": "Kleider",
+    "href": "/ausruestung/kleider"
+   },
+   {
+    "label": "Apotheke",
+    "href": "/ausruestung/apotheke"
+   },
+   {
+    "label": "Necessaire",
+    "href": "/ausruestung/necessaire"
+   },
+   {
+    "label": "Administration",
+    "href": "/ausruestung/administration"
+   },
+   {
+    "label": "Technik",
+    "href": "/ausruestung/technik"
+   },
+   {
+    "label": "Werkzeug",
+    "href": "/ausruestung/werkzeug"
+   },
+   {
+    "label": "Ersatzteile",
+    "href": "/ausruestung/ersatzteile"
+   },
+   {
+    "label": "Diverses",
+    "href": "/ausruestung/diverses"
+   }
+  ]
+ },
+ "/berichte/amerika": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/berichte/kalifornien"
+   },
+   {
+    "label": "Mexiko",
+    "href": "/berichte/mexiko"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/berichte/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/berichte/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/berichte/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/berichte/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/berichte/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/berichte/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/berichte/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/berichte/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/berichte/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/berichte/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/berichte/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/berichte/new-york"
+   }
+  ]
+ },
+ "/berichte/asien": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/berichte/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/berichte/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/berichte/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/berichte/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/berichte/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/berichte/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/berichte/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/berichte/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/berichte/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/berichte/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/berichte/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/berichte/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/berichte/borneo"
+   }
+  ]
+ },
+ "/berichte/ozeanien": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivien"
+   },
+   {
+    "label": "Chile/Argentinien",
+    "href": "/berichte/chile"
+   },
+   {
+    "label": "New Zealand",
+    "href": "/berichte/new-zealand"
+   }
+  ]
+ },
+ "/fotos/highlights-amerika": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Highlights Ozeanien",
+    "href": "/fotos/highlights-ozeanien"
+   },
+   {
+    "label": "Fotos Nordamerika",
+    "href": "/fotos/nordamerika"
+   },
+   {
+    "label": "Fotos Suedamerika",
+    "href": "/fotos/suedamerika"
+   },
+   {
+    "label": "Fotos Asien",
+    "href": "/fotos/asien"
+   },
+   {
+    "label": "Fotos Ozeanien",
+    "href": "/fotos/ozeanien"
+   },
+   {
+    "label": "Filme Amerika",
+    "href": "/fotos/filme-amerika"
+   },
+   {
+    "label": "Filme Asien",
+    "href": "/fotos/filme-asien"
+   },
+   {
+    "label": "Filme Ozeanien",
+    "href": "/fotos/filme-ozeanien"
+   }
+  ]
+ },
+ "/fotos/highlights-asien": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Highlights Ozeanien",
+    "href": "/fotos/highlights-ozeanien"
+   },
+   {
+    "label": "Fotos Nordamerika",
+    "href": "/fotos/nordamerika"
+   },
+   {
+    "label": "Fotos Suedamerika",
+    "href": "/fotos/suedamerika"
+   },
+   {
+    "label": "Fotos Asien",
+    "href": "/fotos/asien"
+   },
+   {
+    "label": "Fotos Ozeanien",
+    "href": "/fotos/ozeanien"
+   },
+   {
+    "label": "Filme Amerika",
+    "href": "/fotos/filme-amerika"
+   },
+   {
+    "label": "Filme Asien",
+    "href": "/fotos/filme-asien"
+   },
+   {
+    "label": "Filme Ozeanien",
+    "href": "/fotos/filme-ozeanien"
+   }
+  ]
+ },
+ "/fotos/highlights-ozeanien": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Highlights Ozeanien",
+    "href": "/fotos/highlights-ozeanien"
+   },
+   {
+    "label": "Fotos Nordamerika",
+    "href": "/fotos/nordamerika"
+   },
+   {
+    "label": "Fotos Suedamerika",
+    "href": "/fotos/suedamerika"
+   },
+   {
+    "label": "Fotos Asien",
+    "href": "/fotos/asien"
+   },
+   {
+    "label": "Fotos Ozeanien",
+    "href": "/fotos/ozeanien"
+   },
+   {
+    "label": "Filme Amerika",
+    "href": "/fotos/filme-amerika"
+   },
+   {
+    "label": "Filme Asien",
+    "href": "/fotos/filme-asien"
+   },
+   {
+    "label": "Filme Ozeanien",
+    "href": "/fotos/filme-ozeanien"
+   }
+  ]
+ },
+ "/fotos/nordamerika": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Kalifornien",
+    "href": "/fotos/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/fotos/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/fotos/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/fotos/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/fotos/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/fotos/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/fotos/florida"
+   },
+   {
+    "label": "New York",
+    "href": "/fotos/new-york"
+   }
+  ]
+ },
+ "/fotos/suedamerika": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/fotos/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/fotos/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/fotos/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/fotos/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/fotos/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/fotos/uruguay"
+   }
+  ]
+ },
+ "/fotos/asien": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Tuerkei",
+    "href": "/fotos/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/fotos/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/fotos/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/fotos/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/fotos/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/fotos/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/fotos/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/fotos/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/fotos/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/fotos/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/fotos/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/fotos/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/fotos/borneo"
+   }
+  ]
+ },
+ "/fotos/ozeanien": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Ozeanien",
+    "href": "/fotos/highlights-ozeanien"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/fotos/bolivia"
+   },
+   {
+    "label": "Chile/Argentinien",
+    "href": "/fotos/chile"
+   },
+   {
+    "label": "New Zealand",
+    "href": "/fotos/new-zealand"
+   }
+  ]
+ },
+ "/fotos/filme-amerika": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Highlights Ozeanien",
+    "href": "/fotos/highlights-ozeanien"
+   },
+   {
+    "label": "Fotos Nordamerika",
+    "href": "/fotos/nordamerika"
+   },
+   {
+    "label": "Fotos Suedamerika",
+    "href": "/fotos/suedamerika"
+   },
+   {
+    "label": "Fotos Asien",
+    "href": "/fotos/asien"
+   },
+   {
+    "label": "Fotos Ozeanien",
+    "href": "/fotos/ozeanien"
+   },
+   {
+    "label": "Filme Amerika",
+    "href": "/fotos/filme-amerika"
+   },
+   {
+    "label": "Filme Asien",
+    "href": "/fotos/filme-asien"
+   },
+   {
+    "label": "Filme Ozeanien",
+    "href": "/fotos/filme-ozeanien"
+   }
+  ]
+ },
+ "/fotos/filme-asien": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Highlights Ozeanien",
+    "href": "/fotos/highlights-ozeanien"
+   },
+   {
+    "label": "Fotos Nordamerika",
+    "href": "/fotos/nordamerika"
+   },
+   {
+    "label": "Fotos Suedamerika",
+    "href": "/fotos/suedamerika"
+   },
+   {
+    "label": "Fotos Asien",
+    "href": "/fotos/asien"
+   },
+   {
+    "label": "Fotos Ozeanien",
+    "href": "/fotos/ozeanien"
+   },
+   {
+    "label": "Filme Amerika",
+    "href": "/fotos/filme-amerika"
+   },
+   {
+    "label": "Filme Asien",
+    "href": "/fotos/filme-asien"
+   },
+   {
+    "label": "Filme Ozeanien",
+    "href": "/fotos/filme-ozeanien"
+   }
+  ]
+ },
+ "/fotos/filme-ozeanien": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Highlights Ozeanien",
+    "href": "/fotos/highlights-ozeanien"
+   },
+   {
+    "label": "Fotos Nordamerika",
+    "href": "/fotos/nordamerika"
+   },
+   {
+    "label": "Fotos Suedamerika",
+    "href": "/fotos/suedamerika"
+   },
+   {
+    "label": "Fotos Asien",
+    "href": "/fotos/asien"
+   },
+   {
+    "label": "Fotos Ozeanien",
+    "href": "/fotos/ozeanien"
+   },
+   {
+    "label": "Filme Amerika",
+    "href": "/fotos/filme-amerika"
+   },
+   {
+    "label": "Filme Asien",
+    "href": "/fotos/filme-asien"
+   },
+   {
+    "label": "Filme Ozeanien",
+    "href": "/fotos/filme-ozeanien"
+   }
+  ]
+ },
+ "/fotos/rumaenien": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Rumaenien",
+    "href": "/fotos/rumaenien"
+   },
+   {
+    "label": "",
+    "href": "/fotos/rumaenien"
+   },
+   {
+    "label": "Aegypten",
+    "href": "/fotos/aegypten"
+   },
+   {
+    "label": "",
+    "href": "/fotos/aegypten"
+   },
+   {
+    "label": "Mexico",
+    "href": "/fotos/mexico"
+   },
+   {
+    "label": "",
+    "href": "/fotos/mexico"
+   }
+  ]
+ },
+ "/fotos/aegypten": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Rumaenien",
+    "href": "/fotos/rumaenien"
+   },
+   {
+    "label": "",
+    "href": "/fotos/rumaenien"
+   },
+   {
+    "label": "Aegypten",
+    "href": "/fotos/aegypten"
+   },
+   {
+    "label": "",
+    "href": "/fotos/aegypten"
+   },
+   {
+    "label": "Mexico",
+    "href": "/fotos/mexico"
+   },
+   {
+    "label": "",
+    "href": "/fotos/mexico"
+   }
+  ]
+ },
+ "/fotos/mexico": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Rumaenien",
+    "href": "/fotos/rumaenien"
+   },
+   {
+    "label": "",
+    "href": "/fotos/rumaenien"
+   },
+   {
+    "label": "Aegypten",
+    "href": "/fotos/aegypten"
+   },
+   {
+    "label": "",
+    "href": "/fotos/aegypten"
+   },
+   {
+    "label": "Mexico",
+    "href": "/fotos/mexico"
+   },
+   {
+    "label": "",
+    "href": "/fotos/mexico"
+   }
+  ]
+ },
+ "/route/amerika": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/route/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/route/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/route/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/route/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/route/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/route/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/route/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/route/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/route/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/route/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/route/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/route/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/route/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/route/new-york"
+   }
+  ]
+ },
+ "/route/asien": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/route/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/route/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/route/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/route/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/route/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/route/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/route/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/route/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/route/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/route/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/route/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/route/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/route/borneo"
+   }
+  ]
+ },
+ "/route/ozeanien": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Bolivien",
+    "href": "/route/bolivia"
+   },
+   {
+    "label": "Chile/Argentinien",
+    "href": "/route/chile"
+   },
+   {
+    "label": "New Zealand",
+    "href": "/route/new-zealand"
+   }
+  ]
+ },
+ "/info/impfung": {
+  "banner": "luzern7_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Impfung",
+    "href": "/info/impfung"
+   },
+   {
+    "label": "Visa",
+    "href": "/info/visa"
+   },
+   {
+    "label": "Fluege",
+    "href": "/info/fluege"
+   },
+   {
+    "label": "Statistiken",
+    "href": "/info/statistiken"
+   },
+   {
+    "label": "Testberichte",
+    "href": "/info/testberichte"
+   },
+   {
+    "label": "Sponsoren",
+    "href": "/info/sponsoring"
+   },
+   {
+    "label": "Links",
+    "href": "/info/links"
+   }
+  ]
+ },
+ "/info/visa": {
+  "banner": "luzern7_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Impfung",
+    "href": "/info/impfung"
+   },
+   {
+    "label": "Visa",
+    "href": "/info/visa"
+   },
+   {
+    "label": "Fluege",
+    "href": "/info/fluege"
+   },
+   {
+    "label": "Statistiken",
+    "href": "/info/statistiken"
+   },
+   {
+    "label": "Testberichte",
+    "href": "/info/testberichte"
+   },
+   {
+    "label": "Sponsoren",
+    "href": "/info/sponsoring"
+   },
+   {
+    "label": "Links",
+    "href": "/info/links"
+   }
+  ]
+ },
+ "/info/fluege": {
+  "banner": "luzern7_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Impfung",
+    "href": "/info/impfung"
+   },
+   {
+    "label": "Visa",
+    "href": "/info/visa"
+   },
+   {
+    "label": "Fluege",
+    "href": "/info/fluege"
+   },
+   {
+    "label": "Statistiken",
+    "href": "/info/statistiken"
+   },
+   {
+    "label": "Testberichte",
+    "href": "/info/testberichte"
+   },
+   {
+    "label": "Sponsoren",
+    "href": "/info/sponsoring"
+   },
+   {
+    "label": "Links",
+    "href": "/info/links"
+   }
+  ]
+ },
+ "/info/statistiken": {
+  "banner": "luzern7_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Impfung",
+    "href": "/info/impfung"
+   },
+   {
+    "label": "Visa",
+    "href": "/info/visa"
+   },
+   {
+    "label": "Fluege",
+    "href": "/info/fluege"
+   },
+   {
+    "label": "Statistiken",
+    "href": "/info/statistiken"
+   },
+   {
+    "label": "Testberichte",
+    "href": "/info/testberichte"
+   },
+   {
+    "label": "Sponsoren",
+    "href": "/info/sponsoring"
+   },
+   {
+    "label": "Links",
+    "href": "/info/links"
+   }
+  ]
+ },
+ "/info/testberichte": {
+  "banner": "luzern7_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Impfung",
+    "href": "/info/impfung"
+   },
+   {
+    "label": "Visa",
+    "href": "/info/visa"
+   },
+   {
+    "label": "Fluege",
+    "href": "/info/fluege"
+   },
+   {
+    "label": "Statistiken",
+    "href": "/info/statistiken"
+   },
+   {
+    "label": "Testberichte",
+    "href": "/info/testberichte"
+   },
+   {
+    "label": "Sponsoren",
+    "href": "/info/sponsoring"
+   },
+   {
+    "label": "Links",
+    "href": "/info/links"
+   }
+  ]
+ },
+ "/info/sponsoring": {
+  "banner": "luzern7_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Impfung",
+    "href": "/info/impfung"
+   },
+   {
+    "label": "Visa",
+    "href": "/info/visa"
+   },
+   {
+    "label": "Fluege",
+    "href": "/info/fluege"
+   },
+   {
+    "label": "Statistiken",
+    "href": "/info/statistiken"
+   },
+   {
+    "label": "Testberichte",
+    "href": "/info/testberichte"
+   },
+   {
+    "label": "Sponsoren",
+    "href": "/info/sponsoring"
+   },
+   {
+    "label": "Links",
+    "href": "/info/links"
+   }
+  ]
+ },
+ "/info/links": {
+  "banner": "luzern7_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Impfung",
+    "href": "/info/impfung"
+   },
+   {
+    "label": "Visa",
+    "href": "/info/visa"
+   },
+   {
+    "label": "Fluege",
+    "href": "/info/fluege"
+   },
+   {
+    "label": "Statistiken",
+    "href": "/info/statistiken"
+   },
+   {
+    "label": "Testberichte",
+    "href": "/info/testberichte"
+   },
+   {
+    "label": "Sponsoren",
+    "href": "/info/sponsoring"
+   },
+   {
+    "label": "Links",
+    "href": "/info/links"
+   }
+  ]
+ },
+ "/varia/medien": {
+  "banner": "luzern6_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Medien",
+    "href": "/varia/medien"
+   },
+   {
+    "label": "Kiosk",
+    "href": "/varia/kiosk"
+   },
+   {
+    "label": "Newsletter",
+    "href": "/varia/newsletter"
+   },
+   {
+    "label": "Gaestebuch",
+    "href": "/varia/gaestebuch"
+   },
+   {
+    "label": "Kontakt",
+    "href": "/varia/kontakt"
+   },
+   {
+    "label": "Impressum",
+    "href": "/varia/impressum"
+   }
+  ]
+ },
+ "/varia/kiosk": {
+  "banner": "luzern6_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Medien",
+    "href": "/varia/medien"
+   },
+   {
+    "label": "Kiosk",
+    "href": "/varia/kiosk"
+   },
+   {
+    "label": "Newsletter",
+    "href": "/varia/newsletter"
+   },
+   {
+    "label": "Gaestebuch",
+    "href": "/varia/gaestebuch"
+   },
+   {
+    "label": "Kontakt",
+    "href": "/varia/kontakt"
+   },
+   {
+    "label": "Impressum",
+    "href": "/varia/impressum"
+   }
+  ]
+ },
+ "/varia/newsletter": {
+  "banner": "luzern6_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Medien",
+    "href": "/varia/medien"
+   },
+   {
+    "label": "Kiosk",
+    "href": "/varia/kiosk"
+   },
+   {
+    "label": "Newsletter",
+    "href": "/varia/newsletter"
+   },
+   {
+    "label": "Gaestebuch",
+    "href": "/varia/gaestebuch"
+   },
+   {
+    "label": "Kontakt",
+    "href": "/varia/kontakt"
+   },
+   {
+    "label": "Impressum",
+    "href": "/varia/impressum"
+   }
+  ]
+ },
+ "/varia/gaestebuch": {
+  "banner": "luzern6_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Medien",
+    "href": "/varia/medien"
+   },
+   {
+    "label": "Kiosk",
+    "href": "/varia/kiosk"
+   },
+   {
+    "label": "Newsletter",
+    "href": "/varia/newsletter"
+   },
+   {
+    "label": "Gaestebuch",
+    "href": "/varia/gaestebuch"
+   },
+   {
+    "label": "Kontakt",
+    "href": "/varia/kontakt"
+   },
+   {
+    "label": "Impressum",
+    "href": "/varia/impressum"
+   }
+  ]
+ },
+ "/fotos/bolivia": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Ozeanien",
+    "href": "/fotos/highlights-ozeanien"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/fotos/bolivia"
+   },
+   {
+    "label": "Chile/Argentinien",
+    "href": "/fotos/chile"
+   },
+   {
+    "label": "New Zealand",
+    "href": "/fotos/new-zealand"
+   }
+  ]
+ },
+ "/berichte/kalifornien": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/berichte/kalifornien"
+   },
+   {
+    "label": "Mexiko",
+    "href": "/berichte/mexiko"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/berichte/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/berichte/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/berichte/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/berichte/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/berichte/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/berichte/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/berichte/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/berichte/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/berichte/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/berichte/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/berichte/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/berichte/new-york"
+   }
+  ]
+ },
+ "/berichte/mexiko": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/berichte/kalifornien"
+   },
+   {
+    "label": "Mexiko",
+    "href": "/berichte/mexiko"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/berichte/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/berichte/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/berichte/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/berichte/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/berichte/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/berichte/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/berichte/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/berichte/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/berichte/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/berichte/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/berichte/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/berichte/new-york"
+   }
+  ]
+ },
+ "/berichte/guatemala": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/berichte/kalifornien"
+   },
+   {
+    "label": "Mexiko",
+    "href": "/berichte/mexiko"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/berichte/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/berichte/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/berichte/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/berichte/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/berichte/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/berichte/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/berichte/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/berichte/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/berichte/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/berichte/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/berichte/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/berichte/new-york"
+   }
+  ]
+ },
+ "/berichte/honduras": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/berichte/kalifornien"
+   },
+   {
+    "label": "Mexiko",
+    "href": "/berichte/mexiko"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/berichte/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/berichte/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/berichte/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/berichte/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/berichte/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/berichte/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/berichte/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/berichte/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/berichte/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/berichte/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/berichte/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/berichte/new-york"
+   }
+  ]
+ },
+ "/berichte/nicaragua": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/berichte/kalifornien"
+   },
+   {
+    "label": "Mexiko",
+    "href": "/berichte/mexiko"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/berichte/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/berichte/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/berichte/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/berichte/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/berichte/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/berichte/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/berichte/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/berichte/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/berichte/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/berichte/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/berichte/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/berichte/new-york"
+   }
+  ]
+ },
+ "/berichte/costa-rica": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/berichte/kalifornien"
+   },
+   {
+    "label": "Mexiko",
+    "href": "/berichte/mexiko"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/berichte/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/berichte/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/berichte/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/berichte/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/berichte/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/berichte/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/berichte/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/berichte/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/berichte/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/berichte/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/berichte/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/berichte/new-york"
+   }
+  ]
+ },
+ "/berichte/panama": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/berichte/kalifornien"
+   },
+   {
+    "label": "Mexiko",
+    "href": "/berichte/mexiko"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/berichte/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/berichte/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/berichte/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/berichte/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/berichte/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/berichte/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/berichte/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/berichte/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/berichte/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/berichte/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/berichte/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/berichte/new-york"
+   }
+  ]
+ },
+ "/berichte/florida": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/berichte/kalifornien"
+   },
+   {
+    "label": "Mexiko",
+    "href": "/berichte/mexiko"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/berichte/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/berichte/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/berichte/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/berichte/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/berichte/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/berichte/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/berichte/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/berichte/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/berichte/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/berichte/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/berichte/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/berichte/new-york"
+   }
+  ]
+ },
+ "/berichte/ecuador": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/berichte/kalifornien"
+   },
+   {
+    "label": "Mexiko",
+    "href": "/berichte/mexiko"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/berichte/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/berichte/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/berichte/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/berichte/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/berichte/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/berichte/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/berichte/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/berichte/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/berichte/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/berichte/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/berichte/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/berichte/new-york"
+   }
+  ]
+ },
+ "/berichte/peru": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/berichte/kalifornien"
+   },
+   {
+    "label": "Mexiko",
+    "href": "/berichte/mexiko"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/berichte/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/berichte/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/berichte/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/berichte/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/berichte/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/berichte/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/berichte/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/berichte/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/berichte/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/berichte/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/berichte/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/berichte/new-york"
+   }
+  ]
+ },
+ "/berichte/bolivien": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/berichte/kalifornien"
+   },
+   {
+    "label": "Mexiko",
+    "href": "/berichte/mexiko"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/berichte/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/berichte/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/berichte/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/berichte/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/berichte/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/berichte/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/berichte/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/berichte/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/berichte/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/berichte/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/berichte/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/berichte/new-york"
+   }
+  ]
+ },
+ "/berichte/paraguay": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/berichte/kalifornien"
+   },
+   {
+    "label": "Mexiko",
+    "href": "/berichte/mexiko"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/berichte/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/berichte/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/berichte/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/berichte/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/berichte/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/berichte/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/berichte/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/berichte/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/berichte/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/berichte/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/berichte/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/berichte/new-york"
+   }
+  ]
+ },
+ "/berichte/argentinien": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/berichte/kalifornien"
+   },
+   {
+    "label": "Mexiko",
+    "href": "/berichte/mexiko"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/berichte/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/berichte/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/berichte/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/berichte/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/berichte/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/berichte/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/berichte/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/berichte/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/berichte/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/berichte/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/berichte/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/berichte/new-york"
+   }
+  ]
+ },
+ "/berichte/uruguay": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/berichte/kalifornien"
+   },
+   {
+    "label": "Mexiko",
+    "href": "/berichte/mexiko"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/berichte/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/berichte/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/berichte/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/berichte/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/berichte/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/berichte/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/berichte/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/berichte/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/berichte/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/berichte/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/berichte/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/berichte/new-york"
+   }
+  ]
+ },
+ "/berichte/new-york": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/berichte/kalifornien"
+   },
+   {
+    "label": "Mexiko",
+    "href": "/berichte/mexiko"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/berichte/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/berichte/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/berichte/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/berichte/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/berichte/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/berichte/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/berichte/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/berichte/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/berichte/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/berichte/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/berichte/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/berichte/new-york"
+   }
+  ]
+ },
+ "/berichte/tuerkei": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/berichte/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/berichte/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/berichte/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/berichte/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/berichte/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/berichte/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/berichte/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/berichte/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/berichte/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/berichte/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/berichte/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/berichte/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/berichte/borneo"
+   }
+  ]
+ },
+ "/berichte/iran": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/berichte/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/berichte/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/berichte/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/berichte/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/berichte/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/berichte/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/berichte/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/berichte/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/berichte/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/berichte/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/berichte/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/berichte/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/berichte/borneo"
+   }
+  ]
+ },
+ "/berichte/turkmenistan": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/berichte/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/berichte/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/berichte/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/berichte/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/berichte/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/berichte/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/berichte/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/berichte/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/berichte/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/berichte/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/berichte/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/berichte/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/berichte/borneo"
+   }
+  ]
+ },
+ "/berichte/usbekistan": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/berichte/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/berichte/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/berichte/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/berichte/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/berichte/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/berichte/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/berichte/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/berichte/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/berichte/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/berichte/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/berichte/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/berichte/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/berichte/borneo"
+   }
+  ]
+ },
+ "/berichte/tadschikistan": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/berichte/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/berichte/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/berichte/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/berichte/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/berichte/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/berichte/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/berichte/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/berichte/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/berichte/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/berichte/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/berichte/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/berichte/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/berichte/borneo"
+   }
+  ]
+ },
+ "/berichte/kirgistan": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/berichte/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/berichte/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/berichte/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/berichte/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/berichte/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/berichte/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/berichte/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/berichte/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/berichte/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/berichte/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/berichte/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/berichte/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/berichte/borneo"
+   }
+  ]
+ },
+ "/berichte/china": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/berichte/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/berichte/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/berichte/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/berichte/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/berichte/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/berichte/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/berichte/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/berichte/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/berichte/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/berichte/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/berichte/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/berichte/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/berichte/borneo"
+   }
+  ]
+ },
+ "/berichte/laos": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/berichte/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/berichte/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/berichte/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/berichte/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/berichte/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/berichte/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/berichte/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/berichte/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/berichte/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/berichte/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/berichte/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/berichte/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/berichte/borneo"
+   }
+  ]
+ },
+ "/berichte/kambodscha": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/berichte/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/berichte/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/berichte/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/berichte/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/berichte/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/berichte/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/berichte/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/berichte/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/berichte/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/berichte/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/berichte/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/berichte/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/berichte/borneo"
+   }
+  ]
+ },
+ "/berichte/thailand": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/berichte/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/berichte/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/berichte/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/berichte/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/berichte/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/berichte/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/berichte/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/berichte/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/berichte/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/berichte/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/berichte/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/berichte/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/berichte/borneo"
+   }
+  ]
+ },
+ "/berichte/malaysia": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/berichte/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/berichte/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/berichte/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/berichte/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/berichte/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/berichte/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/berichte/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/berichte/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/berichte/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/berichte/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/berichte/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/berichte/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/berichte/borneo"
+   }
+  ]
+ },
+ "/berichte/singapur": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/berichte/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/berichte/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/berichte/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/berichte/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/berichte/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/berichte/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/berichte/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/berichte/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/berichte/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/berichte/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/berichte/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/berichte/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/berichte/borneo"
+   }
+  ]
+ },
+ "/berichte/borneo": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/berichte/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/berichte/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/berichte/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/berichte/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/berichte/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/berichte/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/berichte/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/berichte/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/berichte/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/berichte/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/berichte/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/berichte/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/berichte/borneo"
+   }
+  ]
+ },
+ "/berichte/chile": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivien"
+   },
+   {
+    "label": "Chile/Argentinien",
+    "href": "/berichte/chile"
+   },
+   {
+    "label": "New Zealand",
+    "href": "/berichte/new-zealand"
+   }
+  ]
+ },
+ "/berichte/new-zealand": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivien"
+   },
+   {
+    "label": "Chile/Argentinien",
+    "href": "/berichte/chile"
+   },
+   {
+    "label": "New Zealand",
+    "href": "/berichte/new-zealand"
+   }
+  ]
+ },
+ "/fotos/kalifornien": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Kalifornien",
+    "href": "/fotos/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/fotos/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/fotos/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/fotos/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/fotos/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/fotos/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/fotos/florida"
+   },
+   {
+    "label": "New York",
+    "href": "/fotos/new-york"
+   }
+  ]
+ },
+ "/fotos/guatemala": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Kalifornien",
+    "href": "/fotos/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/fotos/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/fotos/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/fotos/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/fotos/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/fotos/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/fotos/florida"
+   },
+   {
+    "label": "New York",
+    "href": "/fotos/new-york"
+   }
+  ]
+ },
+ "/fotos/honduras": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Kalifornien",
+    "href": "/fotos/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/fotos/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/fotos/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/fotos/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/fotos/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/fotos/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/fotos/florida"
+   },
+   {
+    "label": "New York",
+    "href": "/fotos/new-york"
+   }
+  ]
+ },
+ "/fotos/nicaragua": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Kalifornien",
+    "href": "/fotos/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/fotos/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/fotos/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/fotos/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/fotos/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/fotos/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/fotos/florida"
+   },
+   {
+    "label": "New York",
+    "href": "/fotos/new-york"
+   }
+  ]
+ },
+ "/fotos/costa-rica": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Kalifornien",
+    "href": "/fotos/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/fotos/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/fotos/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/fotos/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/fotos/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/fotos/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/fotos/florida"
+   },
+   {
+    "label": "New York",
+    "href": "/fotos/new-york"
+   }
+  ]
+ },
+ "/fotos/panama": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Kalifornien",
+    "href": "/fotos/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/fotos/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/fotos/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/fotos/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/fotos/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/fotos/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/fotos/florida"
+   },
+   {
+    "label": "New York",
+    "href": "/fotos/new-york"
+   }
+  ]
+ },
+ "/fotos/florida": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Kalifornien",
+    "href": "/fotos/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/fotos/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/fotos/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/fotos/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/fotos/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/fotos/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/fotos/florida"
+   },
+   {
+    "label": "New York",
+    "href": "/fotos/new-york"
+   }
+  ]
+ },
+ "/fotos/new-york": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Kalifornien",
+    "href": "/fotos/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/fotos/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/fotos/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/fotos/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/fotos/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/fotos/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/fotos/florida"
+   },
+   {
+    "label": "New York",
+    "href": "/fotos/new-york"
+   }
+  ]
+ },
+ "/fotos/ecuador": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/fotos/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/fotos/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/fotos/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/fotos/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/fotos/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/fotos/uruguay"
+   }
+  ]
+ },
+ "/fotos/peru": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/fotos/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/fotos/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/fotos/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/fotos/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/fotos/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/fotos/uruguay"
+   }
+  ]
+ },
+ "/fotos/bolivien": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/fotos/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/fotos/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/fotos/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/fotos/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/fotos/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/fotos/uruguay"
+   }
+  ]
+ },
+ "/fotos/paraguay": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/fotos/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/fotos/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/fotos/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/fotos/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/fotos/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/fotos/uruguay"
+   }
+  ]
+ },
+ "/fotos/argentinien": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/fotos/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/fotos/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/fotos/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/fotos/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/fotos/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/fotos/uruguay"
+   }
+  ]
+ },
+ "/fotos/uruguay": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Amerika",
+    "href": "/fotos/highlights-amerika"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/fotos/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/fotos/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/fotos/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/fotos/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/fotos/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/fotos/uruguay"
+   }
+  ]
+ },
+ "/fotos/tuerkei": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Tuerkei",
+    "href": "/fotos/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/fotos/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/fotos/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/fotos/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/fotos/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/fotos/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/fotos/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/fotos/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/fotos/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/fotos/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/fotos/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/fotos/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/fotos/borneo"
+   }
+  ]
+ },
+ "/fotos/iran": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Tuerkei",
+    "href": "/fotos/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/fotos/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/fotos/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/fotos/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/fotos/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/fotos/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/fotos/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/fotos/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/fotos/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/fotos/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/fotos/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/fotos/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/fotos/borneo"
+   }
+  ]
+ },
+ "/fotos/turkmenistan": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Tuerkei",
+    "href": "/fotos/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/fotos/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/fotos/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/fotos/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/fotos/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/fotos/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/fotos/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/fotos/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/fotos/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/fotos/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/fotos/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/fotos/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/fotos/borneo"
+   }
+  ]
+ },
+ "/fotos/usbekistan": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Tuerkei",
+    "href": "/fotos/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/fotos/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/fotos/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/fotos/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/fotos/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/fotos/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/fotos/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/fotos/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/fotos/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/fotos/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/fotos/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/fotos/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/fotos/borneo"
+   }
+  ]
+ },
+ "/fotos/tadschikistan": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Tuerkei",
+    "href": "/fotos/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/fotos/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/fotos/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/fotos/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/fotos/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/fotos/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/fotos/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/fotos/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/fotos/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/fotos/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/fotos/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/fotos/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/fotos/borneo"
+   }
+  ]
+ },
+ "/fotos/kirgistan": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Tuerkei",
+    "href": "/fotos/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/fotos/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/fotos/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/fotos/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/fotos/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/fotos/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/fotos/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/fotos/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/fotos/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/fotos/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/fotos/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/fotos/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/fotos/borneo"
+   }
+  ]
+ },
+ "/fotos/china": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Tuerkei",
+    "href": "/fotos/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/fotos/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/fotos/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/fotos/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/fotos/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/fotos/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/fotos/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/fotos/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/fotos/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/fotos/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/fotos/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/fotos/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/fotos/borneo"
+   }
+  ]
+ },
+ "/fotos/laos": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Tuerkei",
+    "href": "/fotos/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/fotos/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/fotos/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/fotos/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/fotos/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/fotos/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/fotos/china"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/fotos/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/fotos/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/fotos/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/fotos/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/fotos/borneo"
+   }
+  ]
+ },
+ "/fotos/kambodscha": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Tuerkei",
+    "href": "/fotos/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/fotos/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/fotos/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/fotos/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/fotos/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/fotos/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/fotos/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/fotos/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/fotos/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/fotos/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/fotos/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/fotos/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/fotos/borneo"
+   }
+  ]
+ },
+ "/fotos/thailand": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Tuerkei",
+    "href": "/fotos/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/fotos/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/fotos/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/fotos/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/fotos/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/fotos/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/fotos/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/fotos/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/fotos/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/fotos/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/fotos/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/fotos/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/fotos/borneo"
+   }
+  ]
+ },
+ "/fotos/malaysia": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Tuerkei",
+    "href": "/fotos/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/fotos/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/fotos/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/fotos/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/fotos/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/fotos/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/fotos/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/fotos/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/fotos/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/fotos/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/fotos/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/fotos/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/fotos/borneo"
+   }
+  ]
+ },
+ "/fotos/singapur": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Tuerkei",
+    "href": "/fotos/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/fotos/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/fotos/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/fotos/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/fotos/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/fotos/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/fotos/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/fotos/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/fotos/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/fotos/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/fotos/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/fotos/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/fotos/borneo"
+   }
+  ]
+ },
+ "/fotos/borneo": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Asien",
+    "href": "/fotos/highlights-asien"
+   },
+   {
+    "label": "Tuerkei",
+    "href": "/fotos/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/fotos/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/fotos/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/fotos/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/fotos/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/fotos/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/fotos/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/fotos/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/fotos/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/fotos/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/fotos/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/fotos/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/fotos/borneo"
+   }
+  ]
+ },
+ "/fotos/chile": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Ozeanien",
+    "href": "/fotos/highlights-ozeanien"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/fotos/bolivia"
+   },
+   {
+    "label": "Chile/Argentinien",
+    "href": "/fotos/chile"
+   },
+   {
+    "label": "New Zealand",
+    "href": "/fotos/new-zealand"
+   }
+  ]
+ },
+ "/fotos/new-zealand": {
+  "banner": "luzern4_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Highlights Ozeanien",
+    "href": "/fotos/highlights-ozeanien"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/fotos/bolivia"
+   },
+   {
+    "label": "Chile/Argentinien",
+    "href": "/fotos/chile"
+   },
+   {
+    "label": "New Zealand",
+    "href": "/fotos/new-zealand"
+   }
+  ]
+ },
+ "/route/kalifornien": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/route/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/route/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/route/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/route/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/route/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/route/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/route/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/route/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/route/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/route/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/route/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/route/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/route/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/route/new-york"
+   },
+   {
+    "label": "Tuerkei",
+    "href": "/route/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/route/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/route/turkmenistan"
+   },
+   {
+    "label": "Usbekistan",
+    "href": "/route/usbekistan"
+   },
+   {
+    "label": "Tadschikistan",
+    "href": "/route/tadschikistan"
+   },
+   {
+    "label": "Kirgistan",
+    "href": "/route/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/route/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/route/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/route/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/route/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/route/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/route/singapur"
+   }
+  ]
+ },
+ "/route/guatemala": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/route/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/route/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/route/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/route/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/route/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/route/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/route/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/route/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/route/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/route/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/route/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/route/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/route/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/route/new-york"
+   }
+  ]
+ },
+ "/route/honduras": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/route/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/route/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/route/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/route/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/route/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/route/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/route/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/route/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/route/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/route/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/route/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/route/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/route/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/route/new-york"
+   }
+  ]
+ },
+ "/route/nicaragua": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/route/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/route/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/route/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/route/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/route/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/route/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/route/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/route/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/route/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/route/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/route/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/route/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/route/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/route/new-york"
+   }
+  ]
+ },
+ "/route/costa-rica": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/route/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/route/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/route/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/route/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/route/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/route/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/route/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/route/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/route/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/route/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/route/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/route/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/route/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/route/new-york"
+   }
+  ]
+ },
+ "/route/panama": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/route/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/route/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/route/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/route/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/route/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/route/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/route/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/route/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/route/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/route/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/route/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/route/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/route/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/route/new-york"
+   }
+  ]
+ },
+ "/route/florida": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/route/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/route/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/route/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/route/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/route/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/route/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/route/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/route/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/route/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/route/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/route/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/route/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/route/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/route/new-york"
+   }
+  ]
+ },
+ "/route/ecuador": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/route/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/route/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/route/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/route/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/route/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/route/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/route/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/route/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/route/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/route/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/route/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/route/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/route/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/route/new-york"
+   }
+  ]
+ },
+ "/route/peru": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/route/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/route/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/route/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/route/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/route/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/route/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/route/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/route/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/route/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/route/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/route/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/route/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/route/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/route/new-york"
+   }
+  ]
+ },
+ "/route/bolivien": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/route/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/route/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/route/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/route/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/route/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/route/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/route/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/route/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/route/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/route/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/route/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/route/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/route/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/route/new-york"
+   }
+  ]
+ },
+ "/route/paraguay": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/route/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/route/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/route/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/route/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/route/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/route/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/route/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/route/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/route/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/route/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/route/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/route/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/route/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/route/new-york"
+   }
+  ]
+ },
+ "/route/argentinien": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/route/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/route/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/route/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/route/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/route/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/route/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/route/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/route/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/route/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/route/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/route/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/route/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/route/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/route/new-york"
+   }
+  ]
+ },
+ "/route/uruguay": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/route/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/route/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/route/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/route/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/route/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/route/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/route/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/route/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/route/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/route/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/route/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/route/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/route/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/route/new-york"
+   }
+  ]
+ },
+ "/route/new-york": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Kalifornien",
+    "href": "/route/kalifornien"
+   },
+   {
+    "label": "Guatemala",
+    "href": "/route/guatemala"
+   },
+   {
+    "label": "Honduras",
+    "href": "/route/honduras"
+   },
+   {
+    "label": "Nicaragua",
+    "href": "/route/nicaragua"
+   },
+   {
+    "label": "Costa Rica",
+    "href": "/route/costa-rica"
+   },
+   {
+    "label": "Panama",
+    "href": "/route/panama"
+   },
+   {
+    "label": "Florida",
+    "href": "/route/florida"
+   },
+   {
+    "label": "Ecuador",
+    "href": "/route/ecuador"
+   },
+   {
+    "label": "Peru",
+    "href": "/route/peru"
+   },
+   {
+    "label": "Bolivien",
+    "href": "/route/bolivien"
+   },
+   {
+    "label": "Paraguay",
+    "href": "/route/paraguay"
+   },
+   {
+    "label": "Argentinien",
+    "href": "/route/argentinien"
+   },
+   {
+    "label": "Uruguay",
+    "href": "/route/uruguay"
+   },
+   {
+    "label": "New York",
+    "href": "/route/new-york"
+   }
+  ]
+ },
+ "/route/tuerkei": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/route/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/route/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/route/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/route/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/route/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/route/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/route/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/route/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/route/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/route/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/route/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/route/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/route/borneo"
+   }
+  ]
+ },
+ "/route/iran": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/route/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/route/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/route/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/route/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/route/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/route/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/route/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/route/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/route/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/route/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/route/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/route/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/route/borneo"
+   }
+  ]
+ },
+ "/route/turkmenistan": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/route/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/route/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/route/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/route/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/route/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/route/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/route/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/route/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/route/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/route/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/route/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/route/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/route/borneo"
+   }
+  ]
+ },
+ "/route/usbekistan": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/route/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/route/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/route/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/route/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/route/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/route/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/route/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/route/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/route/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/route/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/route/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/route/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/route/borneo"
+   }
+  ]
+ },
+ "/route/tadschikistan": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/route/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/route/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/route/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/route/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/route/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/route/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/route/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/route/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/route/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/route/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/route/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/route/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/route/borneo"
+   }
+  ]
+ },
+ "/route/kirgistan": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/route/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/route/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/route/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/route/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/route/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/route/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/route/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/route/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/route/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/route/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/route/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/route/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/route/borneo"
+   }
+  ]
+ },
+ "/route/china": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/route/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/route/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/route/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/route/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/route/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/route/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/route/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/route/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/route/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/route/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/route/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/route/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/route/borneo"
+   }
+  ]
+ },
+ "/route/laos": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/route/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/route/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/route/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/route/usbekistan"
+   },
+   {
+    "label": "Tjikistan",
+    "href": "/route/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/route/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/route/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/route/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/route/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/route/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/route/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/route/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/route/borneo"
+   }
+  ]
+ },
+ "/route/kambodscha": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/route/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/route/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/route/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/route/usbekistan"
+   },
+   {
+    "label": "Tjikistan",
+    "href": "/route/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/route/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/route/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/route/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/route/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/route/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/route/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/route/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/route/borneo"
+   }
+  ]
+ },
+ "/route/thailand": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/route/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/route/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/route/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/route/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/route/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/route/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/route/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/route/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/route/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/route/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/route/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/route/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/route/borneo"
+   }
+  ]
+ },
+ "/route/malaysia": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/route/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/route/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/route/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/route/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/route/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/route/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/route/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/route/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/route/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/route/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/route/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/route/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/route/borneo"
+   }
+  ]
+ },
+ "/route/singapur": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/route/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/route/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/route/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/route/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/route/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/route/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/route/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/route/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/route/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/route/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/route/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/route/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/route/borneo"
+   }
+  ]
+ },
+ "/route/borneo": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Tuerkei",
+    "href": "/route/tuerkei"
+   },
+   {
+    "label": "Iran",
+    "href": "/route/iran"
+   },
+   {
+    "label": "Turkmenistan",
+    "href": "/route/turkmenistan"
+   },
+   {
+    "label": "Uzbekistan",
+    "href": "/route/usbekistan"
+   },
+   {
+    "label": "Tajikistan",
+    "href": "/route/tadschikistan"
+   },
+   {
+    "label": "Kyrgyzstan",
+    "href": "/route/kirgistan"
+   },
+   {
+    "label": "China",
+    "href": "/route/china"
+   },
+   {
+    "label": "Laos",
+    "href": "/route/laos"
+   },
+   {
+    "label": "Kambodscha",
+    "href": "/route/kambodscha"
+   },
+   {
+    "label": "Thailand",
+    "href": "/route/thailand"
+   },
+   {
+    "label": "Malaysia",
+    "href": "/route/malaysia"
+   },
+   {
+    "label": "Singapur",
+    "href": "/route/singapur"
+   },
+   {
+    "label": "Borneo",
+    "href": "/route/borneo"
+   }
+  ]
+ },
+ "/route/bolivia": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Bolivien",
+    "href": "/route/bolivia"
+   },
+   {
+    "label": "Chile/Argentinien",
+    "href": "/route/chile"
+   },
+   {
+    "label": "New Zealand",
+    "href": "/route/new-zealand"
+   }
+  ]
+ },
+ "/route/chile": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Bolivien",
+    "href": "/route/bolivia"
+   },
+   {
+    "label": "Chile/Argentinien",
+    "href": "/route/chile"
+   },
+   {
+    "label": "New Zealand",
+    "href": "/route/new-zealand"
+   }
+  ]
+ },
+ "/route/new-zealand": {
+  "banner": "luzern5_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Bolivien",
+    "href": "/route/bolivia"
+   },
+   {
+    "label": "Chile/Argentinien",
+    "href": "/route/chile"
+   },
+   {
+    "label": "New Zealand",
+    "href": "/route/new-zealand"
+   }
+  ]
+ },
+ "/varia/newsletter-archiv": {
+  "banner": "luzern6_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Medien",
+    "href": "/varia/medien"
+   },
+   {
+    "label": "Kiosk",
+    "href": "/varia/kiosk"
+   },
+   {
+    "label": "Newsletter",
+    "href": "/varia/newsletter"
+   },
+   {
+    "label": "Gaestebuch",
+    "href": "/varia/gaestebuch"
+   },
+   {
+    "label": "Kontakt",
+    "href": "/varia/kontakt"
+   },
+   {
+    "label": "Impressum",
+    "href": "/varia/impressum"
+   }
+  ]
+ }
+}

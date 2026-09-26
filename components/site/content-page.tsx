@@ -1,36 +1,38 @@
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
 
-import { PageHero } from "@/components/site/page-hero";
-import { Section } from "@/components/site/section";
 import { Prose } from "@/components/site/prose";
-import { getPage, pagesInSection } from "@/lib/content";
+import { getPage, getPageByOldPath, pagesInSection, type MigratedPage } from "@/lib/content";
 
 /**
- * Renders any migrated one-off page (Ausrüstung/*, Info/*, Varia/*, the
- * three "about" pages). All of these are the same shape — a hero with
- * breadcrumbs and a body of migrated HTML — so they share one component
- * instead of a near-identical file per route.
+ * Renders a migrated page exactly as the old site showed it: the original
+ * body, inside the original frame (see SiteChrome). Used by every route that
+ * is just "that old page, cleaned up" — which is nearly all of them.
  */
-export async function ContentPage({
+export function ContentPage({
   path,
-  title,
-  crumbs,
+  oldPath,
+  locale,
+  children,
 }: {
-  path: string;
-  title: string;
-  crumbs: { label: string; href?: string }[];
+  /** New-site path, e.g. "/ausruestung/kochen". */
+  path?: string;
+  /** Or the original file, when spellings differ between sections. */
+  oldPath?: string;
+  locale: string;
+  /** Rendered after the body (forms, galleries). */
+  children?: React.ReactNode;
 }) {
-  const t = await getTranslations();
-  const page = getPage(path);
-  if (!page) notFound();
+  const page: MigratedPage | null = oldPath
+    ? getPageByOldPath(oldPath, locale)
+    : path
+      ? getPage(path, locale)
+      : null;
+  if (!page && !children) notFound();
 
   return (
     <>
-      <PageHero crumbs={crumbs} title={title} />
-      <Section>
-        {page.html ? <Prose html={page.html} /> : <p className="text-muted">{t("leg.no_report")}</p>}
-      </Section>
+      {page?.html && <Prose html={page.html} />}
+      {children}
     </>
   );
 }

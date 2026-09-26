@@ -3,162 +3,528 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*  Zentralbiker brand tokens.
-    Pulled straight from the old site's stylesheet (style.css): body #333,
-    header/footer #666 on #CCC text, container grey #999, and the bright
-    #d90000 link red used for the active nav item. Neutrals are true greys
-    (not warm) to match, the red is the exact old hex, and the structure
-    (rounded cards, soft shadows, pill nav) is what makes it read modern.  */
+/*  Zentralbiker — the original look, kept on purpose.
+    Every value below is taken from the old site's style.css: page #333,
+    grey box #999 with a 1px black border, header/footer #666, header text
+    #CCC, body text #333, links #d90000 turning #CCC on hover, the current
+    menu item in aliceblue, and Verdana throughout. The only additions are
+    the rules that let that 1000px layout fold down on phones and tablets. */
 @theme inline {
-  --color-ink: #242424;
-  --color-ink-2: #3d3d3d;
-  --color-muted: #666666;
-  --color-faint: #999999;
-  --color-line: #d9d9d9;
-  --color-paper: #ffffff;
-  --color-paper-2: #f2f2f2;
-  --color-stone: #999999;
+  --color-ink: #000000;
+  --color-ink-2: #333333;
+  --color-muted: #333333;
+  --color-faint: #555555;
+  --color-line: #666666;
+  --color-paper: #999999;
+  --color-paper-2: #aaaaaa;
+  --color-stone: #888888;
   --color-accent: #d90000;
-  --color-accent-2: #a60000;
-  --color-accent-soft: #fbe3e3;
-  --color-pine: #2e6b52;
-  --color-pine-soft: #e7f2ed;
-  --color-sky: #2b6d8f;
-  --color-sky-soft: #e6f0f5;
-  --color-sand: #c98a2e;
-  --color-sand-soft: #fdf3e2;
-  --color-danger: #b3261e;
-  --color-danger-soft: #fbeae9;
+  --color-accent-2: #d90000;
+  --color-danger: #d90000;
 
-  --font-sans: var(--font-source-sans), "Segoe UI", system-ui, sans-serif;
-  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: Verdana, Geneva, Arial, Helvetica, sans-serif;
 
-  --radius-card: 16px;
-  --radius-xl2: 28px;
-
-  --shadow-soft: 0 1px 2px rgb(27 29 33 / 0.05), 0 4px 14px rgb(27 29 33 / 0.05);
-  --shadow-lift: 0 2px 6px rgb(27 29 33 / 0.06), 0 18px 40px rgb(27 29 33 / 0.09);
-  --shadow-deep: 0 2px 4px rgb(27 29 33 / 0.06), 0 12px 24px rgb(27 29 33 / 0.09),
-    0 40px 80px rgb(27 29 33 / 0.18);
-
-  /* shadcn/ui semantic tokens mapped onto the palette above, so Sheet/Dialog/
-     Card/Tabs render on a solid surface instead of falling back to a
-     transparent bg-{token} with nothing defined for it. */
-  --color-background: var(--color-paper);
-  --color-foreground: var(--color-ink);
-  --color-card: var(--color-paper);
-  --color-card-foreground: var(--color-ink);
-  --color-popover: var(--color-paper);
-  --color-popover-foreground: var(--color-ink);
-  --color-primary: var(--color-ink);
-  --color-primary-foreground: var(--color-paper);
-  --color-secondary: var(--color-paper-2);
-  --color-secondary-foreground: var(--color-ink);
-  --color-muted-foreground: var(--color-muted);
-  --color-destructive: var(--color-danger);
-  --color-destructive-foreground: var(--color-paper);
-  --color-border: var(--color-line);
-  --color-input: var(--color-line);
-  --color-ring: var(--color-accent);
+  /* shadcn/ui tokens used by the form controls */
+  --color-background: #999999;
+  --color-foreground: #333333;
+  --color-card: #999999;
+  --color-card-foreground: #333333;
+  --color-popover: #999999;
+  --color-popover-foreground: #333333;
+  --color-primary: #666666;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #aaaaaa;
+  --color-secondary-foreground: #333333;
+  --color-muted-foreground: #333333;
+  --color-destructive: #d90000;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #666666;
+  --color-input: #666666;
+  --color-ring: #d90000;
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #242424;
-  --radius: 0.5rem;
+  --radius: 0;
 }
 
-@layer base {
-  * {
-    @apply border-line;
-  }
-  body {
-    background: var(--background);
-    color: var(--foreground);
-    font-size: 17px;
-    line-height: 1.75;
-    -webkit-font-smoothing: antialiased;
-    /* contains the off-canvas drawer without making <html> a scroll container */
-    overflow-x: clip;
-  }
-  html {
-    overflow-x: clip;
-    scroll-behavior: smooth;
-  }
-  h1,
-  h2,
-  h3,
-  h4 {
-    @apply font-display font-semibold tracking-tight;
-    line-height: 1.2;
-  }
-  p {
-    text-wrap: pretty;
-  }
+html {
+  background: #333333;
 }
 
-/*  Prose styling for migrated diary entries.
-    The old pages were hand-written table layouts with inline <font> and
-    <p> spacing; the extractor strips all of that, so the rendered body is
-    plain semantic HTML and gets its rhythm from here instead.             */
-.prose-zb {
-  @apply text-[1.02rem] leading-[1.8] text-ink-2;
+body {
+  margin: 0;
+  background: #333333;
+  color: #000000;
+  font: 100% Verdana, Geneva, Arial, Helvetica, sans-serif;
+  overflow-x: clip;
 }
-.prose-zb > * + * {
-  margin-top: 1.1em;
+
+a:link,
+a:visited {
+  color: #d90000;
+  text-decoration: none;
 }
-.prose-zb h2 {
-  @apply mt-10 mb-3 font-display text-[1.6rem] text-ink;
+a:hover {
+  color: #cccccc;
 }
-.prose-zb h3 {
-  @apply mt-8 mb-2 font-display text-[1.25rem] text-ink;
+
+/* ------------------------------------------------------------ the frame */
+
+/* Full width: the bands (banner, menu bar, content, footer) run edge to edge;
+   what sits inside them is held to a comfortable width by .zb-wrap. */
+.zb-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #999999;
 }
-.prose-zb a {
-  @apply text-accent-2 underline underline-offset-2 hover:text-accent;
+.zb-wrap {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 32px;
 }
-.prose-zb ul {
-  @apply list-disc space-y-1 ps-5;
+
+/* The Lucerne banner as an edge-to-edge panorama. The files are 1000x140,
+   so it stays a wide strip (never a tall hero, which would blur them), and
+   gets its punch from colour, a slow drift and the title set over it. */
+.zb-hero {
+  position: relative;
+  height: clamp(150px, 15.5vw, 300px);
+  overflow: hidden;
+  background: #333333;
 }
-.prose-zb ol {
-  @apply list-decimal space-y-1 ps-5;
+.zb-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+  filter: saturate(1.2) contrast(1.06) brightness(1.02);
+  animation:
+    zb-fade 0.9s ease-out both,
+    zb-drift 24s ease-in-out 0.9s infinite alternate;
+  transform-origin: center 60%;
 }
-.prose-zb blockquote {
-  @apply border-s-2 border-accent/40 ps-4 italic text-muted;
+/* darkening towards the bottom, so the title reads on any picture */
+.zb-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgb(0 0 0 / 0) 35%, rgb(0 0 0 / 0.55) 100%);
+  pointer-events: none;
 }
-.prose-zb table {
-  @apply w-full border-collapse text-[0.95rem];
+.zb-hero-text {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 1;
+  padding-bottom: clamp(12px, 1.6vw, 26px);
 }
-.prose-zb :is(th, td) {
-  @apply border border-line px-3 py-2 text-start align-top;
+.zb-hero-text p {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(22px, 2.6vw, 42px);
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 12px rgb(0 0 0 / 0.55);
+  animation: zb-rise 0.9s ease-out 0.15s both;
 }
-.prose-zb th {
-  @apply bg-paper-2 font-semibold;
+/* a short red rule under the title – the Zentralbiker red */
+.zb-hero-text p::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin-top: 10px;
+  background: #d90000;
 }
-.prose-zb img {
-  @apply my-6 h-auto max-w-full rounded-lg shadow-soft;
+
+@keyframes zb-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes zb-drift {
+  from { transform: scale(1); }
+  to { transform: scale(1.05) translateX(-1%); }
+}
+@keyframes zb-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* The menu bar: full width, stays at the top while reading. */
+.zb-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #333333;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.25);
+}
+.zb-nav .zb-wrap {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  min-height: 52px;
+}
+.zb-brand:link,
+.zb-brand:visited {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.zb-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 26px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.zb-nav li a:link,
+.zb-nav li a:visited {
+  display: inline-block;
+  padding: 16px 0 13px;
+  border-bottom: 3px solid transparent;
+  color: #d4d4d4;
+  font-size: 14px;
+}
+.zb-nav li a:hover {
+  color: #ffffff;
+}
+.zb-nav li a.is-active {
+  color: #ffffff;
+  border-bottom-color: #d90000;
+}
+.zb-lang:link,
+.zb-lang:visited {
+  margin-left: auto;
+  padding: 3px 8px;
+  border: 1px solid #777777;
+  color: #d4d4d4;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+.zb-lang:hover {
+  border-color: #d90000;
+  color: #ffffff;
+}
+
+/* Sidebar beside the content, kept in view while reading. */
+.zb-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  flex: 1;
+  padding-top: 36px;
+  padding-bottom: 56px;
+}
+.zb-sidebar {
+  position: sticky;
+  top: 76px;
+  flex: 0 0 210px;
+  max-height: calc(100vh - 96px);
+  overflow-y: auto;
+  font-size: 14px;
+}
+.zb-sidebar-title {
+  margin: 0 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #7a7a7a;
+  color: #333333;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.zb-sidebar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.zb-sidebar li a {
+  display: block;
+  padding: 5px 0 5px 12px;
+  border-left: 3px solid transparent;
+}
+.zb-sidebar a.is-active {
+  border-left-color: #d90000;
+  color: aliceblue;
+}
+
+.zb-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: #262626;
+  font-size: 15px;
+  line-height: 1.6;
+}
+/* Long reports read best at around 90 characters a line; pictures, tables
+   and galleries may use the whole width. */
+.zb-content {
+  max-width: 980px;
+}
+
+.zb-footer {
+  background: #333333;
+  color: #a6a6a6;
+}
+.zb-footer p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 14px;
+  margin: 0;
+  padding: 22px 0;
+  font-size: 12px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  .zb-hero-img,
+  .zb-hero-text p {
+    animation: none;
   }
 }
 
-/*
- * Scroll-reveal safety net.
- *
- * Motion server-renders its `initial` state as an inline `opacity:0`, so with
- * scripting turned off the reveal would never run and most of the page would
- * stay blank. `!important` in a stylesheet outranks a plain inline style, so
- * this hands those readers the fully visible page.
- */
-@media (scripting: none) {
-  [data-reveal] {
-    opacity: 1 !important;
-    transform: none !important;
+/* ------------------------------------------------- the page body itself */
+
+.zb-content h1 {
+  margin: 0 0 1em;
+  font-size: 16px;
+  font-weight: bold;
+}
+.zb-content h2,
+.zb-content h3 {
+  font-size: 14px;
+  font-weight: bold;
+}
+.zb-content p {
+  margin: 0 0 1em;
+}
+.zb-content ul {
+  list-style: disc;
+  padding-left: 1.5em;
+}
+.zb-content ol {
+  list-style: decimal;
+  padding-left: 1.5em;
+}
+.zb-content table {
+  border-collapse: collapse;
+}
+.zb-content td,
+.zb-content th {
+  padding: 2px 6px 2px 0;
+  vertical-align: top;
+  text-align: left;
+}
+/* Pictures keep the size they were given on the old site. The only change:
+   they may never be wider than the screen. */
+.zb-content img {
+  max-width: 100%;
+  height: auto;
+}
+.zb-content .float-left {
+  float: left;
+  padding-right: 10px;
+}
+.zb-content::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Text styles from the old style.css, kept on the migrated pages. */
+.fett {
+  font-weight: bold;
+}
+.ueberschrift_2 {
+  font-size: 16px;
+}
+.klein,
+.zitat {
+  font-size: 10px;
+}
+.unterschrift {
+  font-family: "Lucida Calligraphy", cursive;
+  font-size: 14px;
+}
+.hervorheben {
+  color: #ffff99;
+}
+
+/* Equipment boxes: picture | labels | values, side by side, as the original
+   table had them. (A block whose first part holds the picture and which has
+   exactly three parts.) */
+.zb-content div:has(> div:first-child img):has(> div:nth-child(3):last-child) {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 0 20px;
+  align-items: start;
+  margin: 0.5em 0 1.5em;
+}
+
+/* The folded sidebar exists only for phones. */
+.zb-submenu {
+  display: none;
+}
+
+/* ---------------------------------------------------- tablet and phone */
+
+@media (max-width: 760px) {
+  .zb-body {
+    display: block;
+  }
+  /* The sidebar folds into the one-line menu under the main menu. */
+  .zb-sidebar {
+    display: none;
+  }
+  .zb-wrap {
+    padding: 0 16px;
+  }
+  .zb-body {
+    padding-top: 12px;
+    padding-bottom: 28px;
+  }
+
+  /* Menu bar: no brand name, links in two tidy rows. */
+  .zb-brand:link,
+  .zb-brand:visited {
+    display: none;
+  }
+  .zb-nav .zb-wrap {
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .zb-nav ul {
+    gap: 0 18px;
+  }
+  .zb-nav li a:link,
+  .zb-nav li a:visited {
+    padding: 10px 0 7px;
+    font-size: 15px;
+  }
+  .zb-lang:link,
+  .zb-lang:visited {
+    margin-top: 10px;
+  }
+
+  .zb-submenu {
+    display: block;
+    margin: 8px 0 0;
+    border: 1px solid #777777;
+    background: #8c8c8c;
+  }
+  .zb-submenu summary {
+    cursor: pointer;
+    padding: 9px 12px;
+    font-size: 15px;
+    color: #333333;
+    list-style: none;
+  }
+  .zb-submenu summary::-webkit-details-marker {
+    display: none;
+  }
+  .zb-submenu summary::after {
+    content: "▾";
+    float: right;
+    color: #d90000;
+  }
+  .zb-submenu[open] summary::after {
+    content: "▴";
+  }
+  .zb-submenu summary span {
+    color: aliceblue;
+  }
+  .zb-submenu ul {
+    margin: 0;
+    padding: 4px 12px 10px;
+    list-style: none;
+    columns: 2;
+    column-gap: 16px;
+  }
+  .zb-submenu li a {
+    display: block;
+    padding: 6px 0;
+    font-size: 15px;
+  }
+  .zb-submenu a.is-active {
+    color: aliceblue;
+  }
+
+  .zb-content {
+    padding-top: 1em;
+  }
+  .zb-content .klein,
+  .zb-content .zitat {
+    font-size: 12px;
+  }
+  /* Picture on its own row, then labels | values. */
+  /* Labels and values are two separate line-broken lists, so a value that
+     wrapped would push every later value out of line with its label: keep
+     each value on one line, a little smaller, and let the box scroll if a
+     value is still too long. */
+  .zb-content div:has(> div:first-child img):has(> div:nth-child(3):last-child) {
+    grid-template-columns: auto 1fr;
+    gap: 6px 14px;
+    font-size: 13px;
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+  .zb-content div:has(> div:first-child img):has(> div:nth-child(3):last-child) > div:first-child {
+    grid-column: 1 / -1;
+  }
+  .zb-content table {
+    font-size: 12px;
+  }
+  .zb-content .float-left {
+    float: none;
+    display: block;
+    margin: 0 auto 1em;
+    padding: 0;
+  }
+  .zb-content table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+/* Gallery: five 120px thumbnails to a row, never enlarged. */
+.zb-thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 720px;
+  margin: 0;
+  padding: 0 !important;
+  list-style: none !important;
+}
+.zb-thumbs li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 144px;
+  height: 120px;
+}
+.zb-thumbs button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background: none;
+}
+.zb-thumbs img {
+  display: block;
+  max-width: 120px;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+}
+@media (max-width: 760px) {
+  .zb-thumbs {
+    justify-content: center;
+  }
+  .zb-thumbs li {
+    width: 128px;
   }
 }

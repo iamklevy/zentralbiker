@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { PageHero } from "@/components/site/page-hero";
-import { Section } from "@/components/site/section";
 import { Prose } from "@/components/site/prose";
 import { ContactForm } from "@/components/site/contact-form";
 import { getPage } from "@/lib/content";
@@ -28,18 +26,14 @@ export default async function KontaktPage({ params }: { params: Promise<{ locale
 
   return (
     <>
-      <PageHero
-        crumbs={[{ label: t("section.varia.title"), href: "/varia" }, { label: t("contact.title") }]}
-        title={t("contact.title")}
-        lead={t("contact.lead")}
-      />
+      <h1>{t("contact.title")}</h1>
 
-      <Section>
-        <div className="max-w-[46rem]">
+      <section>
+        <div>
           {page?.html && page.words > 5 && <Prose html={page.html} className="mb-8" />}
           <ContactForm />
         </div>
-      </Section>
+      </section>
     </>
   );
 }
