@@ -24,7 +24,7 @@ if (!MIRROR || !existsSync(MIRROR)) {
 }
 
 /** Only these ever get referenced by the migrated pages. */
-const KEEP = /\.(jpe?g|png|gif|ico|pdf|svg)$/i;
+const KEEP = /\.(jpe?g|png|gif|ico|pdf|svg|mp4|mp3|gpx)$/i;
 
 async function walk(dir, base = "") {
   const out = [];

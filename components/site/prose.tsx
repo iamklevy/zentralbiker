@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { rewriteMediaHtml } from "@/lib/media";
 
 /**
  * Renders a migrated page body.
@@ -10,5 +11,5 @@ import { cn } from "@/lib/utils";
  * app/globals.css rather than in per-element classes here.
  */
 export function Prose({ html, className }: { html: string; className?: string }) {
-  return <div className={cn("prose-zb", className)} dangerouslySetInnerHTML={{ __html: html }} />;
+  return <div className={cn("prose-zb", className)} dangerouslySetInnerHTML={{ __html: rewriteMediaHtml(html) }} />;
 }

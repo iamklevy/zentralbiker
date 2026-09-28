@@ -9,6 +9,7 @@
     "lint": "eslint",
     "migrate": "node scripts/extract.mjs .mirror && node scripts/build-content.mjs .mirror && node scripts/build-chrome.mjs .mirror",
     "sync-media": "node scripts/sync-media.mjs .mirror",
+    "upload-media": "node scripts/upload-media.mjs --skip=mp4",
     "translations": "node scripts/build-translations.mjs",
     "predev": "node scripts/build-translations.mjs",
     "prebuild": "node scripts/build-translations.mjs"

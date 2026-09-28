@@ -23,6 +23,8 @@
   --color-danger: #d90000;
 
   --font-sans: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  --font-heading: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  --default-font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 
   /* shadcn/ui tokens used by the form controls */
   --color-background: #999999;
@@ -49,6 +51,13 @@
 
 html {
   background: #333333;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+/* Verdana everywhere, as on the old site: form controls and headings too. */
+h1, h2, h3, h4, h5, h6,
+button, input, select, textarea {
+  font-family: inherit;
 }
 
 body {
@@ -112,30 +121,30 @@ a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgb(0 0 0 / 0) 35%, rgb(0 0 0 / 0.55) 100%);
+  background: linear-gradient(to bottom, rgb(0 0 0 / 0) 60%, rgb(0 0 0 / 0.35) 100%);
   pointer-events: none;
 }
 .zb-hero-text {
   position: absolute;
   inset: auto 0 0 0;
   z-index: 1;
-  padding-bottom: clamp(12px, 1.6vw, 26px);
+  padding-bottom: clamp(8px, 1vw, 16px);
 }
 .zb-hero-text p {
   margin: 0;
   color: #ffffff;
-  font-size: clamp(22px, 2.6vw, 42px);
+  font-size: clamp(13px, 1.25vw, 20px);
   letter-spacing: 0.02em;
-  text-shadow: 0 2px 12px rgb(0 0 0 / 0.55);
+  text-shadow: 0 1px 6px rgb(0 0 0 / 0.7);
   animation: zb-rise 0.9s ease-out 0.15s both;
 }
 /* a short red rule under the title – the Zentralbiker red */
 .zb-hero-text p::after {
   content: "";
   display: block;
-  width: 64px;
-  height: 3px;
-  margin-top: 10px;
+  width: 40px;
+  height: 2px;
+  margin-top: 6px;
   background: #d90000;
 }
 
@@ -256,9 +265,9 @@ a:hover {
 .zb-main {
   flex: 1 1 auto;
   min-width: 0;
-  color: #262626;
-  font-size: 15px;
-  line-height: 1.6;
+  color: #000000;
+  font-size: 16px;
+  line-height: 1.4;
 }
 /* Long reports read best at around 90 characters a line; pictures, tables
    and galleries may use the whole width. */
