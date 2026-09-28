@@ -160,4 +160,4 @@ export const SITE_STATS = {
 };
 
 /** Asset path on the new site for a mirrored file. */
-export const media = (p: string) => `/media/${p}`;
+export { mediaUrl as media } from "@/lib/media";

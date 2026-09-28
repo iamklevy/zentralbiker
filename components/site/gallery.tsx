@@ -6,6 +6,7 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 import type { GalleryItem } from "@/lib/content";
 import { cn } from "@/lib/utils";
+import { mediaUrl } from "@/lib/media";
 
 /**
  * Thumbnail grid + lightbox, as the original galleries had them: small
@@ -54,7 +55,7 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
           <li key={item.src}>
             <button type="button" onClick={() => setOpen(i)} aria-label={t("gallery.open")}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={`/media/${item.thumb}`} alt="" loading="lazy" />
+              <img src={mediaUrl(item.thumb)} alt="" loading="lazy" />
             </button>
           </li>
         ))}
@@ -94,7 +95,7 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`/media/${items[open].src}`}
+              src={mediaUrl(items[open].src)}
               alt=""
               className="max-h-[82vh] w-auto border-4 border-[#666] object-contain"
             />

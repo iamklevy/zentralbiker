@@ -6,6 +6,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { MAIN_NAV, SECTION_BANNERS, HOME_SIDEBAR, sectionOf } from "@/content/nav";
 import chromeJson from "@/content/generated/chrome.json";
 import { cn } from "@/lib/utils";
+import { mediaUrl } from "@/lib/media";
 
 type Chrome = { banner: string | null; sidebar: { label: string; href: string }[] };
 const CHROME = chromeJson as Record<string, Chrome>;
@@ -59,7 +60,7 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
         <img
           key={banner}
           className="zb-hero-img"
-          src={`/media/images/kopf/${banner}`}
+          src={mediaUrl(`images/kopf/${banner}`)}
           alt="Luzern"
           width={1000}
           height={140}
