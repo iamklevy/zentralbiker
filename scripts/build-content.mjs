@@ -16,6 +16,8 @@ import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { withoutExcluded } from "./excluded.mjs";
+
 const HERE = dirname(fileURLToPath(import.meta.url));
 const GEN = join(HERE, "..", "content", "generated");
 const MIRROR = process.argv[2];
@@ -25,7 +27,7 @@ if (!MIRROR || !existsSync(MIRROR)) {
 }
 
 const pages = JSON.parse(readFileSync(join(GEN, "pages.json"), "utf8"));
-const manifest = JSON.parse(readFileSync(join(MIRROR, "_manifest.json"), "utf8"));
+const manifest = withoutExcluded(JSON.parse(readFileSync(join(MIRROR, "_manifest.json"), "utf8")));
 
 /* ------------------------------------------------------------------ legs */
 
@@ -72,9 +74,11 @@ for (const oldPath of Object.keys(pages)) {
   const key = p.num;
   if (!countries.has(key)) countries.set(key, { num: key, slug: p.slug });
   const c = countries.get(key);
-  // The report section owns the canonical slug; route/gallery filenames
-  // sometimes differ in spelling (531bolivia vs 331bolivien).
-  if (p.sec === "3") c.slug = p.slug;
+  // The report section owns the canonical slug — taken from the URL the
+  // extractor gave the report, which can differ from the filename (see
+  // RENAMED in extract.mjs); route/gallery filenames sometimes differ in
+  // spelling too (531bolivia vs 331bolivien).
+  if (p.sec === "3") c.slug = pages[oldPath].path.slice("/berichte/".length);
   c[{ 3: "report", 5: "route", 4: "gallery" }[p.sec]] = oldPath;
 }
 

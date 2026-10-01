@@ -181,10 +181,6 @@
     "href": "/fotos/rumaenien"
    },
    {
-    "label": "Fotos Aegypten",
-    "href": "/fotos/aegypten"
-   },
-   {
     "label": "Fotos Mexico",
     "href": "/fotos/mexico"
    }
@@ -993,7 +989,7 @@
   "sidebar": [
    {
     "label": "Bolivien",
-    "href": "/berichte/bolivien"
+    "href": "/berichte/bolivia"
    },
    {
     "label": "Chile/Argentinien",
@@ -1443,43 +1439,6 @@
     "href": "/fotos/rumaenien"
    },
    {
-    "label": "Aegypten",
-    "href": "/fotos/aegypten"
-   },
-   {
-    "label": "",
-    "href": "/fotos/aegypten"
-   },
-   {
-    "label": "Mexico",
-    "href": "/fotos/mexico"
-   },
-   {
-    "label": "",
-    "href": "/fotos/mexico"
-   }
-  ]
- },
- "/fotos/aegypten": {
-  "banner": "luzern4_1000x140.jpg",
-  "sidebar": [
-   {
-    "label": "Rumaenien",
-    "href": "/fotos/rumaenien"
-   },
-   {
-    "label": "",
-    "href": "/fotos/rumaenien"
-   },
-   {
-    "label": "Aegypten",
-    "href": "/fotos/aegypten"
-   },
-   {
-    "label": "",
-    "href": "/fotos/aegypten"
-   },
-   {
     "label": "Mexico",
     "href": "/fotos/mexico"
    },
@@ -1499,14 +1458,6 @@
    {
     "label": "",
     "href": "/fotos/rumaenien"
-   },
-   {
-    "label": "Aegypten",
-    "href": "/fotos/aegypten"
-   },
-   {
-    "label": "",
-    "href": "/fotos/aegypten"
    },
    {
     "label": "Mexico",
@@ -3737,12 +3688,29 @@
    }
   ]
  },
+ "/berichte/bolivia": {
+  "banner": "luzern3_1000x140.jpg",
+  "sidebar": [
+   {
+    "label": "Bolivien",
+    "href": "/berichte/bolivia"
+   },
+   {
+    "label": "Chile/Argentinien",
+    "href": "/berichte/chile"
+   },
+   {
+    "label": "New Zealand",
+    "href": "/berichte/new-zealand"
+   }
+  ]
+ },
  "/berichte/chile": {
   "banner": "luzern3_1000x140.jpg",
   "sidebar": [
    {
     "label": "Bolivien",
-    "href": "/berichte/bolivien"
+    "href": "/berichte/bolivia"
    },
    {
     "label": "Chile/Argentinien",
@@ -3759,7 +3727,7 @@
   "sidebar": [
    {
     "label": "Bolivien",
-    "href": "/berichte/bolivien"
+    "href": "/berichte/bolivia"
    },
    {
     "label": "Chile/Argentinien",

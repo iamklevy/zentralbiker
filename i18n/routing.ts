@@ -1,5 +1,7 @@
 import { defineRouting } from "next-intl/routing";
 
+import { pathnames } from "./pathnames";
+
 /**
  * German is the default and stays un-prefixed at `/`, because that is what the
  * old static site served and what its inbound links and search rankings point
@@ -22,6 +24,11 @@ export const routing = defineRouting({
    * alternates in the layout's metadata.
    */
   localeDetection: false,
+  /*
+   * English pages get English URLs (/en/about-us, /en/reports/turkey). The
+   * German path stays the internal one, so routes and links keep using it.
+   */
+  pathnames,
 });
 
 export type Locale = (typeof routing.locales)[number];

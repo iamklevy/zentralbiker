@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { GuestbookForm } from "@/components/site/guestbook-form";
 import { listEntries } from "@/lib/guestbook/actions";
 import { formatDate } from "@/lib/utils";
+import { pageAlternates } from "@/lib/seo";
 
 // Entries are moderated, so a short revalidate window is plenty — and it
 // keeps the page static for the overwhelming majority of visits.
@@ -16,7 +17,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "guestbook" });
-  return { title: t("title"), description: t("lead") };
+  return { title: t("title"), description: t("lead"), alternates: pageAlternates("/varia/gaestebuch", locale) };
 }
 
 export default async function GaestebuchPage({ params }: { params: Promise<{ locale: string }> }) {

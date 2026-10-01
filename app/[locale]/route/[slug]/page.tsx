@@ -4,7 +4,8 @@ import { setRequestLocale } from "next-intl/server";
 
 import { routing } from "@/i18n/routing";
 import { ContentPage } from "@/components/site/content-page";
-import { LEGS, getLeg, getCountry } from "@/lib/content";
+import { LEGS, getLeg, getCountry, localName } from "@/lib/content";
+import { pageAlternates } from "@/lib/seo";
 
 /**
  * One route serves two page kinds, because the old site's URLs did too:
@@ -20,10 +21,10 @@ export function generateStaticParams() {
   return routing.locales.flatMap((locale) => slugs.map((slug) => ({ locale, slug })));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug } = await params;
   const name = getLeg(slug)?.name ?? getCountry(slug)?.name;
-  return name ? { title: name } : {};
+  return { ...(name && { title: localName(slug, name, locale) }), alternates: pageAlternates(`/route/${slug}`, locale) };
 }
 
 export default async function Page({ params }: { params: Promise<{ locale: string; slug: string }> }) {

@@ -500,40 +500,277 @@ a:hover {
   }
 }
 
-/* Gallery: five 120px thumbnails to a row, never enlarged. */
-.zb-thumbs {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 720px;
-  margin: 0;
-  padding: 0 !important;
+/* ------------------------------------------------------------ gallery */
+
+/*
+ * Thumbnails as loose photo prints on the grey page: a warm white border,
+ * thicker at the bottom where the frame number is written by hand, a soft
+ * shadow, each tilted a little (--tilt, set per print). The photos carry a
+ * faded-print tint that clears on hover and in the viewer. Hover or focus
+ * straightens and lifts a print and marks it with the red site accent.
+ */
+.zb-prints {
+  --print: 180px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(var(--print) + 28px), 1fr));
+  gap: 30px 18px;
+  align-items: center;
+  justify-items: center;
+  margin: 8px 0 0;
+  padding: 8px 0 24px !important;
   list-style: none !important;
 }
-.zb-thumbs li {
+.zb-print {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  border: 0;
+  padding: 8px 8px 28px;
+  background: #f7f3ea;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.35),
+    0 6px 14px rgba(0, 0, 0, 0.22);
+  transform: rotate(var(--tilt, 0deg));
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.zb-print img {
+  display: block;
+  max-width: var(--print);
+  max-height: var(--print);
+  width: auto;
+  height: auto;
+  background: #ddd8cc;
+  filter: sepia(0.35) saturate(0.8) contrast(0.95) brightness(1.03);
+  transition: filter 0.3s ease;
+}
+/* The frame number, written on the white bottom edge. */
+.zb-print span {
+  position: absolute;
+  inset: auto 0 6px;
+  font-family: "Lucida Calligraphy", "Segoe Script", cursive;
+  font-size: 11px;
+  color: #6b655a;
+  text-align: center;
+}
+/* The red accent: a short pen stroke under the frame number. */
+.zb-print::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transform: translateX(-50%);
+  transition: width 0.2s ease;
+}
+.zb-print:hover,
+.zb-print:focus-visible {
+  z-index: 1;
+  outline: none;
+  transform: rotate(0deg) translateY(-5px) scale(1.04);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 14px 28px rgba(0, 0, 0, 0.35);
+}
+.zb-print:hover::after,
+.zb-print:focus-visible::after {
+  width: 28px;
+}
+.zb-print:hover img,
+.zb-print:focus-visible img {
+  filter: none;
+}
+@media (max-width: 520px) {
+  .zb-prints {
+    --print: 128px;
+    gap: 22px 12px;
+  }
+  .zb-print {
+    padding: 6px 6px 22px;
+  }
+}
+
+/*
+ * Overview pages (Fotos, Nordamerika, Filme …): the same prints, linking on,
+ * with the place or film written on the bottom edge instead of a number.
+ * Shown at the size the old site made them — they are not enlarged.
+ */
+a.zb-print,
+a.zb-print:visited {
+  color: inherit;
+  text-decoration: none;
+}
+.zb-print--labelled {
+  padding-bottom: 8px;
+}
+.zb-print--labelled img {
+  max-width: 150px;
+  max-height: 150px;
+}
+.zb-print.zb-print--labelled span {
+  position: static;
+  display: block;
+  max-width: 150px;
+  margin: 7px auto 10px;
+  font-size: 12px;
+  line-height: 1.35;
+  color: #3d3a34;
+}
+.zb-prints:has(.zb-print--labelled) {
+  grid-template-columns: repeat(auto-fill, minmax(178px, 1fr));
+  align-items: start;
+}
+.zb-overview-heading {
+  margin: 28px 0 4px;
+  font-size: 14px;
+  font-weight: bold;
+}
+section:first-of-type > .zb-overview-heading {
+  margin-top: 4px;
+}
+.zb-overview-nav {
   display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+.zb-overview-nav [aria-current] {
+  font-weight: bold;
+}
+
+/*
+ * The viewer, as a slide projector in a dark room: the photo in true colour
+ * with a faint warm light spill around it, each slide coming up with a short
+ * lamp-flare fade, and a filmstrip of the whole gallery along the bottom.
+ */
+.zb-projector {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 144px;
-  height: 120px;
+  gap: 14px;
+  padding: 16px 16px 12px;
+  background: radial-gradient(ellipse at 50% 42%, #1d1a15 0%, #0a0907 62%, #050504 100%);
+  color: #b9b2a6;
 }
-.zb-thumbs button {
+.zb-projector-stage {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+.zb-projector-stage img {
+  display: block;
+  max-width: min(1400px, 88vw);
+  max-height: calc(100vh - 190px);
+  width: auto;
+  height: auto;
+  box-shadow:
+    0 0 0 1px rgba(255, 236, 200, 0.08),
+    0 0 70px 12px rgba(255, 210, 140, 0.1);
+  animation: zb-slide-in 0.45s ease-out;
+}
+@keyframes zb-slide-in {
+  from {
+    opacity: 0;
+    filter: brightness(1.7) sepia(0.3);
+  }
+  to {
+    opacity: 1;
+    filter: none;
+  }
+}
+.zb-projector-counter {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+.zb-projector-btn {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 0;
+  background: none;
+  color: #9a9386;
   cursor: pointer;
+}
+.zb-projector-btn:hover,
+.zb-projector-btn:focus-visible {
+  color: #fff;
+}
+.zb-filmstrip {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  gap: 6px;
+  margin: 0;
+  padding: 6px 4px !important;
+  overflow-x: auto;
+  list-style: none !important;
+  background: #000;
+  border-block: 3px dotted #2a2721; /* sprocket holes */
+  scrollbar-width: thin;
+  scrollbar-color: #3a362e transparent;
+}
+.zb-filmstrip button {
+  display: block;
+  flex: none;
   border: 0;
   padding: 0;
   background: none;
+  cursor: pointer;
+  opacity: 0.45;
+  outline: 2px solid transparent;
+  outline-offset: 1px;
+  transition: opacity 0.15s ease;
 }
-.zb-thumbs img {
+.zb-filmstrip button:hover,
+.zb-filmstrip button:focus-visible {
+  opacity: 0.85;
+}
+.zb-filmstrip button[aria-current="true"] {
+  opacity: 1;
+  outline-color: var(--color-accent);
+}
+/* A fixed frame, exempt from the base img max-width: in the scrolling strip
+   a percentage max-width resolves against a container sized by its content,
+   and every thumbnail collapses to nothing. */
+.zb-filmstrip img {
   display: block;
-  max-width: 120px;
-  max-height: 120px;
-  width: auto;
-  height: auto;
+  max-width: none;
+  width: 72px;
+  height: 54px;
+  object-fit: cover;
+  background: #1a1814;
 }
-@media (max-width: 760px) {
-  .zb-thumbs {
-    justify-content: center;
+@media (max-width: 520px) {
+  .zb-projector-stage img {
+    max-width: 100%;
+    max-height: calc(100vh - 160px);
   }
-  .zb-thumbs li {
-    width: 128px;
+  .zb-filmstrip img {
+    width: 56px;
+    height: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zb-print,
+  .zb-print img,
+  .zb-print::after {
+    transition: none;
+  }
+  .zb-projector-stage img {
+    animation: none;
   }
 }

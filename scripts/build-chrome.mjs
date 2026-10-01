@@ -13,6 +13,8 @@ import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { EXCLUDED_PAGES, withoutExcluded } from "./excluded.mjs";
+
 const HERE = dirname(fileURLToPath(import.meta.url));
 const MIRROR = process.argv[2];
 if (!MIRROR || !existsSync(MIRROR)) {
@@ -20,7 +22,7 @@ if (!MIRROR || !existsSync(MIRROR)) {
   process.exit(1);
 }
 
-const manifest = JSON.parse(readFileSync(join(MIRROR, "_manifest.json"), "utf8"));
+const manifest = withoutExcluded(JSON.parse(readFileSync(join(MIRROR, "_manifest.json"), "utf8")));
 const pages = JSON.parse(readFileSync(join(HERE, "..", "content", "generated", "pages.json"), "utf8"));
 
 /** Old path -> new path, taken from the migration output so the two never disagree. */
@@ -64,7 +66,9 @@ for (const oldPath of Object.keys(manifest.pages)) {
   for (const m of ul.matchAll(/<a\s+href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/g)) {
     const [, href, label] = m;
     // "#" is how the old site marked the current page in its own menu.
-    const target = href === "#" ? path : toNew(flatten(href.split("#")[0], dir));
+    const old = flatten(href.split("#")[0], dir);
+    if (EXCLUDED_PAGES.has(old)) continue; // not migrated, so not in the menu either
+    const target = href === "#" ? path : toNew(old);
     if (!target) {
       missing++;
       continue;

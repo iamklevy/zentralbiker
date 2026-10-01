@@ -161,3 +161,39 @@ export const SITE_STATS = {
 
 /** Asset path on the new site for a mirrored file. */
 export { mediaUrl as media } from "@/lib/media";
+
+/* ---------------------------------------------------------------- titles */
+
+/**
+ * English names for countries, legs and galleries, by slug — only where they
+ * differ from the German (Peru is Peru). Used for page titles, which the
+ * German routes take from the migrated names.
+ */
+const NAMES_EN: Record<string, string> = {
+  amerika: "America",
+  asien: "Asia",
+  ozeanien: "Oceania",
+  argentinien: "Argentina",
+  bolivien: "Bolivia",
+  bolivia: "Bolivia",
+  kalifornien: "California",
+  kambodscha: "Cambodia",
+  kirgistan: "Kyrgyzstan",
+  mexiko: "Mexico",
+  "new-zealand": "New Zealand",
+  rumaenien: "Romania",
+  singapur: "Singapore",
+  tadschikistan: "Tajikistan",
+  tuerkei: "Turkey",
+  usbekistan: "Uzbekistan",
+};
+
+/** A country, leg or gallery name in the reader's language. */
+export function localName(slug: string, german: string, locale: string): string {
+  return locale === "en" ? (NAMES_EN[slug.replace(/^highlights-/, "")] ?? german) : german;
+}
+
+/** A page's title from its translation, if it has one (not for German). */
+export function translatedTitle(path: string, locale: string): string | undefined {
+  return locale === "de" ? undefined : TRANSLATIONS[locale]?.[path]?.title;
+}
