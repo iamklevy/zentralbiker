@@ -1,8 +1,9 @@
 "use client";
 
+import NextLink from "next/link";
 import { useLocale, useMessages, useTranslations } from "next-intl";
 
-import { Link, usePathname } from "@/i18n/navigation";
+import { Link, getPathname, usePathname } from "@/i18n/navigation";
 import { MAIN_NAV, SECTION_BANNERS, HOME_SIDEBAR, sectionOf } from "@/content/nav";
 import chromeJson from "@/content/generated/chrome.json";
 import { cn } from "@/lib/utils";
@@ -85,10 +86,12 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
               </li>
             ))}
           </ul>
-          {/* Keeps the reader on the same page in the other language. */}
-          <Link href={pathname} locale={other} className="zb-lang" hrefLang={other}>
+          {/* Keeps the reader on the same page in the other language. A plain
+              link to the exact URL: next-intl's Link would send German to
+              /de/... and leave the proxy to redirect it to the bare path. */}
+          <NextLink href={getPathname({ href: pathname, locale: other })} className="zb-lang" hrefLang={other}>
             {other.toUpperCase()}
-          </Link>
+          </NextLink>
         </div>
       </nav>
 

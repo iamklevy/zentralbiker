@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Prose } from "@/components/site/prose";
 import { ContactForm } from "@/components/site/contact-form";
 import { getPage } from "@/lib/content";
+import { pageAlternates } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -12,7 +13,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "contact" });
-  return { title: t("title"), description: t("lead") };
+  return { title: t("title"), description: t("lead"), alternates: pageAlternates("/varia/kontakt", locale) };
 }
 
 export default async function KontaktPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -22,7 +23,7 @@ export default async function KontaktPage({ params }: { params: Promise<{ locale
 
   // Whatever standing text the old contact page carried (addresses, notes)
   // still shows above the rebuilt form.
-  const page = getPage("/varia/kontakt");
+  const page = getPage("/varia/kontakt", locale);
 
   return (
     <>

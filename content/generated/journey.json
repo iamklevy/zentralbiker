@@ -305,12 +305,12 @@
    "countries": [
     {
      "num": 31,
-     "slug": "bolivien",
+     "slug": "bolivia",
      "gallery": "4fotos/431bolivia.html",
      "report": "3berichte/331bolivien.html",
      "route": "5route/531bolivia.html",
      "name": "Bolivien",
-     "path": "/berichte/bolivien",
+     "path": "/berichte/bolivia",
      "galleryDir": "4fotos/431photos_bolivien2"
     },
     {

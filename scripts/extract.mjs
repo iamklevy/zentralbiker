@@ -14,6 +14,8 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { EXCLUDED_PATHS, isExcludedAsset, withoutExcluded } from "./excluded.mjs";
+
 const HERE = dirname(fileURLToPath(import.meta.url));
 const MIRROR = process.argv[2];
 if (!MIRROR || !existsSync(MIRROR)) {
@@ -23,7 +25,7 @@ if (!MIRROR || !existsSync(MIRROR)) {
 const OUT = join(HERE, "..", "content", "generated");
 mkdirSync(OUT, { recursive: true });
 
-const manifest = JSON.parse(readFileSync(join(MIRROR, "_manifest.json"), "utf8"));
+const manifest = withoutExcluded(JSON.parse(readFileSync(join(MIRROR, "_manifest.json"), "utf8")));
 
 /* ---------------------------------------------------------------- routing */
 
@@ -40,10 +42,19 @@ const countrySlug = (base) => base.replace(/^\d+(?:[a-c]_)?/, "").replace(/_/g, 
 
 const LEG = { a: "amerika", b: "asien", c: "ozeanien" };
 
+/**
+ * Pages whose filename would give them another page's URL. Bolivia was
+ * crossed twice, and both reports are named "bolivien" (311 on the America
+ * leg, 331 on the Oceania leg); the second takes the spelling its own route
+ * and gallery already use (531bolivia, 431bolivia).
+ */
+const RENAMED = { "3berichte/331bolivien": "/berichte/bolivia" };
+
 /** Old mirror path -> new site path. Also the link-rewriting table. */
 export function newPath(old) {
   const p = old.replace(/^\/+/, "").replace(/\.html?$/i, "");
   if (p === "index") return "/";
+  if (RENAMED[p]) return RENAMED[p];
   const [dir, file] = p.includes("/") ? p.split("/") : [null, p];
 
   if (!dir) return `/${file}`; // ausruestung, berichte, fotos, route, info, varia
@@ -277,6 +288,20 @@ function sliceContent(raw) {
   return body.replace(/(?:\s*<\/div>)+\s*$/i, "").trim();
 }
 
+/**
+ * Links to pages that are not migrated (scripts/excluded.mjs). A link that is
+ * a menu entry or thumbnail of its own goes entirely — the cell left empty is
+ * cleared by stripEmpties; one inside running text keeps its words.
+ */
+function dropExcludedLinks(root) {
+  for (const a of root.querySelectorAll("a")) {
+    if (!EXCLUDED_PATHS.has(a.getAttribute("href"))) continue;
+    const standalone = a.querySelector("img") || a.parentNode.text.trim() === a.text.trim();
+    if (standalone) a.remove();
+    else a.replaceWith(...a.childNodes);
+  }
+}
+
 /* ------------------------------------------------------------------ main */
 
 const out = {};
@@ -299,6 +324,7 @@ for (const oldPath of Object.keys(manifest.pages)) {
   const ctx = { dir, images: [] };
 
   cleanNode(body, ctx);
+  dropExcludedLinks(body);
   unwrapLayoutTables(body);
   stripEmpties(body);
 
@@ -310,7 +336,7 @@ for (const oldPath of Object.keys(manifest.pages)) {
     html: body.innerHTML.replace(/\n{3,}/g, "\n\n").trim(),
     text,
     words: text ? text.split(" ").length : 0,
-    images: [...new Set(ctx.images)],
+    images: [...new Set(ctx.images)].filter((i) => !isExcludedAsset(i)),
   };
 }
 

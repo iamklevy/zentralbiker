@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { routing } from "@/i18n/routing";
 import { SiteChrome } from "@/components/site/site-chrome";
+import { SITE_URL } from "@/lib/seo";
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -18,18 +19,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
-  const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.zentralbiker.ch";
 
   return {
     title: { default: t("title"), template: `%s — Zentralbiker` },
     description: t("description"),
-    metadataBase: new URL(base),
-    alternates: {
-      // German is un-prefixed (localePrefix: "as-needed"), so its canonical
-      // is the bare path — matching what the old site's URLs already were.
-      canonical: locale === routing.defaultLocale ? "/" : `/${locale}`,
-      languages: { de: "/", en: "/en" },
-    },
+    metadataBase: new URL(SITE_URL),
+    // No canonical/hreflang here: they must name the page itself, so each
+    // page sets its own with pageAlternates (lib/seo.ts).
     openGraph: {
       title: t("title"),
       description: t("description"),
