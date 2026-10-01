@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Prose } from "@/components/site/prose";
 import { NewsletterForm } from "@/components/site/newsletter-form";
 import { getPage } from "@/lib/content";
+import { pageAlternates } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -13,7 +14,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "newsletter" });
-  return { title: t("title"), description: t("lead") };
+  return { title: t("title"), description: t("lead"), alternates: pageAlternates("/varia/newsletter", locale) };
 }
 
 export default async function NewsletterPage({
@@ -29,7 +30,7 @@ export default async function NewsletterPage({
 
   // The confirm API route redirects back here with a result flag.
   const { confirmed } = await searchParams;
-  const archive = getPage("/varia/newsletter-archiv");
+  const archive = getPage("/varia/newsletter-archiv", locale);
 
   return (
     <>

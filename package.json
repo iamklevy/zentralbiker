@@ -10,9 +10,10 @@
     "migrate": "node scripts/extract.mjs .mirror && node scripts/build-content.mjs .mirror && node scripts/build-chrome.mjs .mirror",
     "sync-media": "node scripts/sync-media.mjs .mirror",
     "upload-media": "node scripts/upload-media.mjs --skip=mp4",
-    "translations": "node scripts/build-translations.mjs",
-    "predev": "node scripts/build-translations.mjs",
-    "prebuild": "node scripts/build-translations.mjs"
+    "translations": "node scripts/build-paths.mjs && node scripts/build-translations.mjs",
+    "predev": "npm run translations",
+    "prebuild": "npm run translations",
+    "prints": "node scripts/build-prints.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.5",
@@ -39,6 +40,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.0",
     "node-html-parser": "^9.0.1",
+    "sharp": "^0.35.4",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
