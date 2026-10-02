@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Caveat } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -7,6 +8,9 @@ import { routing } from "@/i18n/routing";
 import { SiteChrome } from "@/components/site/site-chrome";
 import { SITE_URL } from "@/lib/seo";
 import "../globals.css";
+
+// The handwriting on the photo overview prints (see .zb-print--labelled).
+const caveat = Caveat({ subsets: ["latin"], variable: "--font-hand", display: "swap" });
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -49,7 +53,7 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={caveat.variable}>
       <body>
         <NextIntlClientProvider>
           <SiteChrome>{children}</SiteChrome>

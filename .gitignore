@@ -45,3 +45,6 @@ next-env.d.ts
 
 # Local site mirror used by the migration scripts
 /.mirror
+
+# Compressed films waiting to be uploaded (scripts/compress-films.mjs)
+/.compressed
