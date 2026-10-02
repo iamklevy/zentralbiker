@@ -14,9 +14,13 @@
  * The 46 videos (images/filme/*.mp4, ~360 MB) would push the bucket past the
  * free plan's 1 GB, so they are left out for now with --skip=mp4.
  *
- * Usage: node scripts/upload-media.mjs [--skip=mp4,...]
+ * The films are uploaded from their compressed copies instead (see
+ * scripts/compress-films.mjs): --from=.compressed takes the files from that
+ * folder, keeping the same paths. --dry-run lists what would be uploaded.
+ *
+ * Usage: node scripts/upload-media.mjs [--skip=mp4,...] [--from=dir] [--dry-run]
  */
-import { readdir, readFile } from "node:fs/promises";
+import { readdir, readFile, stat } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { join, dirname, extname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -26,7 +30,9 @@ import { mediaKey } from "../lib/media-key.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, "..");
-const SRC = join(ROOT, "public", "media");
+const FROM = process.argv.find((a) => a.startsWith("--from="))?.slice("--from=".length);
+const SRC = FROM ? join(ROOT, FROM) : join(ROOT, "public", "media");
+const DRY_RUN = process.argv.includes("--dry-run");
 const BUCKET = "media";
 const PARALLEL = 6;
 const SKIP = new Set(
@@ -44,7 +50,7 @@ if (!url || !key) {
   process.exit(1);
 }
 if (!existsSync(SRC)) {
-  console.error("public/media is missing — run `npm run sync-media` first.");
+  console.error(`${SRC} is missing${FROM ? "" : " — run `npm run sync-media` first"}.`);
   process.exit(1);
 }
 
@@ -112,6 +118,14 @@ for (const folder of folders) {
 }
 const todo = files.filter((f) => !present.has(f.key));
 console.log(`${files.length} files, ${files.length - todo.length} already uploaded, ${todo.length} to go`);
+if (DRY_RUN) {
+  let size = 0;
+  for (const f of todo) size += (await stat(join(SRC, f.rel))).size;
+  for (const f of todo.slice(0, 60)) console.log(`  ${f.key}`);
+  if (todo.length > 60) console.log(`  … and ${todo.length - 60} more`);
+  console.log(`${(size / 1024 / 1024).toFixed(1)} MB would be uploaded`);
+  process.exit(0);
+}
 
 // 4. Upload, a few at a time, retrying transient failures.
 let done = 0;

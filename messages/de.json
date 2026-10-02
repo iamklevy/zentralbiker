@@ -82,7 +82,8 @@
     "close": "Schliessen",
     "counter": "{current} von {total}",
     "loading": "Bild wird geladen …",
-    "empty": "In dieser Galerie sind noch keine Bilder."
+    "empty": "In dieser Galerie sind noch keine Bilder.",
+    "play": "Film abspielen"
   },
   "guestbook": {
     "title": "Gästebuch",

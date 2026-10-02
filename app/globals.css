@@ -138,16 +138,6 @@ a:hover {
   text-shadow: 0 1px 6px rgb(0 0 0 / 0.7);
   animation: zb-rise 0.9s ease-out 0.15s both;
 }
-/* a short red rule under the title – the Zentralbiker red */
-.zb-hero-text p::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 2px;
-  margin-top: 6px;
-  background: #d90000;
-}
-
 @keyframes zb-fade {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -327,6 +317,25 @@ a:hover {
   padding: 2px 6px 2px 0;
   vertical-align: top;
   text-align: left;
+}
+
+/* The Route page's three map cards (America, Asia, Oceania): more room
+   between them, and a thin frame around the one under the mouse. */
+.zb-content td:has(img[src*="Visitenkarte"]) {
+  padding: 0 28px 28px 0;
+}
+.zb-content a:has(> img[src*="Visitenkarte"]) {
+  display: inline-block;
+  outline: 2px solid transparent;
+  outline-offset: 4px;
+  transition: outline-color 0.15s ease;
+}
+.zb-content a:has(> img[src*="Visitenkarte"]):hover,
+.zb-content a:has(> img[src*="Visitenkarte"]):focus-visible {
+  outline-color: var(--color-accent);
+}
+.zb-content a:has(> img[src*="Visitenkarte"]) img {
+  display: block;
 }
 /* Pictures keep the size they were given on the old site. The only change:
    they may never be wider than the screen. */
@@ -615,9 +624,11 @@ a.zb-print:visited {
   display: block;
   max-width: 150px;
   margin: 7px auto 10px;
-  font-size: 12px;
-  line-height: 1.35;
-  color: #3d3a34;
+  /* Caveat runs small, so 16px reads about like the 12px Verdana around it. */
+  font-family: var(--font-hand), "Segoe Script", cursive;
+  font-size: 16px;
+  line-height: 1.15;
+  color: #000;
 }
 .zb-prints:has(.zb-print--labelled) {
   grid-template-columns: repeat(auto-fill, minmax(178px, 1fr));
@@ -640,6 +651,70 @@ section:first-of-type > .zb-overview-heading {
 }
 .zb-overview-nav [aria-current] {
   font-weight: bold;
+}
+
+/*
+ * Film pages: each film a short piece of film strip — a frame from the film
+ * between two rows of sprocket holes — with its name on a white label
+ * underneath, and a play mark that turns red on hover.
+ */
+.zb-print--film {
+  padding: 0;
+}
+.zb-print.zb-print--film .zb-film {
+  position: relative;
+  display: block;
+  max-width: none;
+  margin: 0;
+  padding: 13px 6px;
+  background:
+    repeating-linear-gradient(90deg, #8f897d 0 5px, transparent 5px 11px) left 6px top 4px / calc(100% - 12px) 5px no-repeat,
+    repeating-linear-gradient(90deg, #8f897d 0 5px, transparent 5px 11px) left 6px bottom 4px / calc(100% - 12px) 5px no-repeat,
+    #161411;
+}
+.zb-print--film .zb-film img {
+  width: 160px;
+  height: 90px;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+}
+.zb-print--film .zb-film::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  /* the triangle, drawn inside the circle */
+  background:
+    conic-gradient(from 240deg at 100% 50%, #fff 0 60deg, transparent 0) calc(50% + 2px) 50% / 13px 16px no-repeat,
+    rgba(0, 0, 0, 0.45);
+  transform: translate(-50%, -50%);
+  transition: background-color 0.2s ease;
+}
+.zb-print--film:hover .zb-film::after,
+.zb-print--film:focus-visible .zb-film::after {
+  background-color: var(--color-accent);
+}
+.zb-print.zb-print--film > span:last-child {
+  max-width: 172px;
+  margin: 0;
+  padding: 7px 6px 12px;
+}
+@media (max-width: 520px) {
+  .zb-prints:has(.zb-print--film) {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+  .zb-print--film .zb-film img {
+    width: 120px;
+    height: 68px;
+  }
+  .zb-print.zb-print--film > span:last-child {
+    max-width: 132px;
+  }
 }
 
 /*
@@ -667,7 +742,8 @@ section:first-of-type > .zb-overview-heading {
   align-items: center;
   justify-content: center;
 }
-.zb-projector-stage img {
+.zb-projector-stage img,
+.zb-projector-stage video {
   display: block;
   max-width: min(1400px, 88vw);
   max-height: calc(100vh - 190px);
@@ -754,7 +830,8 @@ section:first-of-type > .zb-overview-heading {
   background: #1a1814;
 }
 @media (max-width: 520px) {
-  .zb-projector-stage img {
+  .zb-projector-stage img,
+  .zb-projector-stage video {
     max-width: 100%;
     max-height: calc(100vh - 160px);
   }
@@ -770,7 +847,8 @@ section:first-of-type > .zb-overview-heading {
   .zb-print::after {
     transition: none;
   }
-  .zb-projector-stage img {
+  .zb-projector-stage img,
+  .zb-projector-stage video {
     animation: none;
   }
 }

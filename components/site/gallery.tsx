@@ -56,14 +56,17 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
   );
 }
 
-function Projector({
+/** A slide in the projector: a photo, or (on the film pages) a video. */
+export type Slide = GalleryItem & { video?: boolean };
+
+export function Projector({
   items,
   index,
   onSelect,
   onStep,
   onClose,
 }: {
-  items: GalleryItem[];
+  items: Slide[];
   index: number;
   onSelect: (i: number) => void;
   onStep: (delta: number) => void;
@@ -76,6 +79,8 @@ function Projector({
   // Keyboard control, and lock body scroll so the page behind stays put.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      // the arrow keys seek inside a focused video, so leave them to it
+      if (e.target instanceof HTMLVideoElement && e.key !== "Escape") return;
       if (e.key === "Escape") onClose();
       else if (e.key === "ArrowRight") onStep(1);
       else if (e.key === "ArrowLeft") onStep(-1);
@@ -95,7 +100,10 @@ function Projector({
     strip.current
       ?.querySelector('[aria-current="true"]')
       ?.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
-    for (const d of [1, -1]) new Image().src = mediaUrl(items[(index + d + items.length) % items.length].src);
+    for (const d of [1, -1]) {
+      const next = items[(index + d + items.length) % items.length];
+      if (!next.video) new Image().src = mediaUrl(next.src);
+    }
   }, [index, items]);
 
   const stop = (e: React.SyntheticEvent) => e.stopPropagation();
@@ -106,7 +114,8 @@ function Projector({
       aria-modal="true"
       className="zb-projector"
       onClick={onClose}
-      onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}
+      // a swipe on the video is its own scrubbing, not a change of slide
+      onTouchStart={(e) => (touchX.current = e.target instanceof HTMLVideoElement ? null : e.touches[0].clientX)}
       onTouchEnd={(e) => {
         if (touchX.current === null) return;
         const dx = e.changedTouches[0].clientX - touchX.current;
@@ -147,8 +156,21 @@ function Projector({
 
       <div className="zb-projector-stage">
         {/* Keyed on the slide so each one comes up with the lamp fade. */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img key={items[index].src} src={mediaUrl(items[index].src)} alt="" onClick={stop} />
+        {items[index].video ? (
+          <video
+            key={items[index].src}
+            src={mediaUrl(items[index].src)}
+            poster={mediaUrl(items[index].thumb)}
+            controls
+            autoPlay
+            playsInline
+            preload="metadata"
+            onClick={stop}
+          />
+        ) : (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img key={items[index].src} src={mediaUrl(items[index].src)} alt="" onClick={stop} />
+        )}
       </div>
 
       <p className="zb-projector-counter" aria-live="polite">
