@@ -1,7 +1,7 @@
 {
   "brand": {
     "name": "Zentralbiker",
-    "tag": "Central Swiss on a World Tour"
+    "tag": "Central Swiss on a Trip Around the World"
   },
   "nav": {
     "home": "Home",
@@ -24,7 +24,7 @@
     "home": "Home"
   },
   "home": {
-    "title": "Central Swiss on a World Tour",
+    "title": "Central Swiss on a Trip Around the World",
     "lead": "Idea – decision – planning",
     "stats": {
       "countries": "Countries",
@@ -82,7 +82,8 @@
     "close": "Close",
     "counter": "{current} of {total}",
     "loading": "Loading image …",
-    "empty": "There are no images in this gallery yet."
+    "empty": "There are no images in this gallery yet.",
+    "play": "Play film"
   },
   "guestbook": {
     "title": "Guestbook",
@@ -136,7 +137,7 @@
     "about": "About us"
   },
   "meta": {
-    "title": "Zentralbiker – Central Swiss on a World Tour",
+    "title": "Zentralbiker – Central Swiss on a Trip Around the World",
     "description": "Travel reports, photos and routes from a round-the-world bicycle journey through the Americas, Asia and Oceania."
   },
   "common": {
