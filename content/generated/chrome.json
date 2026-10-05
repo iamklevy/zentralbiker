@@ -175,14 +175,6 @@
    {
     "label": "Filme Ozeanien",
     "href": "/fotos/filme-ozeanien"
-   },
-   {
-    "label": "Fotos Rumaenien",
-    "href": "/fotos/rumaenien"
-   },
-   {
-    "label": "Fotos Mexico",
-    "href": "/fotos/mexico"
    }
   ]
  },
@@ -1424,48 +1416,6 @@
    {
     "label": "Filme Ozeanien",
     "href": "/fotos/filme-ozeanien"
-   }
-  ]
- },
- "/fotos/rumaenien": {
-  "banner": "luzern4_1000x140.jpg",
-  "sidebar": [
-   {
-    "label": "Rumaenien",
-    "href": "/fotos/rumaenien"
-   },
-   {
-    "label": "",
-    "href": "/fotos/rumaenien"
-   },
-   {
-    "label": "Mexico",
-    "href": "/fotos/mexico"
-   },
-   {
-    "label": "",
-    "href": "/fotos/mexico"
-   }
-  ]
- },
- "/fotos/mexico": {
-  "banner": "luzern4_1000x140.jpg",
-  "sidebar": [
-   {
-    "label": "Rumaenien",
-    "href": "/fotos/rumaenien"
-   },
-   {
-    "label": "",
-    "href": "/fotos/rumaenien"
-   },
-   {
-    "label": "Mexico",
-    "href": "/fotos/mexico"
-   },
-   {
-    "label": "",
-    "href": "/fotos/mexico"
    }
   ]
  },

@@ -1,16 +1,21 @@
 import type { Metadata } from "next";
-import { Caveat } from "next/font/google";
+import { Atkinson_Hyperlegible_Next } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { routing } from "@/i18n/routing";
 import { SiteChrome } from "@/components/site/site-chrome";
+import { THEME_SCRIPT } from "@/lib/theme";
 import { SITE_URL } from "@/lib/seo";
 import "../globals.css";
 
-// The handwriting on the photo overview prints (see .zb-print--labelled).
-const caveat = Caveat({ subsets: ["latin"], variable: "--font-hand", display: "swap" });
+// The labels on the photo prints (see .zb-print span), chosen for legibility.
+const labelFont = Atkinson_Hyperlegible_Next({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-label",
+  display: "swap",
+});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -53,8 +58,14 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} className={caveat.variable}>
-      <body>
+    // The theme script adds "dark" before React hydrates, hence the warning opt-out.
+    <html lang={locale} className={labelFont.variable} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+      </head>
+      {/* Browser extensions (Grammarly and the like) add attributes to <body>
+          before React loads; they are not ours to match. */}
+      <body suppressHydrationWarning>
         <NextIntlClientProvider>
           <SiteChrome>{children}</SiteChrome>
         </NextIntlClientProvider>

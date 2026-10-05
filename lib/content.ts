@@ -181,7 +181,6 @@ const NAMES_EN: Record<string, string> = {
   kirgistan: "Kyrgyzstan",
   mexiko: "Mexico",
   "new-zealand": "New Zealand",
-  rumaenien: "Romania",
   singapur: "Singapore",
   tadschikistan: "Tajikistan",
   tuerkei: "Turkey",
