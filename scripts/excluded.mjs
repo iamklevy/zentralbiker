@@ -3,22 +3,37 @@
  * has some of them, so every migration script filters through this list —
  * otherwise `npm run migrate` would bring them straight back.
  *
- * - The Egypt photo gallery (/fotos/aegypten): removed from the site, and its
- *   photos deleted from public/media, the mirror and the storage bucket.
- *   The Egypt newsletter (7varia/13_aegypten.pdf) is a different thing and stays.
+ * - The Egypt, Romania and Mexico photo galleries (/fotos/aegypten,
+ *   /fotos/rumaenien, /fotos/mexico): removed from the site, and their photos
+ *   deleted from public/media, the mirror and the storage bucket.
+ *   The Egypt newsletter (7varia/13_aegypten.pdf) and the Mexico report
+ *   (/berichte/mexiko) are different things and stay.
  */
 
 /** Mirror pages that are never migrated. */
-export const EXCLUDED_PAGES = new Set(["4fotos/400f_aegypten.html", "4fotos/436aegypten.html"]);
+export const EXCLUDED_PAGES = new Set([
+  "4fotos/400f_aegypten.html",
+  "4fotos/436aegypten.html",
+  "4fotos/400e_rumaenien.html",
+  "4fotos/435rumaenien.html",
+  "4fotos/400g_mexico.html",
+  "4fotos/437mexico.html",
+]);
 
 /** New-site paths of those pages; links to them are removed from other pages. */
-export const EXCLUDED_PATHS = new Set(["/fotos/aegypten"]);
+export const EXCLUDED_PATHS = new Set(["/fotos/aegypten", "/fotos/rumaenien", "/fotos/mexico"]);
 
 /** Mirror files (photos, thumbnails) that are never migrated. */
 const EXCLUDED_ASSETS = [
   /^4fotos\/436(?:photos|thumbnails)_aegypten\//,
   /^4fotos\/galeriebilder\/36aegypten\.jpg$/,
   /^images\/web\/aegypten\.jpg$/,
+  /^4fotos\/435(?:photos|thumbnails)_rumaenien\//,
+  /^4fotos\/galeriebilder\/35rumaenien1\.jpg$/,
+  /^images\/web\/rumaenien\.jpg$/,
+  /^4fotos\/437(?:photos|thumbnails)_mexico\//,
+  /^4fotos\/galeriebilder\/37mexico\.jpg$/,
+  /^images\/web\/mexico\.jpg$/,
 ];
 
 export const isExcludedAsset = (path) => EXCLUDED_ASSETS.some((re) => re.test(path));

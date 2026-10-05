@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 
 import { routing } from "@/i18n/routing";
-import { ContentPage, sectionSlugs, titleFromSlug } from "@/components/site/content-page";
+import { sectionSlugs, titleFromSlug } from "@/components/site/content-page";
+import { GearSheet } from "@/components/site/gear";
 import { translatedTitle } from "@/lib/content";
 import { pageAlternates } from "@/lib/seo";
 
@@ -19,5 +20,5 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function Page({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  return <ContentPage path={`/ausruestung/${slug}`} locale={locale} />;
+  return <GearSheet slug={slug} locale={locale} />;
 }

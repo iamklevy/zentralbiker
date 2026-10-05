@@ -53,7 +53,6 @@ const EN: Record<string, string> = {
   kambodscha: "cambodia",
   kirgistan: "kyrgyzstan",
   mexiko: "mexico",
-  rumaenien: "romania",
   singapur: "singapore",
   tadschikistan: "tajikistan",
   tuerkei: "turkey",
