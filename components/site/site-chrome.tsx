@@ -8,13 +8,14 @@ import { MAIN_NAV, SECTION_BANNERS, HOME_SIDEBAR, sectionOf } from "@/content/na
 import chromeJson from "@/content/generated/chrome.json";
 import { cn } from "@/lib/utils";
 import { mediaUrl } from "@/lib/media";
+import { ThemeToggle } from "@/components/site/theme-toggle";
 
 type Chrome = { banner: string | null; sidebar: { label: string; href: string }[] };
 const CHROME = chromeJson as Record<string, Chrome>;
 
 /**
  * The page frame, full width: the section's Lucerne banner as an edge-to-edge
- * panorama with "Zentralschweizer auf Weltreise" set over it, a sticky menu
+ * panorama, a sticky menu
  * bar, then the sidebar menu beside the content, and the footer. Visual rules
  * live in the `.zb-*` block of app/globals.css.
  */
@@ -67,31 +68,32 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
           height={140}
           fetchPriority="high"
         />
-        <div className="zb-wrap zb-hero-text">
-          <p>{t("brand.tag")}</p>
-        </div>
       </header>
 
       <nav className="zb-nav" aria-label={t("nav.main")}>
         <div className="zb-wrap">
-          <Link href="/" className="zb-brand">
-            Zentralbiker
-          </Link>
-          <ul>
-            {MAIN_NAV.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className={cn(section === item.href && "is-active")}>
-                  {t(`nav.${item.labelKey}`)}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          {/* Keeps the reader on the same page in the other language. A plain
-              link to the exact URL: next-intl's Link would send German to
-              /de/... and leave the proxy to redirect it to the bare path. */}
-          <NextLink href={getPathname({ href: pathname, locale: other })} className="zb-lang" hrefLang={other}>
-            {other.toUpperCase()}
-          </NextLink>
+          <div className="zb-nav-pill">
+            <Link href="/" className="zb-brand">
+              Zentralbiker
+            </Link>
+            <ul>
+              {MAIN_NAV.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className={cn(section === item.href && "is-active")}>
+                    {t(`nav.${item.labelKey}`)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <span className="zb-nav-divider" aria-hidden />
+            {/* Keeps the reader on the same page in the other language. A plain
+                link to the exact URL: next-intl's Link would send German to
+                /de/... and leave the proxy to redirect it to the bare path. */}
+            <NextLink href={getPathname({ href: pathname, locale: other })} className="zb-lang" hrefLang={other}>
+              {other.toUpperCase()}
+            </NextLink>
+            <ThemeToggle />
+          </div>
         </div>
       </nav>
 

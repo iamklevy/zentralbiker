@@ -123,8 +123,9 @@ export function Projector({
         if (Math.abs(dx) > 50) onStep(dx < 0 ? 1 : -1);
       }}
     >
-      <button type="button" onClick={onClose} aria-label={t("gallery.close")} className="zb-projector-btn end-3 top-3">
-        <X className="size-5" />
+      <button type="button" onClick={onClose} className="zb-projector-close">
+        <X className="size-5" aria-hidden />
+        {t("gallery.close")}
       </button>
 
       {items.length > 1 && (
