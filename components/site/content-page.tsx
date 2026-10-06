@@ -12,6 +12,7 @@ export function ContentPage({
   path,
   oldPath,
   locale,
+  transform,
   children,
 }: {
   /** New-site path, e.g. "/ausruestung/kochen". */
@@ -19,6 +20,8 @@ export function ContentPage({
   /** Or the original file, when spellings differ between sections. */
   oldPath?: string;
   locale: string;
+  /** Tidies the migrated HTML before it is shown. */
+  transform?: (html: string) => string;
   /** Rendered after the body (forms, galleries). */
   children?: React.ReactNode;
 }) {
@@ -31,7 +34,7 @@ export function ContentPage({
 
   return (
     <>
-      {page?.html && <Prose html={page.html} />}
+      {page?.html && <Prose html={transform ? transform(page.html) : page.html} />}
       {children}
     </>
   );
