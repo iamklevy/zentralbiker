@@ -45,6 +45,21 @@ export function sectionOf(path: string): string {
   return "/"; // /ueber-uns, /claudia, /alexandre hang off Home, as they did
 }
 
+/**
+ * The page one level up, for the "back to …" button: a section's pages go to
+ * the section, a section to Home, and the two portraits to "Über uns", where
+ * they are reached from. Home has none.
+ */
+export function parentOf(path: string): { href: string; labelKey: string } | null {
+  if (path === "/") return null;
+  if (path === "/claudia" || path === "/alexandre") return { href: "/ueber-uns", labelKey: "ueber_uns" };
+  const section = sectionOf(path);
+  if (section !== "/" && path !== section) {
+    return { href: section, labelKey: MAIN_NAV.find((n) => n.href === section)!.labelKey };
+  }
+  return { href: "/", labelKey: "home" };
+}
+
 /** Home's sidebar — also the fallback for the three "about" pages. */
 export const HOME_SIDEBAR = [
   { labelKey: "ueber_uns", href: "/ueber-uns" },

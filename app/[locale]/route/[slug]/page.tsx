@@ -4,7 +4,9 @@ import { setRequestLocale } from "next-intl/server";
 
 import { routing } from "@/i18n/routing";
 import { ContentPage } from "@/components/site/content-page";
+import { RouteCountryPage, RouteLeg } from "@/components/site/route-pages";
 import { LEGS, getLeg, getCountry, localName } from "@/lib/content";
+import { routeCountry } from "@/lib/route";
 import { pageAlternates } from "@/lib/seo";
 
 /**
@@ -31,9 +33,13 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  if (getLeg(slug)) return <ContentPage path={`/route/${slug}`} locale={locale} />;
+  const leg = getLeg(slug);
+  if (leg) return <RouteLeg leg={leg} locale={locale} />;
 
   const country = getCountry(slug);
   if (!country?.route) notFound();
+  // the redesigned page when the old one can be read, else the old one as is
+  const page = routeCountry(country, locale);
+  if (page) return <RouteCountryPage country={country} page={page} locale={locale} />;
   return <ContentPage oldPath={country.route} locale={locale} />;
 }

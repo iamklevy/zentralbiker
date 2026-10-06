@@ -1,10 +1,12 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import NextLink from "next/link";
+import { ArrowLeft, Menu, X } from "lucide-react";
 import { useLocale, useMessages, useTranslations } from "next-intl";
 
 import { Link, getPathname, usePathname } from "@/i18n/navigation";
-import { MAIN_NAV, SECTION_BANNERS, HOME_SIDEBAR, sectionOf } from "@/content/nav";
+import { MAIN_NAV, SECTION_BANNERS, HOME_SIDEBAR, parentOf, sectionOf } from "@/content/nav";
 import chromeJson from "@/content/generated/chrome.json";
 import { cn } from "@/lib/utils";
 import { mediaUrl } from "@/lib/media";
@@ -40,7 +42,29 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
         : (CHROME[section]?.sidebar ?? []).map((l) => ({ ...l, label: messages.sidebar?.[l.label] ?? l.label }));
 
   const current = sidebar.find((item) => item.href === pathname);
+  const parent = parentOf(pathname);
   const other = locale === "de" ? "en" : "de";
+
+  // Phones: the main links sit behind a menu button. Remembering the path it
+  // was opened on closes the panel by itself once a tap navigates away.
+  const [openOn, setOpenOn] = useState<string | null>(null);
+  const menuOpen = openOn === pathname;
+  const pillRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const close = () => setOpenOn(null);
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && close();
+    const onPointer = (e: PointerEvent) => {
+      if (!pillRef.current?.contains(e.target as Node)) close();
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", onPointer);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("pointerdown", onPointer);
+    };
+  }, [menuOpen]);
 
   const sidebarLinks = (
     <ul>
@@ -72,10 +96,21 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
 
       <nav className="zb-nav" aria-label={t("nav.main")}>
         <div className="zb-wrap">
-          <div className="zb-nav-pill">
+          <div className="zb-nav-pill" ref={pillRef}>
             <Link href="/" className="zb-brand">
               Zentralbiker
             </Link>
+            <button
+              type="button"
+              className="zb-menu-toggle"
+              aria-expanded={menuOpen}
+              aria-controls="zb-main-links"
+              aria-label={t(menuOpen ? "nav.close" : "nav.menu")}
+              onClick={() => setOpenOn(menuOpen ? null : pathname)}
+            >
+              {menuOpen ? <X className="size-5" aria-hidden /> : <Menu className="size-5" aria-hidden />}
+              <span>{current?.label ?? sectionLabel}</span>
+            </button>
             <ul>
               {MAIN_NAV.map((item) => (
                 <li key={item.href}>
@@ -93,6 +128,24 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
               {other.toUpperCase()}
             </NextLink>
             <ThemeToggle />
+
+            {/* Phones only: every section, then the pages of this one (the
+                sidebar's links), in one panel under the pill. */}
+            {menuOpen && (
+              <div id="zb-main-links" className="zb-menu-panel">
+                <ul className="zb-menu-sections">
+                  {MAIN_NAV.map((item) => (
+                    <li key={item.href}>
+                      <Link href={item.href} className={cn(section === item.href && "is-active")}>
+                        {t(`nav.${item.labelKey}`)}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                {/* No heading: the highlighted section above already names them. */}
+                {sidebar.length > 0 && <div className="zb-menu-pages">{sidebarLinks}</div>}
+              </div>
+            )}
           </div>
         </div>
       </nav>
@@ -106,17 +159,13 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
         )}
 
         <div className="zb-main">
-          {/* Phones only: the sidebar folded into one line, so the page starts
-              with its content rather than a screenful of links. Keyed on the
-              path so it closes again after a tap navigates. */}
-          {sidebar.length > 0 && (
-            <details className="zb-submenu" key={pathname}>
-              <summary>
-                {sectionLabel}
-                {current && <>: <span>{current.label}</span></>}
-              </summary>
-              {sidebarLinks}
-            </details>
+          {/* A plain, labelled way up one level, for readers who don't
+              think of the browser's back button or the menus. */}
+          {parent && (
+            <Link href={parent.href} className="zb-back">
+              <ArrowLeft className="size-4" aria-hidden />
+              {t("nav.back", { page: t(`nav.${parent.labelKey}`) })}
+            </Link>
           )}
 
           <main className="zb-content">{children}</main>

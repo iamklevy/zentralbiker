@@ -18,14 +18,14 @@
     "close": "Close menu",
     "language": "Language",
     "main": "Main menu",
-    "sub": "Sub menu"
+    "sub": "Sub menu",
+    "back": "Back to {page}"
   },
   "crumb": {
     "home": "Home"
   },
   "home": {
     "title": "Central Swiss on a Trip Around the World",
-    "lead": "Idea – decision – planning",
     "stats": {
       "countries": "Countries",
       "reports": "Travel reports",
@@ -85,7 +85,7 @@
     "entries": "{count, plural, =1 {# entry} other {# entries}}",
     "weight": "Weight",
     "also": "Also",
-    "partner": "Advice and equipment"
+    "photo_credit": "Clothing photo:"
   },
   "section": {
     "ausruestung": {
@@ -253,5 +253,62 @@
     "Kambodscha": "Cambodia",
     "Singapur": "Singapore",
     "Chile/Argentinien": "Chile/Argentina"
+  },
+  "route": {
+    "stops": "Route cycled",
+    "round_trip": "Round trip",
+    "stages": "Daily stages",
+    "countries_title": "Countries on this leg",
+    "open_map": "Open the map full size",
+    "swipe": "Swipe the table sideways to see every column",
+    "prev": "Previous country",
+    "next": "Next country",
+    "total": "Total",
+    "stat": {
+      "km": "kilometres",
+      "gain": "metres climbed",
+      "time": "hours in the saddle",
+      "stages": "stages",
+      "countries": "countries"
+    },
+    "col": {
+      "date": "Date",
+      "place": "Stage / destination",
+      "distance": "km",
+      "gain": "Climb",
+      "altitude": "Altitude",
+      "time": "Riding time",
+      "night": "Night",
+      "temperature": "°C",
+      "comment": "Comment"
+    },
+    "col_hint": {
+      "distance": "Distance in kilometres",
+      "gain": "Height gained in metres",
+      "altitude": "Altitude in metres above sea level",
+      "time": "Riding time in hours:minutes",
+      "temperature": "Temperature in degrees Celsius"
+    },
+    "night": {
+      "hotel": "Hotel",
+      "tent": "Tent",
+      "guesthouse": "Guesthouse",
+      "border": "Customs",
+      "bus": "Bus",
+      "train": "Train",
+      "other": "Night"
+    },
+    "track_title": "The route on the map",
+    "track_all": "Whole route",
+    "track": {
+      "distance": "Distance",
+      "duration": "Under way",
+      "moving": "Riding time",
+      "speed": "Avg. speed",
+      "up": "Climb",
+      "down": "Descent",
+      "height": "Altitude",
+      "hint": "Zoom with the mouse wheel, drag to move. Click a day's stretch for its figures."
+    }
   }
 }
