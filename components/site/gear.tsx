@@ -10,6 +10,16 @@ import { mediaUrl } from "@/lib/media";
 
 const SLUGS = Object.keys(GEAR_CODES);
 
+/**
+ * Overview pictures for the categories whose page has none (both are lists).
+ * The passport is public domain (fedpol); the jacket is CC BY-SA 4.0 and is
+ * credited under the tiles — see Wikimedia Commons for both originals.
+ */
+const TILE_IMAGES: Record<string, GearImage> = {
+  kleider: { src: "images/ausruestung/mammut-jacke.jpg", width: 384, height: 480, alt: "" },
+  administration: { src: "images/ausruestung/schweizer-pass.jpg", width: 338, height: 480, alt: "" },
+};
+
 function gearTitle(slug: string, locale: string) {
   return translatedTitle(`/ausruestung/${slug}`, locale) ?? titleFromSlug(slug);
 }
@@ -24,7 +34,6 @@ function GearCard({ item, fallbackName, t }: { item: GearItem; fallbackName: str
   return (
     <article className="zb-gear-card" id={item.code}>
       <header className="zb-gear-card-head">
-        <span className="zb-gear-code">{item.code}</span>
         <h2>{item.name ?? fallbackName}</h2>
         {item.weight && (
           <span className="zb-gear-weight" title={t("gear.weight")}>
@@ -108,7 +117,7 @@ function GearBlockView({ block, title, t }: { block: GearBlock; title: string; t
               <tr>
                 {block.table.columns.map((c, i) => (
                   <th key={i} scope="col">
-                    {c}
+                    {c === "♀" || c === "♂" ? <span className="zb-gear-sign">{c}</span> : c}
                   </th>
                 ))}
               </tr>
@@ -137,13 +146,13 @@ function GearBlockView({ block, title, t }: { block: GearBlock; title: string; t
   }
 }
 
-/** Sheet header: the category's part-number prefix, its name, its size. */
-function SheetHead({ code, title, meta, kicker }: { code: string; title: string; meta?: string; kicker: string }) {
+/** Sheet header: the kicker (with the overview's sheet count), the name, its size. */
+function SheetHead({ code, title, meta, kicker }: { code?: string; title: string; meta?: string; kicker: string }) {
   return (
     <header className="zb-gear-head">
       <p className="zb-gear-kicker">
         <span>{kicker}</span>
-        <span className="zb-gear-code">{code}</span>
+        {code && <span className="zb-gear-code">{code}</span>}
       </p>
       <h1>{title}</h1>
       {meta && <p className="zb-gear-meta">{meta}</p>}
@@ -171,7 +180,7 @@ export async function GearSheet({ slug, locale }: { slug: string; locale: string
 
   return (
     <div className="zb-gear">
-      <SheetHead code={GEAR_CODES[slug]} title={title} meta={meta} kicker={t("gear.sheet")} />
+      <SheetHead title={title} meta={meta} kicker={t("gear.sheet")} />
       {blocks.map((b, i) => (
         <GearBlockView key={i} block={b} title={title} t={t} />
       ))}
@@ -189,37 +198,34 @@ export async function GearIndex({ locale }: { locale: string }) {
     <div className="zb-gear">
       <SheetHead code={`${SLUGS.length} × ${t("gear.sheet")}`} title={t("nav.ausruestung")} kicker={t("gear.overview")} />
 
+      {/* Photo left, text right, the photo taped in as a print: the same
+          pattern as Home and the two portraits. */}
       <div className={index.image ? "zb-gear-intro" : "zb-gear-intro zb-gear-intro--text"}>
+        {index.image && (
+          <figure className="zb-journal-photo">
+            <GearPhoto img={{ ...index.image, alt: t("nav.ausruestung") }} />
+            <figcaption>{t("nav.ausruestung")}</figcaption>
+          </figure>
+        )}
         <div className="zb-gear-text">
           {index.intro.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
-          {index.partner && (
-            <a className="zb-gear-partner" href={index.partner.href} target="_blank" rel="noopener noreferrer">
-              <span>{t("gear.partner")}</span>
-              {index.partner.logo ? <GearPhoto img={index.partner.logo} /> : index.partner.href}
-            </a>
-          )}
         </div>
-        {index.image && (
-          <div className="zb-gear-photo">
-            <GearPhoto img={index.image} />
-          </div>
-        )}
       </div>
 
       <ul className="zb-gear-tiles">
         {SLUGS.map((slug) => {
           const s = summary(slug, locale);
           const weight = s.items.length === 1 ? s.items[0].weight : undefined;
+          const image = s.image ?? TILE_IMAGES[slug];
           return (
             <li key={slug}>
               <a href={getPathname({ href: `/ausruestung/${slug}`, locale })} className="zb-gear-tile">
                 <span className="zb-gear-tile-photo">
-                  {s.image ? <GearPhoto img={s.image} /> : <span className="zb-gear-code">{GEAR_CODES[slug]}</span>}
+                  {image && <GearPhoto img={image} />}
                 </span>
                 <span className="zb-gear-tile-body">
-                  <span className="zb-gear-code">{GEAR_CODES[slug]}</span>
                   <strong>{gearTitle(slug, locale)}</strong>
                   <span className="zb-gear-tile-meta">
                     {s.items.length > 1 ? t("gear.items", { count: s.items.length }) : t("gear.entries", { count: s.entries })}
@@ -231,6 +237,16 @@ export async function GearIndex({ locale }: { locale: string }) {
           );
         })}
       </ul>
+      <p className="zb-gear-credit">
+        {t("gear.photo_credit")}{" "}
+        <a href="https://commons.wikimedia.org/wiki/File:Mammut,_OutDoor_2018,_Friedrichshafen_(1X7A0185).jpg" target="_blank" rel="noopener noreferrer">
+          Matti Blume
+        </a>
+        ,{" "}
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">
+          CC BY-SA 4.0
+        </a>
+      </p>
     </div>
   );
 }

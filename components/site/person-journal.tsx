@@ -22,8 +22,9 @@ export const TRAVELLERS: Record<
   claudia: {
     name: "Claudia",
     href: "/claudia",
-    img: "images/wir/claudia-start.jpg",
-    width: 427,
+    // her half of the New Zealand sailing diptych (Fotos › Neuseeland, no. 132)
+    img: "images/wir/claudia-segeln.jpg",
+    width: 477,
     height: 640,
     author: "alexandre",
   },

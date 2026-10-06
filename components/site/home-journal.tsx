@@ -6,7 +6,7 @@ import { mediaUrl } from "@/lib/media";
 import { PRINT_TILTS, printPath } from "@/lib/print-path.mjs";
 
 /** One photo per leg, from its highlights gallery. */
-const LEG_PHOTOS: Record<string, string> = {
+export const LEG_PHOTOS: Record<string, string> = {
   amerika: "4fotos/images_highlights_amerika/002 Altiplano - Peru.JPG",
   asien: "4fotos/images_highlights_asien/019 Pamir Highway - Tajikistan.JPG",
   ozeanien: "4fotos/images_highlights_ozeanien/009 Patagonien - Chile.jpg",
@@ -31,15 +31,16 @@ export async function HomeJournal({ locale }: { locale: string }) {
         </figure>
 
         <div className="zb-journal-text">
-          <p className="zb-journal-kicker">{t("home.lead")}</p>
           <blockquote className="zb-journal-quote">{t("home.quote")}</blockquote>
           {paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
         </div>
-      </div>
 
-      <p className="zb-journal-motto">{t("home.motto")}</p>
+        {/* In the text column, so it centres under the paragraphs rather
+            than across the photo as well. */}
+        <p className="zb-journal-motto">{t("home.motto")}</p>
+      </div>
 
       <section className="zb-journal-legs" aria-labelledby="zb-legs-title">
         <h2 id="zb-legs-title" className="zb-journal-rule">

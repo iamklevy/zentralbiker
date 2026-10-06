@@ -21,6 +21,21 @@ export function generateStaticParams() {
   return routing.locales.flatMap((locale) => slugs.map((slug) => ({ locale, slug })));
 }
 
+const LEG_SLUGS = LEGS.map((l) => l.slug).join("|");
+const LEG_LINK = new RegExp(`<a href="/berichte/(?:${LEG_SLUGS})">[^<]*</a>`, "g");
+const COUNTRY_LINK = new RegExp(`<a href="/berichte/(?!(?:${LEG_SLUGS})")`);
+
+/**
+ * A leg page opens with the old site's "Amerika Asien Ozeanien" switcher; the
+ * Berichte overview and the back button do that job now. Only the links
+ * before the first country are dropped, so any in the reports stay.
+ */
+function withoutLegSwitcher(html: string): string {
+  const firstCountry = html.search(COUNTRY_LINK);
+  if (firstCountry < 0) return html;
+  return html.slice(0, firstCountry).replace(LEG_LINK, "") + html.slice(firstCountry);
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
   const { locale, slug } = await params;
   const name = getLeg(slug)?.name ?? getCountry(slug)?.name;
@@ -31,7 +46,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  if (getLeg(slug)) return <ContentPage path={`/berichte/${slug}`} locale={locale} />;
+  if (getLeg(slug)) return <ContentPage path={`/berichte/${slug}`} locale={locale} transform={withoutLegSwitcher} />;
 
   const country = getCountry(slug);
   if (!country?.report) notFound();

@@ -248,9 +248,14 @@ function unwrapLayoutTables(root) {
   }
 }
 
-/** Drop the &nbsp;-only spacer paragraphs the old editor left everywhere. */
+/**
+ * Drop the &nbsp;-only spacer paragraphs the old editor left everywhere.
+ * Empty cells stay: they hold their column, and without them the rest of a
+ * row slides left (a stage with no altitude showed its time under altitude).
+ * A row with nothing in any cell still goes.
+ */
 function stripEmpties(root) {
-  for (const el of [...root.querySelectorAll("p,div,span,td,tr")].reverse()) {
+  for (const el of [...root.querySelectorAll("p,div,span,tr")].reverse()) {
     const txt = el.text.replace(/ |\s/g, "");
     if (!txt && el.querySelectorAll("img,iframe,br,a,table").length === 0) el.remove();
   }

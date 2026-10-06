@@ -65,11 +65,10 @@
   --zb-link: #d90000;
   --zb-link-hover: #cccccc;
   --zb-rule: #7a7a7a;
-  --zb-submenu: #8c8c8c;
-  --zb-submenu-line: #777777;
 
   /* the frosted menu bar, as in the portfolio header */
   --zb-glass: rgb(255 255 255 / 0.7);
+  --zb-glass-solid: #ffffff;
   --zb-glass-line: rgb(20 18 15 / 0.07);
   --zb-glass-fg: #141210;
   --zb-glass-muted: #4f4a44;
@@ -102,10 +101,9 @@
   --zb-link: #ff5a4f;
   --zb-link-hover: #ffffff;
   --zb-rule: #444444;
-  --zb-submenu: #2b2b2b;
-  --zb-submenu-line: #444444;
 
   --zb-glass: rgb(17 17 20 / 0.7);
+  --zb-glass-solid: #16161a;
   --zb-glass-line: rgb(255 255 255 / 0.065);
   --zb-glass-fg: #f3f2ef;
   --zb-glass-muted: #a9a8b0;
@@ -269,6 +267,10 @@ a:hover {
   background: var(--zb-glass-active);
   color: var(--zb-glass-fg);
 }
+/* Phones only: the button that opens the main links. */
+.zb-menu-toggle {
+  display: none;
+}
 .zb-nav-divider {
   flex: none;
   width: 1px;
@@ -363,6 +365,32 @@ a:hover {
    and galleries may use the whole width. */
 .zb-content {
   max-width: 980px;
+}
+
+/* "← Zurück zu …": big, worded and boxed so it reads as a button to anyone,
+   above the content of every page but Home. */
+.zb-back:link,
+.zb-back:visited {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  margin: 4px 0 18px;
+  padding: 8px 16px 8px 13px;
+  border: 1px solid var(--zb-glass-line);
+  border-radius: 999px;
+  background: var(--zb-glass-active);
+  color: var(--zb-glass-fg);
+  font-size: 15px;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+.zb-back:hover {
+  background: var(--zb-glass-hover);
+}
+.zb-back:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent);
 }
 
 .zb-footer {
@@ -482,8 +510,8 @@ a:hover {
   margin: 0.5em 0 1.5em;
 }
 
-/* The folded sidebar exists only for phones. */
-.zb-submenu {
+/* Phones only: the panel the menu button opens. */
+.zb-menu-panel {
   display: none;
 }
 
@@ -493,7 +521,7 @@ a:hover {
   .zb-body {
     display: block;
   }
-  /* The sidebar folds into the one-line menu under the main menu. */
+  /* The sidebar moves into the menu bar's panel. */
   .zb-sidebar {
     display: none;
   }
@@ -505,7 +533,8 @@ a:hover {
     padding-bottom: 28px;
   }
 
-  /* Menu bar: no wordmark, the links sliding sideways in the pill. */
+  /* Menu bar: no wordmark; a menu button naming the current page opens a
+     panel under the pill with every section and this section's pages. */
   .zb-brand:link,
   .zb-brand:visited {
     display: none;
@@ -515,14 +544,72 @@ a:hover {
     margin-top: 8px;
   }
   .zb-nav-pill {
+    position: relative;
     gap: 4px;
     min-height: 52px;
     padding: 0 6px;
   }
+  .zb-menu-toggle {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    height: 40px;
+    padding: 0 14px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--zb-glass-active);
+    color: var(--zb-glass-fg);
+    font: inherit;
+    font-size: 15px;
+    text-align: left;
+    cursor: pointer;
+  }
+  .zb-menu-toggle span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .zb-menu-toggle:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-accent);
+  }
+  /* The inline links give way to the menu button. */
+  .zb-nav-pill > ul {
+    display: none;
+  }
+  .zb-menu-panel {
+    display: block;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    max-height: calc(100dvh - 90px);
+    overflow-y: auto;
+    padding: 8px;
+    border: 1px solid var(--zb-glass-line);
+    border-radius: 24px;
+    /* solid, not glass: page text behind it would show through the links */
+    background: var(--zb-glass-solid);
+    box-shadow: var(--zb-glass-shadow);
+  }
+  .zb-menu-panel ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    padding: 0;
+    overflow: visible;
+  }
+  .zb-menu-pages {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--zb-glass-divider);
+  }
   .zb-nav li a:link,
   .zb-nav li a:visited {
-    padding: 8px 10px;
-    font-size: 15px;
+    padding: 12px 16px;
+    font-size: 16px;
   }
   .zb-nav-divider {
     display: none;
@@ -532,49 +619,6 @@ a:hover {
   .zb-theme {
     width: 34px;
     height: 34px;
-  }
-
-  .zb-submenu {
-    display: block;
-    margin: 8px 0 0;
-    border: 1px solid var(--zb-submenu-line);
-    background: var(--zb-submenu);
-  }
-  .zb-submenu summary {
-    cursor: pointer;
-    padding: 9px 12px;
-    font-size: 15px;
-    color: var(--zb-text-2);
-    list-style: none;
-  }
-  .zb-submenu summary::-webkit-details-marker {
-    display: none;
-  }
-  .zb-submenu summary::after {
-    content: "▾";
-    float: right;
-    color: #d90000;
-  }
-  .zb-submenu[open] summary::after {
-    content: "▴";
-  }
-  .zb-submenu summary span {
-    color: aliceblue;
-  }
-  .zb-submenu ul {
-    margin: 0;
-    padding: 4px 12px 10px;
-    list-style: none;
-    columns: 2;
-    column-gap: 16px;
-  }
-  .zb-submenu li a {
-    display: block;
-    padding: 6px 0;
-    font-size: 15px;
-  }
-  .zb-submenu a.is-active {
-    color: aliceblue;
   }
 
   .zb-content {
@@ -1033,21 +1077,12 @@ section:first-of-type > .zb-overview-heading {
 }
 
 .zb-content .zb-journal-kicker {
-  display: flex;
-  align-items: center;
-  gap: 12px;
   margin: 0 0 16px;
   color: var(--zb-text-2);
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-}
-.zb-journal-kicker::before {
-  content: "";
-  width: 28px;
-  height: 2px;
-  background: var(--color-accent);
 }
 /* The opening line, in a book face; quote marks follow the page language. */
 .zb-journal-quote {
@@ -1071,36 +1106,19 @@ section:first-of-type > .zb-overview-heading {
   font-size: 16px;
   line-height: 1.7;
 }
-/* A large red first letter, as diaries and old books open a chapter. */
-.zb-journal-quote + p::first-letter {
-  float: left;
-  padding: 6px 10px 0 0;
-  color: var(--color-accent);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 3.5em;
-  line-height: 0.82;
-}
 
 .zb-content .zb-journal-motto {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 18px;
-  margin: 40px 0 0;
+  grid-column: 2;
+  margin: 0;
   color: var(--zb-text);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 22px;
   font-style: italic;
   text-align: center;
-}
-.zb-journal-motto::before,
-.zb-journal-motto::after {
-  content: "";
-  flex: none;
-  width: 48px;
-  height: 1px;
-  background: currentColor;
-  opacity: 0.45;
 }
 
 /* The three legs, as prints leading to their reports. */
@@ -1200,11 +1218,9 @@ section:first-of-type > .zb-overview-heading {
   }
   .zb-content .zb-journal-motto {
     gap: 12px;
+    grid-column: auto;
+    margin-top: 12px;
     font-size: 19px;
-  }
-  .zb-journal-motto::before,
-  .zb-journal-motto::after {
-    width: 24px;
   }
 }
 
@@ -1276,13 +1292,6 @@ section:first-of-type > .zb-overview-heading {
   padding: 10px 16px;
   background: var(--zb-sheet-head);
   color: #ffffff;
-}
-.zb-gear-card-head .zb-gear-code {
-  padding: 2px 7px;
-  border: 1px solid rgb(255 255 255 / 0.25);
-  border-radius: 3px;
-  color: #ff6a5f;
-  font-size: 12px;
 }
 .zb-content .zb-gear-card-head h2 {
   flex: 1 1 auto;
@@ -1462,11 +1471,21 @@ section:first-of-type > .zb-overview-heading {
   border-bottom: 1px solid var(--zb-sheet-line);
 }
 .zb-gear-table thead th {
+  vertical-align: middle;
   background: var(--zb-sheet-head);
   color: #ffffff;
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+/* The female/male column signs: big enough to read at a glance. */
+.zb-gear-sign {
+  display: inline-block;
+  font-family: "Segoe UI Symbol", "Apple Symbols", "DejaVu Sans", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0;
 }
 .zb-content .zb-gear-table th:not(:first-child),
 .zb-content .zb-gear-table td:not(:first-child) {
@@ -1485,37 +1504,15 @@ section:first-of-type > .zb-overview-heading {
 }
 
 /* The overview: intro beside its photo, then a tile per category. */
+/* Laid out like .zb-journal-entry: the print on the left, the text beside it. */
 .zb-gear-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
-  gap: 28px;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: 48px;
   align-items: start;
 }
 .zb-gear-intro--text {
   grid-template-columns: minmax(0, 1fr);
-}
-.zb-gear-intro .zb-gear-photo {
-  border: 1px solid var(--zb-sheet-line);
-  border-radius: 6px;
-}
-a.zb-gear-partner,
-a.zb-gear-partner:visited {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  padding: 8px 14px;
-  border: 1px solid var(--zb-sheet-line);
-  border-radius: 6px;
-  background: var(--zb-sheet);
-  color: var(--zb-sheet-muted);
-  font-size: 11.5px;
-  font-weight: bold;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-a.zb-gear-partner:hover {
-  border-color: var(--color-accent);
-  color: var(--zb-sheet-text);
 }
 .zb-content ul.zb-gear-tiles {
   display: grid;
@@ -1565,19 +1562,18 @@ a.zb-gear-tile:focus-visible {
   height: auto;
   object-fit: contain;
 }
-.zb-gear-tile-photo .zb-gear-code {
-  font-size: 28px;
-}
 .zb-gear-tile-body {
   display: grid;
   gap: 2px;
   padding: 10px 14px 12px;
 }
-.zb-gear-tile-body .zb-gear-code {
-  font-size: 11.5px;
-}
 .zb-gear-tile-body strong {
   font-size: 15px;
+}
+.zb-content .zb-gear-credit {
+  margin: 10px 0 0;
+  color: var(--zb-text-2);
+  font-size: 12px;
 }
 .zb-gear-tile-meta {
   color: var(--zb-sheet-muted);
@@ -1589,6 +1585,7 @@ a.zb-gear-tile:focus-visible {
   .zb-gear-card-body,
   .zb-gear-intro {
     grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
   }
   .zb-gear-photo {
     border-right: 0;
@@ -1600,5 +1597,613 @@ a.zb-gear-tile:focus-visible {
   }
   .zb-content ul.zb-gear-tiles {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+/* ----------------------------------------------------------- reports */
+
+/*
+ * The reports overview (components/site/reports-overview): the three legs as
+ * diary entries, photo print left, text right, one under the other.
+ */
+.zb-reports-head {
+  max-width: 640px;
+  margin-bottom: 28px;
+}
+.zb-content .zb-reports-lead {
+  margin: -6px 0 0;
+  color: var(--zb-text-2);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-style: italic;
+}
+.zb-reports-leg {
+  padding-top: 44px;
+  border-top: 1px solid var(--zb-glass-divider);
+}
+.zb-reports-leg + .zb-reports-leg {
+  margin-top: 52px;
+}
+/* loose prints, not a stack: every other one leans the other way */
+.zb-reports-leg:nth-of-type(even) .zb-journal-photo {
+  transform: rotate(1.6deg);
+}
+.zb-content h2.zb-reports-title {
+  margin: 0 0 14px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 3.4vw, 36px);
+  font-weight: normal;
+  line-height: 1.1;
+}
+.zb-content .zb-reports-title a:link,
+.zb-content .zb-reports-title a:visited {
+  color: var(--zb-text);
+  text-decoration: none;
+}
+.zb-content .zb-reports-title a:hover {
+  color: var(--color-accent);
+}
+/* every country of the leg, as tags leading to its report */
+.zb-content ul.zb-reports-countries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 24px;
+  padding: 0;
+  list-style: none;
+}
+.zb-content .zb-reports-countries a:link,
+.zb-content .zb-reports-countries a:visited {
+  display: inline-block;
+  padding: 6px 13px;
+  border: 1px solid var(--zb-glass-line);
+  border-radius: 999px;
+  background: var(--zb-glass-hover);
+  color: var(--zb-text);
+  font-size: 14px;
+  text-decoration: none;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+.zb-content .zb-reports-countries a:hover {
+  border-color: var(--color-accent);
+  background: var(--zb-glass-active);
+}
+.zb-content a.zb-reports-more:link,
+.zb-content a.zb-reports-more:visited {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-size: 15px;
+  text-decoration: none;
+  transition: filter 0.15s ease;
+}
+.zb-content a.zb-reports-more:hover {
+  filter: brightness(1.12);
+}
+.zb-content .zb-reports-countries a:focus-visible,
+.zb-content a.zb-reports-more:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+/* ------------------------------------------------------------- route */
+
+/*
+ * The route pages (components/site/route-pages): the overview reuses the
+ * reports' diary entries; a leg is its map and a card per country; a country
+ * is its figures, facts, the stops ridden, the map and the daily stages.
+ */
+.zb-route-head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+.zb-content .zb-route-head .zb-journal-name {
+  margin: 0;
+}
+.zb-content img.zb-route-flag {
+  flex: none;
+  width: 84px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.3);
+}
+
+/* the big figures */
+.zb-content dl.zb-route-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px;
+  margin: 0 0 32px;
+  overflow: hidden;
+  border: 1px solid var(--zb-glass-line);
+  border-radius: 14px;
+  background: var(--zb-glass-line);
+}
+.zb-route-stats > div {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2px;
+  padding: 16px 18px;
+  background: var(--zb-page);
+}
+.zb-content .zb-route-stats dd {
+  margin: 0;
+  color: var(--zb-text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  line-height: 1.1;
+}
+.zb-content .zb-route-stats dt {
+  color: var(--zb-text-2);
+  font-size: 13px;
+}
+
+/* facts beside the stops */
+.zb-route-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: 20px;
+  align-items: start;
+  margin-bottom: 32px;
+}
+.zb-route-facts {
+  display: grid;
+  gap: 20px;
+}
+.zb-route-card {
+  padding: 18px 20px 20px;
+  border: 1px solid var(--zb-glass-line);
+  border-radius: 14px;
+  background: var(--zb-glass-hover);
+}
+.zb-content .zb-route-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+  color: var(--zb-text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: normal;
+}
+.zb-content .zb-route-card h2 img {
+  width: 32px;
+  height: auto;
+  border-radius: 2px;
+}
+.zb-content .zb-route-card h2 span {
+  color: var(--zb-text-2);
+  font-size: 16px;
+}
+.zb-content .zb-route-card dl {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+.zb-content .zb-route-card dl > div {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--zb-glass-line);
+}
+.zb-content .zb-route-card dl > div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+.zb-content .zb-route-card dt {
+  color: var(--zb-text-2);
+  font-size: 14px;
+}
+.zb-content .zb-route-card dd {
+  margin: 0;
+  color: var(--zb-text);
+  font-size: 15px;
+}
+
+.zb-content .zb-route-note {
+  margin: 12px 0 0;
+  color: var(--zb-text-2);
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* the stops ridden, as a line of places; border crossings stand out */
+.zb-content .zb-route-stops ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--zb-text);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.zb-route-stops li:not(:last-child)::after {
+  content: "→";
+  margin: 0 8px;
+  color: var(--zb-text-2);
+}
+.zb-route-stops li:first-child,
+.zb-route-stops li:last-child {
+  font-weight: bold;
+}
+.zb-route-part + .zb-route-part {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--zb-glass-line);
+}
+.zb-content .zb-route-part-km {
+  margin: 6px 0 0;
+  color: var(--zb-text-2);
+  font-size: 14px;
+  font-weight: bold;
+}
+.zb-route-border {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 9px;
+  border: 1px solid var(--color-accent);
+  border-radius: 999px;
+  color: var(--zb-text);
+  font-size: 12.5px;
+  font-weight: normal;
+}
+
+/* maps: large, framed, open full size on a tap */
+.zb-route-map {
+  margin: 0 0 32px;
+  text-align: center;
+}
+.zb-route-map > a {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  background: #f7f3ea;
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 0.35),
+    0 10px 24px rgb(0 0 0 / 0.25);
+}
+.zb-content .zb-route-map img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 760px;
+}
+.zb-route-map-zoom {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgb(0 0 0 / 0.55);
+  color: #ffffff;
+}
+.zb-content .zb-route-map figcaption {
+  margin-top: 8px;
+  font-size: 12px;
+}
+.zb-content .zb-route-map figcaption a {
+  color: var(--zb-text-2);
+}
+
+/* the GPS tracks on an OpenStreetMap map */
+.zb-track-map {
+  /* Leaflet stacks its panes up to z-index 1000: keep them under the nav */
+  isolation: isolate;
+  height: 520px;
+  margin-top: 12px;
+  overflow: hidden;
+  border: 1px solid var(--zb-glass-line);
+  border-radius: 12px;
+  background: var(--zb-glass-hover);
+}
+.zb-track-pick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+.zb-track-pick button {
+  padding: 6px 13px;
+  border: 1px solid var(--zb-glass-line);
+  border-radius: 999px;
+  background: var(--zb-glass-hover);
+  color: var(--zb-text);
+  font: inherit;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+.zb-track-pick button:hover {
+  border-color: var(--color-accent);
+}
+.zb-track-pick button[aria-pressed="true"] {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: #ffffff;
+}
+.zb-track-pick button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
+.zb-content .zb-track-hint {
+  margin: 10px 0 0;
+  color: var(--zb-text-2);
+  font-size: 13px;
+}
+.zb-track-map .leaflet-interactive {
+  cursor: pointer;
+}
+/* a day's figures, in the map's own popup (always light, like the map) */
+.zb-day-popup .leaflet-popup-content {
+  margin: 12px 14px;
+  color: #1d1d1d;
+  font-family: inherit;
+  font-size: 13.5px;
+  line-height: 1.35;
+}
+.zb-day p {
+  margin: 0;
+}
+.zb-day-section {
+  color: #6b6b6b;
+  font-size: 12px;
+}
+.zb-day-date {
+  margin-bottom: 8px !important;
+  font-weight: bold;
+  font-size: 14.5px;
+}
+.zb-day dl {
+  display: grid;
+  gap: 3px;
+  margin: 6px 0 0;
+}
+.zb-day dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.zb-day dt {
+  color: #6b6b6b;
+  font-weight: normal;
+}
+.zb-day dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  font-weight: bold;
+}
+
+/* the map draws its own links and buttons: keep the page's styles off them */
+.zb-content .zb-track-map a {
+  color: #0078a8;
+}
+
+/* a leg's countries */
+.zb-content ul.zb-route-countries {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 12px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.zb-content .zb-route-countries a:link,
+.zb-content .zb-route-countries a:visited {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  border: 1px solid var(--zb-glass-line);
+  border-radius: 12px;
+  background: var(--zb-glass-hover);
+  color: var(--zb-text);
+  text-decoration: none;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+.zb-content .zb-route-countries a:hover {
+  border-color: var(--color-accent);
+  background: var(--zb-glass-active);
+}
+.zb-content .zb-route-countries img,
+.zb-route-noflag {
+  grid-row: span 2;
+  width: 44px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 3px;
+  background: var(--zb-glass-active);
+}
+.zb-route-countries strong {
+  font-size: 15px;
+}
+.zb-route-countries a > span:last-child {
+  color: var(--zb-text-2);
+  font-size: 13px;
+}
+
+/* the daily stages */
+.zb-route-section {
+  margin-bottom: 32px;
+}
+.zb-content h2.zb-route-h2 {
+  margin: 0 0 4px;
+  color: var(--zb-text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: normal;
+}
+.zb-content .zb-route-swipe {
+  display: none;
+  margin: 0 0 8px;
+  color: var(--zb-text-2);
+  font-size: 13px;
+}
+.zb-route-table-wrap {
+  margin-top: 10px;
+  overflow-x: auto;
+  border: 1px solid var(--zb-glass-line);
+  border-radius: 12px;
+}
+.zb-content table.zb-route-table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.zb-content .zb-route-table th,
+.zb-content .zb-route-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--zb-glass-line);
+  text-align: left;
+  vertical-align: top;
+}
+.zb-content .zb-route-table thead th {
+  background: var(--zb-glass-solid);
+  color: var(--zb-text-2);
+  font-size: 12.5px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.zb-content .zb-route-table abbr {
+  text-decoration: none;
+  cursor: help;
+}
+.zb-content .zb-route-table tbody th {
+  color: var(--zb-text);
+  font-weight: bold;
+}
+.zb-content .zb-route-table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.zb-content .zb-route-table .date {
+  color: var(--zb-text-2);
+  white-space: nowrap;
+}
+.zb-content .zb-route-table .comment {
+  min-width: 200px;
+  color: var(--zb-text-2);
+}
+.zb-content .zb-route-table tbody tr:nth-child(even) {
+  background: var(--zb-glass-hover);
+}
+/* rest days and transfers: no riding, so they step back */
+.zb-content .zb-route-table tr.is-rest th {
+  font-weight: normal;
+  font-style: italic;
+}
+.zb-content .zb-route-table tfoot th,
+.zb-content .zb-route-table tfoot td {
+  border-bottom: 0;
+  background: var(--zb-glass-active);
+  color: var(--zb-text);
+  font-weight: bold;
+}
+.zb-night {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.zb-night svg {
+  color: var(--zb-text-2);
+}
+
+/* previous / next country */
+.zb-route-pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+  padding-top: 24px;
+  border-top: 1px solid var(--zb-glass-divider);
+}
+.zb-content .zb-route-pager a:link,
+.zb-content .zb-route-pager a:visited {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 8px 18px;
+  border: 1px solid var(--zb-glass-line);
+  border-radius: 999px;
+  background: var(--zb-glass-hover);
+  color: var(--zb-text);
+  font-size: 16px;
+  text-decoration: none;
+}
+.zb-content .zb-route-pager a:hover {
+  border-color: var(--color-accent);
+}
+.zb-route-pager a.is-next {
+  margin-left: auto;
+  text-align: right;
+}
+.zb-route-pager small {
+  display: block;
+  color: var(--zb-text-2);
+  font-size: 12px;
+}
+
+@media (max-width: 760px) {
+  .zb-route-intro {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .zb-content img.zb-route-flag {
+    width: 60px;
+  }
+  .zb-content .zb-route-stats dd {
+    font-size: 24px;
+  }
+  .zb-content .zb-route-card dl > div {
+    grid-template-columns: 100px minmax(0, 1fr);
+  }
+  .zb-content .zb-route-swipe {
+    display: block;
+  }
+  .zb-track-map {
+    height: 380px;
+  }
+  /* one swipeable row, so the map stays near its title */
+  .zb-track-pick {
+    flex-wrap: nowrap;
+    margin-right: -16px;
+    padding-bottom: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .zb-track-pick button {
+    flex: none;
+    white-space: nowrap;
+  }
+  .zb-route-pager {
+    flex-direction: column;
+  }
+  .zb-content .zb-route-pager a.is-next {
+    margin-left: 0;
   }
 }

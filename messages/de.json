@@ -18,14 +18,14 @@
     "close": "Menü schliessen",
     "language": "Sprache",
     "main": "Hauptmenü",
-    "sub": "Untermenü"
+    "sub": "Untermenü",
+    "back": "Zurück zu {page}"
   },
   "crumb": {
     "home": "Home"
   },
   "home": {
     "title": "Zentralschweizer auf Weltreise",
-    "lead": "Idee – Entschluss – Planung",
     "stats": {
       "countries": "Länder",
       "reports": "Reiseberichte",
@@ -85,7 +85,7 @@
     "entries": "{count, plural, =1 {# Position} other {# Positionen}}",
     "weight": "Gewicht",
     "also": "Ausserdem",
-    "partner": "Beratung und Ausrüstung"
+    "photo_credit": "Foto Kleider:"
   },
   "section": {
     "ausruestung": {
@@ -200,5 +200,65 @@
     "to_home": "Zur Startseite",
     "updated": "Aktualisiert",
     "words": "{count} Wörter"
+  },
+  "sidebar": {
+    "ueber uns": "Über uns"
+  },
+  "route": {
+    "stops": "Gefahrene Route",
+    "round_trip": "Rundtour",
+    "stages": "Tagesetappen",
+    "countries_title": "Länder dieser Etappe",
+    "open_map": "Karte in voller Grösse öffnen",
+    "swipe": "Tabelle seitlich wischen für alle Spalten",
+    "prev": "Vorheriges Land",
+    "next": "Nächstes Land",
+    "total": "Total",
+    "stat": {
+      "km": "Kilometer",
+      "gain": "Höhenmeter Aufstieg",
+      "time": "Stunden im Sattel",
+      "stages": "Etappen",
+      "countries": "Länder"
+    },
+    "col": {
+      "date": "Datum",
+      "place": "Etappe / Zielort",
+      "distance": "km",
+      "gain": "Aufstieg",
+      "altitude": "Höhe",
+      "time": "Fahrzeit",
+      "night": "Übernachtung",
+      "temperature": "°C",
+      "comment": "Kommentar"
+    },
+    "col_hint": {
+      "distance": "Distanz in Kilometern",
+      "gain": "Höhenzuwachs in Metern",
+      "altitude": "Höhe in Metern über Meer",
+      "time": "Fahrzeit in Stunden:Minuten",
+      "temperature": "Temperatur in Grad Celsius"
+    },
+    "night": {
+      "hotel": "Hotel",
+      "tent": "Zelt",
+      "guesthouse": "Gästehaus",
+      "border": "Zoll",
+      "bus": "Bus",
+      "train": "Zug",
+      "other": "Übernachtung"
+    },
+    "track_title": "Die Strecke auf der Karte",
+    "track_all": "Ganze Strecke",
+    "track": {
+      "distance": "Distanz",
+      "duration": "Unterwegs",
+      "moving": "Fahrzeit",
+      "speed": "Ø Geschwindigkeit",
+      "up": "Aufstieg",
+      "down": "Abstieg",
+      "height": "Höhe",
+      "hint": "Mit dem Mausrad zoomen, ziehen zum Verschieben. Einen Tagesabschnitt anklicken für seine Daten."
+    }
   }
 }
