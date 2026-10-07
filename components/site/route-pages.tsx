@@ -4,10 +4,11 @@ import { ArrowLeft, ArrowRight, BedDouble, Bus, House, Maximize2, Stamp, Tent, T
 import { getPathname } from "@/i18n/navigation";
 import { LEGS, legOf, localName, type Country, type Leg } from "@/lib/content";
 import { mediaUrl } from "@/lib/media";
-import { RouteTrackMap } from "@/components/site/route-track-map";
+import { RouteTrackMap, type TrackMapLabels } from "@/components/site/route-track-map";
 import {
   legCards,
   legMap,
+  legTracks,
   routeCountries,
   routeCountry,
   routeKm,
@@ -59,7 +60,7 @@ function Stats({ items }: { items: { value: string; label: string }[] }) {
 
 /**
  * The route overview, laid out like Berichte: one diary entry per leg, its
- * map card taped in on the left, the distance and countries beside it.
+ * map card set in on the left, the distance and countries beside it.
  */
 export async function RouteOverview({ locale }: { locale: string }) {
   const t = await getTranslations({ locale });
@@ -122,6 +123,7 @@ export async function RouteOverview({ locale }: { locale: string }) {
 export async function RouteLeg({ leg, locale }: { leg: Leg; locale: string }) {
   const t = await getTranslations({ locale });
   const map = legMap(leg, locale);
+  const tracks = legTracks(leg, locale);
   const list = routeCountries(leg).map((c) => ({ country: c, page: routeCountry(c, locale) }));
   const stages = list.reduce((n, { page }) => n + (page?.tables.reduce((m, tb) => m + tb.stages.length, 0) ?? 0), 0);
 
@@ -140,7 +142,14 @@ export async function RouteLeg({ leg, locale }: { leg: Leg; locale: string }) {
         ]}
       />
 
-      {map && <RouteMap map={map} t={t} />}
+      {tracks.length > 0 ? (
+        <section className="zb-route-section">
+          <h2 className="zb-route-h2">{t("route.track_title")}</h2>
+          <RouteTrackMap tracks={tracks} locale={locale} labels={trackLabels(t, true)} />
+        </section>
+      ) : (
+        map && <RouteMap map={map} t={t} />
+      )}
 
       <h2 className="zb-journal-rule">
         <span>{t("route.countries_title")}</span>
@@ -163,6 +172,24 @@ export async function RouteLeg({ leg, locale }: { leg: Leg; locale: string }) {
       </ul>
     </div>
   );
+}
+
+/** The words of a track map; a leg's says which of its countries are approximate. */
+function trackLabels(t: T, leg = false): TrackMapLabels {
+  return {
+    all: t("route.track_all"),
+    title: t("route.track_title"),
+    distance: t("route.track.distance"),
+    duration: t("route.track.duration"),
+    moving: t("route.track.moving"),
+    speed: t("route.track.speed"),
+    up: t("route.track.up"),
+    down: t("route.track.down"),
+    height: t("route.track.height"),
+    hint: t(leg ? "route.track.hint_leg" : "route.track.hint"),
+    hint_planned: t(leg ? "route.track.hint_planned_leg" : "route.track.hint_planned"),
+    straight: t("route.track.straight"),
+  };
 }
 
 function RouteMap({ map, credit, t }: { map: RouteCountry["maps"][number]; credit?: RouteCountry["credit"]; t: T }) {
@@ -353,29 +380,13 @@ export async function RouteCountryPage({ country, page, locale }: { country: Cou
         )}
       </div>
 
-      {page.maps.map((m) => (
-        <RouteMap key={m.src} map={m} credit={page.credit} t={t} />
-      ))}
+      {/* the old picture only where there's nothing to draw (New York) */}
+      {tracks.length === 0 && page.maps.map((m) => <RouteMap key={m.src} map={m} credit={page.credit} t={t} />)}
 
       {tracks.length > 0 && (
         <section className="zb-route-section">
           <h2 className="zb-route-h2">{t("route.track_title")}</h2>
-          <RouteTrackMap
-            tracks={tracks}
-            locale={locale}
-            labels={{
-              all: t("route.track_all"),
-              title: t("route.track_title"),
-              distance: t("route.track.distance"),
-              duration: t("route.track.duration"),
-              moving: t("route.track.moving"),
-              speed: t("route.track.speed"),
-              up: t("route.track.up"),
-              down: t("route.track.down"),
-              height: t("route.track.height"),
-              hint: t("route.track.hint"),
-            }}
-          />
+          <RouteTrackMap tracks={tracks} locale={locale} labels={trackLabels(t)} />
         </section>
       )}
 

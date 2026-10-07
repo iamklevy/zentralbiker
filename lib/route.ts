@@ -1,7 +1,8 @@
 import { parse, type HTMLElement } from "node-html-parser";
 
-import { getPage, getPageByOldPath, LEGS, type Country, type Leg } from "@/lib/content";
+import { getPage, getPageByOldPath, LEGS, localName, type Country, type Leg } from "@/lib/content";
 import tracksJson from "@/content/generated/tracks.json";
+import routedTracksJson from "@/content/generated/routed-tracks.json";
 
 /**
  * Reads the old route pages into data, so the route section can be laid out
@@ -283,6 +284,11 @@ export interface DayInfo {
   down?: number;
   min?: number;
   max?: number;
+  /** A routed hop between two stops (see `Track.planned`). */
+  from?: string;
+  to?: string;
+  /** No road found: the hop is a straight line (train, ferry). */
+  straight?: boolean;
 }
 
 /** A section of a country's route: its lines (one per day) and their info. */
@@ -290,14 +296,22 @@ export interface Track {
   label: string;
   lines: [number, number][][];
   info: DayInfo[];
+  /** Not recorded but routed from the page's stops: one line per hop. */
+  planned?: boolean;
 }
 
 interface TrackData extends Track {
-  file: string;
+  file?: string;
   km: number;
 }
-/** GPS tracks per route page, from scripts/build-tracks.mjs. */
-const TRACKS = tracksJson as unknown as Record<string, TrackData[]>;
+/**
+ * GPS tracks per route page, from scripts/build-tracks.mjs; the American leg,
+ * which has none, routed from its stops by scripts/build-routed-tracks.mjs.
+ */
+const TRACKS = {
+  ...(routedTracksJson as unknown as Record<string, TrackData[]>),
+  ...(tracksJson as unknown as Record<string, TrackData[]>),
+};
 
 /**
  * A country's GPS tracks, for its map. The section names come from the old
@@ -310,9 +324,53 @@ export function routeTracks(country: Country, locale: string): Track[] {
   // sections switch between Chile and Argentinien, so theirs stay.)
   const sectionCountry = (label: string) => /^(?:\d+\s+)?([^,]+),/.exec(label)?.[1];
   const shared = tracks.length > 1 && new Set(tracks.map((t) => sectionCountry(t.label))).size === 1 ? sectionCountry(tracks[0].label) : undefined;
-  return tracks.map(({ label, lines, info }) => {
+  return tracks.map(({ label, lines, info, planned }) => {
     let text = shared ? label.replace(`${shared}, `, "") : label;
     if (locale !== "de") text = text.replace(/ bis /g, " to ");
-    return { label: text, lines, info };
+    return { label: text, lines, info, ...(planned && { planned }) };
+  });
+}
+
+/** Douglas–Peucker on [lat, lon]s, as scripts/gpx-tracks.mjs does it. */
+function thin(points: [number, number][], tolerance: number): [number, number][] {
+  if (points.length < 3) return points;
+  const keep = new Uint8Array(points.length);
+  keep[0] = keep[points.length - 1] = 1;
+  const stack: [number, number][] = [[0, points.length - 1]];
+  while (stack.length) {
+    const [first, last] = stack.pop()!;
+    const [ax, ay] = points[first];
+    const [dx, dy] = [points[last][0] - ax, points[last][1] - ay];
+    const len = Math.hypot(dx, dy) || 1e-12;
+    let [worst, index] = [0, -1];
+    for (let i = first + 1; i < last; i++) {
+      const d = Math.abs(dy * (points[i][0] - ax) - dx * (points[i][1] - ay)) / len;
+      if (d > worst) [worst, index] = [d, i];
+    }
+    if (worst > tolerance) {
+      keep[index] = 1;
+      stack.push([first, index], [index, last]);
+    }
+  }
+  return points.filter((_, i) => keep[i]);
+}
+
+/**
+ * A whole leg on one map: a section per country, named after it, its tracks
+ * joined. Seen from that far out the lines are thinned to ~300 m, which keeps
+ * a leg to a fraction of its countries' full detail.
+ */
+export function legTracks(leg: Leg, locale: string): Track[] {
+  return routeCountries(leg).flatMap((country) => {
+    const tracks = routeTracks(country, locale);
+    if (!tracks.length) return [];
+    return [
+      {
+        label: localName(country.slug, country.name, locale),
+        lines: tracks.flatMap((t) => t.lines.map((line) => thin(line, 0.003))),
+        info: tracks.flatMap((t) => t.info),
+        ...(tracks.some((t) => t.planned) && { planned: true }),
+      },
+    ];
   });
 }

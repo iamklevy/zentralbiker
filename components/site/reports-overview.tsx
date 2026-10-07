@@ -26,7 +26,7 @@ function legIntros(locale: string): Record<string, string> {
 
 /**
  * "Berichte" as a travel diary, like Home and the portraits: each leg of the
- * journey is an entry with its photo taped in on the left and, beside it,
+ * journey is an entry with its photo set in on the left and, beside it,
  * what the leg was about, every country it crossed, and the way into its
  * report.
  */

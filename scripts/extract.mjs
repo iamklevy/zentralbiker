@@ -15,6 +15,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { EXCLUDED_PATHS, isExcludedAsset, withoutExcluded } from "./excluded.mjs";
+import { germanNames } from "./german-names.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const MIRROR = process.argv[2];
@@ -332,6 +333,7 @@ for (const oldPath of Object.keys(manifest.pages)) {
   dropExcludedLinks(body);
   unwrapLayoutTables(body);
   stripEmpties(body);
+  germanNames(body);
 
   const text = body.text.replace(/\s+/g, " ").trim();
   out[oldPath] = {

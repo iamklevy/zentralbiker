@@ -1025,7 +1025,7 @@ section:first-of-type > .zb-overview-heading {
 
 /*
  * The home page as a page from a travel diary (components/site/home-journal):
- * the lighthouse taped in as a photo print beside the essay, its opening
+ * the lighthouse set in as a photo print beside the essay, its opening
  * line set large in a book face, the motto as a sign-off, and the three legs
  * as prints in the gallery style.
  */
@@ -1039,7 +1039,7 @@ section:first-of-type > .zb-overview-heading {
   align-items: start;
 }
 
-/* The lighthouse: a print on the page, held by a strip of tape. */
+/* The lighthouse: a print on the page. */
 .zb-journal-photo {
   position: relative;
   margin: 18px 0 0;
@@ -1049,17 +1049,6 @@ section:first-of-type > .zb-overview-heading {
     0 1px 2px rgba(0, 0, 0, 0.35),
     0 10px 24px rgba(0, 0, 0, 0.25);
   transform: rotate(-2deg);
-}
-.zb-journal-photo::before {
-  content: "";
-  position: absolute;
-  top: -13px;
-  left: 50%;
-  width: 104px;
-  height: 28px;
-  background: rgb(236 226 200 / 0.78);
-  box-shadow: 0 1px 2px rgb(0 0 0 / 0.15);
-  transform: translateX(-50%) rotate(3deg);
 }
 .zb-content .zb-journal-photo img {
   display: block;

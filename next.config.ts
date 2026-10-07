@@ -4,6 +4,9 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 const nextConfig: NextConfig = {
+  // When this version of the site was built: every push deploys a new build,
+  // so /info's "Last updated" follows it without anyone touching the text.
+  env: { BUILD_TIME: new Date().toISOString() },
   images: {
     // Gallery originals are large scans/photos; these widths keep the
     // lightbox sharp on retina without shipping the full 2–4 MP file.

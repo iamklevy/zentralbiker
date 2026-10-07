@@ -198,7 +198,7 @@ export async function GearIndex({ locale }: { locale: string }) {
     <div className="zb-gear">
       <SheetHead code={`${SLUGS.length} × ${t("gear.sheet")}`} title={t("nav.ausruestung")} kicker={t("gear.overview")} />
 
-      {/* Photo left, text right, the photo taped in as a print: the same
+      {/* Photo left, text right, the photo set in as a print: the same
           pattern as Home and the two portraits. */}
       <div className={index.image ? "zb-gear-intro" : "zb-gear-intro zb-gear-intro--text"}>
         {index.image && (
