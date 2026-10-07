@@ -15,6 +15,9 @@ const labelFont = Atkinson_Hyperlegible_Next({
   subsets: ["latin", "latin-ext"],
   variable: "--font-label",
   display: "swap",
+  // next/font has no metrics for this face, so it can't build an adjusted
+  // fallback; globals.css falls back to Verdana instead.
+  adjustFontFallback: false,
 });
 
 export function generateStaticParams() {

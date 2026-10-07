@@ -205,6 +205,7 @@
     "ueber uns": "About us",
     "Über uns": "About us",
     "Trekkingrad": "Touring bike",
+    "Neuseeland": "New Zealand",
     "Schlafen": "Sleeping",
     "Kochen": "Cooking",
     "Kleider": "Clothing",
@@ -308,7 +309,11 @@
       "up": "Climb",
       "down": "Descent",
       "height": "Altitude",
-      "hint": "Zoom with the mouse wheel, drag to move. Click a day's stretch for its figures."
+      "hint": "Zoom with the mouse wheel, drag to move. Click a day's stretch for its figures.",
+      "hint_planned": "No GPS recording exists for this country: the route is drawn along the roads between the stops, so it is approximate. Click a stretch for its distance.",
+      "straight": "No road: by train or boat",
+      "hint_leg": "Zoom with the mouse wheel, drag to move. Pick a country above, or click a day's stretch for its figures.",
+      "hint_planned_leg": "Pick a country above, or click a stretch for its figures. Where there was no GPS recording, the route is drawn along the roads between the stops and is approximate."
     }
   }
 }

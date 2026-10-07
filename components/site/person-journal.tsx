@@ -32,7 +32,7 @@ export const TRAVELLERS: Record<
 
 /**
  * A traveller's portrait page in the travel-diary style (see HomeJournal):
- * their photo taped in as a print, their name, their motto set large, the
+ * their photo set in as a print, their name, their motto set large, the
  * text, signed by the partner who wrote it, and a print of that partner.
  */
 export async function PersonJournal({ slug, locale }: { slug: TravellerSlug; locale: string }) {
