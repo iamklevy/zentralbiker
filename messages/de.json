@@ -258,7 +258,11 @@
       "up": "Aufstieg",
       "down": "Abstieg",
       "height": "Höhe",
-      "hint": "Mit dem Mausrad zoomen, ziehen zum Verschieben. Einen Tagesabschnitt anklicken für seine Daten."
+      "hint": "Mit dem Mausrad zoomen, ziehen zum Verschieben. Einen Tagesabschnitt anklicken für seine Daten.",
+      "hint_planned": "Für dieses Land gibt es keine GPS-Aufzeichnung: Die Strecke ist entlang der Strassen zwischen den Etappenorten gezeichnet und daher ungefähr. Einen Abschnitt anklicken für seine Distanz.",
+      "straight": "Keine Strasse: mit Zug oder Boot",
+      "hint_leg": "Mit dem Mausrad zoomen, ziehen zum Verschieben. Oben ein Land wählen oder einen Tagesabschnitt anklicken für seine Daten.",
+      "hint_planned_leg": "Oben ein Land wählen oder einen Abschnitt anklicken für seine Daten. Wo es keine GPS-Aufzeichnung gibt, ist die Strecke entlang der Strassen zwischen den Etappenorten gezeichnet und daher ungefähr."
     }
   }
 }

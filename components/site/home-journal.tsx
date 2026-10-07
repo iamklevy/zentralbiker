@@ -13,7 +13,7 @@ export const LEG_PHOTOS: Record<string, string> = {
 };
 
 /**
- * The home page as a page from a travel diary: the lighthouse taped in as a
+ * The home page as a page from a travel diary: the lighthouse set in as a
  * photo print beside the essay, the motto as a sign-off, and the three legs
  * of the trip as prints leading to their reports.
  */

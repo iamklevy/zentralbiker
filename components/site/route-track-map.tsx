@@ -17,6 +17,10 @@ export interface TrackMapLabels {
   down: string;
   height: string;
   hint: string;
+  /** The hint of a routed map, which says it is only an approximation. */
+  hint_planned: string;
+  /** A hop drawn straight: no road (train, ferry). */
+  straight: string;
 }
 
 const esc = (s: string) => s.replace(/[&<>"]/g, (c) => `&#${c.charCodeAt(0)};`);
@@ -43,9 +47,12 @@ function infoHtml(info: DayInfo, section: string, labels: TrackMapLabels, locale
         timeZone: "UTC",
       })
     : "";
+  const hop = info.from && info.to ? `${info.from} – ${info.to}` : "";
   return `<div class="zb-day">
     ${section ? `<p class="zb-day-section">${esc(section)}</p>` : ""}
     ${date ? `<p class="zb-day-date">${esc(date)}</p>` : ""}
+    ${hop ? `<p class="zb-day-date">${esc(hop)}</p>` : ""}
+    ${info.straight ? `<p class="zb-day-section">${esc(labels.straight)}</p>` : ""}
     <dl>${rows
       .filter(([, v]) => v)
       .map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v!)}</dd></div>`)
@@ -98,7 +105,8 @@ export function RouteTrackMap({ tracks, labels, locale }: { tracks: Track[]; lab
             all.push(...line);
             // the line you see ignores the mouse: raised on hover it would
             // otherwise cover its hit twin and swallow the click
-            const day = L.polyline(line, { ...normal, interactive: false }).addTo(layer);
+            const dashed = track.info[d]?.straight ? { dashArray: "6 8" } : {};
+            const day = L.polyline(line, { ...normal, ...dashed, interactive: false }).addTo(layer);
             // a wide invisible twin makes the thin line easy to hit
             const hit = L.polyline(line, { opacity: 0, weight: 18 }).addTo(layer);
             const light = (on: boolean) => {
@@ -155,7 +163,7 @@ export function RouteTrackMap({ tracks, labels, locale }: { tracks: Track[]; lab
           ))}
         </div>
       )}
-      <p className="zb-track-hint">{labels.hint}</p>
+      <p className="zb-track-hint">{tracks.some((t) => t.planned) ? labels.hint_planned : labels.hint}</p>
       <div ref={box} className="zb-track-map" role="region" aria-label={labels.title} />
     </div>
   );
