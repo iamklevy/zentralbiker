@@ -24,11 +24,22 @@ export async function HomeJournal({ locale }: { locale: string }) {
   return (
     <div className="zb-journal">
       <div className="zb-journal-entry">
-        <figure className="zb-journal-photo">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={mediaUrl("images/wir/Leuchtturm.jpg")} alt={t("home.photo")} width={319} height={425} />
-          <figcaption>{t("home.photo")}</figcaption>
-        </figure>
+        <div className="zb-journal-side">
+          <figure className="zb-journal-photo">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={mediaUrl("images/wir/Leuchtturm.jpg")} alt={t("home.photo")} width={319} height={425} />
+            <figcaption>{t("home.photo")}</figcaption>
+          </figure>
+
+          {/* Under the lighthouse, in two lines: broken after its comma. */}
+          <p className="zb-journal-motto">
+            {t("home.motto")
+              .split(/(?<=,)\s+/)
+              .map((line, i) => (
+                <span key={i}>{line}</span>
+              ))}
+          </p>
+        </div>
 
         <div className="zb-journal-text">
           <blockquote className="zb-journal-quote">{t("home.quote")}</blockquote>
@@ -36,10 +47,6 @@ export async function HomeJournal({ locale }: { locale: string }) {
             <p key={i}>{p}</p>
           ))}
         </div>
-
-        {/* In the text column, so it centres under the paragraphs rather
-            than across the photo as well. */}
-        <p className="zb-journal-motto">{t("home.motto")}</p>
       </div>
 
       <section className="zb-journal-legs" aria-labelledby="zb-legs-title">

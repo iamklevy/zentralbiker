@@ -1096,18 +1096,18 @@ section:first-of-type > .zb-overview-heading {
   line-height: 1.7;
 }
 
+/* The motto under the lighthouse, a line per half of the sentence. */
 .zb-content .zb-journal-motto {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  grid-column: 2;
-  margin: 0;
+  margin: 34px 0 0;
+  line-height: 1.35;
   color: var(--zb-text);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 22px;
   font-style: italic;
   text-align: center;
+}
+.zb-journal-motto span {
+  display: block;
 }
 
 /* The three legs, as prints leading to their reports. */
@@ -1206,9 +1206,7 @@ section:first-of-type > .zb-overview-heading {
     margin: 18px auto 0;
   }
   .zb-content .zb-journal-motto {
-    gap: 12px;
-    grid-column: auto;
-    margin-top: 12px;
+    margin-top: 28px;
     font-size: 19px;
   }
 }
