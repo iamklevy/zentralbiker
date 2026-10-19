@@ -49,10 +49,17 @@ const NAMES = {
   tadschikistan: "Tadschikistan", kirgistan: "Kirgistan", china: "China",
   laos: "Laos", kambodscha: "Kambodscha", thailand: "Thailand",
   malaysia: "Malaysia", singapur: "Singapur", borneo: "Borneo",
-  bolivia: "Bolivien", chile: "Chile", "new-zealand": "Neuseeland",
+  bolivia: "Bolivien", chile: "Chile/Argentinien", "new-zealand": "Neuseeland",
   rumaenien: "Rumänien", aegypten: "Ägypten", mexico: "Mexico",
   nordamerika: "Nordamerika", suedamerika: "Südamerika",
 };
+
+/**
+ * Entries that cover more than one country. The Oceania leg rode back and
+ * forth across the Andes, and the old site kept Chile and Argentina as one
+ * report, gallery and route ("Chile/Argentinien"); Argentina still counts.
+ */
+const ALSO = { chile: ["argentinien"] };
 
 const nice = (slug) => NAMES[slug] || slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 
@@ -191,6 +198,7 @@ const legs = LEGS.map((leg) => ({
     .map((c) => ({
       ...c,
       name: nice(c.slug),
+      ...(ALSO[c.slug] && { also: ALSO[c.slug] }),
       path: `/berichte/${c.slug}`,
       galleryDir:
         Object.keys(galleries).find((d) => d.startsWith(`4fotos/${String(c.num).padStart(2, "0")}`)) ||
@@ -202,12 +210,13 @@ const legs = LEGS.map((leg) => ({
 writeFileSync(join(GEN, "journey.json"), JSON.stringify({ legs }, null, 1));
 writeFileSync(join(GEN, "galleries.json"), JSON.stringify(galleries, null, 1));
 
-const totalCountries = legs.reduce((n, l) => n + l.countries.length, 0);
+const countryCount = (cs) => cs.reduce((n, c) => n + 1 + (c.also?.length ?? 0), 0);
+const totalCountries = legs.reduce((n, l) => n + countryCount(l.countries), 0);
 const totalPhotos = Object.values(galleries).reduce((n, g) => n + g.count, 0);
 const withThumb = Object.values(galleries).reduce(
   (n, g) => n + g.items.filter((i) => i.thumb !== i.src).length, 0);
 console.log(`journey: ${legs.length} legs, ${totalCountries} countries`);
-legs.forEach((l) => console.log(`   ${l.name.padEnd(10)} ${l.countries.length} countries`));
+legs.forEach((l) => console.log(`   ${l.name.padEnd(10)} ${countryCount(l.countries)} countries`));
 console.log(`galleries: ${Object.keys(galleries).length}, ${totalPhotos} photos (${withThumb} with a real thumbnail)`);
 const noGallery = legs.flatMap((l) => l.countries).filter((c) => !c.galleryDir);
 if (noGallery.length) console.log(`countries without a gallery: ${noGallery.map((c) => c.slug).join(", ")}`);

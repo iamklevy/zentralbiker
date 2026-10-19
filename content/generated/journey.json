@@ -319,7 +319,10 @@
      "report": "3berichte/332chile.html",
      "gallery": "4fotos/432chile.html",
      "route": "5route/532chile.html",
-     "name": "Chile",
+     "name": "Chile/Argentinien",
+     "also": [
+      "argentinien"
+     ],
      "path": "/berichte/chile",
      "galleryDir": "4fotos/432photos_chile"
     },
