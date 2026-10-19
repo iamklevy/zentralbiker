@@ -16,8 +16,10 @@ const labelFont = Atkinson_Hyperlegible_Next({
   variable: "--font-label",
   display: "swap",
   // next/font has no metrics for this face, so it can't build an adjusted
-  // fallback; globals.css falls back to Verdana instead.
+  // fallback. Turbopack still looks the metrics up (and warns) unless the
+  // fallback is given explicitly, so name the same one globals.css uses.
   adjustFontFallback: false,
+  fallback: ["Verdana", "sans-serif"],
 });
 
 export function generateStaticParams() {

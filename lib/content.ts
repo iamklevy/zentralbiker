@@ -27,6 +27,8 @@ export interface Country {
   route?: string;
   gallery?: string;
   galleryDir: string | null;
+  /** Other countries this entry covers, e.g. Chile's "argentinien". */
+  also?: string[];
 }
 
 export interface Leg {
@@ -104,6 +106,11 @@ export function pagesInSection(section: string): MigratedPage[] {
 
 export const ALL_COUNTRIES: Country[] = LEGS.flatMap((l) => l.countries);
 
+/** How many countries a list of entries covers ("Chile/Argentinien" is two). */
+export function countryCount(countries: Country[]): number {
+  return countries.reduce((n, c) => n + 1 + (c.also?.length ?? 0), 0);
+}
+
 export function getLeg(slug: string): Leg | null {
   return LEGS.find((l) => l.slug === slug) ?? null;
 }
@@ -153,7 +160,7 @@ export const COUNTRY_GALLERIES = ALL_GALLERIES.filter((g) => !g.slug.startsWith(
 /* ------------------------------------------------------------- site stats */
 
 export const SITE_STATS = {
-  countries: ALL_COUNTRIES.length,
+  countries: countryCount(ALL_COUNTRIES),
   reports: ALL_COUNTRIES.filter((c) => c.report).length,
   photos: ALL_GALLERIES.reduce((n, g) => n + g.count, 0),
   legs: LEGS.length,
@@ -176,6 +183,7 @@ const NAMES_EN: Record<string, string> = {
   argentinien: "Argentina",
   bolivien: "Bolivia",
   bolivia: "Bolivia",
+  chile: "Chile/Argentina",
   kalifornien: "California",
   kambodscha: "Cambodia",
   kirgistan: "Kyrgyzstan",

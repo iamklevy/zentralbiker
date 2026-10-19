@@ -12,12 +12,12 @@ const SLUGS = Object.keys(GEAR_CODES);
 
 /**
  * Overview pictures for the categories whose page has none (both are lists).
- * The passport is public domain (fedpol); the jacket is CC BY-SA 4.0 and is
- * credited under the tiles — see Wikimedia Commons for both originals.
+ * The passport is public domain (fedpol, Wikimedia Commons); the jacket is the
+ * GOREWEAR product shot from bike-discount.de, credited under the tiles.
  */
 const TILE_IMAGES: Record<string, GearImage> = {
-  kleider: { src: "images/ausruestung/mammut-jacke.jpg", width: 384, height: 480, alt: "" },
-  administration: { src: "images/ausruestung/schweizer-pass.jpg", width: 338, height: 480, alt: "" },
+  kleider: { src: "images/ausruestung/gorewear-spinshift-jacke.png", width: 363, height: 480, alt: "" },
+  administration: { src: "images/ausruestung/schweizer-pass.png", width: 338, height: 480, alt: "" },
 };
 
 function gearTitle(slug: string, locale: string) {
@@ -147,13 +147,14 @@ function GearBlockView({ block, title, t }: { block: GearBlock; title: string; t
 }
 
 /** Sheet header: the kicker (with the overview's sheet count), the name, its size. */
-function SheetHead({ code, title, meta, kicker }: { code?: string; title: string; meta?: string; kicker: string }) {
+function SheetHead({ title, meta, kicker }: { title: string; meta?: string; kicker?: string }) {
   return (
     <header className="zb-gear-head">
-      <p className="zb-gear-kicker">
-        <span>{kicker}</span>
-        {code && <span className="zb-gear-code">{code}</span>}
-      </p>
+      {kicker && (
+        <p className="zb-gear-kicker">
+          <span>{kicker}</span>
+        </p>
+      )}
       <h1>{title}</h1>
       {meta && <p className="zb-gear-meta">{meta}</p>}
     </header>
@@ -180,7 +181,7 @@ export async function GearSheet({ slug, locale }: { slug: string; locale: string
 
   return (
     <div className="zb-gear">
-      <SheetHead title={title} meta={meta} kicker={t("gear.sheet")} />
+      <SheetHead title={title} meta={meta} />
       {blocks.map((b, i) => (
         <GearBlockView key={i} block={b} title={title} t={t} />
       ))}
@@ -196,7 +197,7 @@ export async function GearIndex({ locale }: { locale: string }) {
 
   return (
     <div className="zb-gear">
-      <SheetHead code={`${SLUGS.length} × ${t("gear.sheet")}`} title={t("nav.ausruestung")} kicker={t("gear.overview")} />
+      <SheetHead title={t("nav.ausruestung")} kicker={t("gear.overview")} />
 
       {/* Photo left, text right, the photo set in as a print: the same
           pattern as Home and the two portraits. */}
@@ -239,12 +240,8 @@ export async function GearIndex({ locale }: { locale: string }) {
       </ul>
       <p className="zb-gear-credit">
         {t("gear.photo_credit")}{" "}
-        <a href="https://commons.wikimedia.org/wiki/File:Mammut,_OutDoor_2018,_Friedrichshafen_(1X7A0185).jpg" target="_blank" rel="noopener noreferrer">
-          Matti Blume
-        </a>
-        ,{" "}
-        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">
-          CC BY-SA 4.0
+        <a href="https://www.bike-discount.de/de/gorewear-spinshift-gore-tex-regenjacke-2" target="_blank" rel="noopener noreferrer">
+          GOREWEAR / bike-discount.de
         </a>
       </p>
     </div>

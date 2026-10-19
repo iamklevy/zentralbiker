@@ -335,12 +335,16 @@ for (const oldPath of Object.keys(manifest.pages)) {
   stripEmpties(body);
   germanNames(body);
 
-  const text = body.text.replace(/\s+/g, " ").trim();
+  const text = body.text.replace(/\s+/g, " ").replace(" (wie abgebildet)", "").trim();
   out[oldPath] = {
     oldPath,
     path: newPath(oldPath),
     title: (manifest.pages[oldPath].title || "").replace(/\s+/g, " ").trim(),
-    html: body.innerHTML.replace(/\n{3,}/g, "\n\n").trim(),
+    html: body.innerHTML
+      .replace(/\n{3,}/g, "\n\n")
+      // the bike's weight said "17,9 kg (wie abgebildet)": the owners dropped it
+      .replace(" (wie abgebildet)", "")
+      .trim(),
     text,
     words: text ? text.split(" ").length : 0,
     images: [...new Set(ctx.images)].filter((i) => !isExcludedAsset(i)),
