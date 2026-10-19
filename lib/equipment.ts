@@ -121,17 +121,58 @@ function lines(node: Node, skip?: (el: HTMLElement) => boolean): string[] {
   return out;
 }
 
+/**
+ * Transparent cut-outs of the product photos (background removed, trimmed),
+ * kept beside the originals in images/web as <name>.png, with their sizes.
+ * The pharmacy photo is a whole room, so it stays as it is.
+ */
+const CUTOUTS: Record<string, [number, number]> = {
+  aarios: [364, 256],
+  diverses_fertig: [235, 291],
+  edge810: [95, 57],
+  ersatzteile: [265, 282],
+  faltschuessel: [134, 99],
+  gitzo: [152, 33],
+  hilleberg: [242, 101],
+  ipod: [95, 54],
+  katadyn: [64, 120],
+  kueche1: [242, 138],
+  lenovo: [143, 96],
+  Lumix_G6: [164, 94],
+  necessair: [189, 325],
+  "Omnifuel-Small": [248, 102],
+  ortlieb_wassersack: [134, 82],
+  petzl: [101, 64],
+  PrimusLiTech: [210, 120],
+  silkTravelLiner: [116, 68],
+  sony_hx50v: [108, 89],
+  "synmat-7-mw": [221, 69],
+  therm_a_rest_z_lite: [198, 75],
+  vib1000: [196, 105],
+  werkzeug: [213, 163],
+  Werkzeug_kl2: [197, 67],
+};
+
 /** The photos in an element, without the sign pictures and the "to top" arrow. */
 function images(el: HTMLElement): GearImage[] {
   return el
     .querySelectorAll("img")
     .filter((img) => !sign(img) && !/top\.gif$/i.test(img.getAttribute("src") ?? ""))
-    .map((img) => ({
-      src: (img.getAttribute("src") ?? "").replace(/^\/media\//, ""),
-      width: Number(img.getAttribute("width")) || undefined,
-      height: Number(img.getAttribute("height")) || undefined,
-      alt: img.getAttribute("alt") ?? "",
-    }));
+    .map((img) => {
+      const src = (img.getAttribute("src") ?? "").replace(/^\/media\//, "");
+      const alt = img.getAttribute("alt") ?? "";
+      const cut = /^images\/web\/([^/]+)\.jpg$/.exec(src)?.[1];
+      if (cut && CUTOUTS[cut]) {
+        const [width, height] = CUTOUTS[cut];
+        return { src: `images/web/${cut}.png`, width, height, alt };
+      }
+      return {
+        src,
+        width: Number(img.getAttribute("width")) || undefined,
+        height: Number(img.getAttribute("height")) || undefined,
+        alt,
+      };
+    });
 }
 
 /** The product name: a bold span opening its paragraph. */

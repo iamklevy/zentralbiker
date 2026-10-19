@@ -79,13 +79,41 @@
     }
   },
   "gear": {
-    "sheet": "Data sheet",
     "overview": "Overview",
     "items": "{count, plural, =1 {# item} other {# items}}",
     "entries": "{count, plural, =1 {# entry} other {# entries}}",
     "weight": "Weight",
     "also": "Also",
     "photo_credit": "Clothing photo:"
+  },
+  "info": {
+    "kicker": "Travel info",
+    "updated": "Last updated",
+    "open": "Open",
+    "pdf": "PDF",
+    "external": "opens in a new window",
+    "pages": {
+      "impfung": { "lead": "Requirements, recommendations and health risks along our route.", "count": "{count, plural, =1 {# entry} other {# entries}}" },
+      "visa": { "lead": "Entry requirements for Swiss citizens, country by country.", "count": "{count, plural, =1 {# country} other {# countries}}" },
+      "fluege": { "lead": "How the bikes got onto the plane – and what it takes.", "count": "{count, plural, =1 {# flight} other {# flights}}" },
+      "statistiken": { "lead": "Countries, illnesses and breakdowns on the road, in figures.", "count": "{count, plural, =1 {# PDF} other {# PDFs}}" },
+      "testberichte": { "lead": "Our equipment, tested over the long haul.", "count": "{count, plural, =1 {# review} other {# reviews}}" },
+      "sponsoring": { "lead": "The companies that supported our journeys.", "count": "{count, plural, =1 {# sponsor} other {# sponsors}}" },
+      "links": { "lead": "Partners, planning tips and travellers we met on the road.", "count": "{count, plural, =1 {# link} other {# links}}" }
+    },
+    "visa": {
+      "free": "No visa",
+      "visa": "Visa required",
+      "arrival": "Visa on arrival",
+      "passport": "Passport valid ≥ {months} mo.",
+      "stay": "{days} days",
+      "groups": { "0": "America", "1": "Asia & Oceania" },
+      "report": "Report"
+    },
+    "health": { "countries": "Applies to" },
+    "flights": { "plan": "Flight plan", "from": "From", "to": "To", "flight": "Flight", "allowance": "Free baggage" },
+    "sponsoring": { "cta": "Get in touch" },
+    "links": { "partners": "Partners" }
   },
   "section": {
     "ausruestung": {

@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { ArrowLeft, ArrowRight, BedDouble, Bus, House, Maximize2, Stamp, Tent, TrainFront } from "lucide-react";
 
 import { getPathname } from "@/i18n/navigation";
-import { LEGS, legOf, localName, type Country, type Leg } from "@/lib/content";
+import { countryCount, LEGS, legOf, localName, type Country, type Leg } from "@/lib/content";
 import { mediaUrl } from "@/lib/media";
 import { RouteTrackMap, type TrackMapLabels } from "@/components/site/route-track-map";
 import {
@@ -66,7 +66,7 @@ export async function RouteOverview({ locale }: { locale: string }) {
   const t = await getTranslations({ locale });
   const cards = legCards(locale);
   const total = LEGS.reduce((n, leg) => n + legKm(leg, locale), 0);
-  const countries = LEGS.reduce((n, leg) => n + routeCountries(leg).length, 0);
+  const countries = LEGS.reduce((n, leg) => n + countryCount(routeCountries(leg)), 0);
 
   return (
     <div className="zb-journal zb-reports">
@@ -93,7 +93,7 @@ export async function RouteOverview({ locale }: { locale: string }) {
             )}
             <div className="zb-journal-text">
               <p className="zb-journal-kicker">
-                {t("leg.countries", { count: list.length })} · {formatKm(legKm(leg, locale), locale)} km
+                {t("leg.countries", { count: countryCount(list) })} · {formatKm(legKm(leg, locale), locale)} km
               </p>
               <h2 className="zb-reports-title">
                 <a href={href}>{name}</a>
@@ -137,7 +137,7 @@ export async function RouteLeg({ leg, locale }: { leg: Leg; locale: string }) {
       <Stats
         items={[
           { value: formatKm(legKm(leg, locale), locale), label: t("route.stat.km") },
-          { value: String(list.length), label: t("route.stat.countries") },
+          { value: String(countryCount(list.map((l) => l.country))), label: t("route.stat.countries") },
           { value: stages ? String(stages) : "", label: t("route.stat.stages") },
         ]}
       />

@@ -79,13 +79,41 @@
     }
   },
   "gear": {
-    "sheet": "Datenblatt",
     "overview": "Übersicht",
     "items": "{count, plural, =1 {# Artikel} other {# Artikel}}",
     "entries": "{count, plural, =1 {# Position} other {# Positionen}}",
     "weight": "Gewicht",
     "also": "Ausserdem",
     "photo_credit": "Foto Kleider:"
+  },
+  "info": {
+    "kicker": "Reiseinfos",
+    "updated": "Letzte Aktualisierung",
+    "open": "Öffnen",
+    "pdf": "PDF",
+    "external": "öffnet in neuem Fenster",
+    "pages": {
+      "impfung": { "lead": "Vorschriften, Empfehlungen und Gesundheitsrisiken auf unserer Route.", "count": "{count, plural, =1 {# Eintrag} other {# Einträge}}" },
+      "visa": { "lead": "Einreisebestimmungen für Schweizer Bürger, Land für Land.", "count": "{count, plural, =1 {# Land} other {# Länder}}" },
+      "fluege": { "lead": "Wie die Velos ins Flugzeug kamen – und was es dazu braucht.", "count": "{count, plural, =1 {# Flug} other {# Flüge}}" },
+      "statistiken": { "lead": "Länder, Krankheiten und Pannen unterwegs, in Zahlen.", "count": "{count, plural, =1 {# PDF} other {# PDFs}}" },
+      "testberichte": { "lead": "Unsere Ausrüstung im Langzeittest.", "count": "{count, plural, =1 {# Bericht} other {# Berichte}}" },
+      "sponsoring": { "lead": "Die Firmen, die unsere Reisen unterstützt haben.", "count": "{count, plural, =1 {# Sponsor} other {# Sponsoren}}" },
+      "links": { "lead": "Partner, Planungstipps und Reisende, die wir unterwegs getroffen haben.", "count": "{count, plural, =1 {# Link} other {# Links}}" }
+    },
+    "visa": {
+      "free": "Ohne Visum",
+      "visa": "Visum nötig",
+      "arrival": "Visum bei Einreise",
+      "passport": "Pass ≥ {months} Mt. gültig",
+      "stay": "{days} Tage",
+      "groups": { "0": "Amerika", "1": "Asien & Ozeanien" },
+      "report": "Bericht"
+    },
+    "health": { "countries": "Betrifft" },
+    "flights": { "plan": "Flugplan", "from": "Von", "to": "Nach", "flight": "Flug", "allowance": "Freigepäck" },
+    "sponsoring": { "cta": "Kontakt aufnehmen" },
+    "links": { "partners": "Partner" }
   },
   "section": {
     "ausruestung": {

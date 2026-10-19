@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { ContentPage } from "@/components/site/content-page";
+import { InfoIndex } from "@/components/site/info";
 import { pageAlternates } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -30,9 +30,7 @@ function lastUpdated(locale: string) {
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  // the old page's "Letzte Aktualisierung:<br> Mittwoch, 20. Mai, 2020 13:32"
-  // (English: "Last updated:<br> …") gets the real date
-  const transform = (html: string) =>
-    html.replace(/((?:Aktualisierung|Last updated):\s*<br>)[\s\S]*?(<\/span>)/, `$1\n${lastUpdated(locale)}$2`);
-  return <ContentPage path="/info" locale={locale} transform={transform} />;
+  // the old page's "Letzte Aktualisierung: Mittwoch, 20. Mai, 2020 13:32"
+  // shows the real date instead
+  return <InfoIndex locale={locale} updated={lastUpdated(locale)} />;
 }

@@ -1098,7 +1098,7 @@ section:first-of-type > .zb-overview-heading {
 
 /* The motto under the lighthouse, a line per half of the sentence. */
 .zb-content .zb-journal-motto {
-  margin: 34px 0 0;
+  margin: 52px 0 0;
   line-height: 1.35;
   color: var(--zb-text);
   font-family: Georgia, "Times New Roman", serif;
@@ -1206,7 +1206,7 @@ section:first-of-type > .zb-overview-heading {
     margin: 18px auto 0;
   }
   .zb-content .zb-journal-motto {
-    margin-top: 28px;
+    margin-top: 40px;
     font-size: 19px;
   }
 }
@@ -1225,13 +1225,6 @@ section:first-of-type > .zb-overview-heading {
   gap: 22px;
   padding-top: 4px;
 }
-.zb-gear-code {
-  color: var(--color-accent);
-  font-family: var(--zb-mono);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-}
-
 .zb-gear-head {
   padding-bottom: 14px;
   border-bottom: 2px solid var(--zb-text);
@@ -1292,8 +1285,8 @@ section:first-of-type > .zb-overview-heading {
   gap: 6px;
   padding: 3px 10px;
   border-radius: 999px;
-  background: var(--color-accent);
-  color: #ffffff;
+  background: var(--zb-page);
+  color: var(--zb-text);
   font-family: var(--zb-mono);
   font-size: 12.5px;
   white-space: nowrap;
@@ -1312,7 +1305,7 @@ section:first-of-type > .zb-overview-heading {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 12px;
   padding: 18px;
   border-right: 1px solid var(--zb-sheet-line);
@@ -1584,6 +1577,706 @@ a.zb-gear-tile:focus-visible {
   }
   .zb-content ul.zb-gear-tiles {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+/* --------------------------------------------------------------- info */
+
+/*
+ * The Info pages (components/site/info) in the equipment's data-sheet look:
+ * the same head, dark-banded cards on the sheet colour, labels in small
+ * capitals and figures in the monospace face. Links inside cards and tiles
+ * keep the card's colours; the page's red only marks what is clickable.
+ */
+.zb-content .zb-info-head .zb-gear-kicker {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.zb-info-meta {
+  color: var(--zb-text);
+  letter-spacing: 0.04em;
+}
+.zb-content .zb-info-lead {
+  max-width: 62ch;
+  margin: 8px 0 0;
+  color: var(--zb-text-2);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.4;
+}
+.zb-content .zb-info-intro {
+  max-width: 70ch;
+  margin: 0;
+  line-height: 1.65;
+}
+.zb-info-section {
+  display: grid;
+  gap: 14px;
+}
+.zb-content .zb-info-h2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 14px;
+  margin: 10px 0 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--zb-rule);
+  font-size: 20px;
+}
+.zb-info-h2-meta,
+.zb-info-count {
+  font-family: var(--zb-mono);
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: 0.04em;
+}
+.zb-info-h2-meta {
+  color: var(--zb-text-2);
+}
+.zb-info-count {
+  color: rgb(255 255 255 / 0.75);
+}
+.zb-content .zb-gear-card-head h3 {
+  flex: 1 1 auto;
+  margin: 0;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+/* the overview: last update beside the photo, then a tile per page */
+.zb-content .zb-info-updated {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  align-self: center;
+  padding: 16px 18px;
+  border-left: 4px solid var(--color-accent);
+  border-radius: 4px;
+  background: var(--zb-sheet);
+  color: var(--zb-sheet-text);
+}
+.zb-info-updated svg {
+  margin-top: 2px;
+  color: var(--color-accent);
+}
+.zb-content .zb-info-updated p {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+}
+.zb-info-updated span {
+  color: var(--zb-sheet-muted);
+  font-size: 11.5px;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.zb-info-updated time {
+  font-family: var(--zb-mono);
+  font-size: 14px;
+}
+.zb-content ul.zb-info-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.zb-content a.zb-info-tile:link,
+.zb-content a.zb-info-tile:visited,
+.zb-content a.zb-info-tile:hover {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  height: 100%;
+  padding: 16px;
+  border: 1px solid var(--zb-sheet-line);
+  border-radius: 6px;
+  background: var(--zb-sheet);
+  color: var(--zb-sheet-text);
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.zb-content a.zb-info-tile:hover,
+.zb-content a.zb-info-tile:focus-visible {
+  border-color: var(--color-accent);
+  box-shadow: 0 10px 24px -14px rgb(0 0 0 / 0.45);
+  outline: none;
+  transform: translateY(-2px);
+}
+.zb-info-tile-icon {
+  display: grid;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--zb-sheet-head);
+  color: #ffffff;
+}
+.zb-info-tile-body {
+  display: grid;
+  flex: 1 1 auto;
+  gap: 4px;
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+.zb-info-tile-body strong {
+  font-size: 16px;
+}
+.zb-info-tile-meta {
+  color: var(--zb-sheet-muted);
+  font-family: var(--zb-mono);
+  font-size: 12px;
+}
+.zb-info-tile-arrow {
+  flex: none;
+  margin-top: 12px;
+  color: var(--zb-sheet-muted);
+  transition:
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+.zb-info-tile:hover .zb-info-tile-arrow {
+  color: var(--color-accent);
+  transform: translateX(3px);
+}
+
+/* visa: a status per country, the tally of them up top */
+.zb-content ul.zb-info-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.zb-visa-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+.zb-visa-status b {
+  font-family: var(--zb-mono);
+}
+.zb-visa-status--free {
+  background: var(--zb-page-2);
+  color: var(--zb-text);
+}
+.zb-visa-status--visa {
+  background: var(--color-accent);
+  color: #ffffff;
+}
+.zb-visa-status--arrival {
+  border-color: currentColor;
+  border-style: dashed;
+  color: var(--zb-text);
+}
+.zb-gear-card-head .zb-visa-status--arrival {
+  color: #ffffff;
+}
+.zb-content ul.zb-visa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.zb-visa-card {
+  display: flex;
+  flex-direction: column;
+}
+.zb-visa-body {
+  display: grid;
+  flex: 1 1 auto;
+  gap: 10px;
+  align-content: start;
+  padding: 14px 16px 16px;
+}
+.zb-content .zb-visa-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+}
+.zb-visa-facts span {
+  padding: 2px 8px;
+  border: 1px solid var(--zb-sheet-line);
+  border-radius: 4px;
+  background: var(--zb-sheet-stripe);
+  font-family: var(--zb-mono);
+  font-size: 12px;
+}
+.zb-content .zb-visa-rules {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.zb-content a.zb-info-more:link,
+.zb-content a.zb-info-more:visited {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  justify-self: start;
+  margin-top: auto;
+  color: var(--zb-link);
+  font-size: 13px;
+  font-weight: bold;
+}
+.zb-content a.zb-info-more:hover {
+  color: var(--zb-link);
+  text-decoration: underline;
+}
+
+/* vaccinations: who it concerns, then disease | advice */
+.zb-health-countries {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--zb-sheet-line);
+}
+.zb-content .zb-health-countries p {
+  margin: 0 0 8px;
+  color: var(--zb-sheet-muted);
+  font-size: 11.5px;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.zb-content .zb-health-countries ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.zb-health-countries li {
+  padding: 2px 9px;
+  border: 1px solid var(--zb-sheet-line);
+  border-radius: 999px;
+  font-size: 12.5px;
+}
+.zb-info-specs {
+  margin: 0;
+  font-size: 14px;
+}
+.zb-info-specs > div {
+  display: grid;
+  grid-template-columns: minmax(150px, 30%) minmax(0, 1fr);
+  gap: 16px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--zb-sheet-line);
+}
+.zb-info-specs > div:last-child {
+  border-bottom: 0;
+}
+.zb-info-specs > div:nth-child(even) {
+  background: var(--zb-sheet-stripe);
+}
+.zb-info-specs dt {
+  display: grid;
+  gap: 2px;
+  align-content: start;
+  font-weight: bold;
+  line-height: 1.45;
+}
+.zb-info-specs dt span {
+  color: var(--zb-sheet-muted);
+  font-family: var(--zb-mono);
+  font-size: 11.5px;
+  font-weight: normal;
+}
+.zb-info-specs dd {
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* flights: the bookings as an itinerary, then the story */
+.zb-content .zb-flight-plan ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.zb-flight-plan li {
+  display: grid;
+  grid-template-columns: minmax(150px, 30%) minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 11px 16px;
+  border-bottom: 1px dashed var(--zb-sheet-line);
+}
+.zb-flight-plan li:last-child {
+  border-bottom: 0;
+}
+.zb-flight-when {
+  color: var(--zb-sheet-muted);
+  font-family: var(--zb-mono);
+  font-size: 12.5px;
+}
+.zb-flight-leg {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.zb-flight-leg svg {
+  color: var(--color-accent);
+}
+.zb-flight-number {
+  padding: 2px 9px;
+  border-radius: 4px;
+  background: var(--zb-sheet-head);
+  color: #ffffff;
+  font-family: var(--zb-mono);
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+.zb-info-article {
+  display: grid;
+  gap: 16px;
+  max-width: 70ch;
+  line-height: 1.65;
+}
+.zb-content .zb-info-article p {
+  margin: 0;
+}
+.zb-content ol.zb-flight-steps {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+.zb-flight-steps li {
+  position: relative;
+  padding-left: 38px;
+  counter-increment: step;
+}
+.zb-flight-steps li::before {
+  content: counter(step);
+  position: absolute;
+  top: -1px;
+  left: 0;
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-family: var(--zb-mono);
+  font-size: 13px;
+}
+.zb-content ul.zb-flight-questions {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 12px 16px;
+  border: 1px dashed var(--zb-rule);
+  border-radius: 6px;
+  list-style: none;
+}
+.zb-flight-questions li {
+  position: relative;
+  padding-left: 22px;
+}
+.zb-flight-questions li::before {
+  content: "?";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-family: var(--zb-mono);
+  font-weight: bold;
+}
+.zb-flight-allowance {
+  padding: 14px 16px;
+  border-left: 4px solid var(--color-accent);
+  border-radius: 4px;
+  background: var(--zb-sheet);
+  color: var(--zb-sheet-text);
+}
+.zb-content .zb-flight-allowance p {
+  margin: 0 0 6px;
+  color: var(--zb-sheet-muted);
+  font-size: 11.5px;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.zb-content .zb-flight-allowance ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--zb-mono);
+  font-size: 14px;
+}
+.zb-flight-quote {
+  margin: 0;
+  padding: 4px 0 4px 20px;
+  border-left: 2px solid var(--zb-text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.55;
+}
+.zb-flight-quote figcaption {
+  margin-top: 8px;
+  color: var(--zb-text-2);
+  font-family: var(--zb-mono);
+  font-size: 12px;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* statistics and product tests: download sheets */
+.zb-content ul.zb-stat-grid,
+.zb-content ul.zb-review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.zb-content ul.zb-review-grid {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.zb-stat-card {
+  display: flex;
+  flex-direction: column;
+}
+.zb-stat-body {
+  display: grid;
+  gap: 10px;
+  padding: 12px 14px 14px;
+}
+.zb-content .zb-stat-body h2 {
+  margin: 0;
+  font-size: 15px;
+}
+.zb-content .zb-stat-body ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.zb-content a.zb-info-download:link,
+.zb-content a.zb-info-download:visited,
+.zb-content a.zb-info-download:hover {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border: 1px solid var(--zb-sheet-line);
+  border-radius: 999px;
+  background: var(--zb-sheet-stripe);
+  color: var(--zb-sheet-text);
+  font-size: 13.5px;
+  transition: border-color 0.15s ease;
+}
+.zb-content a.zb-info-download:hover,
+.zb-content a.zb-info-download:focus-visible {
+  border-color: var(--color-accent);
+  outline: none;
+}
+.zb-info-download svg {
+  color: var(--color-accent);
+}
+.zb-info-download-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--zb-sheet-muted);
+  font-family: var(--zb-mono);
+  font-size: 11.5px;
+}
+.zb-content a.zb-review-tile:link,
+.zb-content a.zb-review-tile:visited,
+.zb-content a.zb-review-tile:hover,
+.zb-content a.zb-logo-tile:link,
+.zb-content a.zb-logo-tile:visited,
+.zb-content a.zb-logo-tile:hover {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--zb-sheet-line);
+  border-radius: 6px;
+  background: var(--zb-sheet);
+  color: var(--zb-sheet-text);
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.zb-content a.zb-review-tile:hover,
+.zb-content a.zb-review-tile:focus-visible,
+.zb-content a.zb-logo-tile:hover,
+.zb-content a.zb-logo-tile:focus-visible {
+  border-color: var(--color-accent);
+  box-shadow: 0 10px 24px -14px rgb(0 0 0 / 0.45);
+  outline: none;
+  transform: translateY(-2px);
+}
+.zb-review-photo {
+  aspect-ratio: 189 / 120;
+  overflow: hidden;
+  border-bottom: 1px solid var(--zb-sheet-line);
+  background: #ffffff;
+}
+.zb-content .zb-review-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.zb-review-body {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px 12px;
+}
+.zb-review-body strong {
+  font-size: 14.5px;
+  line-height: 1.35;
+}
+
+/* sponsors and partners: a wall of logos on the old site's grey, in both
+   themes: the sponsors' logos are white cut-outs made for it, and the
+   partners' have it built in */
+.zb-content ul.zb-logo-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.zb-logo-img {
+  display: grid;
+  height: 110px;
+  place-items: center;
+  padding: 14px 18px;
+  background: #999999;
+}
+.zb-content .zb-logo-img img {
+  max-width: 100%;
+  max-height: 82px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.zb-logo-host {
+  padding: 7px 12px;
+  border-top: 1px solid var(--zb-sheet-line);
+  color: var(--zb-sheet-muted);
+  font-family: var(--zb-mono);
+  font-size: 11.5px;
+  overflow-wrap: anywhere;
+}
+.zb-content .zb-info-cta {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 22px;
+  border-radius: 6px;
+  background: var(--zb-sheet);
+  color: var(--zb-sheet-text);
+}
+.zb-info-cta svg {
+  color: var(--color-accent);
+}
+.zb-content .zb-info-cta p {
+  max-width: 62ch;
+  margin: 0 0 14px;
+  line-height: 1.6;
+}
+
+/* links: a card per list, a row per link with its site */
+.zb-link-lists {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+.zb-link-lists .zb-link-card:last-child {
+  grid-column: 1 / -1;
+}
+.zb-content .zb-link-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.zb-link-card li + li {
+  border-top: 1px solid var(--zb-sheet-line);
+}
+.zb-content a.zb-link-row:link,
+.zb-content a.zb-link-row:visited,
+.zb-content a.zb-link-row:hover {
+  display: grid;
+  gap: 2px;
+  padding: 10px 16px;
+  color: var(--zb-sheet-text);
+  transition: background-color 0.15s ease;
+}
+.zb-content a.zb-link-row:hover,
+.zb-content a.zb-link-row:focus-visible {
+  background: var(--zb-sheet-stripe);
+  outline: none;
+}
+.zb-link-row:hover .zb-link-label {
+  color: var(--color-accent);
+}
+.zb-link-label {
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+.zb-link-host {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--zb-sheet-muted);
+  font-family: var(--zb-mono);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .zb-info-specs > div,
+  .zb-flight-plan li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+  .zb-flight-number {
+    justify-self: start;
+  }
+  .zb-link-lists {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .zb-content ul.zb-visa-grid,
+  .zb-content ul.zb-info-tiles {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .zb-content ul.zb-logo-wall {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   }
 }
 

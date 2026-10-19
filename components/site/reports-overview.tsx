@@ -3,7 +3,7 @@ import { parse } from "node-html-parser";
 import { ArrowRight } from "lucide-react";
 
 import { getPathname } from "@/i18n/navigation";
-import { getPage, LEGS, localName } from "@/lib/content";
+import { countryCount, getPage, LEGS, localName } from "@/lib/content";
 import { mediaUrl } from "@/lib/media";
 import { printPath } from "@/lib/print-path.mjs";
 import { LEG_PHOTOS } from "@/components/site/home-journal";
@@ -33,7 +33,7 @@ function legIntros(locale: string): Record<string, string> {
 export async function ReportsOverview({ locale }: { locale: string }) {
   const t = await getTranslations({ locale });
   const intros = legIntros(locale);
-  const countries = LEGS.reduce((n, leg) => n + leg.countries.length, 0);
+  const countries = LEGS.reduce((n, leg) => n + countryCount(leg.countries), 0);
 
   return (
     <div className="zb-journal zb-reports">
@@ -57,7 +57,7 @@ export async function ReportsOverview({ locale }: { locale: string }) {
             </figure>
 
             <div className="zb-journal-text">
-              <p className="zb-journal-kicker">{t("leg.countries", { count: leg.countries.length })}</p>
+              <p className="zb-journal-kicker">{t("leg.countries", { count: countryCount(leg.countries) })}</p>
               <h2 className="zb-reports-title">
                 <a href={href}>{name}</a>
               </h2>

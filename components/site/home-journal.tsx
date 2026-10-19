@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 
 import { getPathname } from "@/i18n/navigation";
-import { LEGS, localName } from "@/lib/content";
+import { countryCount, LEGS, localName } from "@/lib/content";
 import { mediaUrl } from "@/lib/media";
 import { PRINT_TILTS, printPath } from "@/lib/print-path.mjs";
 
@@ -65,7 +65,7 @@ export async function HomeJournal({ locale }: { locale: string }) {
                 <img src={mediaUrl(printPath(LEG_PHOTOS[leg.slug]))} alt="" loading="lazy" decoding="async" />
                 <span>
                   <strong>{localName(leg.slug, leg.name, locale)}</strong>
-                  {t("leg.countries", { count: leg.countries.length })}
+                  {t("leg.countries", { count: countryCount(leg.countries) })}
                 </span>
               </a>
             </li>
