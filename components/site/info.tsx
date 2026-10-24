@@ -3,7 +3,6 @@ import { getTranslations } from "next-intl/server";
 import {
   ArrowRight,
   ChartColumn,
-  Clock,
   ClipboardCheck,
   Download,
   ExternalLink,
@@ -109,46 +108,23 @@ function Outbound({ href, className, children, t }: { href: string; className?: 
 
 /* --------------------------------------------------------------- /info */
 
-/** How many entries each page has, for its tile and its head. */
-function counts(locale: string): Record<string, number> {
-  return {
-    impfung: parseHealth(html("impfung", locale)).reduce((n, s) => n + s.entries.length, 0),
-    visa: parseVisa(html("visa", locale)).reduce((n, g) => n + g.countries.length, 0),
-    fluege: parseFlights(html("fluege", locale)).flights.length,
-    statistiken: parseStats(html("statistiken", locale)).reduce((n, s) => n + s.files.length, 0),
-    testberichte: parseImageLinks(html("testberichte", locale)).length,
-    sponsoring: parseImageLinks(html("sponsoring", locale)).length,
-    links:
-      parseImageLinks(html("links", locale)).length +
-      parseLinkLists(html("links", locale)).reduce((n, l) => n + l.links.length, 0),
-  };
-}
-
-/** The Info overview: the photo with the last update, then a tile per page. */
-export async function InfoIndex({ locale, updated }: { locale: string; updated: string }) {
+/** The Info overview: the photo, then a tile per page. */
+export async function InfoIndex({ locale }: { locale: string }) {
   const t = await getTranslations({ locale });
   const index = parseInfoIndex(html("", locale));
-  const n = counts(locale);
 
   return (
     <div className="zb-gear zb-info">
       <InfoHead kicker={t("info.kicker")} title={t("section.info.title")} lead={t("section.info.lead")} />
 
-      <div className={index.image ? "zb-gear-intro" : "zb-gear-intro zb-gear-intro--text"}>
-        {index.image && (
+      {index.image && (
+        <div className="zb-gear-intro">
           <figure className="zb-journal-photo">
             <Photo img={index.image} alt={index.caption ?? index.image.alt} />
             {index.caption && <figcaption>{index.caption}</figcaption>}
           </figure>
-        )}
-        <div className="zb-info-updated">
-          <Clock className="size-5 flex-none" aria-hidden />
-          <p>
-            <span>{t("info.updated")}</span>
-            <time>{updated}</time>
-          </p>
         </div>
-      </div>
+      )}
 
       <ul className="zb-info-tiles">
         {INFO_PAGES.map(([slug, Icon]) => (
@@ -160,7 +136,6 @@ export async function InfoIndex({ locale, updated }: { locale: string; updated: 
               <span className="zb-info-tile-body">
                 <strong>{infoTitle(slug, locale)}</strong>
                 <span>{t(`info.pages.${slug}.lead`)}</span>
-                <span className="zb-info-tile-meta">{t(`info.pages.${slug}.count`, { count: n[slug] })}</span>
               </span>
               <ArrowRight className="zb-info-tile-arrow size-4" aria-hidden />
             </a>
@@ -414,7 +389,7 @@ export async function InfoStats({ locale }: { locale: string }) {
       <ul className="zb-stat-grid">
         {sheets.map((s) => (
           <li key={s.label} className="zb-gear-card zb-stat-card">
-            <div className="zb-gear-tile-photo">{s.image && <Photo img={s.image} alt="" />}</div>
+            <div className="zb-gear-tile-photo zb-stat-photo">{s.image && <Photo img={s.image} alt="" />}</div>
             <div className="zb-stat-body">
               <h2>{s.label}</h2>
               <ul>
@@ -469,9 +444,9 @@ export async function InfoReviews({ locale }: { locale: string }) {
 
 /* --------------------------------------------------- sponsors and links */
 
-function LogoWall({ logos, t }: { logos: InfoLink[]; t: T }) {
+function LogoWall({ logos, t, bare }: { logos: InfoLink[]; t: T; bare?: boolean }) {
   return (
-    <ul className="zb-logo-wall">
+    <ul className={bare ? "zb-logo-wall zb-logo-wall--bare" : "zb-logo-wall"}>
       {logos.map((l) => (
         <li key={l.href}>
           <Outbound href={l.href} className="zb-logo-tile" t={t}>
@@ -489,7 +464,7 @@ export async function InfoSponsors({ locale }: { locale: string }) {
   const source = html("sponsoring", locale);
   const logos = parseImageLinks(source);
   if (!logos.length) notFound();
-  const { before, after } = parseAround(source);
+  const { before } = parseAround(source);
 
   return (
     <div className="zb-gear zb-info">
@@ -498,24 +473,15 @@ export async function InfoSponsors({ locale }: { locale: string }) {
         <Html key={i} html={p} locale={locale} className="zb-info-intro" />
       ))}
       <LogoWall logos={logos} t={t} />
-      {after.length > 0 && (
-        <aside className="zb-info-cta">
-          <Handshake className="size-6 flex-none" aria-hidden />
-          <div>
-            {after.map((p, i) => (
-              <Html key={i} html={p} locale={locale} />
-            ))}
-            <a href={getPathname({ href: "/varia/kontakt", locale })} className="zb-reports-more">
-              {t("info.sponsoring.cta")}
-              <ArrowRight className="size-4" aria-hidden />
-            </a>
-          </div>
-        </aside>
-      )}
     </div>
   );
 }
 
+/**
+ * Links: a bar of the sections up top, then the lists (practical first), each
+ * a heading over two even columns of numbered links, and the partners' logos
+ * at the end, free-standing like the statistics icons.
+ */
 export async function InfoLinks({ locale }: { locale: string }) {
   const t = await getTranslations({ locale });
   const source = html("links", locale);
@@ -524,43 +490,59 @@ export async function InfoLinks({ locale }: { locale: string }) {
   if (!logos.length && !lists.length) notFound();
   const total = logos.length + lists.reduce((n, l) => n + l.links.length, 0);
 
+  const sections = [
+    ...lists.map((l, i) => ({ id: `links-${i}`, title: l.title, count: l.links.length })),
+    ...(logos.length ? [{ id: "links-partners", title: t("info.links.partners"), count: logos.length }] : []),
+  ];
+
   return (
     <div className="zb-gear zb-info">
       {await subpageHead("links", locale, total)}
 
+      <nav className="zb-link-jump" aria-label={t("info.links.jump")}>
+        <ul>
+          {sections.map((s) => (
+            <li key={s.id}>
+              <a href={`#${s.id}`}>
+                {s.title}
+                <b>{s.count}</b>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {lists.map((list, i) => (
+        <section key={i} id={`links-${i}`} className="zb-info-section zb-link-section" aria-labelledby={`links-${i}-h`}>
+          <h2 id={`links-${i}-h`} className="zb-info-h2">
+            {list.title}
+            <span className="zb-info-h2-meta">{t("info.pages.links.count", { count: list.links.length })}</span>
+          </h2>
+          <ol className="zb-link-rows">
+            {list.links.map((l) => (
+              <li key={l.href + l.label}>
+                <Outbound href={l.href} className="zb-link-row" t={t}>
+                  <span className="zb-link-label">{l.label}</span>
+                  <span className="zb-link-host">
+                    {host(l.href)}
+                    <ExternalLink className="size-3.5 flex-none" aria-hidden />
+                  </span>
+                </Outbound>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
+
       {logos.length > 0 && (
-        <section className="zb-info-section" aria-labelledby="links-partners">
-          <h2 id="links-partners" className="zb-info-h2">
+        <section id="links-partners" className="zb-info-section zb-link-section" aria-labelledby="links-partners-h">
+          <h2 id="links-partners-h" className="zb-info-h2">
             {t("info.links.partners")}
             <span className="zb-info-h2-meta">{t("info.pages.links.count", { count: logos.length })}</span>
           </h2>
-          <LogoWall logos={logos} t={t} />
+          <LogoWall logos={logos} t={t} bare />
         </section>
       )}
-
-      <div className="zb-link-lists">
-        {lists.map((list, i) => (
-          <section key={i} className="zb-gear-card zb-link-card" aria-labelledby={`links-${i}`}>
-            <header className="zb-gear-card-head">
-              <h2 id={`links-${i}`}>{list.title}</h2>
-              <span className="zb-info-count">{list.links.length}</span>
-            </header>
-            <ul>
-              {list.links.map((l) => (
-                <li key={l.href + l.label}>
-                  <Outbound href={l.href} className="zb-link-row" t={t}>
-                    <span className="zb-link-label">{l.label}</span>
-                    <span className="zb-link-host">
-                      {host(l.href)}
-                      <ExternalLink className="size-3.5 flex-none" aria-hidden />
-                    </span>
-                  </Outbound>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
-      </div>
     </div>
   );
 }

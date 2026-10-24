@@ -9,14 +9,13 @@ import { Link, getPathname, usePathname } from "@/i18n/navigation";
 import { MAIN_NAV, SECTION_BANNERS, HOME_SIDEBAR, parentOf, sectionOf } from "@/content/nav";
 import chromeJson from "@/content/generated/chrome.json";
 import { cn } from "@/lib/utils";
-import { mediaUrl } from "@/lib/media";
 import { ThemeToggle } from "@/components/site/theme-toggle";
 
-type Chrome = { banner: string | null; sidebar: { label: string; href: string }[] };
+type Chrome = { sidebar: { label: string; href: string }[] };
 const CHROME = chromeJson as Record<string, Chrome>;
 
 /**
- * The page frame, full width: the section's Lucerne banner as an edge-to-edge
+ * The page frame, full width: the section's photo banner as an edge-to-edge
  * panorama, a sticky menu
  * bar, then the sidebar menu beside the content, and the footer. Visual rules
  * live in the `.zb-*` block of app/globals.css.
@@ -30,7 +29,7 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
   const section = sectionOf(pathname);
   const sectionLabel = t(`nav.${MAIN_NAV.find((n) => n.href === section)?.labelKey ?? "home"}`);
   const chrome = CHROME[pathname];
-  const banner = chrome?.banner ?? SECTION_BANNERS[section];
+  const banner = SECTION_BANNERS[section];
 
   // Sidebar labels were copied verbatim from the German pages; English gets
   // them from the `sidebar` dictionary and falls back to the original.
@@ -86,10 +85,10 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
         <img
           key={banner}
           className="zb-hero-img"
-          src={mediaUrl(`images/kopf/${banner}`)}
-          alt="Luzern"
-          width={1000}
-          height={140}
+          src={`/images/kopf/${banner}`}
+          alt=""
+          width={2400}
+          height={960}
           fetchPriority="high"
         />
       </header>

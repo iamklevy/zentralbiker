@@ -25,17 +25,19 @@ export const MAIN_NAV: NavItem[] = [
 ];
 
 /**
- * The 1000x140 Lucerne photo band above every page — a different shot per
- * section, luzern1..7 in MAIN_NAV order.
+ * The photo band above every page — one Swiss shot per section, in MAIN_NAV
+ * order. The files live in public/images/kopf (served by the app itself, not
+ * the media bucket), pre-cropped to 2.5:1 with the subject where the thin
+ * desktop strip shows it.
  */
 export const SECTION_BANNERS: Record<string, string> = {
-  "/": "luzern1_1000x140.jpg",
-  "/ausruestung": "luzern2_1000x140.jpg",
-  "/berichte": "luzern3_1000x140.jpg",
-  "/fotos": "luzern4_1000x140.jpg",
-  "/route": "luzern5_1000x140.jpg",
-  "/info": "luzern6_1000x140.jpg",
-  "/varia": "luzern7_1000x140.jpg",
+  "/": "home-luzern-kapellbruecke.jpg",
+  "/ausruestung": "ausruestung-rheinschlucht-ruinaulta.jpg",
+  "/berichte": "berichte-schloss-chillon.jpg",
+  "/fotos": "fotos-matterhorn-riffelsee.jpg",
+  "/route": "route-gotthard-tremola.jpg",
+  "/info": "info-urnersee-fronalpstock.jpg",
+  "/varia": "varia-dampfschiff-stadt-luzern.jpg",
 };
 
 /** The top-level section a path belongs to ("/berichte/peru" -> "/berichte"). */

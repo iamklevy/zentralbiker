@@ -88,7 +88,6 @@
   },
   "info": {
     "kicker": "Travel info",
-    "updated": "Last updated",
     "open": "Open",
     "pdf": "PDF",
     "external": "opens in a new window",
@@ -112,8 +111,7 @@
     },
     "health": { "countries": "Applies to" },
     "flights": { "plan": "Flight plan", "from": "From", "to": "To", "flight": "Flight", "allowance": "Free baggage" },
-    "sponsoring": { "cta": "Get in touch" },
-    "links": { "partners": "Partners" }
+    "links": { "partners": "Partners", "jump": "On this page" }
   },
   "section": {
     "ausruestung": {
