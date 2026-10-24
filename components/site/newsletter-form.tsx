@@ -26,7 +26,7 @@ export function NewsletterForm() {
             autoComplete="email"
             className="min-w-56 flex-1"
           />
-          <Button type="submit" disabled={pending} className="rounded-full bg-accent hover:bg-accent-2">
+          <Button type="submit" disabled={pending} className="rounded-full bg-button hover:bg-button-hover">
             {pending ? t("sending") : t("submit")}
           </Button>
         </div>

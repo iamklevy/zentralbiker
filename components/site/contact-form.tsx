@@ -40,7 +40,7 @@ export function ContactForm() {
       <Honeypot />
 
       <div className="mt-5 flex flex-wrap items-center gap-4">
-        <Button type="submit" disabled={pending} className="rounded-full bg-accent hover:bg-accent-2">
+        <Button type="submit" disabled={pending} className="rounded-full bg-button hover:bg-button-hover">
           {pending ? t("sending") : t("submit")}
         </Button>
         <FormMessage state={state} />

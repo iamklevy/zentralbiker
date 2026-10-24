@@ -88,7 +88,6 @@
   },
   "info": {
     "kicker": "Reiseinfos",
-    "updated": "Letzte Aktualisierung",
     "open": "Öffnen",
     "pdf": "PDF",
     "external": "öffnet in neuem Fenster",
@@ -112,8 +111,7 @@
     },
     "health": { "countries": "Betrifft" },
     "flights": { "plan": "Flugplan", "from": "Von", "to": "Nach", "flight": "Flug", "allowance": "Freigepäck" },
-    "sponsoring": { "cta": "Kontakt aufnehmen" },
-    "links": { "partners": "Partner" }
+    "links": { "partners": "Partner", "jump": "Auf dieser Seite" }
   },
   "section": {
     "ausruestung": {

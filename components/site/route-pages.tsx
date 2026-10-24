@@ -107,7 +107,7 @@ export async function RouteOverview({ locale }: { locale: string }) {
               </ul>
               <a href={href} className="zb-reports-more">
                 {t("leg.route")}
-                <ArrowRight className="size-4" aria-hidden />
+                <ArrowRight className="size-3.5" aria-hidden />
               </a>
             </div>
           </article>
