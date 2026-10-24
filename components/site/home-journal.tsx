@@ -13,8 +13,8 @@ export const LEG_PHOTOS: Record<string, string> = {
 };
 
 /**
- * The home page as a page from a travel diary: the lighthouse set in as a
- * photo print beside the essay, the motto as a sign-off, and the three legs
+ * The home page as a page from a travel diary: the essay in a frame, the
+ * lighthouse upright beside it with the motto as a sign-off, and the three legs
  * of the trip as prints leading to their reports.
  */
 export async function HomeJournal({ locale }: { locale: string }) {
@@ -22,8 +22,17 @@ export async function HomeJournal({ locale }: { locale: string }) {
   const paragraphs = t.raw("home.paragraphs") as string[];
 
   return (
-    <div className="zb-journal">
+    <div className="zb-journal zb-journal--home">
+      {/* The essay in a frame, the lighthouse upright beside it, and the
+          motto under the photo on the same line as the essay's last line. */}
       <div className="zb-journal-entry">
+        <div className="zb-journal-text">
+          <blockquote className="zb-journal-quote">{t("home.quote")}</blockquote>
+          {paragraphs.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
+
         <div className="zb-journal-side">
           <figure className="zb-journal-photo">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -31,21 +40,7 @@ export async function HomeJournal({ locale }: { locale: string }) {
             <figcaption>{t("home.photo")}</figcaption>
           </figure>
 
-          {/* Under the lighthouse, in two lines: broken after its comma. */}
-          <p className="zb-journal-motto">
-            {t("home.motto")
-              .split(/(?<=,)\s+/)
-              .map((line, i) => (
-                <span key={i}>{line}</span>
-              ))}
-          </p>
-        </div>
-
-        <div className="zb-journal-text">
-          <blockquote className="zb-journal-quote">{t("home.quote")}</blockquote>
-          {paragraphs.map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
+          <p className="zb-journal-motto">{t("home.motto")}</p>
         </div>
       </div>
 

@@ -73,7 +73,7 @@ export async function ReportsOverview({ locale }: { locale: string }) {
 
               <a href={href} className="zb-reports-more">
                 {t("leg.read")}
-                <ArrowRight className="size-4" aria-hidden />
+                <ArrowRight className="size-3.5" aria-hidden />
               </a>
             </div>
           </article>
