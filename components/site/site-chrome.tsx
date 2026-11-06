@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowUpRight, Menu, X } from "lucide-react";
 import { useLocale, useMessages, useTranslations } from "next-intl";
 
 import { Link, getPathname, usePathname } from "@/i18n/navigation";
-import { MAIN_NAV, SECTION_BANNERS, HOME_SIDEBAR, parentOf, sectionOf } from "@/content/nav";
+import { MAIN_NAV, SECTION_BANNERS, BANNER_FOCUS, HOME_SIDEBAR, parentOf, sectionOf } from "@/content/nav";
 import chromeJson from "@/content/generated/chrome.json";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/site/theme-toggle";
@@ -89,6 +89,7 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
           alt=""
           width={2400}
           height={960}
+          style={{ "--zb-focus": BANNER_FOCUS[banner] ?? "50%" } as React.CSSProperties}
           fetchPriority="high"
         />
       </header>

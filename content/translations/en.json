@@ -9,7 +9,7 @@
  },
  "/ausruestung/apotheke": {
   "title": "First aid",
-  "html": "<div>\n  <div><img src=\"/media/images/web/Apotheke.jpg\" alt=\"First aid kit\" width=\"320\" height=\"240\"></div>\n  <div>Diarrhoea</div>\n  <div>Loperamide, ciprofloxacin</div>\n  <div>Nausea/vomiting</div>\n  <div>Motilium lingual</div>\n  <div>Colds</div>\n  <div>Bexin</div>\n  <div>Fever/pain</div>\n  <div>Dafalgan</div>\n  <div>Severe pain</div>\n  <div>Ecofenac</div>\n  <div>Allergies/insect bites</div>\n  <div>Levocetirizine</div>\n  <div>Antibiotics (bladder infections)</div>\n  <div>Cotrim forte</div>\n  <div>Wound ointment</div>\n  <div>Bepanthen cream</div>\n  <div>Disinfectant</div>\n  <div>Octenisept</div>\n  <div>Sun protection</div>\n  <div>La Roche-Posay</div>\n  <div>Insect repellent</div>\n  <div>Antibrumm Forte</div>\n</div>\n<div>\n  <div><p>Gauze and elastic bandages, safety pins, adhesive tape and plasters, 2 disposable 5 ml syringes, No. 2 needles, fever thermometer</p></div>\n</div>"
+  "html": "<div>\n  <div><img src=\"/media/images/web/Apotheke.jpg\" alt=\"First aid kit\" width=\"320\" height=\"240\"></div>\n  <div>Diarrhoea</div>\n  <div>Loperamide, ciprofloxacin</div>\n  <div>Nausea/vomiting</div>\n  <div>Motilium lingual</div>\n  <div>Colds</div>\n  <div>Bexin</div>\n  <div>Fever/pain</div>\n  <div>Dafalgan</div>\n  <div>Severe pain</div>\n  <div>Ecofenac</div>\n  <div>Allergies/insect bites</div>\n  <div>Levocetirizine</div>\n  <div>Antibiotics (bladder infections)</div>\n  <div>Cotrim forte</div>\n  <div>Wound ointment</div>\n  <div>Bepanthen cream</div>\n  <div>Disinfectant</div>\n  <div>Octenisept</div>\n  <div>Sun protection</div>\n  <div>La Roche-Posay</div>\n  <div>Insect repellent</div>\n  <div>Antibrumm Forte</div>\n  <div>Weight</div>\n  <div>1,130 g</div>\n</div>\n<div>\n  <div><p>Gauze and elastic bandages, safety pins, adhesive tape and plasters, 2 disposable 5 ml syringes, No. 2 needles, fever thermometer</p></div>\n</div>"
  },
  "/ausruestung/diverses": {
   "title": "Miscellaneous",
@@ -409,7 +409,7 @@
  },
  "/varia/kiosk": {
   "title": "Kiosk",
-  "html": "<p> Here you can buy items from us.\n</p>\n    <p><span class=\"fett\">Currently available:<br>\n      </span>T-shirt with the Zentralbiker evolution design and the lettering zentralbiker.ch, in various colours</p>\n<a href=\"http://758630.spreadshirt.net/\" target=\"_blank\" rel=\"noopener noreferrer\">My shop</a>"
+  "html": "<p> Here you can buy items from us.\n</p>\n    <p><span class=\"fett\">Currently available:<br>\n      </span>T-shirt with the Zentralbiker evolution design and the lettering zentralbiker.ch, in various colours</p>\n<p>No sales offer at the moment.</p>"
  },
  "/varia/kontakt": {
   "title": "Contact",

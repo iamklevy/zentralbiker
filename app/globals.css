@@ -181,12 +181,17 @@ a:hover {
   padding: 0 32px;
 }
 
-/* The Lucerne banner as an edge-to-edge panorama. The files are 1000x140,
-   so it stays a wide strip (never a tall hero, which would blur them), and
-   gets its punch from colour and a slow drift. */
+/* The section banner as an edge-to-edge panorama. The files are 5:2
+   (2400x960), so the banner keeps that shape and shows the whole photo on
+   phones and laptops; on wide screens it stops at the height cap so the page
+   still starts above the fold, and is cropped around the per-image focus
+   point (BANNER_FOCUS in content/nav.ts). */
 .zb-hero {
   position: relative;
-  height: clamp(150px, 15.5vw, 300px);
+  aspect-ratio: 5 / 2;
+  max-height: min(60vh, 560px);
+  min-height: 140px;
+  width: 100%;
   overflow: hidden;
   background: var(--zb-frame);
 }
@@ -196,12 +201,12 @@ a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 60%;
+  object-position: center var(--zb-focus, 50%);
   filter: saturate(1.2) contrast(1.06) brightness(1.02);
   animation:
     zb-fade 0.9s ease-out both,
     zb-drift 24s ease-in-out 0.9s infinite alternate;
-  transform-origin: center 60%;
+  transform-origin: center var(--zb-focus, 50%);
 }
 @keyframes zb-fade {
   from { opacity: 0; }
