@@ -88,13 +88,13 @@
     "pdf": "PDF",
     "external": "opens in a new window",
     "pages": {
-      "impfung": { "lead": "Requirements, recommendations and health risks along our route.", "count": "{count, plural, =1 {# entry} other {# entries}}" },
-      "visa": { "lead": "Entry requirements for Swiss citizens, country by country.", "count": "{count, plural, =1 {# country} other {# countries}}" },
-      "fluege": { "lead": "How the bikes got onto the plane – and what it takes.", "count": "{count, plural, =1 {# flight} other {# flights}}" },
-      "statistiken": { "lead": "Countries, illnesses and breakdowns on the road, in figures.", "count": "{count, plural, =1 {# PDF} other {# PDFs}}" },
-      "testberichte": { "lead": "Our equipment, tested over the long haul.", "count": "{count, plural, =1 {# review} other {# reviews}}" },
-      "sponsoring": { "lead": "The companies that supported our journeys.", "count": "{count, plural, =1 {# sponsor} other {# sponsors}}" },
-      "links": { "lead": "Partners, planning tips and travellers we met on the road.", "count": "{count, plural, =1 {# link} other {# links}}" }
+      "impfung": { "lead": "Requirements, recommendations and health risks along our route." },
+      "visa": { "lead": "Entry requirements for Swiss citizens, country by country." },
+      "fluege": { "lead": "How the bikes got onto the plane – and what it takes." },
+      "statistiken": { "lead": "Countries, illnesses and breakdowns on the road, in figures." },
+      "testberichte": { "lead": "Our equipment, tested over the long haul." },
+      "sponsoring": { "lead": "The companies that supported our journeys." },
+      "links": { "lead": "Partners, planning tips and travellers we met on the road." }
     },
     "visa": {
       "free": "No visa",
