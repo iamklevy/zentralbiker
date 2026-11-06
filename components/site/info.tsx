@@ -71,13 +71,15 @@ function Html({ as: Tag = "p", html, locale, className }: { as?: "p" | "div" | "
 }
 
 /** The page head every Info page shares: kicker, title, lead, size. */
-function InfoHead({ kicker, title, lead, meta }: { kicker: string; title: string; lead?: string; meta?: string }) {
+function InfoHead({ kicker, title, lead, meta }: { kicker?: string; title: string; lead?: string; meta?: string }) {
   return (
     <header className="zb-gear-head zb-info-head">
-      <p className="zb-gear-kicker">
-        <span>{kicker}</span>
-        {meta && <span className="zb-info-meta">{meta}</span>}
-      </p>
+      {(kicker || meta) && (
+        <p className="zb-gear-kicker">
+          {kicker && <span>{kicker}</span>}
+          {meta && <span className="zb-info-meta">{meta}</span>}
+        </p>
+      )}
       <h1>{title}</h1>
       {lead && <p className="zb-info-lead">{lead}</p>}
     </header>
@@ -115,7 +117,7 @@ export async function InfoIndex({ locale }: { locale: string }) {
 
   return (
     <div className="zb-gear zb-info">
-      <InfoHead kicker={t("info.kicker")} title={t("section.info.title")} lead={t("section.info.lead")} />
+      <InfoHead title={t("section.info.title")} lead={t("section.info.lead")} />
 
       {index.image && (
         <div className="zb-gear-intro">
