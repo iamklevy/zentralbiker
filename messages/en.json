@@ -61,7 +61,6 @@
       "To balance out our bike training, we spend our holidays windsurfing in Egypt."
     ],
     "travellers": "The travellers",
-    "portrait": "Read the portrait",
     "by": "Written by {name}",
     "alexandre": {
       "motto": "Let's get to it!",
@@ -79,7 +78,6 @@
     }
   },
   "gear": {
-    "overview": "Overview",
     "items": "{count, plural, =1 {# item} other {# items}}",
     "entries": "{count, plural, =1 {# entry} other {# entries}}",
     "weight": "Weight",
@@ -87,7 +85,6 @@
     "photo_credit": "Clothing photo:"
   },
   "info": {
-    "kicker": "Travel info",
     "open": "Open",
     "pdf": "PDF",
     "external": "opens in a new window",

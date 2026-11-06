@@ -77,7 +77,6 @@ export async function PersonJournal({ slug, locale }: { slug: TravellerSlug; loc
               <img src={mediaUrl(author.img)} alt="" loading="lazy" decoding="async" />
               <span>
                 <strong>{author.name}</strong>
-                {t.raw("about.portrait")}
               </span>
             </a>
           </li>

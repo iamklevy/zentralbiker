@@ -61,7 +61,6 @@
       "Als Ausgleich zum Bike-Training verbringen wir unsere Ferien in Ägypten beim Windsurfen."
     ],
     "travellers": "Die Reisenden",
-    "portrait": "Porträt lesen",
     "by": "Geschrieben von {name}",
     "alexandre": {
       "motto": "Packen wir's an!",
@@ -79,7 +78,6 @@
     }
   },
   "gear": {
-    "overview": "Übersicht",
     "items": "{count, plural, =1 {# Artikel} other {# Artikel}}",
     "entries": "{count, plural, =1 {# Position} other {# Positionen}}",
     "weight": "Gewicht",
@@ -87,7 +85,6 @@
     "photo_credit": "Foto Kleider:"
   },
   "info": {
-    "kicker": "Reiseinfos",
     "open": "Öffnen",
     "pdf": "PDF",
     "external": "öffnet in neuem Fenster",
