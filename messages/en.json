@@ -81,8 +81,7 @@
     "items": "{count, plural, =1 {# item} other {# items}}",
     "entries": "{count, plural, =1 {# entry} other {# entries}}",
     "weight": "Weight",
-    "also": "Also",
-    "photo_credit": "Clothing photo:"
+    "also": "Also"
   },
   "info": {
     "open": "Open",
