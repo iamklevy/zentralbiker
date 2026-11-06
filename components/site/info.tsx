@@ -70,32 +70,19 @@ function Html({ as: Tag = "p", html, locale, className }: { as?: "p" | "div" | "
   return <Tag className={className} dangerouslySetInnerHTML={{ __html: localHtml(html, locale) }} />;
 }
 
-/** The page head every Info page shares: kicker, title, lead, size. */
-function InfoHead({ kicker, title, lead, meta }: { kicker?: string; title: string; lead?: string; meta?: string }) {
+/** The page head every Info page shares: title and lead. */
+function InfoHead({ title, lead }: { title: string; lead?: string }) {
   return (
     <header className="zb-gear-head zb-info-head">
-      {(kicker || meta) && (
-        <p className="zb-gear-kicker">
-          {kicker && <span>{kicker}</span>}
-          {meta && <span className="zb-info-meta">{meta}</span>}
-        </p>
-      )}
       <h1>{title}</h1>
       {lead && <p className="zb-info-lead">{lead}</p>}
     </header>
   );
 }
 
-async function subpageHead(slug: string, locale: string, count: number) {
+async function subpageHead(slug: string, locale: string) {
   const t = await getTranslations({ locale });
-  return (
-    <InfoHead
-      kicker={t("nav.info")}
-      title={infoTitle(slug, locale)}
-      lead={t(`info.pages.${slug}.lead`)}
-      meta={t(`info.pages.${slug}.count`, { count })}
-    />
-  );
+  return <InfoHead title={infoTitle(slug, locale)} lead={t(`info.pages.${slug}.lead`)} />;
 }
 
 /** An external link: a new window, said so to screen readers. */
@@ -176,7 +163,7 @@ export async function InfoVisa({ locale }: { locale: string }) {
 
   return (
     <div className="zb-gear zb-info">
-      {await subpageHead("visa", locale, all.length)}
+      {await subpageHead("visa", locale)}
 
       <ul className="zb-info-legend" aria-label={infoTitle("visa", locale)}>
         {tally
@@ -193,11 +180,12 @@ export async function InfoVisa({ locale }: { locale: string }) {
       </ul>
 
       {groups.map((g, i) => (
-        <section key={i} className="zb-info-section" aria-labelledby={`visa-${i}`}>
-          <h2 id={`visa-${i}`} className="zb-info-h2">
-            {i < 2 ? t(`info.visa.groups.${i}`) : null}
-            <span className="zb-info-h2-meta">{t("info.pages.visa.count", { count: g.countries.length })}</span>
-          </h2>
+        <section key={i} className="zb-info-section" aria-labelledby={i < 2 ? `visa-${i}` : undefined}>
+          {i < 2 && (
+            <h2 id={`visa-${i}`} className="zb-info-h2">
+              {t(`info.visa.groups.${i}`)}
+            </h2>
+          )}
           {g.intro.map((p, j) => (
             <Html key={j} html={p} locale={locale} className="zb-info-intro" />
           ))}
@@ -250,13 +238,12 @@ export async function InfoHealth({ locale }: { locale: string }) {
 
   return (
     <div className="zb-gear zb-info">
-      {await subpageHead("impfung", locale, sections.reduce((n, s) => n + s.entries.length, 0))}
+      {await subpageHead("impfung", locale)}
 
       {sections.map((s, i) => (
         <section key={i} className="zb-gear-card zb-health-card" aria-labelledby={`health-${i}`}>
           <header className="zb-gear-card-head">
             <h2 id={`health-${i}`}>{s.title}</h2>
-            <span className="zb-info-count">{t("info.pages.impfung.count", { count: s.entries.length })}</span>
           </header>
           {s.countries.length > 0 && (
             <div className="zb-health-countries">
@@ -335,7 +322,7 @@ export async function InfoFlights({ locale }: { locale: string }) {
 
   return (
     <div className="zb-gear zb-info">
-      {await subpageHead("fluege", locale, flights.length)}
+      {await subpageHead("fluege", locale)}
 
       {flights.length > 0 && (
         <section className="zb-gear-card zb-flight-plan" aria-labelledby="flight-plan">
@@ -386,7 +373,7 @@ export async function InfoStats({ locale }: { locale: string }) {
 
   return (
     <div className="zb-gear zb-info">
-      {await subpageHead("statistiken", locale, sheets.reduce((n, s) => n + s.files.length, 0))}
+      {await subpageHead("statistiken", locale)}
 
       <ul className="zb-stat-grid">
         {sheets.map((s) => (
@@ -422,7 +409,7 @@ export async function InfoReviews({ locale }: { locale: string }) {
 
   return (
     <div className="zb-gear zb-info">
-      {await subpageHead("testberichte", locale, reviews.length)}
+      {await subpageHead("testberichte", locale)}
 
       <ul className="zb-review-grid">
         {reviews.map((r) => (
@@ -470,7 +457,7 @@ export async function InfoSponsors({ locale }: { locale: string }) {
 
   return (
     <div className="zb-gear zb-info">
-      {await subpageHead("sponsoring", locale, logos.length)}
+      {await subpageHead("sponsoring", locale)}
       {before.map((p, i) => (
         <Html key={i} html={p} locale={locale} className="zb-info-intro" />
       ))}
@@ -490,25 +477,21 @@ export async function InfoLinks({ locale }: { locale: string }) {
   const logos = parseImageLinks(source);
   const lists = parseLinkLists(source);
   if (!logos.length && !lists.length) notFound();
-  const total = logos.length + lists.reduce((n, l) => n + l.links.length, 0);
 
   const sections = [
-    ...lists.map((l, i) => ({ id: `links-${i}`, title: l.title, count: l.links.length })),
-    ...(logos.length ? [{ id: "links-partners", title: t("info.links.partners"), count: logos.length }] : []),
+    ...lists.map((l, i) => ({ id: `links-${i}`, title: l.title })),
+    ...(logos.length ? [{ id: "links-partners", title: t("info.links.partners") }] : []),
   ];
 
   return (
     <div className="zb-gear zb-info">
-      {await subpageHead("links", locale, total)}
+      {await subpageHead("links", locale)}
 
       <nav className="zb-link-jump" aria-label={t("info.links.jump")}>
         <ul>
           {sections.map((s) => (
             <li key={s.id}>
-              <a href={`#${s.id}`}>
-                {s.title}
-                <b>{s.count}</b>
-              </a>
+              <a href={`#${s.id}`}>{s.title}</a>
             </li>
           ))}
         </ul>
@@ -518,7 +501,6 @@ export async function InfoLinks({ locale }: { locale: string }) {
         <section key={i} id={`links-${i}`} className="zb-info-section zb-link-section" aria-labelledby={`links-${i}-h`}>
           <h2 id={`links-${i}-h`} className="zb-info-h2">
             {list.title}
-            <span className="zb-info-h2-meta">{t("info.pages.links.count", { count: list.links.length })}</span>
           </h2>
           <ol className="zb-link-rows">
             {list.links.map((l) => (
@@ -540,7 +522,6 @@ export async function InfoLinks({ locale }: { locale: string }) {
         <section id="links-partners" className="zb-info-section zb-link-section" aria-labelledby="links-partners-h">
           <h2 id="links-partners-h" className="zb-info-h2">
             {t("info.links.partners")}
-            <span className="zb-info-h2-meta">{t("info.pages.links.count", { count: logos.length })}</span>
           </h2>
           <LogoWall logos={logos} t={t} bare />
         </section>
