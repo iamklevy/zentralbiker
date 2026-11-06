@@ -197,7 +197,7 @@ export async function GearIndex({ locale }: { locale: string }) {
 
   return (
     <div className="zb-gear">
-      <SheetHead title={t("nav.ausruestung")} kicker={t("gear.overview")} />
+      <SheetHead title={t("nav.ausruestung")} />
 
       {/* Photo left, text right, the photo set in as a print: the same
           pattern as Home and the two portraits. */}
@@ -218,7 +218,6 @@ export async function GearIndex({ locale }: { locale: string }) {
       <ul className="zb-gear-tiles">
         {SLUGS.map((slug) => {
           const s = summary(slug, locale);
-          const weight = s.items.length === 1 ? s.items[0].weight : undefined;
           const image = s.image ?? TILE_IMAGES[slug];
           return (
             <li key={slug}>
@@ -228,10 +227,6 @@ export async function GearIndex({ locale }: { locale: string }) {
                 </span>
                 <span className="zb-gear-tile-body">
                   <strong>{gearTitle(slug, locale)}</strong>
-                  <span className="zb-gear-tile-meta">
-                    {s.items.length > 1 ? t("gear.items", { count: s.items.length }) : t("gear.entries", { count: s.entries })}
-                    {weight && ` · ${weight}`}
-                  </span>
                 </span>
               </a>
             </li>

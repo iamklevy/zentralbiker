@@ -25,7 +25,6 @@ export async function AboutJournal({ locale }: { locale: string }) {
         </figure>
 
         <div className="zb-journal-text">
-          <p className="zb-journal-kicker">{t("nav.ueber_uns")}</p>
           <p className="zb-journal-lead">{t.raw("about.lead")}</p>
           {paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
@@ -49,7 +48,6 @@ export async function AboutJournal({ locale }: { locale: string }) {
                 <img src={mediaUrl(p.img)} alt="" loading="lazy" decoding="async" />
                 <span>
                   <strong>{p.name}</strong>
-                  {t.raw("about.portrait")}
                 </span>
               </a>
             </li>
