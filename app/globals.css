@@ -1706,10 +1706,6 @@ a.zb-gear-tile:focus-visible {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.zb-info-meta {
-  color: var(--zb-text);
-  letter-spacing: 0.04em;
-}
 .zb-content .zb-info-lead {
   max-width: 62ch;
   margin: 8px 0 0;
@@ -1738,19 +1734,6 @@ a.zb-gear-tile:focus-visible {
   padding-bottom: 8px;
   border-bottom: 1px solid var(--zb-rule);
   font-size: 20px;
-}
-.zb-info-h2-meta,
-.zb-info-count {
-  font-family: var(--zb-mono);
-  font-size: 12px;
-  font-weight: normal;
-  letter-spacing: 0.04em;
-}
-.zb-info-h2-meta {
-  color: var(--zb-text-2);
-}
-.zb-info-count {
-  color: rgb(255 255 255 / 0.75);
 }
 .zb-content .zb-gear-card-head h3 {
   flex: 1 1 auto;
@@ -2155,6 +2138,12 @@ a.zb-gear-tile:focus-visible {
   border-bottom: 0;
   background: none;
 }
+/* The icons are transparent PNGs standing on the page itself, so they skip
+   the tiles' multiply blend: on the dark page it would turn their colours
+   near-black. Shown as drawn, they look the same in light and dark. */
+.zb-content .zb-stat-photo img {
+  mix-blend-mode: normal;
+}
 .zb-stat-body {
   display: grid;
   gap: 10px;
@@ -2318,11 +2307,6 @@ a.zb-gear-tile:focus-visible {
 .zb-content .zb-link-jump a:focus-visible {
   border-color: var(--color-accent);
   outline: none;
-}
-.zb-link-jump b {
-  color: var(--zb-text-2);
-  font-family: var(--zb-mono);
-  font-size: 11.5px;
 }
 .zb-link-section {
   scroll-margin-top: 90px;
