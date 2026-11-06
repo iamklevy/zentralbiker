@@ -189,7 +189,7 @@ a:hover {
 .zb-hero {
   position: relative;
   aspect-ratio: 5 / 2;
-  max-height: min(60vh, 560px);
+  max-height: min(45vh, 420px);
   min-height: 140px;
   width: 100%;
   overflow: hidden;
@@ -1140,8 +1140,8 @@ section:first-of-type > .zb-overview-heading {
 }
 
 /*
- * The home page only (.zb-journal--home): the essay in a thin frame, tighter
- * set, the lighthouse upright beside it filling its column, and the motto
+ * The home page only (.zb-journal--home): the essay tighter set, the
+ * lighthouse upright beside it filling its column, and the motto
  * under it. "last baseline" puts the motto, the side's last line, on the same
  * line as the essay's last line.
  */
@@ -1149,11 +1149,6 @@ section:first-of-type > .zb-overview-heading {
   grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
   gap: 40px;
   align-items: last baseline;
-}
-.zb-journal--home .zb-journal-text {
-  padding: 26px 30px;
-  border: 1px solid var(--zb-rule);
-  border-radius: 6px;
 }
 .zb-journal--home .zb-journal-side {
   display: grid;
@@ -1286,9 +1281,6 @@ section:first-of-type > .zb-overview-heading {
   .zb-journal-photo {
     max-width: 260px;
     margin: 18px auto 0;
-  }
-  .zb-journal--home .zb-journal-text {
-    padding: 18px 16px;
   }
   .zb-journal--home .zb-journal-photo {
     margin: 0;
