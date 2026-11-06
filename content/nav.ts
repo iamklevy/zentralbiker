@@ -40,6 +40,21 @@ export const SECTION_BANNERS: Record<string, string> = {
   "/varia": "varia-dampfschiff-stadt-luzern.jpg",
 };
 
+/**
+ * Where each banner's subject sits vertically (CSS object-position y). On
+ * wide screens the banner hits its height cap and is cropped top and bottom;
+ * this keeps the castle, peak or ship in view. Unlisted banners use 50%.
+ */
+export const BANNER_FOCUS: Record<string, string> = {
+  "home-luzern-kapellbruecke.jpg": "55%",
+  "ausruestung-rheinschlucht-ruinaulta.jpg": "65%",
+  "berichte-schloss-chillon.jpg": "60%",
+  "fotos-matterhorn-riffelsee.jpg": "55%",
+  "route-gotthard-tremola.jpg": "65%",
+  "info-urnersee-fronalpstock.jpg": "50%",
+  "varia-dampfschiff-stadt-luzern.jpg": "70%",
+};
+
 /** The top-level section a path belongs to ("/berichte/peru" -> "/berichte"). */
 export function sectionOf(path: string): string {
   const first = path.split("/")[1] ?? "";
