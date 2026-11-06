@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import NextLink from "next/link";
-import { ArrowLeft, Menu, X } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Menu, X } from "lucide-react";
 import { useLocale, useMessages, useTranslations } from "next-intl";
 
 import { Link, getPathname, usePathname } from "@/i18n/navigation";
@@ -179,6 +179,17 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
             <Link href="/varia/kontakt">{t("footer.kontakt")}</Link>
             <span aria-hidden>|</span>
             &copy; Zentralbiker
+          </p>
+          <p className="zb-footer-credit">
+            {t("footer.credit")}{" "}
+            <a
+              href="https://portfolio-green-nine-36.vercel.app/"
+              target="_blank"
+              rel="noopener"
+            >
+              klevy
+              <ArrowUpRight className="size-3" aria-hidden />
+            </a>
           </p>
         </div>
       </footer>
