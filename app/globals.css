@@ -354,17 +354,6 @@ a:hover {
   overflow-y: auto;
   font-size: 14px;
 }
-.zb-sidebar-title {
-  margin: 0 0 10px;
-  /* Lines up with the link text: 3px active bar + 12px padding. */
-  padding: 0 0 8px 15px;
-  border-bottom: 1px solid var(--zb-rule);
-  color: var(--zb-text-2);
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
 .zb-sidebar ul {
   margin: 0;
   padding: 0;
@@ -1147,18 +1136,32 @@ section:first-of-type > .zb-overview-heading {
 
 /*
  * The home page only (.zb-journal--home): the essay tighter set, the
- * lighthouse upright beside it filling its column, and the motto
- * under it. "last baseline" puts the motto, the side's last line, on the same
- * line as the essay's last line.
+ * lighthouse upright beside it filling its column, and the motto under it.
+ * Both columns stretch to the same height and are pinned at both ends: the
+ * quote starts level with the top of the photo, and the essay's last line
+ * sits level with the motto. Spare height opens up after the quote (essay)
+ * or above the motto (side), whichever column is shorter.
  */
 .zb-journal--home .zb-journal-entry {
   grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
   gap: 40px;
-  align-items: last baseline;
+  align-items: stretch;
+}
+.zb-journal--home .zb-journal-text {
+  display: flex;
+  flex-direction: column;
+}
+.zb-content .zb-journal--home .zb-journal-text .zb-journal-quote + p {
+  margin-top: auto;
 }
 .zb-journal--home .zb-journal-side {
-  display: grid;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.zb-content .zb-journal--home .zb-journal-motto {
+  margin: auto 0 0;
 }
 .zb-journal--home .zb-journal-photo {
   width: 100%;
@@ -1529,6 +1532,16 @@ section:first-of-type > .zb-overview-heading {
   max-width: 70ch;
   line-height: 1.65;
 }
+/* The overview's intro beside the bikes: set like the home page's essay. */
+.zb-content .zb-gear-intro .zb-gear-text p {
+  max-width: 62ch;
+  margin: 0 0 0.7em;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.zb-content .zb-gear-intro .zb-gear-text p:last-child {
+  margin-bottom: 0;
+}
 .zb-content .zb-gear-note {
   display: flex;
   align-items: flex-start;
@@ -1667,11 +1680,6 @@ a.zb-gear-tile:focus-visible {
   font-size: var(--zb-caption-size);
   font-weight: normal;
   line-height: 1.25;
-}
-.zb-content .zb-gear-credit {
-  margin: 10px 0 0;
-  color: var(--zb-text-2);
-  font-size: 12px;
 }
 
 @media (max-width: 760px) {

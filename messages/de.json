@@ -81,8 +81,7 @@
     "items": "{count, plural, =1 {# Artikel} other {# Artikel}}",
     "entries": "{count, plural, =1 {# Position} other {# Positionen}}",
     "weight": "Gewicht",
-    "also": "Ausserdem",
-    "photo_credit": "Foto Kleider:"
+    "also": "Ausserdem"
   },
   "info": {
     "open": "Öffnen",

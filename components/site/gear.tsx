@@ -13,7 +13,7 @@ const SLUGS = Object.keys(GEAR_CODES);
 /**
  * Overview pictures for the categories whose page has none (both are lists).
  * The passport is public domain (fedpol, Wikimedia Commons); the jacket is the
- * GOREWEAR product shot from bike-discount.de, credited under the tiles.
+ * GOREWEAR product shot from bike-discount.de.
  */
 const TILE_IMAGES: Record<string, GearImage> = {
   kleider: { src: "images/ausruestung/gorewear-spinshift-jacke.png", width: 363, height: 480, alt: "" },
@@ -233,12 +233,6 @@ export async function GearIndex({ locale }: { locale: string }) {
           );
         })}
       </ul>
-      <p className="zb-gear-credit">
-        {t("gear.photo_credit")}{" "}
-        <a href="https://www.bike-discount.de/de/gorewear-spinshift-gore-tex-regenjacke-2" target="_blank" rel="noopener noreferrer">
-          GOREWEAR / bike-discount.de
-        </a>
-      </p>
     </div>
   );
 }

@@ -153,7 +153,6 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
       <div className="zb-wrap zb-body">
         {sidebar.length > 0 && (
           <nav className="zb-sidebar" aria-label={t("nav.sub")}>
-            <p className="zb-sidebar-title">{sectionLabel}</p>
             {sidebarLinks}
           </nav>
         )}
