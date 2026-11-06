@@ -32,10 +32,10 @@ export const MAIN_NAV: NavItem[] = [
  */
 export const SECTION_BANNERS: Record<string, string> = {
   "/": "home-luzern-kapellbruecke.jpg",
-  "/ausruestung": "ausruestung-rheinschlucht-ruinaulta.jpg",
+  "/ausruestung": "ausruestung-schneepiste-alpen.jpg",
   "/berichte": "berichte-schloss-chillon.jpg",
   "/fotos": "fotos-matterhorn-riffelsee.jpg",
-  "/route": "route-gotthard-tremola.jpg",
+  "/route": "route-basel-mittlere-bruecke-nacht.jpg",
   "/info": "info-urnersee-fronalpstock.jpg",
   "/varia": "varia-dampfschiff-stadt-luzern.jpg",
 };
@@ -48,9 +48,11 @@ export const SECTION_BANNERS: Record<string, string> = {
 export const BANNER_FOCUS: Record<string, string> = {
   "home-luzern-kapellbruecke.jpg": "55%",
   "ausruestung-rheinschlucht-ruinaulta.jpg": "65%",
+  "ausruestung-schneepiste-alpen.jpg": "50%",
   "berichte-schloss-chillon.jpg": "60%",
   "fotos-matterhorn-riffelsee.jpg": "55%",
   "route-gotthard-tremola.jpg": "65%",
+  "route-basel-mittlere-bruecke-nacht.jpg": "45%",
   "info-urnersee-fronalpstock.jpg": "50%",
   "varia-dampfschiff-stadt-luzern.jpg": "70%",
 };
