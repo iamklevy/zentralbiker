@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Atkinson_Hyperlegible_Next } from "next/font/google";
 import { notFound } from "next/navigation";
+import { Analytics } from "@vercel/analytics/next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { routing } from "@/i18n/routing";
 import { SiteChrome } from "@/components/site/site-chrome";
-import { THEME_SCRIPT } from "@/lib/theme";
+import { ThemeScript } from "@/components/site/theme-script";
 import { SITE_URL } from "@/lib/seo";
 import "../globals.css";
 
@@ -66,7 +67,7 @@ export default async function LocaleLayout({
     // The theme script adds "dark" before React hydrates, hence the warning opt-out.
     <html lang={locale} className={labelFont.variable} suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+        <ThemeScript />
       </head>
       {/* Browser extensions (Grammarly and the like) add attributes to <body>
           before React loads; they are not ours to match. */}
@@ -74,6 +75,9 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <SiteChrome>{children}</SiteChrome>
         </NextIntlClientProvider>
+        {/* Vercel Web Analytics: cookieless page views. Sends nothing in
+            development; enable it in the Vercel project's Analytics tab. */}
+        <Analytics />
       </body>
     </html>
   );
