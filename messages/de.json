@@ -159,11 +159,18 @@
     "empty": "In dieser Galerie sind noch keine Bilder.",
     "play": "Film abspielen"
   },
-  "music": {
-    "label": "Musik zur Reise",
-    "play": "Musik abspielen",
-    "pause": "Musik anhalten",
-    "seek": "Position in der Musik"
+  "show": {
+    "label": "Diashow",
+    "play": "Diashow abspielen",
+    "pause": "Diashow anhalten",
+    "prev": "Vorheriges Bild",
+    "next": "Nächstes Bild",
+    "musicOn": "Musik einschalten",
+    "musicOff": "Musik ausschalten",
+    "tapForMusic": "Tippen für Musik",
+    "fullscreen": "Vollbild",
+    "exitFullscreen": "Vollbild beenden",
+    "counter": "{current} / {total}"
   },
   "guestbook": {
     "title": "Gästebuch",

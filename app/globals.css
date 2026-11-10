@@ -338,63 +338,126 @@ a:hover {
   box-shadow: 0 0 0 2px var(--color-accent);
 }
 
-/* The music player above a highlights gallery: the menu bar's frosted pill. */
-.zb-music {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+/* A leg's highlights as a slideshow over its music (components/site/
+   highlights-show.tsx): the photo on a dark screen, fading from one to the
+   next as on the old site, and the controls in the menu bar's frosted pill. */
+.zb-show {
   margin: 0 0 1.5em;
-  padding: 6px 16px 6px 6px;
+  outline: none;
+}
+.zb-show:focus-visible .zb-show-stage {
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
+.zb-show-stage {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  max-height: 72vh;
+  width: 100%;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 45%, #1d1a15 0%, #0a0907 70%);
+}
+.zb-show-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: zb-fade 1s ease-out both;
+}
+.zb-show-img.is-under {
+  animation: none;
+}
+.zb-show-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin-top: 10px;
+  padding: 6px 6px 6px 18px;
   border: 1px solid var(--zb-glass-line);
-  border-radius: 999px;
+  border-radius: 28px;
   background: var(--zb-glass);
   box-shadow: var(--zb-glass-shadow);
   color: var(--zb-glass-fg);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
-.zb-music-toggle {
-  display: grid;
-  flex: none;
-  width: 38px;
-  height: 38px;
-  place-items: center;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: var(--zb-button);
-  color: #e0e0e0;
-  cursor: pointer;
-  transition: background 0.15s ease;
-}
-.zb-music-toggle:hover {
-  background: var(--zb-button-hover);
-}
-.zb-music-toggle:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px var(--color-accent);
-}
-.zb-music-label {
-  flex: none;
+/* Two classes, to outrank `.zb-content p` and its bottom margin, which
+   would push the caption up off the bar's centre line. */
+.zb-show-bar .zb-show-caption {
+  flex: 1 1 12em;
+  min-width: 0;
+  margin: 0;
   font-family: var(--zb-caption-font);
   font-size: var(--zb-caption-size);
 }
-.zb-music-seek {
-  flex: 1;
-  min-width: 0;
-  accent-color: var(--zb-link);
-  cursor: pointer;
-}
-.zb-music-time {
+.zb-show-count {
   flex: none;
   color: var(--zb-glass-muted);
   font-family: var(--zb-mono);
   font-size: 12px;
   font-variant-numeric: tabular-nums;
 }
+.zb-show-buttons {
+  display: flex;
+  flex: none;
+  gap: 4px;
+}
+.zb-show-buttons button {
+  display: inline-flex;
+  min-width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: var(--zb-glass-fg);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.zb-show-buttons button:hover {
+  background: var(--zb-glass-hover);
+}
+.zb-show-buttons button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
+/* the music switch stands out while it is on */
+.zb-show-buttons .zb-show-music[aria-pressed="true"] {
+  background: var(--zb-button);
+  color: #e0e0e0;
+}
+/* Full screen: the photo fills the screen, the controls along the bottom. */
+.zb-show:fullscreen {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 16px;
+  background: #050504;
+}
+.zb-show:fullscreen .zb-show-stage {
+  flex: 1;
+  aspect-ratio: auto;
+  max-height: none;
+  background: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .zb-show-img {
+    animation: none;
+  }
+}
 @media (max-width: 520px) {
-  .zb-music-label {
-    display: none;
+  .zb-show-bar {
+    padding-left: 14px;
+  }
+  .zb-show-buttons {
+    width: 100%;
+    justify-content: space-between;
   }
 }
 
