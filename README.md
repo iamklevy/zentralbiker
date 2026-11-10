@@ -117,3 +117,27 @@ by design. If a browser-side client is ever added, write explicit policies then.
 Set the environment variables from `.env.example`, then make `public/media` available — either
 by running `npm run sync-media` as a build step with the mirror present, or by serving
 `/media/*` from object storage via a rewrite in `next.config.ts`.
+
+### Domains
+
+- **zentralbiker.ch** — this site, on Vercel. DNS stays at Metanet: only the `@` and `www`
+  records point at Vercel; MX and `mail.zentralbiker.ch` stay on Metanet, which hosts the
+  `post@zentralbiker.ch` mailbox.
+- **zentralbiker.com** — the old site, as an archive on its Metanet hosting. DNS is in Vercel
+  DNS; `@` and `www` point at the Metanet server.
+
+`NEXT_PUBLIC_SITE_URL` is read at build time (canonical tags, sitemap, Open Graph), so redeploy
+after changing it.
+
+### Old addresses
+
+The new site took over the old site's domain, so its addresses keep working
+(`lib/old-site.ts`, wired up in `next.config.ts`):
+
+- each of the old pages redirects (301) to its new page, e.g.
+  `/4fotos/400_highlights_asien.html` → `/fotos/highlights-asien` — German, as the old site was;
+- the galleries removed on purpose go to `/fotos`, and any other old `.html` in a section
+  folder to that section;
+- old file addresses (photos, PDFs, music under `/4fotos/…`, `/7varia/…`, …) are sent on to the
+  same file in the media bucket by `app/api/old-file`, which applies the umlaut
+  transliteration of `lib/media-key.mjs`.
