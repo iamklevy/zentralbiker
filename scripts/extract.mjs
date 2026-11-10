@@ -93,7 +93,7 @@ const LAYOUT_STYLE =
 
 // iframes embedded the old PHP contact form and guestbook, which the new
 // site replaces with its own forms.
-const DROP_TAGS = ["script", "noscript", "style", "meta", "link", "iframe"];
+const DROP_TAGS = ["script", "noscript", "style", "meta", "link", "iframe", "canvas"];
 const UNWRAP_TAGS = ["font", "center", "basefont", "tt"];
 
 /** Text styles from the old style.css that carry meaning (see .zb-content in globals.css). */

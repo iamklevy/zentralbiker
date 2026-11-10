@@ -188,13 +188,14 @@ a:hover {
 
 /* The section banner as an edge-to-edge panorama. The files are 5:2
    (2400x960), so the banner keeps that shape and shows the whole photo on
-   phones and laptops; on wide screens it stops at the height cap so the page
-   still starts above the fold, and is cropped around the per-image focus
-   point (BANNER_FOCUS in content/nav.ts). */
+   phones and most laptops; on wide screens it stops at the height cap so the
+   page still starts above the fold, and is cropped around the per-image focus
+   point (BANNER_FOCUS in content/nav.ts). The cap is generous on purpose: the
+   scenery is the point (1440x900 shows ~97% of the photo, 1920x1080 ~81%). */
 .zb-hero {
   position: relative;
   aspect-ratio: 5 / 2;
-  max-height: min(45vh, 420px);
+  max-height: min(62vh, 620px);
   min-height: 140px;
   width: 100%;
   overflow: hidden;
@@ -335,6 +336,66 @@ a:hover {
 .zb-nav a:focus-visible,
 .zb-theme:focus-visible {
   box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+/* The music player above a highlights gallery: the menu bar's frosted pill. */
+.zb-music {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 1.5em;
+  padding: 6px 16px 6px 6px;
+  border: 1px solid var(--zb-glass-line);
+  border-radius: 999px;
+  background: var(--zb-glass);
+  box-shadow: var(--zb-glass-shadow);
+  color: var(--zb-glass-fg);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+.zb-music-toggle {
+  display: grid;
+  flex: none;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--zb-button);
+  color: #e0e0e0;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.zb-music-toggle:hover {
+  background: var(--zb-button-hover);
+}
+.zb-music-toggle:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
+.zb-music-label {
+  flex: none;
+  font-family: var(--zb-caption-font);
+  font-size: var(--zb-caption-size);
+}
+.zb-music-seek {
+  flex: 1;
+  min-width: 0;
+  accent-color: var(--zb-link);
+  cursor: pointer;
+}
+.zb-music-time {
+  flex: none;
+  color: var(--zb-glass-muted);
+  font-family: var(--zb-mono);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 520px) {
+  .zb-music-label {
+    display: none;
+  }
 }
 
 /* Sidebar beside the content, kept in view while reading. */
@@ -554,7 +615,10 @@ a:hover {
 
 /* ---------------------------------------------------- tablet and phone */
 
-@media (max-width: 760px) {
+/* The compact frame (menu button, no sidebar) runs up to 959px: iPads in
+   portrait (744-834px) cannot fit the desktop menu bar and sidebar beside
+   the page, and the content needs the whole width there. */
+@media (max-width: 959px) {
   .zb-body {
     display: block;
   }
@@ -658,6 +722,10 @@ a:hover {
     height: 34px;
   }
 
+}
+
+/* Phone-sized content: smaller print, pictures on their own row. */
+@media (max-width: 760px) {
   .zb-content {
     padding-top: 1em;
   }

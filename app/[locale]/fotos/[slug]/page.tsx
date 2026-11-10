@@ -5,6 +5,7 @@ import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { PhotoOverview } from "@/components/site/photo-overview";
 import { Gallery as GalleryView } from "@/components/site/gallery";
+import { HighlightsMusic } from "@/components/site/highlights-music";
 import { ALL_GALLERIES, FOTO_OVERVIEWS, getGallery, getPage, localName, translatedTitle } from "@/lib/content";
 import { pageAlternates } from "@/lib/seo";
 
@@ -41,6 +42,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
   return (
     <>
       <h1>{localName(slug, gallery.name, locale)}</h1>
+      <HighlightsMusic slug={slug} />
       <GalleryView items={gallery.items} />
     </>
   );

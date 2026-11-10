@@ -159,6 +159,12 @@
     "empty": "In dieser Galerie sind noch keine Bilder.",
     "play": "Film abspielen"
   },
+  "music": {
+    "label": "Musik zur Reise",
+    "play": "Musik abspielen",
+    "pause": "Musik anhalten",
+    "seek": "Position in der Musik"
+  },
   "guestbook": {
     "title": "Gästebuch",
     "lead": "Schreib uns ein paar Zeilen – wir lesen unterwegs mit.",
