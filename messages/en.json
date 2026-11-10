@@ -159,11 +159,18 @@
     "empty": "There are no images in this gallery yet.",
     "play": "Play film"
   },
-  "music": {
-    "label": "Music of the trip",
-    "play": "Play music",
-    "pause": "Pause music",
-    "seek": "Position in the music"
+  "show": {
+    "label": "Slideshow",
+    "play": "Play slideshow",
+    "pause": "Pause slideshow",
+    "prev": "Previous photo",
+    "next": "Next photo",
+    "musicOn": "Turn music on",
+    "musicOff": "Turn music off",
+    "tapForMusic": "Tap for music",
+    "fullscreen": "Full screen",
+    "exitFullscreen": "Exit full screen",
+    "counter": "{current} / {total}"
   },
   "guestbook": {
     "title": "Guestbook",
