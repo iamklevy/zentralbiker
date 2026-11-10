@@ -159,6 +159,12 @@
     "empty": "There are no images in this gallery yet.",
     "play": "Play film"
   },
+  "music": {
+    "label": "Music of the trip",
+    "play": "Play music",
+    "pause": "Pause music",
+    "seek": "Position in the music"
+  },
   "guestbook": {
     "title": "Guestbook",
     "lead": "Leave us a few lines — we read them on the road.",
