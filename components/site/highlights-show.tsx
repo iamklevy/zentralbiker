@@ -23,9 +23,18 @@ import { mediaUrl } from "@/lib/media";
  * interacted with the page, so if the music is refused it starts, in step,
  * on the first tap, click or key press, unless the reader switched it off.
  */
+/**
+ * Captions that should read differently from their file name. The files keep
+ * their names: the old site's links and the media bucket use them.
+ */
+const CAPTION_FIXES: Record<string, string> = {
+  "000b 120 Kilo Gepäck Luzern - Schweiz.jpg": "000b 120 kg Gepäck Luzern - Schweiz.jpg",
+};
+
 /** "4fotos/…/006 Abkühlung - Costa Rica.JPG" -> "Abkühlung – Costa Rica". */
 function caption(src: string): string {
-  const name = (src.split("/").pop() ?? "")
+  const file = src.split("/").pop() ?? "";
+  const name = (CAPTION_FIXES[file] ?? file)
     .replace(/\.[^.]+$/, "")
     .replace(/^\d+[a-z]?\s+/i, "")
     .replace(/_/g, " ")
