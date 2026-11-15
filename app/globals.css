@@ -561,6 +561,20 @@ a:hover {
   text-decoration: none;
   transition: color 0.15s ease;
 }
+/* A sentence, not a row of links: wraps as centred text on phones, with the
+   link kept in one piece instead of dropping onto its own flex line. */
+.zb-footer p.zb-footer-classic {
+  display: block;
+  max-width: 34rem;
+  margin-inline: auto;
+  padding-inline: 16px;
+  text-align: center;
+  line-height: 1.6;
+  text-wrap: balance;
+}
+.zb-footer-classic a {
+  white-space: nowrap;
+}
 .zb-footer-credit a:hover,
 .zb-footer-credit a:focus-visible {
   color: #e0e0e0;

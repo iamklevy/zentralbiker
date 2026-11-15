@@ -191,7 +191,7 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
               <ArrowUpRight className="size-3" aria-hidden />
             </a>
           </p>
-          <p className="zb-footer-credit">
+          <p className="zb-footer-credit zb-footer-classic">
             {t("footer.classic")}{" "}
             <a href="https://zentralbiker.com" target="_blank" rel="noopener">
               zentralbiker.com
