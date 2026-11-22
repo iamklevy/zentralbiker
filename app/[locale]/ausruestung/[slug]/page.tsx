@@ -1,41 +1,24 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 import { routing } from "@/i18n/routing";
-import { ContentPage, sectionSlugs, titleFromSlug } from "@/components/site/content-page";
+import { sectionSlugs, titleFromSlug } from "@/components/site/content-page";
+import { GearSheet } from "@/components/site/gear";
+import { translatedTitle } from "@/lib/content";
+import { pageAlternates } from "@/lib/seo";
 
 export function generateStaticParams() {
-  return routing.locales.flatMap((locale) =>
-    sectionSlugs("ausruestung").map((slug) => ({ locale, slug })),
-  );
+  const slugs = sectionSlugs("ausruestung");
+  return routing.locales.flatMap((locale) => slugs.map((slug) => ({ locale, slug })));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
-  return { title: titleFromSlug(slug) };
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug } = await params;
+  return { title: translatedTitle(`/ausruestung/${slug}`, locale) ?? titleFromSlug(slug), alternates: pageAlternates(`/ausruestung/${slug}`, locale) };
 }
 
-export default async function AusruestungPage({
-  params,
-}: {
-  params: Promise<{ locale: string; slug: string }>;
-}) {
+export default async function Page({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations();
-
-  return (
-    <ContentPage
-      path={`/ausruestung/${slug}`}
-      title={titleFromSlug(slug)}
-      crumbs={[
-        { label: t("section.ausruestung.title"), href: "/ausruestung" },
-        { label: titleFromSlug(slug) },
-      ]}
-    />
-  );
+  return <GearSheet slug={slug} locale={locale} />;
 }

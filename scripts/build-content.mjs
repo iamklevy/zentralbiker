@@ -16,6 +16,8 @@ import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { withoutExcluded } from "./excluded.mjs";
+
 const HERE = dirname(fileURLToPath(import.meta.url));
 const GEN = join(HERE, "..", "content", "generated");
 const MIRROR = process.argv[2];
@@ -25,7 +27,7 @@ if (!MIRROR || !existsSync(MIRROR)) {
 }
 
 const pages = JSON.parse(readFileSync(join(GEN, "pages.json"), "utf8"));
-const manifest = JSON.parse(readFileSync(join(MIRROR, "_manifest.json"), "utf8"));
+const manifest = withoutExcluded(JSON.parse(readFileSync(join(MIRROR, "_manifest.json"), "utf8")));
 
 /* ------------------------------------------------------------------ legs */
 
@@ -47,10 +49,17 @@ const NAMES = {
   tadschikistan: "Tadschikistan", kirgistan: "Kirgistan", china: "China",
   laos: "Laos", kambodscha: "Kambodscha", thailand: "Thailand",
   malaysia: "Malaysia", singapur: "Singapur", borneo: "Borneo",
-  bolivia: "Bolivien", chile: "Chile", "new-zealand": "Neuseeland",
+  bolivia: "Bolivien", chile: "Chile/Argentinien", "new-zealand": "Neuseeland",
   rumaenien: "Rumänien", aegypten: "Ägypten", mexico: "Mexico",
   nordamerika: "Nordamerika", suedamerika: "Südamerika",
 };
+
+/**
+ * Entries that cover more than one country. The Oceania leg rode back and
+ * forth across the Andes, and the old site kept Chile and Argentina as one
+ * report, gallery and route ("Chile/Argentinien"); Argentina still counts.
+ */
+const ALSO = { chile: ["argentinien"] };
 
 const nice = (slug) => NAMES[slug] || slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 
@@ -72,9 +81,11 @@ for (const oldPath of Object.keys(pages)) {
   const key = p.num;
   if (!countries.has(key)) countries.set(key, { num: key, slug: p.slug });
   const c = countries.get(key);
-  // The report section owns the canonical slug; route/gallery filenames
-  // sometimes differ in spelling (531bolivia vs 331bolivien).
-  if (p.sec === "3") c.slug = p.slug;
+  // The report section owns the canonical slug — taken from the URL the
+  // extractor gave the report, which can differ from the filename (see
+  // RENAMED in extract.mjs); route/gallery filenames sometimes differ in
+  // spelling too (531bolivia vs 331bolivien).
+  if (p.sec === "3") c.slug = pages[oldPath].path.slice("/berichte/".length);
   c[{ 3: "report", 5: "route", 4: "gallery" }[p.sec]] = oldPath;
 }
 
@@ -160,11 +171,19 @@ for (const [dir, files] of byDir) {
   if (!items.length) continue;
 
   const base = dir.slice("4fotos/".length);
-  const slug = base
-    .replace(/^\d+/, "")
-    .replace(/^(photos|thumbnails|images)_?/, "")
-    .replace(/^highlights_/, "highlights-")
-    .replace(/_/g, "-");
+  // A numbered photo folder belongs to the gallery page with the same number,
+  // and must live at that page's URL — the folder names are spelled
+  // differently (406photos_costarica vs 406costa_rica.html, 419photos_uzbekistan
+  // vs 419usbekistan.html), and every menu and in-text link uses the page's.
+  const num = base.match(/^(\d{3})/)?.[1];
+  const pageForNum = num && Object.values(pages).find((p) => p.oldPath.startsWith(`4fotos/${num}`));
+  const slug = pageForNum
+    ? pageForNum.path.slice("/fotos/".length)
+    : base
+        .replace(/^\d+/, "")
+        .replace(/^(photos|thumbnails|images)_?/, "")
+        .replace(/^highlights_/, "highlights-")
+        .replace(/_/g, "-");
   galleries[dir] = { dir, slug, name: nice(slug.replace(/^highlights-/, "")), count: items.length, items };
 }
 
@@ -179,6 +198,7 @@ const legs = LEGS.map((leg) => ({
     .map((c) => ({
       ...c,
       name: nice(c.slug),
+      ...(ALSO[c.slug] && { also: ALSO[c.slug] }),
       path: `/berichte/${c.slug}`,
       galleryDir:
         Object.keys(galleries).find((d) => d.startsWith(`4fotos/${String(c.num).padStart(2, "0")}`)) ||
@@ -190,12 +210,13 @@ const legs = LEGS.map((leg) => ({
 writeFileSync(join(GEN, "journey.json"), JSON.stringify({ legs }, null, 1));
 writeFileSync(join(GEN, "galleries.json"), JSON.stringify(galleries, null, 1));
 
-const totalCountries = legs.reduce((n, l) => n + l.countries.length, 0);
+const countryCount = (cs) => cs.reduce((n, c) => n + 1 + (c.also?.length ?? 0), 0);
+const totalCountries = legs.reduce((n, l) => n + countryCount(l.countries), 0);
 const totalPhotos = Object.values(galleries).reduce((n, g) => n + g.count, 0);
 const withThumb = Object.values(galleries).reduce(
   (n, g) => n + g.items.filter((i) => i.thumb !== i.src).length, 0);
 console.log(`journey: ${legs.length} legs, ${totalCountries} countries`);
-legs.forEach((l) => console.log(`   ${l.name.padEnd(10)} ${l.countries.length} countries`));
+legs.forEach((l) => console.log(`   ${l.name.padEnd(10)} ${countryCount(l.countries)} countries`));
 console.log(`galleries: ${Object.keys(galleries).length}, ${totalPhotos} photos (${withThumb} with a real thumbnail)`);
 const noGallery = legs.flatMap((l) => l.countries).filter((c) => !c.galleryDir);
 if (noGallery.length) console.log(`countries without a gallery: ${noGallery.map((c) => c.slug).join(", ")}`);

@@ -1,6 +1,7 @@
 import pagesJson from "@/content/generated/pages.json";
 import journeyJson from "@/content/generated/journey.json";
 import galleriesJson from "@/content/generated/galleries.json";
+import enJson from "@/content/translations/en.json";
 
 /* ------------------------------------------------------------------ types */
 
@@ -26,6 +27,8 @@ export interface Country {
   route?: string;
   gallery?: string;
   galleryDir: string | null;
+  /** Other countries this entry covers, e.g. Chile's "argentinien". */
+  also?: string[];
 }
 
 export interface Leg {
@@ -67,12 +70,30 @@ for (const page of Object.values(PAGES)) {
 
 /* --------------------------------------------------------------- lookups */
 
-export function getPage(path: string): MigratedPage | null {
-  return BY_PATH.get(path) ?? null;
+/**
+ * English versions of the migrated pages, keyed by new path. A page without
+ * one is served in the original German — nothing is ever blank.
+ */
+const TRANSLATIONS: Record<string, Record<string, { title?: string; html: string }>> = {
+  en: enJson as Record<string, { title?: string; html: string }>,
+};
+
+function localize(page: MigratedPage | null, locale?: string): MigratedPage | null {
+  const tr = page && locale ? TRANSLATIONS[locale]?.[page.path] : undefined;
+  return tr ? { ...page!, html: tr.html, title: tr.title ?? page!.title } : page;
 }
 
-export function getPageByOldPath(oldPath: string): MigratedPage | null {
-  return PAGES[oldPath] ?? null;
+export function getPage(path: string, locale?: string): MigratedPage | null {
+  return localize(BY_PATH.get(path) ?? null, locale);
+}
+
+export function getPageByOldPath(oldPath: string, locale?: string): MigratedPage | null {
+  return localize(PAGES[oldPath] ?? null, locale);
+}
+
+/** Whether a page has an English (or other) version yet. */
+export function isTranslated(path: string, locale: string): boolean {
+  return locale === "de" || Boolean(TRANSLATIONS[locale]?.[path]);
 }
 
 /** All migrated pages that live directly under a section, e.g. "/info". */
@@ -84,6 +105,11 @@ export function pagesInSection(section: string): MigratedPage[] {
 }
 
 export const ALL_COUNTRIES: Country[] = LEGS.flatMap((l) => l.countries);
+
+/** How many countries a list of entries covers ("Chile/Argentinien" is two). */
+export function countryCount(countries: Country[]): number {
+  return countries.reduce((n, c) => n + 1 + (c.also?.length ?? 0), 0);
+}
 
 export function getLeg(slug: string): Leg | null {
   return LEGS.find((l) => l.slug === slug) ?? null;
@@ -123,17 +149,58 @@ export function getGalleryByDir(dir: string | null): Gallery | null {
 }
 
 /** Highlight galleries are the curated per-continent sets; the rest are per country. */
+/** Slugs of the migrated /fotos/* pages that are overviews, not galleries. */
+export const FOTO_OVERVIEWS = pagesInSection("fotos")
+  .map((p) => p.path.slice("/fotos/".length))
+  .filter((slug) => !ALL_GALLERIES.some((g) => g.slug === slug));
+
 export const HIGHLIGHT_GALLERIES = ALL_GALLERIES.filter((g) => g.slug.startsWith("highlights-"));
 export const COUNTRY_GALLERIES = ALL_GALLERIES.filter((g) => !g.slug.startsWith("highlights-"));
 
 /* ------------------------------------------------------------- site stats */
 
 export const SITE_STATS = {
-  countries: ALL_COUNTRIES.length,
+  countries: countryCount(ALL_COUNTRIES),
   reports: ALL_COUNTRIES.filter((c) => c.report).length,
   photos: ALL_GALLERIES.reduce((n, g) => n + g.count, 0),
   legs: LEGS.length,
 };
 
 /** Asset path on the new site for a mirrored file. */
-export const media = (p: string) => `/media/${p}`;
+export { mediaUrl as media } from "@/lib/media";
+
+/* ---------------------------------------------------------------- titles */
+
+/**
+ * English names for countries, legs and galleries, by slug — only where they
+ * differ from the German (Peru is Peru). Used for page titles, which the
+ * German routes take from the migrated names.
+ */
+const NAMES_EN: Record<string, string> = {
+  amerika: "America",
+  asien: "Asia",
+  ozeanien: "Oceania",
+  argentinien: "Argentina",
+  bolivien: "Bolivia",
+  bolivia: "Bolivia",
+  chile: "Chile/Argentina",
+  kalifornien: "California",
+  kambodscha: "Cambodia",
+  kirgistan: "Kyrgyzstan",
+  mexiko: "Mexico",
+  "new-zealand": "New Zealand",
+  singapur: "Singapore",
+  tadschikistan: "Tajikistan",
+  tuerkei: "Turkey",
+  usbekistan: "Uzbekistan",
+};
+
+/** A country, leg or gallery name in the reader's language. */
+export function localName(slug: string, german: string, locale: string): string {
+  return locale === "en" ? (NAMES_EN[slug.replace(/^highlights-/, "")] ?? german) : german;
+}
+
+/** A page's title from its translation, if it has one (not for German). */
+export function translatedTitle(path: string, locale: string): string | undefined {
+  return locale === "de" ? undefined : TRANSLATIONS[locale]?.[path]?.title;
+}

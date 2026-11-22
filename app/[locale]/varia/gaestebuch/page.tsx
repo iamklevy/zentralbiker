@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { PageHero } from "@/components/site/page-hero";
-import { Section } from "@/components/site/section";
 import { GuestbookForm } from "@/components/site/guestbook-form";
 import { listEntries } from "@/lib/guestbook/actions";
 import { formatDate } from "@/lib/utils";
+import { pageAlternates } from "@/lib/seo";
 
 // Entries are moderated, so a short revalidate window is plenty — and it
 // keeps the page static for the overwhelming majority of visits.
@@ -18,7 +17,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "guestbook" });
-  return { title: t("title"), description: t("lead") };
+  return { title: t("title"), description: t("lead"), alternates: pageAlternates("/varia/gaestebuch", locale) };
 }
 
 export default async function GaestebuchPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -29,15 +28,11 @@ export default async function GaestebuchPage({ params }: { params: Promise<{ loc
 
   return (
     <>
-      <PageHero
-        crumbs={[{ label: t("section.varia.title"), href: "/varia" }, { label: t("guestbook.title") }]}
-        title={t("guestbook.title")}
-        lead={t("guestbook.lead")}
-      />
+      <h1>{t("guestbook.title")}</h1>
 
-      <Section>
+      <section>
         <div className="grid gap-10 lg:grid-cols-[22rem_minmax(0,1fr)]">
-          <div className="lg:sticky lg:top-24 lg:self-start">
+          <div className="">
             <GuestbookForm />
           </div>
 
@@ -53,10 +48,10 @@ export default async function GaestebuchPage({ params }: { params: Promise<{ loc
                 {entries.map((entry) => (
                   <li
                     key={entry.id}
-                    className="rounded-card border border-line bg-paper p-5 shadow-soft"
+                    className="border-b border-[#666] py-3"
                   >
                     <div className="flex flex-wrap items-baseline justify-between gap-2">
-                      <p className="font-display text-[1.05rem] font-semibold text-ink">
+                      <p className="text-[1.05rem] font-semibold text-ink">
                         {entry.name}
                         {entry.location && (
                           <span className="ms-2 text-[0.88rem] font-normal text-muted">
@@ -82,7 +77,7 @@ export default async function GaestebuchPage({ params }: { params: Promise<{ loc
             )}
           </div>
         </div>
-      </Section>
+      </section>
     </>
   );
 }

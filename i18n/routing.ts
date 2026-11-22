@@ -1,13 +1,15 @@
 import { defineRouting } from "next-intl/routing";
 
+import { pathnames } from "./pathnames";
+
 /**
  * German is the default and stays un-prefixed at `/`, because that is what the
  * old static site served and what its inbound links and search rankings point
- * at. English and French get their own indexable trees at `/en/...` and
- * `/fr/...` — the original had no translations at all, so these are additive.
+ * at. English gets its own indexable tree at `/en/...`
+ * — the original had no translations at all, so this is additive.
  */
 export const routing = defineRouting({
-  locales: ["de", "en", "fr"],
+  locales: ["de", "en"],
   defaultLocale: "de",
   localePrefix: "as-needed",
   /*
@@ -17,11 +19,16 @@ export const routing = defineRouting({
    * for — so the same URL that Google has indexed as German would answer in
    * English to an English browser. The old site served German at "/" for
    * years and its inbound links and rankings all point there, so that URL has
-   * to stay German for everyone. English and French are reachable, and
-   * discoverable, through the explicit /en and /fr prefixes and the hreflang
+   * to stay German for everyone. English is reachable, and
+   * discoverable, through the explicit /en prefix and the hreflang
    * alternates in the layout's metadata.
    */
   localeDetection: false,
+  /*
+   * English pages get English URLs (/en/about-us, /en/reports/turkey). The
+   * German path stays the internal one, so routes and links keep using it.
+   */
+  pathnames,
 });
 
 export type Locale = (typeof routing.locales)[number];

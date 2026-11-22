@@ -1,37 +1,17 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { PageHero } from "@/components/site/page-hero";
-import { Section } from "@/components/site/section";
-import { SectionIndex } from "@/components/site/section-index";
-import { SECTION_BANNERS } from "@/content/nav";
+import { InfoIndex } from "@/components/site/info";
+import { pageAlternates } from "@/lib/seo";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "section.info" });
-  return { title: t("title"), description: t("lead") };
+  const t = await getTranslations({ locale });
+  return { title: t("nav.info"), alternates: pageAlternates("/info", locale) };
 }
 
-export default async function InfoIndex({ params }: { params: Promise<{ locale: string }> }) {
+export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations();
-
-  return (
-    <>
-      <PageHero
-        crumbs={[{ label: t("section.info.title") }]}
-        title={t("section.info.title")}
-        lead={t("section.info.lead")}
-        image={SECTION_BANNERS["/info"]}
-      />
-      <Section>
-        <SectionIndex section="info" />
-      </Section>
-    </>
-  );
+  return <InfoIndex locale={locale} />;
 }

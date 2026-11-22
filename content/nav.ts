@@ -1,35 +1,21 @@
 /**
- * Site navigation, mirroring the original information architecture.
- *
- * The old site split navigation in two: a horizontal main bar (Home,
- * Ausruestung, Berichte, Fotos, Route, Info, Varia) and a small sidebar list
- * of the three "about" pages. Both are preserved here — the sidebar entries
- * now hang off Home as a dropdown instead of floating in the left column.
+ * Site navigation, exactly as the original laid it out: a horizontal main bar
+ * (Home, Ausrüstung, Berichte, Fotos, Route, Info, Varia) above the content,
+ * and a per-page sidebar list on the left. The sidebar is copied from each
+ * old page by scripts/build-chrome.mjs, because it varies within a section
+ * (a gallery lists only its own sub-continent) — this file only holds the
+ * fallback for pages that had none.
  *
  * `labelKey` indexes into messages/<locale>.json under `nav.`.
  */
 
-export interface NavChild {
-  href: string;
-  labelKey: string;
-}
-
 export interface NavItem {
   href: string;
   labelKey: string;
-  children?: NavChild[];
 }
 
 export const MAIN_NAV: NavItem[] = [
-  {
-    href: "/",
-    labelKey: "home",
-    children: [
-      { href: "/ueber-uns", labelKey: "ueber_uns" },
-      { href: "/claudia", labelKey: "claudia" },
-      { href: "/alexandre", labelKey: "alexandre" },
-    ],
-  },
+  { href: "/", labelKey: "home" },
   { href: "/ausruestung", labelKey: "ausruestung" },
   { href: "/berichte", labelKey: "berichte" },
   { href: "/fotos", labelKey: "fotos" },
@@ -38,28 +24,64 @@ export const MAIN_NAV: NavItem[] = [
   { href: "/varia", labelKey: "varia" },
 ];
 
-/** Sections that render an index page listing their migrated sub-pages. */
-export const INDEX_SECTIONS = ["ausruestung", "info", "varia"] as const;
-
 /**
- * Header banners, one per top-level section — the old site swapped a
- * 1000x140 Lucerne photo above the nav on every section (luzern1..7, in
- * `MAIN_NAV` order). Kept as the hero background image on each section's
- * index page so picking a different menu item still changes the picture.
+ * The photo band above every page — one Swiss shot per section, in MAIN_NAV
+ * order. The files live in public/images/kopf (served by the app itself, not
+ * the media bucket), pre-cropped to 2.5:1 with the subject where the thin
+ * desktop strip shows it.
  */
 export const SECTION_BANNERS: Record<string, string> = {
-  "/": "/media/images/kopf/luzern1_1000x140.jpg",
-  "/ausruestung": "/media/images/kopf/luzern2_1000x140.jpg",
-  "/berichte": "/media/images/kopf/luzern3_1000x140.jpg",
-  "/fotos": "/media/images/kopf/luzern4_1000x140.jpg",
-  "/route": "/media/images/kopf/luzern5_1000x140.jpg",
-  "/info": "/media/images/kopf/luzern6_1000x140.jpg",
-  "/varia": "/media/images/kopf/luzern7_1000x140.jpg",
+  "/": "home-luzern-kapellbruecke.jpg",
+  "/ausruestung": "ausruestung-schneepiste-alpen.jpg",
+  "/berichte": "berichte-schloss-chillon.jpg",
+  "/fotos": "fotos-matterhorn-riffelsee.jpg",
+  "/route": "route-basel-mittlere-bruecke-nacht.jpg",
+  "/info": "info-urnersee-fronalpstock.jpg",
+  "/varia": "varia-dampfschiff-stadt-luzern.jpg",
 };
 
-/** Locale display names for the language switcher. */
-export const LOCALE_NAMES: Record<string, string> = {
-  de: "Deutsch",
-  en: "English",
-  fr: "Français",
+/**
+ * Where each banner's subject sits vertically (CSS object-position y). On
+ * wide screens the banner hits its height cap and is cropped top and bottom;
+ * this keeps the castle, peak or ship in view. Unlisted banners use 50%.
+ */
+export const BANNER_FOCUS: Record<string, string> = {
+  "home-luzern-kapellbruecke.jpg": "55%",
+  "ausruestung-rheinschlucht-ruinaulta.jpg": "65%",
+  "ausruestung-schneepiste-alpen.jpg": "50%",
+  "berichte-schloss-chillon.jpg": "60%",
+  "fotos-matterhorn-riffelsee.jpg": "55%",
+  "route-gotthard-tremola.jpg": "65%",
+  "route-basel-mittlere-bruecke-nacht.jpg": "45%",
+  "info-urnersee-fronalpstock.jpg": "50%",
+  "varia-dampfschiff-stadt-luzern.jpg": "70%",
 };
+
+/** The top-level section a path belongs to ("/berichte/peru" -> "/berichte"). */
+export function sectionOf(path: string): string {
+  const first = path.split("/")[1] ?? "";
+  if (MAIN_NAV.some((n) => n.href === `/${first}`)) return `/${first}`;
+  return "/"; // /ueber-uns, /claudia, /alexandre hang off Home, as they did
+}
+
+/**
+ * The page one level up, for the "back to …" button: a section's pages go to
+ * the section, a section to Home, and the two portraits to "Über uns", where
+ * they are reached from. Home has none.
+ */
+export function parentOf(path: string): { href: string; labelKey: string } | null {
+  if (path === "/") return null;
+  if (path === "/claudia" || path === "/alexandre") return { href: "/ueber-uns", labelKey: "ueber_uns" };
+  const section = sectionOf(path);
+  if (section !== "/" && path !== section) {
+    return { href: section, labelKey: MAIN_NAV.find((n) => n.href === section)!.labelKey };
+  }
+  return { href: "/", labelKey: "home" };
+}
+
+/** Home's sidebar — also the fallback for the three "about" pages. */
+export const HOME_SIDEBAR = [
+  { labelKey: "ueber_uns", href: "/ueber-uns" },
+  { labelKey: "claudia", href: "/claudia" },
+  { labelKey: "alexandre", href: "/alexandre" },
+];

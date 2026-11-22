@@ -16,14 +16,16 @@
     "alexandre": "Alexandre",
     "menu": "Menü öffnen",
     "close": "Menü schliessen",
-    "language": "Sprache"
+    "language": "Sprache",
+    "main": "Hauptmenü",
+    "sub": "Untermenü",
+    "back": "Zurück zu {page}"
   },
   "crumb": {
     "home": "Home"
   },
   "home": {
     "title": "Zentralschweizer auf Weltreise",
-    "lead": "Idee – Entschluss – Planung",
     "stats": {
       "countries": "Länder",
       "reports": "Reiseberichte",
@@ -36,7 +38,76 @@
     "explore": "Alle Berichte",
     "gear_title": "Was mitkommt",
     "gear_lead": "Vom Trekkingrad bis zur Reiseapotheke – die vollständige Packliste.",
-    "gear_cta": "Zur Ausrüstung"
+    "gear_cta": "Zur Ausrüstung",
+    "quote": "Die grösste Sehenswürdigkeit ist die Welt.",
+    "paragraphs": [
+      "Was man selbst gesehen, erlebt und angefasst hat bleibt besser in Erinnerung, als Dinge von denen man nur gelesen hat. In unserer Zeit ist alles viel einfacher kalkulier- und planbar. Möglicherweise liegt das authentische Reisen genau in der Differenz zwischen Plan und Wirklichkeit.",
+      "Die Erfahrungsberichte anderer Weltreisender ermöglichen uns die Vorahnung, wohin ein fremder Weg führen kann. Das Reisen besteht nicht nur in der Wahl des Reiseziels sondern vielmehr in der Vorfreude des sich Einlassen auf das Unbekannte. Auch das Dokumentieren der Begegnungen, Eindrücke und Gefühle, zählen zu unseren Reiseerlebnissen.",
+      "Oft fragen wir uns; Ist es das Fernweh das gestillt werden muss oder die Sehnsucht nach dem Aussergewöhnlichen? Die Phantasie von Orten und Menschen oder der Abschied vom Alten und der Begegnung mit Neuem?",
+      "Wenn auch die Zeit der grossen Eroberer und Entdecker längst der Vergangenheit angehört, schlummert in uns immer noch ein kleiner Forscher, der sehen will was er noch nicht kennt.",
+      "Und so wollen wir das Leben spüren und Gewohntes entbehren um Ungewohntes zu entdecken."
+    ],
+    "motto": "Spuren verschwinden, Erinnerungen halten ewig.",
+    "photo": "Leuchtturm"
+  },
+  "about": {
+    "photo": "Alexandre & Claudia",
+    "lead": "Als begeisterte Mountainbike-Fahrer ist fast kein \"Berg\" vor uns sicher.",
+    "paragraphs": [
+      "Immer wieder entdecken wir neue Routen, welche uns zu den Gipfeln unserer Zentralschweizer Hausberge führen.",
+      "Unsere Favoritenetappe ist die 4 Seeentour, welche von Luzern zur Melchsee-Frutt, über den Jochpass nach Engelberg und zurück nach Luzern führt. Bei längeren Touren, mit ausgedehnten Tragepassagen wie über den \"Surenenpass\", übernachten wir auf dem Weg zur Passhöhe in der \"Stäfelihütte\". Auch die Rigi, der Bürgenstock und das Stanserhorn werden von uns gerne befahren.",
+      "Gelegentlich nehmen wir auch an Bike-Marathon's teil. Das Swiss-Bike-Masters im Prättigau, wo wir mit über 3'000 weiteren Teilnehmer auf den Startschuss warten, ist immer wieder ein besonderes Erlebnis. Das Bündnerland mit dem Engadiner-Bike-Marathon (138 km und 4'000 Hm) und seiner einmaligen Landschaft hat uns im Jahr 2007 sehr begeistert. Kleinere Anlässe wie der \"Brittnauer\", wo keine Zeitnahme statt findet, und wir nachher bei einem Teller Spaghetti mit anderen Radlern fachsimpeln, sind uns stets willkommen um neue Kontakte zu knüpfen.",
+      "Wir geniessen es, auf zwei Räder die Natur zu erleben und das Hochgefühl zu spüren, wieder einige Kilometer \"abgestrampelt\" zu haben.",
+      "Als Ausgleich zum Bike-Training verbringen wir unsere Ferien in Ägypten beim Windsurfen."
+    ],
+    "travellers": "Die Reisenden",
+    "by": "Geschrieben von {name}",
+    "alexandre": {
+      "motto": "Packen wir's an!",
+      "paragraphs": [
+        "Als Tüftler, Bastler und Mann für alle Fälle, sind für Ihn Schwierigkeiten da um sie zu lösen! Kein Berg zu hoch, keine Abfahrt zu steil, keine Pannen zu gross. Alles lässt sich lösen, alles lässt sich meistern. Nach dem Motto \"packen wir's an\" wird pragmatisch an den Lösungen getüftelt. Er liebt es zu planen, nichts oder nur wenig dem Zufall zu überlassen. Er lebt nach dem Grundsatz: Gute Vorbereitung erleichtert das Vorhaben und reduziert die unangenehmen Überraschungen.",
+        "Eine Biketour zieht er einem Restaurantbesuch oder einer Vereinsaktivität vor! Sicherheit ist ein Aspekt den er gross schreibt und nie aus den Augen verliert. Er ist kein Mann von grossen Worten, sondern der Taten. Man kann sich auf ihn verlassen was bei unserem geplanten Vorhaben wichtig ist. Seine vielfältige Erfahrung auf ganz verschiedenen Gebieten wird uns von grossem Nutzen sein."
+      ]
+    },
+    "claudia": {
+      "motto": "Probieren, experimentieren und testen.",
+      "paragraphs": [
+        "Als begeisterte Mountainbikefahrerin sieht Sie es als Training an, mit dem Bike bei jeder Witterung zur Arbeit zu fahren. So kam ihre Idee von einem Trekking-Abenteuer durch einen anderen Kontinent nicht überraschend. Ihre Ausdauer, ihre lösungsorientierte Denkweise und ihr Motto \"probieren, experimentieren und testen\" hat sich schon vielfach bewährt.",
+        "Unkompliziert wie Sie ist, gibt sie auch in widrigen Situationen nicht auf und beisst sich durch. Ihr Durchhaltewille und ihre Begeisterungsfähigkeit sind für dieses Abenteuer gute Voraussetzungen. Ihre Verlässlichkeit und Kompromissfähigkeit geben mir das Gefühl von Sicherheit um unvorhergesehene Ereignisse meistern zu können."
+      ]
+    }
+  },
+  "gear": {
+    "items": "{count, plural, =1 {# Artikel} other {# Artikel}}",
+    "entries": "{count, plural, =1 {# Position} other {# Positionen}}",
+    "weight": "Gewicht",
+    "also": "Ausserdem"
+  },
+  "info": {
+    "open": "Öffnen",
+    "pdf": "PDF",
+    "external": "öffnet in neuem Fenster",
+    "pages": {
+      "impfung": { "lead": "Vorschriften, Empfehlungen und Gesundheitsrisiken auf unserer Route." },
+      "visa": { "lead": "Einreisebestimmungen für Schweizer Bürger, Land für Land." },
+      "fluege": { "lead": "Wie die Velos ins Flugzeug kamen – und was es dazu braucht." },
+      "statistiken": { "lead": "Länder, Krankheiten und Pannen unterwegs, in Zahlen." },
+      "testberichte": { "lead": "Unsere Ausrüstung im Langzeittest." },
+      "sponsoring": { "lead": "Die Firmen, die unsere Reisen unterstützt haben." },
+      "links": { "lead": "Partner, Planungstipps und Reisende, die wir unterwegs getroffen haben." }
+    },
+    "visa": {
+      "free": "Ohne Visum",
+      "visa": "Visum nötig",
+      "arrival": "Visum bei Einreise",
+      "passport": "Pass ≥ {months} Mt. gültig",
+      "stay": "{days} Tage",
+      "groups": { "0": "Amerika", "1": "Asien & Ozeanien" },
+      "report": "Bericht"
+    },
+    "health": { "countries": "Betrifft" },
+    "flights": { "plan": "Flugplan", "from": "Von", "to": "Nach", "flight": "Flug", "allowance": "Freigepäck" },
+    "links": { "partners": "Partner", "jump": "Auf dieser Seite" }
   },
   "section": {
     "ausruestung": {
@@ -72,6 +143,11 @@
     "no_report": "Für dieses Land gibt es keinen Bericht.",
     "also": "Dazu passend"
   },
+  "theme": {
+    "dark": "Dunkler Modus",
+    "toDark": "Zum dunklen Modus wechseln",
+    "toLight": "Zum hellen Modus wechseln"
+  },
   "gallery": {
     "photos": "{count, plural, =1 {# Foto} other {# Fotos}}",
     "open": "Bild öffnen",
@@ -80,7 +156,21 @@
     "close": "Schliessen",
     "counter": "{current} von {total}",
     "loading": "Bild wird geladen …",
-    "empty": "In dieser Galerie sind noch keine Bilder."
+    "empty": "In dieser Galerie sind noch keine Bilder.",
+    "play": "Film abspielen"
+  },
+  "show": {
+    "label": "Diashow",
+    "play": "Diashow abspielen",
+    "pause": "Diashow anhalten",
+    "prev": "Vorheriges Bild",
+    "next": "Nächstes Bild",
+    "musicOn": "Musik einschalten",
+    "musicOff": "Musik ausschalten",
+    "tapForMusic": "Tippen für Musik",
+    "fullscreen": "Vollbild",
+    "exitFullscreen": "Vollbild beenden",
+    "counter": "{current} / {total}"
   },
   "guestbook": {
     "title": "Gästebuch",
@@ -128,6 +218,8 @@
   "footer": {
     "impressum": "Impressum",
     "kontakt": "Kontakt",
+    "credit": "Design & Entwicklung:",
+    "classic": "Neu gestaltet 2026 · Die klassische Website im Originallook bleibt erhalten auf",
     "rights": "© {year} Zentralbiker",
     "built": "Reiseberichte einer Velo-Weltreise",
     "sections": "Bereiche",
@@ -145,5 +237,69 @@
     "to_home": "Zur Startseite",
     "updated": "Aktualisiert",
     "words": "{count} Wörter"
+  },
+  "sidebar": {
+    "ueber uns": "Über uns"
+  },
+  "route": {
+    "stops": "Gefahrene Route",
+    "round_trip": "Rundtour",
+    "stages": "Tagesetappen",
+    "countries_title": "Länder dieser Etappe",
+    "open_map": "Karte in voller Grösse öffnen",
+    "swipe": "Tabelle seitlich wischen für alle Spalten",
+    "prev": "Vorheriges Land",
+    "next": "Nächstes Land",
+    "total": "Total",
+    "stat": {
+      "km": "Kilometer",
+      "gain": "Höhenmeter Aufstieg",
+      "time": "Stunden im Sattel",
+      "stages": "Etappen",
+      "countries": "Länder"
+    },
+    "col": {
+      "date": "Datum",
+      "place": "Etappe / Zielort",
+      "distance": "km",
+      "gain": "Aufstieg",
+      "altitude": "Höhe",
+      "time": "Fahrzeit",
+      "night": "Übernachtung",
+      "temperature": "°C",
+      "comment": "Kommentar"
+    },
+    "col_hint": {
+      "distance": "Distanz in Kilometern",
+      "gain": "Höhenzuwachs in Metern",
+      "altitude": "Höhe in Metern über Meer",
+      "time": "Fahrzeit in Stunden:Minuten",
+      "temperature": "Temperatur in Grad Celsius"
+    },
+    "night": {
+      "hotel": "Hotel",
+      "tent": "Zelt",
+      "guesthouse": "Gästehaus",
+      "border": "Zoll",
+      "bus": "Bus",
+      "train": "Zug",
+      "other": "Übernachtung"
+    },
+    "track_title": "Die Strecke auf der Karte",
+    "track_all": "Ganze Strecke",
+    "track": {
+      "distance": "Distanz",
+      "duration": "Unterwegs",
+      "moving": "Fahrzeit",
+      "speed": "Ø Geschwindigkeit",
+      "up": "Aufstieg",
+      "down": "Abstieg",
+      "height": "Höhe",
+      "hint": "Mit dem Mausrad zoomen, ziehen zum Verschieben. Einen Tagesabschnitt anklicken für seine Daten.",
+      "hint_planned": "Für dieses Land gibt es keine GPS-Aufzeichnung: Die Strecke ist entlang der Strassen zwischen den Etappenorten gezeichnet und daher ungefähr. Einen Abschnitt anklicken für seine Distanz.",
+      "straight": "Keine Strasse: mit Zug oder Boot",
+      "hint_leg": "Mit dem Mausrad zoomen, ziehen zum Verschieben. Oben ein Land wählen oder einen Tagesabschnitt anklicken für seine Daten.",
+      "hint_planned_leg": "Oben ein Land wählen oder einen Abschnitt anklicken für seine Daten. Wo es keine GPS-Aufzeichnung gibt, ist die Strecke entlang der Strassen zwischen den Etappenorten gezeichnet und daher ungefähr."
+    }
   }
 }

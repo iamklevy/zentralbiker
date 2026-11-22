@@ -1,0 +1,590 @@
+{
+ "501kalifornien.html|Burlingame": [
+  37.5781,
+  -122.34731
+ ],
+ "501kalifornien.html|Half Moon Bay": [
+  37.46355,
+  -122.42859
+ ],
+ "501kalifornien.html|Pigeon Point": [
+  37.1817,
+  -122.3939
+ ],
+ "501kalifornien.html|Santa Cruz": [
+  37.0501,
+  -121.99059
+ ],
+ "501kalifornien.html|Monterey": [
+  36.6002,
+  -121.8947
+ ],
+ "501kalifornien.html|Carmel": [
+  36.55527,
+  -121.92328
+ ],
+ "501kalifornien.html|Big Sure": [
+  36.1437,
+  -121.56459
+ ],
+ "501kalifornien.html|Pacific Valley": [
+  35.9328,
+  -121.46851
+ ],
+ "501kalifornien.html|Cambria": [
+  35.56414,
+  -121.08111
+ ],
+ "501kalifornien.html|Pismo Beach": [
+  35.14274,
+  -120.64129
+ ],
+ "501kalifornien.html|Lompoc": [
+  34.63915,
+  -120.4579
+ ],
+ "501kalifornien.html|El Captain Beach State Park": [
+  34.48737,
+  -120.01254
+ ],
+ "501kalifornien.html|Carpintera": [
+  34.39888,
+  -119.51846
+ ],
+ "501kalifornien.html|Point Mug": [
+  34.08541,
+  -119.06099
+ ],
+ "501kalifornien.html|Venice Beach (Los Angeles)": [
+  33.99504,
+  -118.46689
+ ],
+ "501kalifornien.html|Capistrano Beach": [
+  33.45872,
+  -117.66857
+ ],
+ "501kalifornien.html|Cardiff by the Sea": [
+  33.0225,
+  -117.27996
+ ],
+ "501kalifornien.html|San Diego": [
+  32.71571,
+  -117.16383
+ ],
+ "503guatemala.html|Guatemala City": [
+  14.64161,
+  -90.51328
+ ],
+ "503guatemala.html|Antigua": [
+  14.55678,
+  -90.73373
+ ],
+ "503guatemala.html|Chiquimullilla": [
+  13.99424,
+  -90.35248
+ ],
+ "503guatemala.html|Ciulapa": [
+  14.27682,
+  -90.29891
+ ],
+ "503guatemala.html|Jocotan": [
+  14.81467,
+  -89.41054
+ ],
+ "503guatemala.html|El Florido": [
+  14.85796,
+  -89.22683
+ ],
+ "504honduras.html|El Florido": [
+  14.85796,
+  -89.22683
+ ],
+ "504honduras.html|Copan Ruinas": [
+  14.83863,
+  -89.15601
+ ],
+ "504honduras.html|Gracias": [
+  14.58891,
+  -88.58055
+ ],
+ "504honduras.html|Esperanza": [
+  14.30813,
+  -88.17678
+ ],
+ "504honduras.html|Marcala": [
+  14.15466,
+  -88.03474
+ ],
+ "504honduras.html|Danli": [
+  14.03247,
+  -86.56828
+ ],
+ "504honduras.html|Los Manos": [
+  13.80223,
+  -86.58182
+ ],
+ "505nicaragua.html|Los Manos": [
+  13.80223,
+  -86.58182
+ ],
+ "505nicaragua.html|Condega": [
+  13.34087,
+  -86.35278
+ ],
+ "505nicaragua.html|Sebaco": [
+  12.92065,
+  -86.09331
+ ],
+ "505nicaragua.html|Masaya": [
+  11.97365,
+  -86.09605
+ ],
+ "505nicaragua.html|Granada": [
+  11.93037,
+  -85.95354
+ ],
+ "505nicaragua.html|Ometepe": [
+  11.52367,
+  -85.70278
+ ],
+ "505nicaragua.html|Penas Blancas": [
+  11.21908,
+  -85.61375
+ ],
+ "506costa_rica.html|Penas Blancas": [
+  11.21908,
+  -85.61375
+ ],
+ "506costa_rica.html|La Cruz": [
+  11.00884,
+  -85.55185
+ ],
+ "506costa_rica.html|Liberia": [
+  10.63198,
+  -85.43932
+ ],
+ "506costa_rica.html|Brasilito": [
+  10.40725,
+  -85.79667
+ ],
+ "506costa_rica.html|Tamarindo": [
+  10.29841,
+  -85.83995
+ ],
+ "506costa_rica.html|Manzanilla": [
+  10.11013,
+  -85.76709
+ ],
+ "506costa_rica.html|Samara": [
+  9.88342,
+  -85.5289
+ ],
+ "506costa_rica.html|Corazallito": [
+  9.86139,
+  -85.36773
+ ],
+ "506costa_rica.html|Puntarenas": [
+  9.9763,
+  -84.8384
+ ],
+ "506costa_rica.html|Jaco": [
+  9.61564,
+  -84.62813
+ ],
+ "506costa_rica.html|Puerto Limon": [
+  9.9907,
+  -83.036
+ ],
+ "506costa_rica.html|Quepos": [
+  9.41279,
+  -84.06492
+ ],
+ "506costa_rica.html|Uvita": [
+  9.1731,
+  -83.7364
+ ],
+ "506costa_rica.html|Palmar Norte": [
+  8.96197,
+  -83.45638
+ ],
+ "506costa_rica.html|Ciudad Neily": [
+  8.64903,
+  -82.9439
+ ],
+ "506costa_rica.html|Paso Canoas": [
+  8.53512,
+  -82.84345
+ ],
+ "507panama.html|Paso Canoas": [
+  8.53512,
+  -82.84345
+ ],
+ "507panama.html|David": [
+  8.43715,
+  -82.42863
+ ],
+ "507panama.html|San Felix": [
+  8.25567,
+  -81.90437
+ ],
+ "507panama.html|Santiago": [
+  8.09899,
+  -80.9804
+ ],
+ "507panama.html|Penonome": [
+  8.5205,
+  -80.35958
+ ],
+ "507panama.html|Gorgona": [
+  8.55823,
+  -79.87561
+ ],
+ "507panama.html|Panama City": [
+  8.97145,
+  -79.53418
+ ],
+ "508florida.html|Miami Beach": [
+  25.79292,
+  -80.1353
+ ],
+ "508florida.html|Miami": [
+  25.77416,
+  -80.1936
+ ],
+ "508florida.html|Key Largo": [
+  25.08704,
+  -80.44724
+ ],
+ "508florida.html|Islamorada": [
+  24.92366,
+  -80.62915
+ ],
+ "508florida.html|Key West": [
+  24.55483,
+  -81.80207
+ ],
+ "508florida.html|Fort Lauderdale": [
+  26.12231,
+  -80.14338
+ ],
+ "508florida.html|Miami Springs": [
+  25.82232,
+  -80.28949
+ ],
+ "509ecuador.html|Quito": [
+  -0.22016,
+  -78.51233
+ ],
+ "509ecuador.html|Machachi": [
+  -0.49848,
+  -78.65169
+ ],
+ "509ecuador.html|Lasso": [
+  -0.7527,
+  -78.60946
+ ],
+ "509ecuador.html|Ambato": [
+  -1.24224,
+  -78.62876
+ ],
+ "509ecuador.html|Riobamba": [
+  -1.67328,
+  -78.64825
+ ],
+ "509ecuador.html|Cajabamba": [
+  -1.70155,
+  -78.77305
+ ],
+ "509ecuador.html|Alausi": [
+  -2.32505,
+  -78.70357
+ ],
+ "509ecuador.html|Chunchi": [
+  -2.32857,
+  -78.89328
+ ],
+ "509ecuador.html|Zhud": [
+  -2.46009,
+  -79.00431
+ ],
+ "509ecuador.html|Cuenca": [
+  -2.89741,
+  -79.00417
+ ],
+ "509ecuador.html|Ona": [
+  -3.49631,
+  -79.10928
+ ],
+ "509ecuador.html|Sorozonga": [
+  -4.30046,
+  -79.79473
+ ],
+ "509ecuador.html|Macará": [
+  -4.34904,
+  -79.91545
+ ],
+ "510peru.html|Macara": [
+  -4.34904,
+  -79.91545
+ ],
+ "510peru.html|Tambo Grande": [
+  -4.93535,
+  -80.3424
+ ],
+ "510peru.html|Chulucanas": [
+  -5.12898,
+  -80.19688
+ ],
+ "510peru.html|Olmos": [
+  -5.98819,
+  -79.74729
+ ],
+ "510peru.html|Chiclayo": [
+  -6.77161,
+  -79.83872
+ ],
+ "510peru.html|Pacasmayo": [
+  -7.42565,
+  -79.43395
+ ],
+ "510peru.html|Trujillo": [
+  -8.11168,
+  -79.02877
+ ],
+ "510peru.html|Lima": [
+  -12.04598,
+  -77.03059
+ ],
+ "510peru.html|Paracas": [
+  -13.8341,
+  -76.24886
+ ],
+ "510peru.html|Huacachino": [
+  -14.08759,
+  -75.76306
+ ],
+ "510peru.html|Palpa": [
+  -14.35149,
+  -75.17079
+ ],
+ "510peru.html|Nasca": [
+  -14.92355,
+  -75.08057
+ ],
+ "510peru.html|Puquio": [
+  -14.68563,
+  -73.99439
+ ],
+ "510peru.html|Pampa Marca": [
+  -14.23273,
+  -74.04145
+ ],
+ "510peru.html|Chalhancua": [
+  -14.29175,
+  -73.21709
+ ],
+ "510peru.html|Limatambo": [
+  -13.48314,
+  -72.43717
+ ],
+ "510peru.html|Cusco": [
+  -13.51709,
+  -71.97854
+ ],
+ "510peru.html|Pisaq": [
+  -13.42105,
+  -71.8505
+ ],
+ "510peru.html|Ollantaytambo": [
+  -13.25865,
+  -72.2636
+ ],
+ "510peru.html|Agua Calientes": [
+  -13.15428,
+  -72.52565
+ ],
+ "510peru.html|Chinchero": [
+  -13.40982,
+  -72.0439
+ ],
+ "510peru.html|Quiquijana": [
+  -13.80278,
+  -71.51559
+ ],
+ "510peru.html|Siguani": [
+  -14.27293,
+  -71.22653
+ ],
+ "510peru.html|Ayaviri": [
+  -14.8818,
+  -70.5901
+ ],
+ "510peru.html|Puno": [
+  -15.8402,
+  -70.0219
+ ],
+ "510peru.html|Juli": [
+  -16.31029,
+  -69.50219
+ ],
+ "510peru.html|Kasani": [
+  -16.22688,
+  -69.09523
+ ],
+ "511bolivien.html|Kasani": [
+  -16.22688,
+  -69.09523
+ ],
+ "511bolivien.html|Copacabana": [
+  -16.16573,
+  -69.08544
+ ],
+ "511bolivien.html|Huatajata": [
+  -16.20886,
+  -68.70049
+ ],
+ "511bolivien.html|La Paz": [
+  -16.49555,
+  -68.13362
+ ],
+ "511bolivien.html|Uyuni": [
+  -20.46284,
+  -66.82391
+ ],
+ "511bolivien.html|Potosi": [
+  -19.58929,
+  -65.75347
+ ],
+ "511bolivien.html|Abra San Miguel": [
+  -21.90267,
+  -64.80691
+ ],
+ "511bolivien.html|Sucre": [
+  -19.04773,
+  -65.25943
+ ],
+ "511bolivien.html|Aiquile": [
+  -18.20022,
+  -65.18063
+ ],
+ "511bolivien.html|Santa Cruz": [
+  -17.78342,
+  -63.18209
+ ],
+ "511bolivien.html|Puerto Suarez": [
+  -18.96318,
+  -57.79746
+ ],
+ "511bolivien.html|Corumba": [
+  -19.0006,
+  -57.65075
+ ],
+ "512paraguay.html|Asuncion": [
+  -25.28005,
+  -57.63438
+ ],
+ "512paraguay.html|Itaugua": [
+  -25.39473,
+  -57.35329
+ ],
+ "512paraguay.html|Caacupe": [
+  -25.38569,
+  -57.14048
+ ],
+ "512paraguay.html|Coronel Oviedo": [
+  -25.45005,
+  -56.4407
+ ],
+ "512paraguay.html|Campo 9": [
+  -25.37153,
+  -55.70448
+ ],
+ "512paraguay.html|Ciudad del Este": [
+  -25.5169,
+  -54.61686
+ ],
+ "513argentinien.html|Puerto Iguazu": [
+  -25.61075,
+  -54.57642
+ ],
+ "513argentinien.html|Eldorado": [
+  -26.40486,
+  -54.62621
+ ],
+ "513argentinien.html|Capiovi": [
+  -26.92827,
+  -55.05732
+ ],
+ "513argentinien.html|San Ignacio": [
+  -27.25234,
+  -55.53264
+ ],
+ "513argentinien.html|San Jose": [
+  -27.77005,
+  -55.78011
+ ],
+ "513argentinien.html|Santo Tome": [
+  -28.5497,
+  -56.03514
+ ],
+ "513argentinien.html|La Cruz": [
+  -29.17613,
+  -56.64274
+ ],
+ "513argentinien.html|Uruguayana": [
+  -29.75607,
+  -57.08675
+ ],
+ "513argentinien.html|Barro do Quarai": [
+  -30.20895,
+  -57.55051
+ ],
+ "514uruguay.html|Bella Union": [
+  -30.26123,
+  -57.6059
+ ],
+ "514uruguay.html|Termes Arapay": [
+  -30.94742,
+  -57.52321
+ ],
+ "514uruguay.html|Salto": [
+  -31.38889,
+  -57.96089
+ ],
+ "514uruguay.html|Guaviyu": [
+  -31.84051,
+  -57.88683
+ ],
+ "514uruguay.html|Paysandu": [
+  -32.32173,
+  -58.08921
+ ],
+ "514uruguay.html|Young": [
+  -32.69953,
+  -57.6342
+ ],
+ "514uruguay.html|Andresito": [
+  -33.16772,
+  -57.13022
+ ],
+ "514uruguay.html|Trinidad": [
+  -33.51735,
+  -56.89797
+ ],
+ "514uruguay.html|San Jose": [
+  -34.455,
+  -56.61694
+ ],
+ "514uruguay.html|Montevideo": [
+  -34.90589,
+  -56.19131
+ ],
+ "509ecuador.html|Saraguro": [
+  -3.6206,
+  -79.2372
+ ],
+ "509ecuador.html|Loja": [
+  -3.9931,
+  -79.2042
+ ]
+}

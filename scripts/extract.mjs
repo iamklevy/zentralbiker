@@ -14,6 +14,9 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { EXCLUDED_PATHS, isExcludedAsset, withoutExcluded } from "./excluded.mjs";
+import { germanNames } from "./german-names.mjs";
+
 const HERE = dirname(fileURLToPath(import.meta.url));
 const MIRROR = process.argv[2];
 if (!MIRROR || !existsSync(MIRROR)) {
@@ -23,7 +26,7 @@ if (!MIRROR || !existsSync(MIRROR)) {
 const OUT = join(HERE, "..", "content", "generated");
 mkdirSync(OUT, { recursive: true });
 
-const manifest = JSON.parse(readFileSync(join(MIRROR, "_manifest.json"), "utf8"));
+const manifest = withoutExcluded(JSON.parse(readFileSync(join(MIRROR, "_manifest.json"), "utf8")));
 
 /* ---------------------------------------------------------------- routing */
 
@@ -40,10 +43,19 @@ const countrySlug = (base) => base.replace(/^\d+(?:[a-c]_)?/, "").replace(/_/g, 
 
 const LEG = { a: "amerika", b: "asien", c: "ozeanien" };
 
+/**
+ * Pages whose filename would give them another page's URL. Bolivia was
+ * crossed twice, and both reports are named "bolivien" (311 on the America
+ * leg, 331 on the Oceania leg); the second takes the spelling its own route
+ * and gallery already use (531bolivia, 431bolivia).
+ */
+const RENAMED = { "3berichte/331bolivien": "/berichte/bolivia" };
+
 /** Old mirror path -> new site path. Also the link-rewriting table. */
 export function newPath(old) {
   const p = old.replace(/^\/+/, "").replace(/\.html?$/i, "");
   if (p === "index") return "/";
+  if (RENAMED[p]) return RENAMED[p];
   const [dir, file] = p.includes("/") ? p.split("/") : [null, p];
 
   if (!dir) return `/${file}`; // ausruestung, berichte, fotos, route, info, varia
@@ -61,7 +73,10 @@ export function newPath(old) {
   if (dir === "5route") {
     return legMatch ? `/route/${LEG[legMatch[1]]}` : `/route/${countrySlug(file)}`;
   }
-  if (dir === "4fotos") return `/fotos/${countrySlug(file.replace(/^\d+[a-z]*_/, ""))}`;
+  // Overview pages carry a short leg code (400_, 400a_, 400ab_); country
+  // galleries do not (406costa_rica). A greedy [a-z]* here ate "costa_" and
+  // "new_", producing /fotos/rica and /fotos/york.
+  if (dir === "4fotos") return `/fotos/${countrySlug(file.replace(/^\d+[a-g]{0,2}_/, ""))}`;
   return `/${p}`;
 }
 
@@ -76,8 +91,13 @@ const DROP_ATTRS = [
 const LAYOUT_STYLE =
   /(float|width|height|padding|margin|border|background|font-family|font-size|text-indent)\s*:/i;
 
-const DROP_TAGS = ["script", "noscript", "style", "meta", "link"];
+// iframes embedded the old PHP contact form and guestbook, which the new
+// site replaces with its own forms.
+const DROP_TAGS = ["script", "noscript", "style", "meta", "link", "iframe", "canvas"];
 const UNWRAP_TAGS = ["font", "center", "basefont", "tt"];
+
+/** Text styles from the old style.css that carry meaning (see .zb-content in globals.css). */
+const TEXT_CLASSES = new Set(["fett", "klein", "hervorheben", "zitat", "unterschrift", "ueberschrift_2"]);
 
 function cleanNode(node, ctx) {
   for (const el of node.querySelectorAll("*")) {
@@ -107,8 +127,16 @@ function cleanNode(node, ctx) {
       }
       ctx.images.push(resolved);
       const alt = el.getAttribute("alt") || el.getAttribute("title") || "";
+      // Keep the size each picture was shown at — thumbnails must stay
+      // thumbnails — and the float that set a photo beside its text.
+      const w = el.getAttribute("width");
+      const h = el.getAttribute("height");
+      const floated = /float\s*:\s*left/i.test(el.getAttribute("style") || "") || /left/i.test(el.getAttribute("align") || "");
       for (const a of DROP_ATTRS) el.removeAttribute(a);
       el.removeAttribute("style");
+      if (/^\d+$/.test(w || "")) el.setAttribute("width", w);
+      if (/^\d+$/.test(h || "")) el.setAttribute("height", h);
+      if (floated) el.setAttribute("class", "float-left");
       el.setAttribute("src", "/media/" + resolved);
       el.setAttribute("alt", alt);
       continue;
@@ -134,7 +162,11 @@ function cleanNode(node, ctx) {
       continue;
     }
 
+    // The original's text styles (bold subheadings, small dates, highlights)
+    // are part of the design and survive; every other class was layout.
+    const kept = (el.getAttribute("class") || "").split(/\s+/).filter((c) => TEXT_CLASSES.has(c));
     for (const a of DROP_ATTRS) el.removeAttribute(a);
+    if (kept.length) el.setAttribute("class", kept.join(" "));
     const style = el.getAttribute("style");
     if (style && LAYOUT_STYLE.test(style)) el.removeAttribute("style");
   }
@@ -201,7 +233,11 @@ function unwrapLayoutTables(root) {
     const inner = table.innerHTML
       .replace(/<\/?(?:tbody|thead|tfoot|colgroup|col|caption)[^>]*>/gi, "")
       .replace(/<\/?tr[^>]*>/gi, "")
-      .replace(/<t[dh][^>]*>/gi, "<div>")
+      // a cell's text style (only the kept ones survive cleanNode) moves to its block
+      .replace(/<t[dh]([^>]*)>/gi, (_, attrs) => {
+        const cls = attrs.match(/class="([^"]*)"/);
+        return cls ? `<div class="${cls[1]}">` : "<div>";
+      })
       .replace(/<\/t[dh]>/gi, "</div>");
     const replacement = parse(`<div>${inner}</div>`);
 
@@ -213,9 +249,14 @@ function unwrapLayoutTables(root) {
   }
 }
 
-/** Drop the &nbsp;-only spacer paragraphs the old editor left everywhere. */
+/**
+ * Drop the &nbsp;-only spacer paragraphs the old editor left everywhere.
+ * Empty cells stay: they hold their column, and without them the rest of a
+ * row slides left (a stage with no altitude showed its time under altitude).
+ * A row with nothing in any cell still goes.
+ */
 function stripEmpties(root) {
-  for (const el of [...root.querySelectorAll("p,div,span,td,tr")].reverse()) {
+  for (const el of [...root.querySelectorAll("p,div,span,tr")].reverse()) {
     const txt = el.text.replace(/ |\s/g, "");
     if (!txt && el.querySelectorAll("img,iframe,br,a,table").length === 0) el.remove();
   }
@@ -253,6 +294,20 @@ function sliceContent(raw) {
   return body.replace(/(?:\s*<\/div>)+\s*$/i, "").trim();
 }
 
+/**
+ * Links to pages that are not migrated (scripts/excluded.mjs). A link that is
+ * a menu entry or thumbnail of its own goes entirely — the cell left empty is
+ * cleared by stripEmpties; one inside running text keeps its words.
+ */
+function dropExcludedLinks(root) {
+  for (const a of root.querySelectorAll("a")) {
+    if (!EXCLUDED_PATHS.has(a.getAttribute("href"))) continue;
+    const standalone = a.querySelector("img") || a.parentNode.text.trim() === a.text.trim();
+    if (standalone) a.remove();
+    else a.replaceWith(...a.childNodes);
+  }
+}
+
 /* ------------------------------------------------------------------ main */
 
 const out = {};
@@ -275,18 +330,24 @@ for (const oldPath of Object.keys(manifest.pages)) {
   const ctx = { dir, images: [] };
 
   cleanNode(body, ctx);
+  dropExcludedLinks(body);
   unwrapLayoutTables(body);
   stripEmpties(body);
+  germanNames(body);
 
-  const text = body.text.replace(/\s+/g, " ").trim();
+  const text = body.text.replace(/\s+/g, " ").replace(" (wie abgebildet)", "").trim();
   out[oldPath] = {
     oldPath,
     path: newPath(oldPath),
     title: (manifest.pages[oldPath].title || "").replace(/\s+/g, " ").trim(),
-    html: body.innerHTML.replace(/\n{3,}/g, "\n\n").trim(),
+    html: body.innerHTML
+      .replace(/\n{3,}/g, "\n\n")
+      // the bike's weight said "17,9 kg (wie abgebildet)": the owners dropped it
+      .replace(" (wie abgebildet)", "")
+      .trim(),
     text,
     words: text ? text.split(" ").length : 0,
-    images: [...new Set(ctx.images)],
+    images: [...new Set(ctx.images)].filter((i) => !isExcludedAsset(i)),
   };
 }
 

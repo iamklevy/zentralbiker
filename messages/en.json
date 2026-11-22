@@ -1,7 +1,7 @@
 {
   "brand": {
     "name": "Zentralbiker",
-    "tag": "Central Swiss cycling the world"
+    "tag": "Central Swiss on a Trip Around the World"
   },
   "nav": {
     "home": "Home",
@@ -16,14 +16,16 @@
     "alexandre": "Alexandre",
     "menu": "Open menu",
     "close": "Close menu",
-    "language": "Language"
+    "language": "Language",
+    "main": "Main menu",
+    "sub": "Sub menu",
+    "back": "Back to {page}"
   },
   "crumb": {
     "home": "Home"
   },
   "home": {
-    "title": "Central Swiss cycling the world",
-    "lead": "Idea – decision – planning",
+    "title": "Central Swiss on a Trip Around the World",
     "stats": {
       "countries": "Countries",
       "reports": "Travel reports",
@@ -36,7 +38,76 @@
     "explore": "All reports",
     "gear_title": "What comes along",
     "gear_lead": "From the trekking bike to the first-aid kit — the complete packing list.",
-    "gear_cta": "See the equipment"
+    "gear_cta": "See the equipment",
+    "quote": "The greatest sight of all is the world itself.",
+    "paragraphs": [
+      "What you have seen, experienced and touched yourself stays in your memory far better than things you have only read about. In our times, everything can be calculated and planned much more easily. Perhaps authentic travel lies precisely in the gap between the plan and reality.",
+      "The stories of other world travellers give us a hint of where an unfamiliar road might lead. Travelling is not only about choosing a destination, but much more about the joyful anticipation of opening ourselves up to the unknown. Recording our encounters, impressions and feelings is also part of our travel experience.",
+      "We often ask ourselves: is it wanderlust that needs to be satisfied, or a longing for the extraordinary? Is it the fantasy of places and people, or saying goodbye to the old and meeting the new?",
+      "Even though the age of the great conquerors and explorers is long gone, a little explorer still slumbers inside us, one who wants to see what it does not yet know.",
+      "And so we want to feel life, and give up the familiar in order to discover the unfamiliar."
+    ],
+    "motto": "Footprints fade, memories last forever.",
+    "photo": "Lighthouse"
+  },
+  "about": {
+    "photo": "Alexandre & Claudia",
+    "lead": "As keen mountain bikers, hardly any \"mountain\" is safe from us.",
+    "paragraphs": [
+      "Again and again we discover new routes that take us up to the summits of our home mountains in Central Switzerland.",
+      "Our favourite stage is the Four Lakes Tour, which leads from Lucerne to Melchsee-Frutt, over the Joch Pass to Engelberg and back to Lucerne. On longer tours with long stretches of carrying our bikes, such as over the \"Surenen Pass\", we spend the night at the \"Stäfeli Hut\" on the way up to the top of the pass. We also love riding the Rigi, the Bürgenstock and the Stanserhorn.",
+      "Now and then we also take part in bike marathons. The Swiss Bike Masters in the Prättigau, where we wait for the starting gun together with more than 3,000 other riders, is always a special experience. In 2007 we were thrilled by the Engadin Bike Marathon in the Grisons (138 km and 4,000 m of climbing) and its unique landscape. Smaller events like the \"Brittnauer\", where there is no timing and afterwards we talk shop with other cyclists over a plate of spaghetti, are always welcome to us as a chance to make new friends.",
+      "We love experiencing nature on two wheels and feeling that high of having once again \"pedalled off\" a few more kilometres.",
+      "To balance out our bike training, we spend our holidays windsurfing in Egypt."
+    ],
+    "travellers": "The travellers",
+    "by": "Written by {name}",
+    "alexandre": {
+      "motto": "Let's get to it!",
+      "paragraphs": [
+        "A tinkerer, a handyman and a man for every situation, for him difficulties are there to be solved! No mountain too high, no descent too steep, no breakdown too big. Everything can be solved, everything can be mastered. True to the motto \"let's get to it\", he works out practical solutions. He loves to plan and leaves nothing, or very little, to chance. He lives by the principle: good preparation makes the job easier and reduces unpleasant surprises.",
+        "He prefers a bike tour to a meal in a restaurant or a club activity! Safety is something he takes very seriously and never loses sight of. He is not a man of big words, but of action. You can rely on him, which is important for the adventure we are planning. His wide experience in many different fields will be of great use to us."
+      ]
+    },
+    "claudia": {
+      "motto": "Try, experiment and test.",
+      "paragraphs": [
+        "As a keen mountain biker, she sees riding her bike to work in any weather as training. So her idea of a trekking adventure across another continent came as no surprise. Her stamina, her solution-oriented way of thinking and her motto \"try, experiment and test\" have proved their worth many times.",
+        "Easy-going as she is, she does not give up even in difficult situations, and she fights her way through. Her perseverance and her enthusiasm are good qualities for this adventure. Her reliability and her willingness to compromise give me the feeling of security I need to cope with the unexpected."
+      ]
+    }
+  },
+  "gear": {
+    "items": "{count, plural, =1 {# item} other {# items}}",
+    "entries": "{count, plural, =1 {# entry} other {# entries}}",
+    "weight": "Weight",
+    "also": "Also"
+  },
+  "info": {
+    "open": "Open",
+    "pdf": "PDF",
+    "external": "opens in a new window",
+    "pages": {
+      "impfung": { "lead": "Requirements, recommendations and health risks along our route." },
+      "visa": { "lead": "Entry requirements for Swiss citizens, country by country." },
+      "fluege": { "lead": "How the bikes got onto the plane – and what it takes." },
+      "statistiken": { "lead": "Countries, illnesses and breakdowns on the road, in figures." },
+      "testberichte": { "lead": "Our equipment, tested over the long haul." },
+      "sponsoring": { "lead": "The companies that supported our journeys." },
+      "links": { "lead": "Partners, planning tips and travellers we met on the road." }
+    },
+    "visa": {
+      "free": "No visa",
+      "visa": "Visa required",
+      "arrival": "Visa on arrival",
+      "passport": "Passport valid ≥ {months} mo.",
+      "stay": "{days} days",
+      "groups": { "0": "America", "1": "Asia & Oceania" },
+      "report": "Report"
+    },
+    "health": { "countries": "Applies to" },
+    "flights": { "plan": "Flight plan", "from": "From", "to": "To", "flight": "Flight", "allowance": "Free baggage" },
+    "links": { "partners": "Partners", "jump": "On this page" }
   },
   "section": {
     "ausruestung": {
@@ -72,6 +143,11 @@
     "no_report": "There is no report for this country.",
     "also": "Related"
   },
+  "theme": {
+    "dark": "Dark mode",
+    "toDark": "Switch to dark mode",
+    "toLight": "Switch to light mode"
+  },
   "gallery": {
     "photos": "{count, plural, =1 {# photo} other {# photos}}",
     "open": "Open image",
@@ -80,7 +156,21 @@
     "close": "Close",
     "counter": "{current} of {total}",
     "loading": "Loading image …",
-    "empty": "There are no images in this gallery yet."
+    "empty": "There are no images in this gallery yet.",
+    "play": "Play film"
+  },
+  "show": {
+    "label": "Slideshow",
+    "play": "Play slideshow",
+    "pause": "Pause slideshow",
+    "prev": "Previous photo",
+    "next": "Next photo",
+    "musicOn": "Turn music on",
+    "musicOff": "Turn music off",
+    "tapForMusic": "Tap for music",
+    "fullscreen": "Full screen",
+    "exitFullscreen": "Exit full screen",
+    "counter": "{current} / {total}"
   },
   "guestbook": {
     "title": "Guestbook",
@@ -128,13 +218,15 @@
   "footer": {
     "impressum": "Imprint",
     "kontakt": "Contact",
+    "credit": "Designed & developed by",
+    "classic": "Redesigned in 2026 · The classic site, with its original look, lives on at",
     "rights": "© {year} Zentralbiker",
     "built": "Travel reports from a round-the-world bike trip",
     "sections": "Sections",
     "about": "About us"
   },
   "meta": {
-    "title": "Zentralbiker – Central Swiss cycling the world",
+    "title": "Zentralbiker – Central Swiss on a Trip Around the World",
     "description": "Travel reports, photos and routes from a round-the-world bicycle journey through the Americas, Asia and Oceania."
   },
   "common": {
@@ -145,5 +237,120 @@
     "to_home": "Go to home page",
     "updated": "Updated",
     "words": "{count} words"
+  },
+  "sidebar": {
+    "ueber uns": "About us",
+    "Über uns": "About us",
+    "Trekkingrad": "Touring bike",
+    "Neuseeland": "New Zealand",
+    "Schlafen": "Sleeping",
+    "Kochen": "Cooking",
+    "Kleider": "Clothing",
+    "Apotheke": "First aid",
+    "Necessaire": "Toiletries",
+    "Administration": "Paperwork",
+    "Technik": "Electronics",
+    "Werkzeug": "Tools",
+    "Ersatzteile": "Spare parts",
+    "Diverses": "Miscellaneous",
+    "Amerika": "America",
+    "Asien": "Asia",
+    "Ozeanien": "Oceania",
+    "Highlights Amerika": "Highlights America",
+    "Highlights Asien": "Highlights Asia",
+    "Highlights Ozeanien": "Highlights Oceania",
+    "Fotos Nordamerika": "Photos North America",
+    "Fotos Suedamerika": "Photos South America",
+    "Fotos Asien": "Photos Asia",
+    "Fotos Ozeanien": "Photos Oceania",
+    "Filme Amerika": "Films America",
+    "Filme Asien": "Films Asia",
+    "Filme Ozeanien": "Films Oceania",
+    "Impfung": "Vaccinations",
+    "Visa": "Visas",
+    "Fluege": "Flights",
+    "Statistiken": "Statistics",
+    "Testberichte": "Product tests",
+    "Sponsoren": "Sponsors",
+    "Links": "Links",
+    "Medien": "Media",
+    "Kiosk": "Kiosk",
+    "Newsletter": "Newsletter",
+    "Gaestebuch": "Guestbook",
+    "Kontakt": "Contact",
+    "Impressum": "Imprint",
+    "Kalifornien": "California",
+    "Mexiko": "Mexico",
+    "Bolivien": "Bolivia",
+    "Argentinien": "Argentina",
+    "Tuerkei": "Turkey",
+    "Usbekistan": "Uzbekistan",
+    "Tadschikistan": "Tajikistan",
+    "Tjikistan": "Tajikistan",
+    "Kirgistan": "Kyrgyzstan",
+    "Kambodscha": "Cambodia",
+    "Singapur": "Singapore",
+    "Chile/Argentinien": "Chile/Argentina"
+  },
+  "route": {
+    "stops": "Route cycled",
+    "round_trip": "Round trip",
+    "stages": "Daily stages",
+    "countries_title": "Countries on this leg",
+    "open_map": "Open the map full size",
+    "swipe": "Swipe the table sideways to see every column",
+    "prev": "Previous country",
+    "next": "Next country",
+    "total": "Total",
+    "stat": {
+      "km": "kilometres",
+      "gain": "metres climbed",
+      "time": "hours in the saddle",
+      "stages": "stages",
+      "countries": "countries"
+    },
+    "col": {
+      "date": "Date",
+      "place": "Stage / destination",
+      "distance": "km",
+      "gain": "Climb",
+      "altitude": "Altitude",
+      "time": "Riding time",
+      "night": "Night",
+      "temperature": "°C",
+      "comment": "Comment"
+    },
+    "col_hint": {
+      "distance": "Distance in kilometres",
+      "gain": "Height gained in metres",
+      "altitude": "Altitude in metres above sea level",
+      "time": "Riding time in hours:minutes",
+      "temperature": "Temperature in degrees Celsius"
+    },
+    "night": {
+      "hotel": "Hotel",
+      "tent": "Tent",
+      "guesthouse": "Guesthouse",
+      "border": "Customs",
+      "bus": "Bus",
+      "train": "Train",
+      "other": "Night"
+    },
+    "track_title": "The route on the map",
+    "track_all": "Whole route",
+    "track": {
+      "distance": "Distance",
+      "duration": "Under way",
+      "moving": "Riding time",
+      "speed": "Avg. speed",
+      "up": "Climb",
+      "down": "Descent",
+      "height": "Altitude",
+      "hint": "Zoom with the mouse wheel, drag to move. Click a day's stretch for its figures.",
+      "hint_planned": "No GPS recording exists for this country: the route is drawn along the roads between the stops, so it is approximate. Click a stretch for its distance.",
+      "straight": "No road: by train or boat",
+      "hint_leg": "Zoom with the mouse wheel, drag to move. Pick a country above, or click a day's stretch for its figures.",
+      "hint_planned_leg": "Pick a country above, or click a stretch for its figures. Where there was no GPS recording, the route is drawn along the roads between the stops and is approximate."
+    }
   }
 }

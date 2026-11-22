@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { PageHero } from "@/components/site/page-hero";
-import { Section } from "@/components/site/section";
 import { Prose } from "@/components/site/prose";
 import { ContactForm } from "@/components/site/contact-form";
 import { getPage } from "@/lib/content";
+import { pageAlternates } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -14,7 +13,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "contact" });
-  return { title: t("title"), description: t("lead") };
+  return { title: t("title"), description: t("lead"), alternates: pageAlternates("/varia/kontakt", locale) };
 }
 
 export default async function KontaktPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -24,22 +23,18 @@ export default async function KontaktPage({ params }: { params: Promise<{ locale
 
   // Whatever standing text the old contact page carried (addresses, notes)
   // still shows above the rebuilt form.
-  const page = getPage("/varia/kontakt");
+  const page = getPage("/varia/kontakt", locale);
 
   return (
     <>
-      <PageHero
-        crumbs={[{ label: t("section.varia.title"), href: "/varia" }, { label: t("contact.title") }]}
-        title={t("contact.title")}
-        lead={t("contact.lead")}
-      />
+      <h1>{t("contact.title")}</h1>
 
-      <Section>
-        <div className="max-w-[46rem]">
+      <section>
+        <div>
           {page?.html && page.words > 5 && <Prose html={page.html} className="mb-8" />}
           <ContactForm />
         </div>
-      </Section>
+      </section>
     </>
   );
 }
